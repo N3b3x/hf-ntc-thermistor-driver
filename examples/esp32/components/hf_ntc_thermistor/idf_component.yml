@@ -1,0 +1,8 @@
+name: hf-ntc-thermistor-driver
+version: "1.0.0"
+description: Hardware-agnostic NTC Thermistor driver component
+maintainers:
+  - "HardFOC"
+targets:
+  - esp32
+  - esp32c6

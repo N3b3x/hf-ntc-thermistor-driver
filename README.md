@@ -1,12 +1,32 @@
-# HF-NTC-Thermistor-Driver
+---
+layout: default
+title: "HardFOC NTC Thermistor Driver"
+description: "Hardware-agnostic NTC thermistor driver with lookup table and mathematical conversion methods"
+nav_order: 1
+permalink: /
+---
 
-Hardware-agnostic NTC (Negative Temperature Coefficient) thermistor driver for the HardFOC system.
+# HF-NTC-Thermistor Driver
+**Hardware-agnostic NTC thermistor driver for the HardFOC system**
 
-## Overview
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+## 📚 Table of Contents
+1. [Overview](#-overview)
+2. [Features](#-features)
+3. [Quick Start](#-quick-start)
+4. [Installation](#-installation)
+5. [API Reference](#-api-reference)
+6. [Examples](#-examples)
+7. [Documentation](#-documentation)
+8. [Contributing](#-contributing)
+9. [License](#-license)
+
+## 📦 Overview
 
 This driver provides a comprehensive solution for temperature measurement using NTC thermistors. It supports various NTC types including the NTCG163JFT103FT1S and provides both lookup table and mathematical conversion methods for accurate temperature readings.
 
-## Features
+## ✨ Features
 
 - **Hardware Agnostic**: Works with any ADC interface that implements BaseAdc
 - **Multiple NTC Types**: Support for various NTC thermistor specifications
@@ -26,7 +46,7 @@ This driver provides a comprehensive solution for temperature measurement using 
 | NTCG163JF103FT1S | 10kΩ | 3435K | -40°C to +125°C | ±1% |
 | Custom | Configurable | Configurable | Configurable | Configurable |
 
-## Quick Start
+## 🚀 Quick Start
 
 ```cpp
 #include "NtcThermistor.h"
@@ -44,7 +64,7 @@ if (thermistor.Initialize()) {
 }
 ```
 
-## API Reference
+## 📖 API Reference
 
 ### Core Functions
 
@@ -63,7 +83,7 @@ if (thermistor.Initialize()) {
 - `SetReferenceVoltage()` - Set ADC reference voltage
 - `SetBetaValue()` - Set thermistor beta value
 
-## Installation
+## 🔧 Installation
 
 1. Add to your project's `CMakeLists.txt`:
 ```cmake
@@ -77,6 +97,19 @@ idf_component_register(
 )
 ```
 
-## License
+## 📊 Examples
 
-MIT License - see LICENSE file for details. 
+For ESP32 examples, see the [examples/esp32](examples/esp32/) directory.
+
+## 📚 Documentation
+
+For detailed documentation, see the [docs](docs/) directory.
+
+## 🤝 Contributing
+
+Pull requests and suggestions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## 📄 License
+
+This project is licensed under the **GNU General Public License v3.0**.  
+See the [LICENSE](LICENSE) file for details. 
