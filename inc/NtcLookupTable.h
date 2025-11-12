@@ -12,8 +12,8 @@
 
 #pragma once
 
-#include <cstdint>
 #include <cstddef>
+#include <cstdint>
 
 //--------------------------------------
 //  Lookup Table Entry
@@ -23,8 +23,8 @@
  * @brief Lookup table entry structure
  */
 typedef struct {
-    float resistance_ohms;              ///< Resistance value (ohms)
-    float temperature_celsius;          ///< Corresponding temperature (°C)
+  float resistance_ohms;     ///< Resistance value (ohms)
+  float temperature_celsius; ///< Corresponding temperature (°C)
 } ntc_lookup_entry_t;
 
 //--------------------------------------
@@ -35,13 +35,13 @@ typedef struct {
  * @brief Lookup table structure
  */
 typedef struct {
-    const ntc_lookup_entry_t* entries;  ///< Array of lookup entries
-    size_t entry_count;                 ///< Number of entries
-    float min_resistance;               ///< Minimum resistance in table
-    float max_resistance;               ///< Maximum resistance in table
-    float min_temperature;              ///< Minimum temperature in table
-    float max_temperature;              ///< Maximum temperature in table
-    float resistance_step;              ///< Resistance step between entries
+  const ntc_lookup_entry_t* entries; ///< Array of lookup entries
+  size_t entry_count;                ///< Number of entries
+  float min_resistance;              ///< Minimum resistance in table
+  float max_resistance;              ///< Maximum resistance in table
+  float min_temperature;             ///< Minimum temperature in table
+  float max_temperature;             ///< Maximum temperature in table
+  float resistance_step;             ///< Resistance step between entries
 } ntc_lookup_table_t;
 
 //--------------------------------------
@@ -62,9 +62,8 @@ const ntc_lookup_table_t* GetNtcLookupTable(int ntc_type) noexcept;
  * @param temperature_celsius Pointer to store temperature
  * @return true if found, false otherwise
  */
-bool FindTemperatureFromLookupTable(const ntc_lookup_table_t* table, 
-                                   float resistance_ohms, 
-                                   float* temperature_celsius) noexcept;
+bool FindTemperatureFromLookupTable(const ntc_lookup_table_t* table, float resistance_ohms,
+                                    float* temperature_celsius) noexcept;
 
 /**
  * @brief Find resistance using lookup table
@@ -73,9 +72,8 @@ bool FindTemperatureFromLookupTable(const ntc_lookup_table_t* table,
  * @param resistance_ohms Pointer to store resistance
  * @return true if found, false otherwise
  */
-bool FindResistanceFromLookupTable(const ntc_lookup_table_t* table, 
-                                  float temperature_celsius, 
-                                  float* resistance_ohms) noexcept;
+bool FindResistanceFromLookupTable(const ntc_lookup_table_t* table, float temperature_celsius,
+                                   float* resistance_ohms) noexcept;
 
 /**
  * @brief Interpolate between two lookup table entries
@@ -85,10 +83,8 @@ bool FindResistanceFromLookupTable(const ntc_lookup_table_t* table,
  * @param temperature_celsius Pointer to store interpolated temperature
  * @return true if interpolation successful, false otherwise
  */
-bool InterpolateLookupEntries(const ntc_lookup_entry_t& entry1,
-                             const ntc_lookup_entry_t& entry2,
-                             float resistance_ohms,
-                             float* temperature_celsius) noexcept;
+bool InterpolateLookupEntries(const ntc_lookup_entry_t& entry1, const ntc_lookup_entry_t& entry2,
+                              float resistance_ohms, float* temperature_celsius) noexcept;
 
 /**
  * @brief Binary search in lookup table
@@ -98,10 +94,8 @@ bool InterpolateLookupEntries(const ntc_lookup_entry_t& entry1,
  * @param upper_index Pointer to store upper index
  * @return true if found, false otherwise
  */
-bool BinarySearchLookupTable(const ntc_lookup_table_t* table,
-                            float resistance_ohms,
-                            size_t* lower_index,
-                            size_t* upper_index) noexcept;
+bool BinarySearchLookupTable(const ntc_lookup_table_t* table, float resistance_ohms,
+                             size_t* lower_index, size_t* upper_index) noexcept;
 
 /**
  * @brief Validate lookup table
@@ -119,12 +113,9 @@ bool ValidateLookupTable(const ntc_lookup_table_t* table) noexcept;
  * @param max_temperature Pointer to store maximum temperature
  * @param entry_count Pointer to store entry count
  */
-void GetLookupTableStats(const ntc_lookup_table_t* table,
-                        float* min_resistance,
-                        float* max_resistance,
-                        float* min_temperature,
-                        float* max_temperature,
-                        size_t* entry_count) noexcept;
+void GetLookupTableStats(const ntc_lookup_table_t* table, float* min_resistance,
+                         float* max_resistance, float* min_temperature, float* max_temperature,
+                         size_t* entry_count) noexcept;
 
 //--------------------------------------
 //  NTCG163JFT103FT1S Lookup Table
@@ -154,4 +145,4 @@ const ntc_lookup_table_t* GetNtcG164Jf103Ft1sLookupTable() noexcept;
  * @brief Get NTCG163JF103FT1S lookup table
  * @return Pointer to lookup table
  */
-const ntc_lookup_table_t* GetNtcG163Jf103Ft1sLookupTable() noexcept; 
+const ntc_lookup_table_t* GetNtcG163Jf103Ft1sLookupTable() noexcept;

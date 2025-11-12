@@ -24,6 +24,9 @@ permalink: /
 
 ## 📦 Overview
 
+> **📖 [📚🌐 Live Complete Documentation](https://n3b3x.github.io/hf-ntc-thermistor-driver/)** - 
+> Interactive guides, examples, and step-by-step tutorials
+
 This driver provides a comprehensive solution for temperature measurement using NTC thermistors. It supports various NTC types including the NTCG163JFT103FT1S and provides both lookup table and mathematical conversion methods for accurate temperature readings.
 
 ## ✨ Features
