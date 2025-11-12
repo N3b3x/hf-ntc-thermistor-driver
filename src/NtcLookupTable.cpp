@@ -11,6 +11,7 @@
  */
 
 #include "NtcLookupTable.h"
+#include "NtcThermistor.h"
 #include <algorithm>
 #include <cmath>
 
