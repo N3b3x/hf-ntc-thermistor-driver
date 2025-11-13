@@ -11,6 +11,7 @@
 
 #include "NtcThermistor.h"
 #include "TestFramework.h"
+#include "MockEsp32Adc.h"
 #include <memory>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -34,7 +35,8 @@ static constexpr bool ENABLE_BASIC_TESTS = true;
 //=============================================================================
 // SHARED TEST RESOURCES
 //=============================================================================
-// TODO: Add driver instance and bus implementation
+static std::unique_ptr<MockEsp32Adc> g_mock_adc;
+static std::unique_ptr<NtcThermistor> g_ntc_driver;
 
 //=============================================================================
 // TEST HELPER FUNCTIONS
@@ -44,8 +46,30 @@ static constexpr bool ENABLE_BASIC_TESTS = true;
  * @brief Initialize test resources
  */
 static bool init_test_resources() noexcept {
-    // TODO: Initialize driver and bus
-    return true;
+  // Create mock ADC
+  g_mock_adc = std::make_unique<MockEsp32Adc>(3.3f, 12);
+  if (!g_mock_adc->Initialize()) {
+    ESP_LOGE(TAG, "Failed to initialize mock ADC");
+    return false;
+  }
+
+  // Create NTC driver configuration
+  NtcConfig config;
+  config.adc_channel = 0;
+  config.series_resistor_ohm = 10000.0f;
+  config.nominal_resistance_ohm = 10000.0f;
+  config.nominal_temperature_c = 25.0f;
+  config.beta_coefficient = 3950.0f;
+  config.vcc_voltage = 3.3f;
+
+  // Create NTC driver instance
+  g_ntc_driver = std::make_unique<NtcThermistor>(g_mock_adc.get(), config);
+  if (!g_ntc_driver->Initialize()) {
+    ESP_LOGE(TAG, "Failed to initialize NTC driver");
+    return false;
+  }
+
+  return true;
 }
 
 /**

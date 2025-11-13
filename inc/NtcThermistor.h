@@ -16,8 +16,7 @@
 #include <cstdint>
 #include <memory>
 
-// Forward declarations
-class BaseAdc;
+#include "BaseAdc.h"
 
 //--------------------------------------
 //  NTC Error Codes
