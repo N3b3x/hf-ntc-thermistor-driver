@@ -1,0 +1,26 @@
+var NtcConversion_8h =
+[
+    [ "NTC_ABSOLUTE_ZERO_CELSIUS", "NtcConversion_8h.html#acc8a86c7ad1a6bd199fa2f5c170bb5d4", null ],
+    [ "NTC_REFERENCE_TEMPERATURE_C", "NtcConversion_8h.html#a02cb374eb826ee59ece4bbaa8c531afa", null ],
+    [ "NTC_STEINHART_HART_A", "NtcConversion_8h.html#ab11f985225405a877216ba3fcf71e8f9", null ],
+    [ "NTC_STEINHART_HART_B", "NtcConversion_8h.html#a63550bd2a81ce8cf99df4741c359e54c", null ],
+    [ "NTC_STEINHART_HART_C", "NtcConversion_8h.html#a2fb00c0cc89c040acfa46f870d6695cc", null ],
+    [ "CalculateBetaValue", "NtcConversion_8h.html#af182bec92971ca06d27d182295e06deb", null ],
+    [ "CalculateOptimalSeriesResistance", "NtcConversion_8h.html#a7eafbadfa6641c4c4c3fdf212b6fb28f", null ],
+    [ "CalculateSteinhartHartCoefficients", "NtcConversion_8h.html#a3c576db3687137cef8536611880c652b", null ],
+    [ "CalculateTemperatureAccuracy", "NtcConversion_8h.html#a6958bf4fc06603c96fd7274eb4669dfd", null ],
+    [ "CalculateThermistorResistance", "NtcConversion_8h.html#a35bf9363cc6c3bf4a5443d3fc369ff07", null ],
+    [ "CalculateThermistorVoltage", "NtcConversion_8h.html#a88dd80c29135ee6559c0773928745c37", null ],
+    [ "CalculateVoltageDividerRatio", "NtcConversion_8h.html#a4f72cf355a4196ef80af5b7a704a269d", null ],
+    [ "ConvertResistanceToTemperatureBeta", "NtcConversion_8h.html#a3e280d6ae206575fbae62a57a1295f71", null ],
+    [ "ConvertResistanceToTemperatureDefault", "NtcConversion_8h.html#a9d296ff75ffbb459587d70909dd2227e", null ],
+    [ "ConvertResistanceToTemperatureSteinhartHart", "NtcConversion_8h.html#a2205b2021d6facedd62393c48cc9ad10", null ],
+    [ "ConvertTemperatureToResistanceBeta", "NtcConversion_8h.html#ae70cc072d432f714ea05f08957ddb1f6", null ],
+    [ "ConvertTemperatureToResistanceDefault", "NtcConversion_8h.html#aaf011041376d9366685c013312c85ffe", null ],
+    [ "ConvertTemperatureToResistanceSteinhartHart", "NtcConversion_8h.html#ad72fe4c92a9567de76b2f4c9e381e666", null ],
+    [ "ValidateBetaValue", "NtcConversion_8h.html#af567af9fc4bb8c8065d2d038b020b552", null ],
+    [ "ValidateResistance", "NtcConversion_8h.html#a5b2d6f486323a06a12681c416db9c97d", null ],
+    [ "ValidateSteinhartHartCoefficients", "NtcConversion_8h.html#acdab60fa0d1615b6af8229c20bb5b8b1", null ],
+    [ "ValidateTemperature", "NtcConversion_8h.html#acab79087f28408747b39d5d7e6652cd6", null ],
+    [ "ValidateVoltage", "NtcConversion_8h.html#afa0b1dafe98e7b23852f0627baa2d914", null ]
+];

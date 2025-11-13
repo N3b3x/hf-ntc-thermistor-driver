@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['hardware_5ferror_0',['HARDWARE_ERROR',['../namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a89fe56ed105248667fe799031276ab23',1,'NTC']]]
+];

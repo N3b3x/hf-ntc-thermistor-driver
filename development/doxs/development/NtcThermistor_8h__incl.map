@@ -1,0 +1,10 @@
+<map id="inc/NtcThermistor.h" name="inc/NtcThermistor.h">
+<area shape="rect" id="Node000001" title="Hardware&#45;agnostic NTC thermistor driver for temperature measurement." alt="" coords="5,5,155,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="63,152,129,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,33,51,47,38,64,30,84,32,103,47,125,66,142,63,146,43,128,27,105,24,83,33,62,47,43,63,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="41,79,119,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="83,31,83,65,77,65,77,31"/>
+<area shape="rect" id="Node000004" href="$BaseAdc_8h.html" title="Abstract base class for ADC interface used by NTC thermistor driver." alt="" coords="143,79,233,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="99,28,160,69,157,73,96,33"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="175,106,123,146,120,141,172,102"/>
+</map>

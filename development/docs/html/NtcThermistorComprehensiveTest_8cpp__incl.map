@@ -1,0 +1,37 @@
+<map id="examples/esp32/main/NtcThermistorComprehensiveTest.cpp" name="examples/esp32/main/NtcThermistorComprehensiveTest.cpp">
+<area shape="rect" id="Node000001" title="Comprehensive test suite for NTC Thermistor driver on ESP32&#45;C6." alt="" coords="295,5,516,60"/>
+<area shape="rect" id="Node000002" href="$NtcThermistor_8h.html" title="Hardware&#45;agnostic NTC thermistor driver for temperature measurement." alt="" coords="85,108,211,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="328,63,196,106,194,101,326,58"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,181,83,207"/>
+<area shape="poly" id="edge17_Node000001_Node000004" title=" " alt="" coords="295,49,165,73,110,90,74,110,63,122,56,137,48,168,43,167,51,135,59,119,70,106,108,85,163,68,294,44"/>
+<area shape="rect" id="Node000006" href="$TestFramework_8h.html" title="Shared testing framework for ESP32&#45;C6 comprehensive test suites." alt="" coords="665,108,799,133"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="506,57,676,102,675,107,504,63"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="359,181,443,207"/>
+<area shape="poly" id="edge20_Node000001_Node000007" title=" " alt="" coords="407,60,405,168,399,168,402,60"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="1035,181,1186,207"/>
+<area shape="poly" id="edge18_Node000001_Node000010" title=" " alt="" coords="516,49,657,73,811,105,948,141,1062,175,1061,180,947,146,810,111,656,79,516,54"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1211,181,1328,207"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="517,47,688,73,880,105,1060,142,1209,176,1208,181,1059,147,880,111,687,78,516,52"/>
+<area shape="rect" id="Node000014" href="$MockEsp32Adc_8h.html" title="Mock ADC implementation for ESP32&#45;C6 testing." alt="" coords="235,108,367,133"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="375,62,328,101,324,97,372,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="128,255,195,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,134,147,167,148,206,156,241,151,242,143,207,141,166,144,133"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="133,136,74,175,71,171,130,131"/>
+<area shape="rect" id="Node000005" href="$BaseAdc_8h.html" title="Abstract base class for ADC interface used by NTC thermistor driver." alt="" coords="157,181,248,207"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="159,132,188,169,183,172,155,135"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="198,208,177,244,173,241,194,206"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="679,136,458,183,457,178,678,131"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="912,181,1011,207"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="770,131,912,175,910,180,768,136"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="468,181,572,207"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="699,136,568,179,566,174,697,131"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="793,131,1037,176,1036,181,792,136"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="597,181,726,207"/>
+<area shape="poly" id="edge11_Node000006_Node000011" title=" " alt="" coords="722,136,684,174,680,170,718,132"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="750,181,887,207"/>
+<area shape="poly" id="edge12_Node000006_Node000012" title=" " alt="" coords="748,131,796,170,792,175,744,135"/>
+<area shape="poly" id="edge13_Node000006_Node000013" title=" " alt="" coords="799,127,1197,178,1196,184,799,132"/>
+<area shape="poly" id="edge15_Node000014_Node000005" title=" " alt="" coords="287,136,231,175,228,171,284,131"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="273,181,335,207"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="304,134,306,168,300,168,299,134"/>
+</map>

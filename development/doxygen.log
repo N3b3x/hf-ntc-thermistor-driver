@@ -1,0 +1,30 @@
+warning: ignoring unsupported tag 'PAGE_OUTLINE_PANEL' at line 1763, file /tmp/doxyfile.B8n35C
+warning: Tag 'DOT_TRANSPARENT' at line 2786 of file '/tmp/doxyfile.B8n35C' has become obsolete.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+error: Style sheet '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome.css' specified by HTML_EXTRA_STYLESHEET does not exist!
+error: Style sheet '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-sidebar-only.css' specified by HTML_EXTRA_STYLESHEET does not exist!
+error: Style sheet '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css' specified by HTML_EXTRA_STYLESHEET does not exist!
+error: Extra file '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js' specified in HTML_EXTRA_FILES does not exist!
+error: Extra file '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js' specified in HTML_EXTRA_FILES does not exist!
+error: Extra file '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-paragraph-link.js' specified in HTML_EXTRA_FILES does not exist!
+error: Extra file '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-interactive-toc.js' specified in HTML_EXTRA_FILES does not exist!
+error: Extra file '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-tabs.js' specified in HTML_EXTRA_FILES does not exist!
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/examples/esp32/main/TestFramework.h:383: warning: The following parameter of print_test_section_footer(const char *tag, const char *section_name, bool enabled=true) is not documented:
+  parameter 'tag'
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/examples/esp32/main/TestFramework.h:357: warning: The following parameter of print_test_section_header(const char *tag, const char *section_name, bool enabled=true) is not documented:
+  parameter 'tag'
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/examples/esp32/main/TestFramework.h:341: warning: argument 'test_results' of command @param is not found in the argument list of print_test_section_status(const char *tag, const char *test_suite_name)
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/examples/esp32/main/TestFramework.h:341: warning: The following parameter of print_test_section_status(const char *tag, const char *test_suite_name) is not documented:
+  parameter 'tag'
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/examples/esp32/main/TestFramework.h:321: warning: The following parameter of print_test_summary(const TestResults &test_results, const char *test_suite_name, const char *tag) is not documented:
+  parameter 'tag'
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/README.md:8: warning: unable to resolve reference to '-overview' for \ref command
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/README.md:9: warning: unable to resolve reference to '-features' for \ref command
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/README.md:10: warning: unable to resolve reference to '-quick-start' for \ref command
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/README.md:11: warning: unable to resolve reference to '-installation' for \ref command
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/README.md:12: warning: unable to resolve reference to '-api-reference' for \ref command
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/README.md:13: warning: unable to resolve reference to '-examples' for \ref command
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/README.md:14: warning: unable to resolve reference to '-documentation' for \ref command
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/README.md:15: warning: unable to resolve reference to '-contributing' for \ref command
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/README.md:16: warning: unable to resolve reference to '-license' for \ref command
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/README.md:106: warning: unable to resolve reference to 'CONTRIBUTING.md' for \ref command
