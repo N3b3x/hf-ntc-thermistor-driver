@@ -6,7 +6,7 @@
  * from NTC thermistor resistance values using the Steinhart-Hart equation and
  * beta parameter approximation.
  *
- * @author HardFOC Development Team
+ * @author Nebiyu Tadesse
  * @date 2025
  * @copyright HardFOC
  */
@@ -15,9 +15,21 @@
 #include <algorithm>
 #include <cmath>
 
+using NTC::Constants::kEpsilonDouble;
+using NTC::Constants::kEpsilonFloat;
+using NTC::Constants::kKelvinOffset;
+using NTC::Constants::kMaxResistanceOhms;
+using NTC::Constants::kMaxTemperatureCelsius;
+using NTC::Constants::kMinResistanceOhms;
+using NTC::Constants::kMinTemperatureCelsius;
+using NTC::Constants::kOneFloat;
+using NTC::Constants::kZeroFloat;
+
 //--------------------------------------
 //  Conversion Methods
 //--------------------------------------
+
+namespace NTC {
 
 bool ConvertResistanceToTemperatureBeta(float resistance_ohms, float resistance_at_25c,
                                         float beta_value, float* temperature_celsius) noexcept {
@@ -25,7 +37,7 @@ bool ConvertResistanceToTemperatureBeta(float resistance_ohms, float resistance_
     return false;
   }
 
-  if (!ValidateResistance(resistance_ohms, 0.1f, 1000000.0f)) {
+  if (!ValidateResistance(resistance_ohms, kMinResistanceOhms, kMaxResistanceOhms)) {
     return false;
   }
 
@@ -33,7 +45,7 @@ bool ConvertResistanceToTemperatureBeta(float resistance_ohms, float resistance_
     return false;
   }
 
-  if (resistance_at_25c <= 0.0f) {
+  if (resistance_at_25c <= kZeroFloat) {
     return false;
   }
 
@@ -41,16 +53,18 @@ bool ConvertResistanceToTemperatureBeta(float resistance_ohms, float resistance_
   // Where: T = temperature in Kelvin, T0 = reference temperature (298.15K = 25°C)
   // R = resistance, R0 = resistance at reference temperature, β = beta value
 
-  const float T0 = NTC_REFERENCE_TEMPERATURE_C + 273.15f; // 298.15K
+  constexpr float kReferenceTemperatureKelvin =
+      NTC::Constants::kReferenceTemperatureC + kKelvinOffset; // 298.15K
+  const float temp_reference_kelvin = kReferenceTemperatureKelvin;
   const float ln_ratio = std::log(resistance_ohms / resistance_at_25c);
-  const float inv_T = (1.0f / T0) + (ln_ratio / beta_value);
+  const float inv_temperature = (kOneFloat / temp_reference_kelvin) + (ln_ratio / beta_value);
 
-  if (inv_T <= 0.0f) {
+  if (inv_temperature <= kZeroFloat) {
     return false; // Invalid result
   }
 
-  const float T_kelvin = 1.0f / inv_T;
-  *temperature_celsius = T_kelvin - 273.15f;
+  const float temp_kelvin = kOneFloat / inv_temperature;
+  *temperature_celsius = temp_kelvin - kKelvinOffset;
 
   return true;
 }
@@ -61,7 +75,7 @@ bool ConvertTemperatureToResistanceBeta(float temperature_celsius, float resista
     return false;
   }
 
-  if (!ValidateTemperature(temperature_celsius, -273.15f, 1000.0f)) {
+  if (!ValidateTemperature(temperature_celsius, kMinTemperatureCelsius, kMaxTemperatureCelsius)) {
     return false;
   }
 
@@ -69,7 +83,7 @@ bool ConvertTemperatureToResistanceBeta(float temperature_celsius, float resista
     return false;
   }
 
-  if (resistance_at_25c <= 0.0f) {
+  if (resistance_at_25c <= kZeroFloat) {
     return false;
   }
 
@@ -77,31 +91,34 @@ bool ConvertTemperatureToResistanceBeta(float temperature_celsius, float resista
   // Where: T = temperature in Kelvin, T0 = reference temperature (298.15K = 25°C)
   // R = resistance, R0 = resistance at reference temperature, β = beta value
 
-  const float T = temperature_celsius + 273.15f;
-  const float T0 = NTC_REFERENCE_TEMPERATURE_C + 273.15f; // 298.15K
+  constexpr float kReferenceTemperatureKelvin =
+      NTC::Constants::kReferenceTemperatureC + kKelvinOffset; // 298.15K
+  const float temp_kelvin = temperature_celsius + kKelvinOffset;
+  const float temp_reference_kelvin = kReferenceTemperatureKelvin;
 
-  if (T <= 0.0f) {
+  if (temp_kelvin <= kZeroFloat) {
     return false; // Invalid temperature
   }
 
-  const float inv_diff = (1.0f / T) - (1.0f / T0);
+  const float inv_diff = (kOneFloat / temp_kelvin) - (kOneFloat / temp_reference_kelvin);
   const float exp_term = std::exp(beta_value * inv_diff);
   *resistance_ohms = resistance_at_25c * exp_term;
 
   return true;
 }
 
-bool ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float a, float b, float c,
+bool ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float coeff_a,
+                                                 float coeff_b, float coeff_c,
                                                  float* temperature_celsius) noexcept {
   if (temperature_celsius == nullptr) {
     return false;
   }
 
-  if (!ValidateResistance(resistance_ohms, 0.1f, 1000000.0f)) {
+  if (!ValidateResistance(resistance_ohms, kMinResistanceOhms, kMaxResistanceOhms)) {
     return false;
   }
 
-  if (!ValidateSteinhartHartCoefficients(a, b, c)) {
+  if (!ValidateSteinhartHartCoefficients(coeff_a, coeff_b, coeff_c)) {
     return false;
   }
 
@@ -110,47 +127,49 @@ bool ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float a,
 
   const float ln_R = std::log(resistance_ohms);
   const float ln_R_cubed = ln_R * ln_R * ln_R;
-  const float inv_T = a + (b * ln_R) + (c * ln_R_cubed);
+  const float inv_temperature = coeff_a + (coeff_b * ln_R) + (coeff_c * ln_R_cubed);
 
-  if (inv_T <= 0.0f) {
+  if (inv_temperature <= kZeroFloat) {
     return false; // Invalid result
   }
 
-  const float T_kelvin = 1.0f / inv_T;
-  *temperature_celsius = T_kelvin - 273.15f;
+  const float temp_kelvin = kOneFloat / inv_temperature;
+  *temperature_celsius = temp_kelvin - kKelvinOffset;
 
   return true;
 }
 
-bool ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float a, float b,
-                                                 float c, float* resistance_ohms) noexcept {
+bool ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float coeff_a,
+                                                 float coeff_b, float coeff_c,
+                                                 float* resistance_ohms) noexcept {
   if (resistance_ohms == nullptr) {
     return false;
   }
 
-  if (!ValidateTemperature(temperature_celsius, -273.15f, 1000.0f)) {
+  if (!ValidateTemperature(temperature_celsius, kMinTemperatureCelsius, kMaxTemperatureCelsius)) {
     return false;
   }
 
-  if (!ValidateSteinhartHartCoefficients(a, b, c)) {
+  if (!ValidateSteinhartHartCoefficients(coeff_a, coeff_b, coeff_c)) {
     return false;
   }
 
   // Steinhart-Hart equation: ln(R) = (1/T - A - C*ln(R)^3) / B
   // This requires iterative solution, so we use a simplified approach
 
-  const float T = temperature_celsius + 273.15f;
-  if (T <= 0.0f) {
+  const float temp_kelvin = temperature_celsius + kKelvinOffset;
+  if (temp_kelvin <= kZeroFloat) {
     return false; // Invalid temperature
   }
 
-  const float inv_T = 1.0f / T;
+  const float inv_temperature = kOneFloat / temp_kelvin;
 
   // For most NTC thermistors, the C term is small, so we can approximate
   // ln(R) ≈ (1/T - A) / B
-  const float ln_R_approx = (inv_T - a) / b;
+  const float ln_R_approx = (inv_temperature - coeff_a) / coeff_b;
 
-  if (ln_R_approx <= -20.0f || ln_R_approx >= 20.0f) {
+  constexpr float kMaxLnResistanceApprox = 20.0F;
+  if (ln_R_approx <= -kMaxLnResistanceApprox || ln_R_approx >= kMaxLnResistanceApprox) {
     return false; // Result out of reasonable range
   }
 
@@ -183,11 +202,11 @@ bool CalculateThermistorResistance(float voltage_thermistor, float reference_vol
     return false;
   }
 
-  if (!ValidateVoltage(voltage_thermistor, 0.0f, reference_voltage)) {
+  if (!ValidateVoltage(voltage_thermistor, kZeroFloat, reference_voltage)) {
     return false;
   }
 
-  if (reference_voltage <= 0.0f || series_resistance <= 0.0f) {
+  if (reference_voltage <= kZeroFloat || series_resistance <= kZeroFloat) {
     return false;
   }
 
@@ -195,7 +214,7 @@ bool CalculateThermistorResistance(float voltage_thermistor, float reference_vol
   // Solving for R_thermistor: R_thermistor = R_series * (V_thermistor / (V_ref - V_thermistor))
 
   const float voltage_diff = reference_voltage - voltage_thermistor;
-  if (std::abs(voltage_diff) < 1e-6f) {
+  if (std::abs(voltage_diff) < kEpsilonFloat) {
     return false; // Voltage too close to reference voltage
   }
 
@@ -211,18 +230,18 @@ bool CalculateThermistorVoltage(float resistance_ohms, float reference_voltage,
     return false;
   }
 
-  if (!ValidateResistance(resistance_ohms, 0.1f, 1000000.0f)) {
+  if (!ValidateResistance(resistance_ohms, kMinResistanceOhms, kMaxResistanceOhms)) {
     return false;
   }
 
-  if (reference_voltage <= 0.0f || series_resistance <= 0.0f) {
+  if (reference_voltage <= kZeroFloat || series_resistance <= kZeroFloat) {
     return false;
   }
 
   // Voltage divider equation: V_thermistor = V_ref * (R_thermistor / (R_series + R_thermistor))
 
   const float total_resistance = series_resistance + resistance_ohms;
-  if (total_resistance <= 0.0f) {
+  if (total_resistance <= kZeroFloat) {
     return false;
   }
 
@@ -237,16 +256,16 @@ bool CalculateVoltageDividerRatio(float resistance_ohms, float series_resistance
     return false;
   }
 
-  if (!ValidateResistance(resistance_ohms, 0.1f, 1000000.0f)) {
+  if (!ValidateResistance(resistance_ohms, kMinResistanceOhms, kMaxResistanceOhms)) {
     return false;
   }
 
-  if (series_resistance <= 0.0f) {
+  if (series_resistance <= kZeroFloat) {
     return false;
   }
 
   const float total_resistance = series_resistance + resistance_ohms;
-  if (total_resistance <= 0.0f) {
+  if (total_resistance <= kZeroFloat) {
     return false;
   }
 
@@ -275,13 +294,21 @@ bool ValidateVoltage(float voltage_volts, float min_voltage, float max_voltage) 
 
 bool ValidateBetaValue(float beta_value) noexcept {
   // Beta values for NTC thermistors typically range from 2000K to 5000K
-  return (beta_value >= 1000.0f && beta_value <= 10000.0f);
+  return (beta_value >= NTC::Constants::kMinBetaValue &&
+          beta_value <= NTC::Constants::kMaxBetaValue);
 }
 
-bool ValidateSteinhartHartCoefficients(float a, float b, float c) noexcept {
+bool ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff_c) noexcept {
   // Validate reasonable ranges for Steinhart-Hart coefficients
   // These are typical ranges, but may vary for specific thermistors
-  return (a >= -1e-2f && a <= 1e-2f && b >= 1e-4f && b <= 1e-3f && c >= -1e-7f && c <= 1e-7f);
+  constexpr float kMinCoeffA = -1e-2F;
+  constexpr float kMaxCoeffA = 1e-2F;
+  constexpr float kMinCoeffB = 1e-4F;
+  constexpr float kMaxCoeffB = 1e-3F;
+  constexpr float kMinCoeffC = -1e-7F;
+  constexpr float kMaxCoeffC = 1e-7F;
+  return (coeff_a >= kMinCoeffA && coeff_a <= kMaxCoeffA && coeff_b >= kMinCoeffB &&
+          coeff_b <= kMaxCoeffB && coeff_c >= kMinCoeffC && coeff_c <= kMaxCoeffC);
 }
 
 //--------------------------------------
@@ -293,32 +320,34 @@ bool CalculateBetaValue(float t1, float r1, float t2, float r2, float* beta_valu
     return false;
   }
 
-  if (!ValidateTemperature(t1, -273.15f, 1000.0f) || !ValidateTemperature(t2, -273.15f, 1000.0f)) {
+  if (!ValidateTemperature(t1, kMinTemperatureCelsius, kMaxTemperatureCelsius) ||
+      !ValidateTemperature(t2, kMinTemperatureCelsius, kMaxTemperatureCelsius)) {
     return false;
   }
 
-  if (!ValidateResistance(r1, 0.1f, 1000000.0f) || !ValidateResistance(r2, 0.1f, 1000000.0f)) {
+  if (!ValidateResistance(r1, kMinResistanceOhms, kMaxResistanceOhms) ||
+      !ValidateResistance(r2, kMinResistanceOhms, kMaxResistanceOhms)) {
     return false;
   }
 
-  if (std::abs(t1 - t2) < 1e-6f) {
+  if (std::abs(t1 - t2) < kEpsilonFloat) {
     return false; // Temperatures too close
   }
 
-  if (r1 <= 0.0f || r2 <= 0.0f) {
+  if (r1 <= kZeroFloat || r2 <= kZeroFloat) {
     return false;
   }
 
   // Beta equation: β = ln(R1/R2) / (1/T1 - 1/T2)
   // Where: T1, T2 = temperatures in Kelvin, R1, R2 = resistances
 
-  const float T1 = t1 + 273.15f;
-  const float T2 = t2 + 273.15f;
+  const float T1 = t1 + kKelvinOffset;
+  const float T2 = t2 + kKelvinOffset;
 
   const float ln_ratio = std::log(r1 / r2);
-  const float inv_diff = (1.0f / T1) - (1.0f / T2);
+  const float inv_diff = (kOneFloat / T1) - (kOneFloat / T2);
 
-  if (std::abs(inv_diff) < 1e-6f) {
+  if (std::abs(inv_diff) < kEpsilonFloat) {
     return false; // Invalid temperature difference
   }
 
@@ -328,30 +357,33 @@ bool CalculateBetaValue(float t1, float r1, float t2, float r2, float* beta_valu
 }
 
 bool CalculateSteinhartHartCoefficients(float t1, float r1, float t2, float r2, float t3, float r3,
-                                        float* a, float* b, float* c) noexcept {
-  if (a == nullptr || b == nullptr || c == nullptr) {
+                                        float* coeff_a, float* coeff_b, float* coeff_c) noexcept {
+  if (coeff_a == nullptr || coeff_b == nullptr || coeff_c == nullptr) {
     return false;
   }
 
-  if (!ValidateTemperature(t1, -273.15f, 1000.0f) || !ValidateTemperature(t2, -273.15f, 1000.0f) ||
-      !ValidateTemperature(t3, -273.15f, 1000.0f)) {
+  if (!ValidateTemperature(t1, kMinTemperatureCelsius, kMaxTemperatureCelsius) ||
+      !ValidateTemperature(t2, kMinTemperatureCelsius, kMaxTemperatureCelsius) ||
+      !ValidateTemperature(t3, kMinTemperatureCelsius, kMaxTemperatureCelsius)) {
     return false;
   }
 
-  if (!ValidateResistance(r1, 0.1f, 1000000.0f) || !ValidateResistance(r2, 0.1f, 1000000.0f) ||
-      !ValidateResistance(r3, 0.1f, 1000000.0f)) {
+  if (!ValidateResistance(r1, kMinResistanceOhms, kMaxResistanceOhms) ||
+      !ValidateResistance(r2, kMinResistanceOhms, kMaxResistanceOhms) ||
+      !ValidateResistance(r3, kMinResistanceOhms, kMaxResistanceOhms)) {
     return false;
   }
 
   // Check that temperatures are different
-  if (std::abs(t1 - t2) < 1e-6f || std::abs(t2 - t3) < 1e-6f || std::abs(t1 - t3) < 1e-6f) {
+  if (std::abs(t1 - t2) < kEpsilonFloat || std::abs(t2 - t3) < kEpsilonFloat ||
+      std::abs(t1 - t3) < kEpsilonFloat) {
     return false;
   }
 
   // Convert temperatures to Kelvin
-  const float T1 = t1 + 273.15f;
-  const float T2 = t2 + 273.15f;
-  const float T3 = t3 + 273.15f;
+  const float T1 = t1 + kKelvinOffset;
+  const float T2 = t2 + kKelvinOffset;
+  const float T3 = t3 + kKelvinOffset;
 
   // Calculate natural logarithms of resistances
   const float ln_R1 = std::log(r1);
@@ -359,20 +391,20 @@ bool CalculateSteinhartHartCoefficients(float t1, float r1, float t2, float r2, 
   const float ln_R3 = std::log(r3);
 
   // Calculate inverse temperatures
-  const float inv_T1 = 1.0f / T1;
-  const float inv_T2 = 1.0f / T2;
-  const float inv_T3 = 1.0f / T3;
+  const float inv_T1 = kOneFloat / T1;
+  const float inv_T2 = kOneFloat / T2;
+  const float inv_T3 = kOneFloat / T3;
 
   // Solve the system of equations using Cramer's rule
   // Matrix: [1 ln_R1 ln_R1^3] [A]   [1/T1]
   //         [1 ln_R2 ln_R2^3] [B] = [1/T2]
   //         [1 ln_R3 ln_R3^3] [C]   [1/T3]
 
-  const float det = 1.0f * (ln_R2 * ln_R3 * ln_R3 * ln_R3 - ln_R3 * ln_R2 * ln_R2 * ln_R2) +
+  const float det = kOneFloat * (ln_R2 * ln_R3 * ln_R3 * ln_R3 - ln_R3 * ln_R2 * ln_R2 * ln_R2) +
                     ln_R1 * (ln_R3 * ln_R2 * ln_R2 * ln_R2 - ln_R2 * ln_R3 * ln_R3 * ln_R3) +
                     ln_R1 * ln_R1 * ln_R1 * (ln_R2 - ln_R3);
 
-  if (std::abs(det) < 1e-12f) {
+  if (std::abs(det) < kEpsilonDouble) {
     return false; // Singular matrix
   }
 
@@ -380,19 +412,20 @@ bool CalculateSteinhartHartCoefficients(float t1, float r1, float t2, float r2, 
                       inv_T2 * (ln_R3 * ln_R1 * ln_R1 * ln_R1 - ln_R1 * ln_R3 * ln_R3 * ln_R3) +
                       inv_T3 * (ln_R1 * ln_R2 * ln_R2 * ln_R2 - ln_R2 * ln_R1 * ln_R1 * ln_R1);
 
-  const float det_b = 1.0f * (inv_T2 * ln_R3 * ln_R3 * ln_R3 - inv_T3 * ln_R2 * ln_R2 * ln_R2) +
-                      ln_R1 * (inv_T3 * ln_R1 * ln_R1 * ln_R1 - inv_T1 * ln_R3 * ln_R3 * ln_R3) +
-                      ln_R1 * ln_R1 * ln_R1 * (inv_T1 - inv_T2);
+  const float det_b =
+      kOneFloat * (inv_T2 * ln_R3 * ln_R3 * ln_R3 - inv_T3 * ln_R2 * ln_R2 * ln_R2) +
+      ln_R1 * (inv_T3 * ln_R1 * ln_R1 * ln_R1 - inv_T1 * ln_R3 * ln_R3 * ln_R3) +
+      ln_R1 * ln_R1 * ln_R1 * (inv_T1 - inv_T2);
 
-  const float det_c = 1.0f * (ln_R2 * inv_T3 - ln_R3 * inv_T2) +
+  const float det_c = kOneFloat * (ln_R2 * inv_T3 - ln_R3 * inv_T2) +
                       ln_R1 * (ln_R3 * inv_T1 - ln_R1 * inv_T3) +
                       ln_R1 * ln_R1 * ln_R1 * (inv_T2 - inv_T1);
 
-  *a = det_a / det;
-  *b = det_b / det;
-  *c = det_c / det;
+  *coeff_a = det_a / det;
+  *coeff_b = det_b / det;
+  *coeff_c = det_c / det;
 
-  return ValidateSteinhartHartCoefficients(*a, *b, *c);
+  return ValidateSteinhartHartCoefficients(*coeff_a, *coeff_b, *coeff_c);
 }
 
 bool CalculateTemperatureAccuracy(float resistance_ohms, float resistance_tolerance,
@@ -401,29 +434,34 @@ bool CalculateTemperatureAccuracy(float resistance_ohms, float resistance_tolera
     return false;
   }
 
-  if (!ValidateResistance(resistance_ohms, 0.1f, 1000000.0f)) {
+  if (!ValidateResistance(resistance_ohms, kMinResistanceOhms, kMaxResistanceOhms)) {
     return false;
   }
 
-  if (resistance_tolerance < 0.0f || resistance_tolerance > 1.0f) {
+  constexpr float kMinTolerance = 0.0f;
+  constexpr float kMaxTolerance = 1.0f;
+  if (resistance_tolerance < kMinTolerance || resistance_tolerance > kMaxTolerance) {
     return false;
   }
 
-  if (beta_tolerance < 0.0f || beta_tolerance > 1.0f) {
+  if (beta_tolerance < kMinTolerance || beta_tolerance > kMaxTolerance) {
     return false;
   }
 
   // Estimate temperature accuracy based on resistance and beta tolerances
   // This is a simplified calculation - actual accuracy depends on many factors
+  constexpr float kTypicalBetaValue = 3435.0f;      // Typical beta value for NTC thermistors
+  constexpr float kResistanceErrorDivisor = 100.0f; // Rough approximation divisor
+  constexpr float kBetaErrorDivisor = 1000.0f;      // Rough approximation divisor
 
   const float resistance_error = resistance_ohms * resistance_tolerance;
-  const float beta_error = 3435.0f * beta_tolerance; // Using typical beta value
+  const float beta_error = kTypicalBetaValue * beta_tolerance;
 
   // Convert resistance error to temperature error (approximate)
-  const float temp_error_resistance = resistance_error / 100.0f; // Rough approximation
+  const float temp_error_resistance = resistance_error / kResistanceErrorDivisor;
 
   // Convert beta error to temperature error (approximate)
-  const float temp_error_beta = beta_error / 1000.0f; // Rough approximation
+  const float temp_error_beta = beta_error / kBetaErrorDivisor;
 
   *accuracy_celsius =
       std::sqrt(temp_error_resistance * temp_error_resistance + temp_error_beta * temp_error_beta);
@@ -437,12 +475,14 @@ bool CalculateOptimalSeriesResistance(float thermistor_resistance_at_25c, float 
     return false;
   }
 
-  if (!ValidateResistance(thermistor_resistance_at_25c, 100.0f, 1000000.0f)) {
+  constexpr float kMinThermistorResistance = 100.0f;
+  if (!ValidateResistance(thermistor_resistance_at_25c, kMinThermistorResistance,
+                          kMaxResistanceOhms)) {
     return false;
   }
 
-  if (!ValidateTemperature(min_temperature, -273.15f, 1000.0f) ||
-      !ValidateTemperature(max_temperature, -273.15f, 1000.0f)) {
+  if (!ValidateTemperature(min_temperature, kMinTemperatureCelsius, kMaxTemperatureCelsius) ||
+      !ValidateTemperature(max_temperature, kMinTemperatureCelsius, kMaxTemperatureCelsius)) {
     return false;
   }
 
@@ -451,10 +491,11 @@ bool CalculateOptimalSeriesResistance(float thermistor_resistance_at_25c, float 
   }
 
   // Calculate resistances at min and max temperatures
-  float r_min, r_max;
-  if (!ConvertTemperatureToResistanceBeta(min_temperature, thermistor_resistance_at_25c, 3435.0f,
+  float r_min = 0.0F;
+  float r_max = 0.0F;
+  if (!ConvertTemperatureToResistanceBeta(min_temperature, thermistor_resistance_at_25c, 3435.0F,
                                           &r_min) ||
-      !ConvertTemperatureToResistanceBeta(max_temperature, thermistor_resistance_at_25c, 3435.0f,
+      !ConvertTemperatureToResistanceBeta(max_temperature, thermistor_resistance_at_25c, 3435.0F,
                                           &r_max)) {
     return false;
   }
@@ -465,3 +506,5 @@ bool CalculateOptimalSeriesResistance(float thermistor_resistance_at_25c, float 
 
   return true;
 }
+
+} // namespace NTC

@@ -6,7 +6,7 @@
  * NTC (Negative Temperature Coefficient) thermistors. It supports various NTC types
  * and provides both lookup table and mathematical conversion methods.
  *
- * @author HardFOC Development Team
+ * @author Nebiyu Tadesse
  * @date 2025
  * @copyright HardFOC
  */
@@ -16,129 +16,8 @@
 #include <cstdint>
 #include <memory>
 
-#include "BaseAdc.h"
-
-//--------------------------------------
-//  NTC Error Codes
-//--------------------------------------
-
-/**
- * @brief NTC thermistor error codes
- */
-typedef enum {
-  NTC_SUCCESS = 0,                      ///< Operation successful
-  NTC_ERR_FAILURE = 1,                  ///< General failure
-  NTC_ERR_NOT_INITIALIZED = 2,          ///< Not initialized
-  NTC_ERR_ALREADY_INITIALIZED = 3,      ///< Already initialized
-  NTC_ERR_INVALID_PARAMETER = 4,        ///< Invalid parameter
-  NTC_ERR_NULL_POINTER = 5,             ///< Null pointer
-  NTC_ERR_OUT_OF_MEMORY = 6,            ///< Out of memory
-  NTC_ERR_ADC_READ_FAILED = 7,          ///< ADC read failed
-  NTC_ERR_INVALID_RESISTANCE = 8,       ///< Invalid resistance value
-  NTC_ERR_TEMPERATURE_OUT_OF_RANGE = 9, ///< Temperature out of range
-  NTC_ERR_LOOKUP_TABLE_ERROR = 10,      ///< Lookup table error
-  NTC_ERR_CONVERSION_FAILED = 11,       ///< Temperature conversion failed
-  NTC_ERR_CALIBRATION_FAILED = 12,      ///< Calibration failed
-  NTC_ERR_UNSUPPORTED_OPERATION = 13,   ///< Operation not supported
-  NTC_ERR_TIMEOUT = 14,                 ///< Operation timeout
-  NTC_ERR_HARDWARE_FAULT = 15,          ///< Hardware fault
-  NTC_ERR_MAX = 16                      ///< Maximum error code
-} ntc_err_t;
-
-//--------------------------------------
-//  NTC Types
-//--------------------------------------
-
-/**
- * @brief NTC thermistor types
- */
-typedef enum {
-  NTC_TYPE_UNKNOWN = 0,           ///< Unknown type
-  NTC_TYPE_NTCG163JFT103FT1S = 1, ///< NTCG163JFT103FT1S (10kΩ @ 25°C, β=3435K)
-  NTC_TYPE_NTCG164JF103FT1S = 2,  ///< NTCG164JF103FT1S (10kΩ @ 25°C, β=3435K)
-  NTC_TYPE_NTCG163JF103FT1S = 3,  ///< NTCG163JF103FT1S (10kΩ @ 25°C, β=3435K)
-  NTC_TYPE_CUSTOM = 4,            ///< Custom NTC type
-  NTC_TYPE_MAX = 5                ///< Maximum type
-} ntc_type_t;
-
-/**
- * @brief Temperature conversion methods
- */
-typedef enum {
-  NTC_CONVERSION_LOOKUP_TABLE = 0, ///< Use lookup table (faster, less accurate)
-  NTC_CONVERSION_MATHEMATICAL = 1, ///< Use mathematical conversion (slower, more accurate)
-  NTC_CONVERSION_AUTO = 2          ///< Auto-select based on accuracy requirements
-} ntc_conversion_method_t;
-
-//--------------------------------------
-//  NTC Configuration
-//--------------------------------------
-
-/**
- * @brief NTC thermistor configuration structure
- */
-typedef struct {
-  ntc_type_t type;                           ///< NTC type
-  float resistance_at_25c;                   ///< Resistance at 25°C (ohms)
-  float beta_value;                          ///< Beta value (K)
-  float reference_voltage;                   ///< Reference voltage (V)
-  float series_resistance;                   ///< Series resistance in voltage divider (ohms)
-  float calibration_offset;                  ///< Calibration offset (°C)
-  ntc_conversion_method_t conversion_method; ///< Conversion method
-  uint8_t adc_channel;                       ///< ADC channel number
-  uint32_t adc_resolution_bits;              ///< ADC resolution in bits
-  uint32_t sample_count;                     ///< Number of samples to average
-  uint32_t sample_delay_ms;                  ///< Delay between samples (ms)
-  float min_temperature;                     ///< Minimum temperature (°C)
-  float max_temperature;                     ///< Maximum temperature (°C)
-  bool enable_filtering;                     ///< Enable temperature filtering
-  float filter_alpha;                        ///< Filter alpha value (0.0-1.0)
-} ntc_config_t;
-
-/**
- * @brief NTC thermistor reading structure
- */
-typedef struct {
-  float temperature_celsius;    ///< Temperature in Celsius
-  float temperature_fahrenheit; ///< Temperature in Fahrenheit
-  float temperature_kelvin;     ///< Temperature in Kelvin
-  float resistance_ohms;        ///< Thermistor resistance (ohms)
-  float voltage_volts;          ///< Voltage across thermistor (V)
-  uint32_t adc_raw_value;       ///< Raw ADC value
-  uint64_t timestamp_us;        ///< Timestamp (microseconds)
-  ntc_err_t error;              ///< Error code
-  bool is_valid;                ///< Whether reading is valid
-  float accuracy_celsius;       ///< Estimated accuracy (°C)
-} ntc_reading_t;
-
-//--------------------------------------
-//  Default Configurations
-//--------------------------------------
-
-/**
- * @brief Default NTC configuration for NTCG163JFT103FT1S
- */
-#define NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S()                                                     \
-  {.type = NTC_TYPE_NTCG163JFT103FT1S,                                                             \
-   .resistance_at_25c = 10000.0f,                                                                  \
-   .beta_value = 3435.0f,                                                                          \
-   .reference_voltage = 3.3f,                                                                      \
-   .series_resistance = 10000.0f,                                                                  \
-   .calibration_offset = 0.0f,                                                                     \
-   .conversion_method = NTC_CONVERSION_AUTO,                                                       \
-   .adc_channel = 0,                                                                               \
-   .adc_resolution_bits = 12,                                                                      \
-   .sample_count = 1,                                                                              \
-   .sample_delay_ms = 0,                                                                           \
-   .min_temperature = -40.0f,                                                                      \
-   .max_temperature = 125.0f,                                                                      \
-   .enable_filtering = false,                                                                      \
-   .filter_alpha = 0.1f}
-
-/**
- * @brief Default NTC configuration
- */
-#define NTC_CONFIG_DEFAULT() NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S()
+#include "NtcAdcInterface.h"
+#include "NtcTypes.h"
 
 //--------------------------------------
 //  NtcThermistor Class
@@ -153,14 +32,54 @@ typedef struct {
  * lookup table and mathematical conversion methods.
  *
  * Key features:
- * - Hardware-agnostic design using BaseAdc interface
+ * - Hardware-agnostic design using CRTP-based ADC interface
  * - Support for multiple NTC types
  * - Dual conversion methods (lookup table and mathematical)
  * - Built-in calibration and filtering
  * - Comprehensive error handling
  *
- * @note The driver requires a BaseAdc interface for voltage measurements
+ * @tparam AdcType The ADC implementation type that inherits from NTC::NtcAdcInterface<AdcType>
+ *
+ * @note The driver requires an ADC type that implements NTC::NtcAdcInterface
+ *
+ * @example Basic Usage
+ * @code
+ * // Define your ADC implementation
+ * class MyAdc : public NTC::NtcAdcInterface<MyAdc> {
+ * public:
+ *   bool IsInitialized() const { return initialized_; }
+ *   bool EnsureInitialized() { return true; }
+ * // ... implement other required methods
+ * };
+ *
+ * // Create ADC instance
+ * MyAdc my_adc;
+ * my_adc.Initialize();
+ * // Create NTC thermistor with default configuration
+ * NtcThermistor<MyAdc> thermistor(NTC_TYPE_NTCG163JFT103FT1S, &my_adc);
+ * // Initialize and read temperature
+ *if (thermistor.Initialize()) {
+ * float temp_c;
+ * if (thermistor.ReadTemperatureCelsius(&temp_c) == NTC_SUCCESS) {
+ * printf("Temperature: %.2f°C\n", temp_c);
+ * }
+ * }
+ * @endcode
+ * @example Custom Configuration
+ * @code
+ * // Create custom configuration
+ * ntc_config_t config = NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S();
+ * config.adc_channel = 1;
+ * config.series_resistance = 10000.0f;
+ * config.conversion_method = NTC_CONVERSION_MATHEMATICAL;
+ * config.enable_filtering = true;
+ * config.filter_alpha = 0.1f;
+ *
+ * NtcThermistor<MyAdc> thermistor(config, &my_adc);
+ * thermistor.Initialize();
+ * @endcode
  */
+template <typename AdcType>
 class NtcThermistor {
 public:
   //==============================================================//
@@ -169,17 +88,27 @@ public:
 
   /**
    * @brief Constructor with NTC type and ADC interface
-   * @param ntc_type NTC thermistor type
-   * @param adc_interface Pointer to BaseAdc interface
+   *
+   * Creates an NTC thermistor instance with default configuration for the
+   * specified NTC type. The configuration is automatically initialized with
+   * appropriate values for the thermistor type.
+   *
+   * @param ntc_type NTC thermistor type (e.g., NTC_TYPE_NTCG163JFT103FT1S)
+   * @param adc_interface Pointer to ADC interface (must inherit from NTC::NtcAdcInterface<AdcType>)
+   *
+   * @note The ADC interface must remain valid for the lifetime of the
+   *       NtcThermistor instance. The driver does not take ownership.
+   *
+   * @warning The ADC interface pointer must not be nullptr.
    */
-  NtcThermistor(ntc_type_t ntc_type, BaseAdc* adc_interface) noexcept;
+  NtcThermistor(ntc_type_t ntc_type, AdcType* adc_interface) noexcept;
 
   /**
    * @brief Constructor with custom configuration
    * @param config NTC configuration structure
-   * @param adc_interface Pointer to BaseAdc interface
+   * @param adc_interface Pointer to ADC interface (must inherit from NTC::NtcAdcInterface<AdcType>)
    */
-  NtcThermistor(const ntc_config_t& config, BaseAdc* adc_interface) noexcept;
+  NtcThermistor(const ntc_config_t& config, AdcType* adc_interface) noexcept;
 
   /**
    * @brief Copy constructor is deleted
@@ -248,8 +177,19 @@ public:
 
   /**
    * @brief Read temperature in Celsius
-   * @param temperature_celsius Pointer to store temperature
-   * @return Error code
+   *
+   * Performs a complete temperature reading cycle: reads ADC, calculates
+   * resistance, converts to temperature, applies filtering (if enabled),
+   * and validates the result.
+   *
+   * @param temperature_celsius Pointer to store temperature (°C)
+   * @return Error code (NTC_SUCCESS on success)
+   *
+   * @note This function may take several milliseconds depending on sample_count
+   *       and sample_delay_ms configuration.
+   *
+   * @warning The driver must be initialized before calling this function.
+   *          Check return value before using the temperature value.
    */
   ntc_err_t ReadTemperatureCelsius(float* temperature_celsius) noexcept;
 
@@ -437,7 +377,7 @@ private:
   //==============================================================//
 
   ntc_config_t config_;    ///< NTC configuration
-  BaseAdc* adc_interface_; ///< ADC interface pointer
+  AdcType* adc_interface_; ///< ADC interface pointer
   bool initialized_;       ///< Initialization status
 
   // Filtering
@@ -453,14 +393,14 @@ private:
    * @param config Configuration to validate
    * @return Error code
    */
-  ntc_err_t ValidateConfiguration(const ntc_config_t& config) const noexcept;
+  ntc_err_t validateConfiguration(const ntc_config_t& config) const noexcept;
 
   /**
    * @brief Read ADC voltage
    * @param voltage_volts Pointer to store voltage
    * @return Error code
    */
-  ntc_err_t ReadAdcVoltage(float* voltage_volts) noexcept;
+  ntc_err_t readAdcVoltage(float* voltage_volts) noexcept;
 
   /**
    * @brief Calculate resistance from voltage
@@ -468,7 +408,7 @@ private:
    * @param resistance_ohms Pointer to store resistance
    * @return Error code
    */
-  ntc_err_t CalculateResistance(float voltage_volts, float* resistance_ohms) noexcept;
+  ntc_err_t calculateResistance(float voltage_volts, float* resistance_ohms) noexcept;
 
   /**
    * @brief Convert resistance to temperature
@@ -476,7 +416,7 @@ private:
    * @param temperature_celsius Pointer to store temperature
    * @return Error code
    */
-  ntc_err_t ConvertResistanceToTemperature(float resistance_ohms,
+  ntc_err_t convertResistanceToTemperature(float resistance_ohms,
                                            float* temperature_celsius) noexcept;
 
   /**
@@ -484,12 +424,17 @@ private:
    * @param new_temperature New temperature reading
    * @return Filtered temperature
    */
-  float ApplyFiltering(float new_temperature) noexcept;
+  float applyFiltering(float new_temperature) noexcept;
 
   /**
    * @brief Initialize configuration for NTC type
    * @param ntc_type NTC type
    * @param config Pointer to configuration to initialize
    */
-  static void InitializeConfigForType(ntc_type_t ntc_type, ntc_config_t* config) noexcept;
+  static void initializeConfigForType(ntc_type_t ntc_type, ntc_config_t* config) noexcept;
 };
+
+// Include template implementation
+#define NTC_THERMISTOR_HEADER_INCLUDED
+#include "../src/NtcThermistor.cpp"
+#undef NTC_THERMISTOR_HEADER_INCLUDED

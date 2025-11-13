@@ -1,12 +1,11 @@
-# PCAL9555 ESP32-C6 Comprehensive Test Suite
+# NTC Thermistor ESP32-C6 Comprehensive Test Suite
 
-This directory contains comprehensive test suites for the PCAL9555 16-bit I/O expander driver using the ESP32-C6 DevKit-M-1.
+This directory contains comprehensive test suites for the NTC Thermistor driver using the ESP32-C6 DevKit-M-1.
 
 ## 📋 Table of Contents
 
 - [Hardware Overview](#-hardware-overview)
-- [Pin Connections](#-pin-connections)
-- [Hardware Setup](#-hardware-setup)
+- [Test Setup](#-test-setup)
 - [Building the Tests](#-building-the-tests)
 - [Running the Tests](#-running-the-tests)
 - [Test Suites](#-test-suites)
@@ -18,7 +17,7 @@ This directory contains comprehensive test suites for the PCAL9555 16-bit I/O ex
 
 ### ESP32-C6 DevKit-M-1
 
-The ESP32-C6 DevKit-M-1 serves as the host controller for communicating with the PCAL9555 GPIO expander via I2C.
+The ESP32-C6 DevKit-M-1 serves as the host controller for testing the NTC thermistor driver.
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -28,7 +27,7 @@ The ESP32-C6 DevKit-M-1 serves as the host controller for communicating with the
 │  │        ESP32-C6 Microcontroller          │   │
 │  │                                          │   │
 │  │  GPIO Pins:                              │   │
-│  │  • I2C: SDA (GPIO4), SCL (GPIO5)         │   │
+│  │  • ADC: GPIO0-GPIO5 (ADC1 channels)      │   │
 │  │  • Test Indicator: GPIO14                │   │
 │  └──────────────────────────────────────────┘   │
 │                                                 │
@@ -37,104 +36,75 @@ The ESP32-C6 DevKit-M-1 serves as the host controller for communicating with the
 └─────────────────────────────────────────────────┘
 ```
 
-### PCAL9555 GPIO Expander
+### NTC Thermistor Circuit
 
-The PCAL9555 is a 16-bit I/O expander with I²C interface, providing 16 GPIO pins organized into two 8-bit ports.
+The NTC thermistor is connected in a voltage divider configuration:
 
 ```
 ┌─────────────────────────────────────────────────┐
-│      PCAL9555 GPIO Expander                     │
+│      NTC Thermistor Circuit                     │
 │                                                 │
-│  ┌──────────────────────────────────────────┐   │
-│  │        PCAL9555 IC                       │   │
-│  │                                          │   │
-│  │  Features:                               │   │
-│  │  • 16 GPIO pins (PORT_0: P0.0-P0.7)      │   │
-│  │  • 16 GPIO pins (PORT_1: P1.0-P1.7)      │   │
-│  │  • I2C interface (7-bit address)         │   │
-│  │  • Configurable pull-up/pull-down        │   │
-│  │  • Programmable drive strength           │   │
-│  │  • Interrupt support                     │   │
-│  │  • Input latch capability                │   │
-│  │  • Polarity inversion                    │   │
-│  │  • Open-drain output mode                │   │
-│  └──────────────────────────────────────────┘   │
+│  ┌───────────────────────────────────────────┐  │
+│  │        Voltage Divider                    │  │
+│  │                                           │  │
+│  │  3.3V                                     │  │
+│  │   │                                       │  │
+│  │   ├── [Series Resistor] ──┬── ADC ────    │  │
+│  │                           │  Channel      │  │
+│  │                           │               │  │
+│  │                    [NTC Thermistor]       │  │
+│  │                           │               │  │
+│  │                          GND              │  │
+│  └───────────────────────────────────────────┘  │
 │                                                 │
-│  I2C Connections:                               │
-│  • SDA (I2C Data)                               │
-│  • SCL (I2C Clock)                              │
-│  • VDD (3.3V Power)                             │
-│  • GND (Ground)                                 │
-│  • INT (Interrupt Output, optional)             │
+│  Typical Values:                                │
+│  • NTC: 10kΩ @ 25°C (NTCG163JFT103FT1S)         │
+│  • Series Resistor: 10kΩ                        │
+│  • Reference Voltage: 3.3V                      │
 └─────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 📌 Pin Connections
+## 📌 Test Setup
 
-### I2C Bus Connections
+### Mock ADC Testing
 
-| PCAL9555 Pin | ESP32-C6 GPIO | Function | Notes |
-|--------------|---------------|----------|-------|
-| SDA | GPIO4 | I2C Data | With 4.7kΩ pull-up to 3.3V |
-| SCL | GPIO5 | I2C Clock | With 4.7kΩ pull-up to 3.3V |
-| VDD | 3.3V | Power Supply | |
-| GND | GND | Ground | |
-| INT | GPIO15 (optional) | Interrupt Output | Open-drain, requires pull-up |
+The comprehensive test suite uses a **Mock ADC** implementation that simulates ADC readings without requiring actual hardware. This allows for:
 
-### Test Indicator
+- **Unit Testing**: Test driver logic without hardware
+- **CI/CD Integration**: Run tests in automated pipelines
+- **Rapid Development**: Iterate quickly without physical setup
 
-| Signal | ESP32-C6 GPIO | Function |
-|--------|---------------|----------|
-| Test Progress | GPIO14 | Visual test progression indicator |
+### Hardware Testing (Optional)
 
-### I2C Address Configuration
+For hardware testing with a real NTC thermistor:
 
-The PCAL9555 I2C address is determined by the A0, A1, and A2 address pins:
+#### Pin Connections
 
-| A2 | A1 | A0 | I2C Address (7-bit) | I2C Address (8-bit) |
-|----|----|----|---------------------|---------------------|
-| GND | GND | GND | 0x20 | 0x40 |
-| GND | GND | VDD | 0x21 | 0x42 |
-| GND | VDD | GND | 0x22 | 0x44 |
-| GND | VDD | VDD | 0x23 | 0x46 |
-| VDD | GND | GND | 0x24 | 0x48 |
-| VDD | GND | VDD | 0x25 | 0x4A |
-| VDD | VDD | GND | 0x26 | 0x4C |
-| VDD | VDD | VDD | 0x27 | 0x4E |
+| Component | ESP32-C6 GPIO | Function | Notes |
+|-----------|---------------|----------|-------|
+| NTC Voltage Divider | GPIO0-GPIO5 | ADC Input | Any ADC1 channel |
+| Series Resistor | - | Voltage Divider | 10kΩ typical |
+| NTC Thermistor | - | Temperature Sensor | 10kΩ @ 25°C typical |
+| Test Indicator | GPIO14 | Visual Progress | Optional |
 
-**Default**: All address pins to GND = **0x20** (used in examples)
+#### Circuit Configuration
 
----
-
-## 🛠️ Hardware Setup
-
-### Basic Setup
-
-1. **Connect I2C Bus**:
-   - Connect PCAL9555 SDA to ESP32-C6 GPIO4
-   - Connect PCAL9555 SCL to ESP32-C6 GPIO5
-   - Add 4.7kΩ pull-up resistors on both SDA and SCL to 3.3V
+1. **Voltage Divider Setup**:
+   - Connect 3.3V to series resistor (10kΩ)
+   - Connect series resistor to NTC thermistor
+   - Connect NTC thermistor to GND
+   - Connect ADC channel to junction between resistor and NTC
 
 2. **Power Connections**:
-   - Connect PCAL9555 VDD to ESP32-C6 3.3V
-   - Connect PCAL9555 GND to ESP32-C6 GND
+   - Connect ESP32-C6 3.3V to voltage divider
+   - Connect ESP32-C6 GND to circuit ground
 
-3. **Optional Interrupt**:
-   - Connect PCAL9555 INT to ESP32-C6 GPIO15 (with pull-up resistor)
-
-4. **Address Configuration**:
-   - Connect A0, A1, A2 to GND for default address 0x20
-   - Or configure for different address if needed
-
-### Test Setup
-
-For comprehensive testing, you can connect:
-- LEDs to output pins (with current-limiting resistors)
-- Switches/buttons to input pins
-- External pull-up/pull-down resistors for testing
-- Logic analyzer on I2C bus for protocol verification
+3. **ADC Configuration**:
+   - Configure ADC channel in driver configuration
+   - Set reference voltage (typically 3.3V)
+   - Set ADC resolution (12-bit for ESP32-C6)
 
 ---
 
@@ -148,171 +118,95 @@ For comprehensive testing, you can connect:
    # Clone ESP-IDF
    git clone --recursive https://github.com/espressif/esp-idf.git
    cd esp-idf
-   
-   # Checkout release version 5.5
-   git checkout release/v5.5
-   git submodule update --init --recursive
-   
-   # Install ESP-IDF (Linux/macOS)
    ./install.sh esp32c6
-   
-   # Set up environment (add to ~/.bashrc or ~/.zshrc for persistence)
    . ./export.sh
    ```
 
-2. **Navigate to ESP32 Examples**:
+2. **Navigate to examples directory**:
 
    ```bash
-   cd examples/esp32
+   cd external/hf-ntc-thermistor-driver/examples/esp32
    ```
 
-3. **Setup Repository** (First time only):
-
-   ```bash
-   # Make scripts executable and setup the build environment
-   chmod +x scripts/*.sh
-   ./scripts/setup_repo.sh
-   ```
-
-### Available Test Applications
-
-The test suites use a centralized build system with scripts. Available applications:
-
-| **Application Name** | **Description** | **Hardware Required** |
-|----------------------|----------------|----------------------|
-| `pcal9555_comprehensive_test` | Comprehensive PCAL9555 GPIO expander testing with all features | PCAL9555 board |
-
-### List Available Applications
+### Build Commands
 
 ```bash
-# List all available applications
+# List available apps
 ./scripts/build_app.sh list
+
+# Build comprehensive test (Debug)
+./scripts/build_app.sh ntc_thermistor_comprehensive_test Debug
+
+# Build comprehensive test (Release)
+./scripts/build_app.sh ntc_thermistor_comprehensive_test Release
 ```
 
-### Build an Application
+### Build Output
 
-```bash
-# Build comprehensive test (Debug build)
-./scripts/build_app.sh pcal9555_comprehensive_test Debug
-
-# Build comprehensive test (Release build)
-./scripts/build_app.sh pcal9555_comprehensive_test Release
-```
+The build process will:
+- Compile the NTC thermistor driver
+- Compile the test suite
+- Link all dependencies
+- Generate binary files in `build-app-ntc_thermistor_comprehensive_test-type-{Debug|Release}-target-esp32c6-idf-{version}/`
 
 ---
 
-## 📤 Running the Tests
+## 🏃 Running the Tests
 
-### Flash Application
-
-```bash
-# Flash the application to ESP32-C6
-./scripts/flash_app.sh pcal9555_comprehensive_test Debug
-
-# Or manually:
-idf.py -p /dev/ttyUSB0 flash
-```
-
-### Monitor Output
+### Flash and Monitor
 
 ```bash
-# Monitor serial output
-idf.py -p /dev/ttyUSB0 monitor
+# Flash and monitor (Debug)
+./scripts/flash_app.sh flash_monitor ntc_thermistor_comprehensive_test Debug
 
-# Or use the flash script which includes monitoring
-./scripts/flash_app.sh pcal9555_comprehensive_test Debug
+# Flash only
+./scripts/flash_app.sh flash ntc_thermistor_comprehensive_test Debug
+
+# Monitor only
+./scripts/flash_app.sh monitor
 ```
 
-### Auto-detect Port
+### Test Execution
 
-```bash
-# The scripts can auto-detect the port
-./scripts/detect_ports.sh
-```
+The comprehensive test suite runs automatically on boot and provides:
+- Real-time test progress via GPIO14 indicator
+- Serial output with detailed test results
+- Automatic test summary at completion
+
+### GPIO14 Test Indicator
+
+GPIO14 toggles between HIGH/LOW for each completed test, providing visual feedback:
+- Use oscilloscope or logic analyzer to monitor
+- Useful for automated test verification
+- Blinks 5 times at section start/end
 
 ---
 
 ## 🧪 Test Suites
 
-### Comprehensive Test Suite
+### Basic Tests
 
-**Application**: `pcal9555_comprehensive_test`
+The comprehensive test suite includes:
 
-This comprehensive test suite validates all PCAL9555 functionality:
-
-#### Test Sections
-
-1. **Initialization Tests**
-   - I2C bus initialization
+1. **Initialization Tests**:
    - Driver initialization
-   - Reset to default state
+   - Configuration validation
+   - ADC interface verification
 
-2. **GPIO Direction Tests**
-   - Single pin direction configuration (input/output)
-   - Multiple pin direction configuration
-   - Port-level direction control
+2. **Temperature Reading Tests**:
+   - Celsius, Fahrenheit, and Kelvin readings
+   - Complete reading structure validation
+   - Error handling verification
 
-3. **GPIO Read/Write Tests**
-   - Pin write operations (HIGH/LOW)
-   - Pin read operations
-   - Pin toggle operations
-   - Port-level read/write
+3. **Configuration Tests**:
+   - Configuration setting/getting
+   - Conversion method selection
+   - Filtering configuration
 
-4. **Pull Resistor Tests**
-   - Pull-up resistor configuration
-   - Pull-down resistor configuration
-   - Pull enable/disable
-   - Per-pin pull configuration
-
-5. **Drive Strength Tests**
-   - All drive strength levels (Level0-Level3)
-   - Per-pin drive strength configuration
-
-6. **Output Mode Tests**
-   - Push-pull mode configuration
-   - Open-drain mode configuration
-   - Port-level output mode control
-
-7. **Polarity Tests**
-   - Input polarity inversion (normal/inverted)
-   - Single pin polarity configuration
-   - Multiple pin polarity configuration
-
-8. **Input Latch Tests**
-   - Input latch enable/disable
-   - Single pin latch configuration
-   - Multiple pin latch configuration
-
-9. **Interrupt Tests**
-   - Interrupt mask configuration
-   - Interrupt status reading
-   - Interrupt callback registration
-
-10. **Port Operation Tests**
-    - Port 0 operations (pins 0-7)
-    - Port 1 operations (pins 8-15)
-    - Mixed port operations
-
-11. **Error Handling Tests**
-    - Invalid pin handling
-    - Error flag management
-    - Error recovery
-
-12. **Stress Tests**
-    - Rapid pin operations
-    - Continuous read/write cycles
-    - Multi-pin simultaneous operations
-
-#### Test Configuration
-
-You can enable/disable specific test sections by editing the test file:
-
-```cpp
-// In PCAL9555ComprehensiveTest.cpp
-static constexpr bool ENABLE_INITIALIZATION_TESTS = true;
-static constexpr bool ENABLE_GPIO_DIRECTION_TESTS = true;
-// ... etc
-```
+4. **Calibration Tests**:
+   - Calibration offset
+   - Calibration reset
+   - Calibration persistence
 
 #### Test Results
 
@@ -327,53 +221,43 @@ The test framework provides:
 
 ## 🔧 Configuration
 
-### I2C Bus Configuration
+### Mock ADC Configuration
 
-Default I2C configuration (can be modified in test file):
+Default mock ADC configuration (in test file):
 
 ```cpp
-Esp32Pcal9555Bus::I2CConfig config;
-config.port = I2C_NUM_0;
-config.sda_pin = GPIO_NUM_4;      // SDA pin
-config.scl_pin = GPIO_NUM_5;       // SCL pin
-config.frequency = 400000;         // 400 kHz
-config.pullup_enable = true;        // Enable internal pullups
+MockEsp32Adc mock_adc(3.3f, 12);  // 3.3V reference, 12-bit resolution
 ```
 
-### PCAL9555 Address
+### NTC Configuration
 
-Default I2C address (can be modified in test file):
+Default NTC configuration (in test file):
 
 ```cpp
-static constexpr uint8_t PCAL9555_I2C_ADDRESS = 0x20;  // Default address
+NtcThermistor<MockEsp32Adc> thermistor(
+    NTC_TYPE_NTCG163JFT103FT1S,  // NTC type
+    &mock_adc                    // ADC interface
+);
+```
+
+### Custom Configuration
+
+For custom NTC setups:
+
+```cpp
+ntc_config_t config = NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S();
+config.adc_channel = 0;                              // ADC channel
+config.series_resistance = 10000.0f;                 // 10kΩ series resistor
+config.conversion_method = NTC_CONVERSION_MATHEMATICAL; // Conversion method
+config.enable_filtering = true;                      // Enable filtering
+config.filter_alpha = 0.1f;                          // Filter coefficient
+
+NtcThermistor<MockEsp32Adc> thermistor(config, &mock_adc);
 ```
 
 ---
 
 ## 🐛 Troubleshooting
-
-### I2C Communication Failures
-
-**Symptoms**: Tests fail with I2C errors
-
-**Solutions**:
-1. **Check I2C connections**:
-   - Verify SDA/SCL connections
-   - Check pull-up resistors (4.7kΩ recommended)
-   - Ensure proper power connections
-
-2. **Verify I2C address**:
-   - Check A0, A1, A2 pin configuration
-   - Use I2C scanner to detect device address
-   - Update `PCAL9555_I2C_ADDRESS` if different
-
-3. **Check I2C bus speed**:
-   - Reduce frequency if using long wires
-   - Try 100 kHz instead of 400 kHz
-
-4. **Verify power supply**:
-   - Ensure 3.3V is stable
-   - Check for voltage drops
 
 ### Build Errors
 
@@ -389,7 +273,7 @@ static constexpr uint8_t PCAL9555_I2C_ADDRESS = 0x20;  // Default address
 2. **Clean and rebuild**:
    ```bash
    idf.py fullclean
-   ./scripts/build_app.sh pcal9555_comprehensive_test Debug
+   ./scripts/build_app.sh ntc_thermistor_comprehensive_test Debug
    ```
 
 3. **Check component paths**:
@@ -401,26 +285,45 @@ static constexpr uint8_t PCAL9555_I2C_ADDRESS = 0x20;  // Default address
 **Symptoms**: Specific tests fail
 
 **Solutions**:
-1. **Check hardware connections**:
-   - Verify all pins are properly connected
-   - Check for loose connections
+1. **Check mock ADC configuration**:
+   - Verify reference voltage matches expected values
+   - Check ADC resolution settings
 
 2. **Review test logs**:
    - Check which specific test failed
    - Review error messages in serial output
 
-3. **Verify device state**:
-   - Reset PCAL9555 (power cycle)
-   - Run reset test first
+3. **Verify driver state**:
+   - Ensure driver is properly initialized
+   - Check configuration values
+
+### Hardware Testing Issues
+
+**Symptoms**: Incorrect temperature readings with real hardware
+
+**Solutions**:
+1. **Check circuit connections**:
+   - Verify voltage divider connections
+   - Check series resistor value (should match configuration)
+   - Ensure proper power connections
+
+2. **Verify ADC configuration**:
+   - Check ADC channel matches physical connection
+   - Verify reference voltage (typically 3.3V)
+   - Confirm ADC resolution settings
+
+3. **Calibrate if needed**:
+   - Use known reference temperature
+   - Apply calibration offset
+   - Verify with multiple temperature points
 
 ---
 
 ## 📚 Additional Resources
 
-- [PCAL9555 Datasheet](../../datasheet/PCAL9555A.pdf)
-- [Driver API Documentation](../../docs/api_reference.md)
-- [Platform Integration Guide](../../docs/platform_integration.md)
-- [Hardware Overview](../../docs/hardware_overview.md)
+- [NTC Driver Documentation](../../README.md) - Complete driver documentation
+- [API Reference](../../docs/) - Detailed API documentation
+- [Datasheets](../../datasheet/) - NTC thermistor datasheets
 
 ---
 
@@ -433,10 +336,10 @@ static constexpr uint8_t PCAL9555_I2C_ADDRESS = 0x20;  // Default address
 ./scripts/build_app.sh list
 
 # Build comprehensive test
-./scripts/build_app.sh pcal9555_comprehensive_test Debug
+./scripts/build_app.sh ntc_thermistor_comprehensive_test Debug
 
 # Flash and monitor
-./scripts/flash_app.sh pcal9555_comprehensive_test Debug
+./scripts/flash_app.sh flash_monitor ntc_thermistor_comprehensive_test Debug
 ```
 
 ### Test Execution
@@ -457,15 +360,14 @@ GPIO14 toggles between HIGH/LOW for each completed test, providing visual feedba
 
 ## 📝 Notes
 
-- **I2C Pull-ups**: External pull-up resistors (4.7kΩ) are recommended even if internal pullups are enabled
-- **Address Configuration**: Default address is 0x20. Modify if using different A0/A1/A2 configuration
-- **Test Duration**: Comprehensive test suite takes approximately 2-5 minutes to complete
-- **Hardware Requirements**: Basic tests work without external hardware; some tests benefit from LEDs/switches
+- **Mock ADC**: Tests use mock ADC for hardware-independent testing
+- **Hardware Testing**: Optional - connect real NTC thermistor for hardware validation
+- **Test Duration**: Comprehensive test suite takes approximately 1-2 minutes to complete
+- **Hardware Requirements**: Basic tests work with mock ADC; hardware tests require NTC thermistor circuit
 
 ---
 
 <div style="text-align: center; margin: 2em 0; padding: 1em; background: #f8f9fa; border-radius: 8px;">
-  <strong>🎯 Ready to test the PCAL9555?</strong><br>
-  Start with: <code>./scripts/build_app.sh pcal9555_comprehensive_test Debug</code>
+  <strong>🎯 Ready to test the NTC Thermistor driver?</strong><br>
+  Start with: <code>./scripts/build_app.sh ntc_thermistor_comprehensive_test Debug</code>
 </div>
-

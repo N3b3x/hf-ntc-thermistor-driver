@@ -31,7 +31,7 @@ This driver provides a comprehensive solution for temperature measurement using 
 
 ## ✨ Features
 
-- **Hardware Agnostic**: Works with any ADC interface that implements BaseAdc
+- **Hardware Agnostic**: Works with any ADC interface that implements NtcAdcInterface
 - **Multiple NTC Types**: Support for various NTC thermistor specifications
 - **Dual Conversion Methods**: Lookup table and mathematical (Steinhart-Hart) conversion
 - **High Accuracy**: Optimized for precision temperature measurement
@@ -51,15 +51,33 @@ This driver provides a comprehensive solution for temperature measurement using 
 
 ## 🚀 Quick Start
 
+### Basic Example
+
 ```cpp
 #include "NtcThermistor.h"
 
-// Create NTC thermistor instance
-NtcThermistor thermistor(NTC_TYPE_NTCG163JFT103FT1S, adc_interface);
+// 1. Define your ADC implementation (must inherit from NTC::NtcAdcInterface)
+class MyAdc : public NTC::NtcAdcInterface<MyAdc> {
+public:
+    bool IsInitialized() const { return initialized_; }
+    bool EnsureInitialized() { /* initialize ADC */ return true; }
+    bool IsChannelAvailable(uint8_t channel) const { return channel < 8; }
+    AdcError ReadChannelCount(uint8_t channel, uint32_t* count) { /* ... */ }
+    AdcError ReadChannelV(uint8_t channel, float* voltage_v) { /* ... */ }
+    float GetReferenceVoltage() const { return 3.3f; }
+    uint8_t GetResolutionBits() const { return 12; }
+private:
+    bool initialized_ = false;
+};
 
-// Initialize
+// 2. Create ADC and NTC instances
+MyAdc adc;
+adc.Initialize();
+
+NtcThermistor<MyAdc> thermistor(NTC_TYPE_NTCG163JFT103FT1S, &adc);
+
+// 3. Initialize and read temperature
 if (thermistor.Initialize()) {
-    // Read temperature
     float temperature;
     if (thermistor.ReadTemperatureCelsius(&temperature) == NTC_SUCCESS) {
         printf("Temperature: %.2f°C\n", temperature);
@@ -67,24 +85,81 @@ if (thermistor.Initialize()) {
 }
 ```
 
+### Custom Configuration Example
+
+```cpp
+// Create custom configuration
+ntc_config_t config = NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S();
+config.adc_channel = 1;                              // Use ADC channel 1
+config.series_resistance = 10000.0f;                 // 10kΩ series resistor
+config.conversion_method = NTC_CONVERSION_MATHEMATICAL; // Use math conversion
+config.enable_filtering = true;                      // Enable filtering
+config.filter_alpha = 0.1f;                          // Filter coefficient
+config.sample_count = 5;                             // Average 5 samples
+config.sample_delay_ms = 10;                         // 10ms between samples
+
+NtcThermistor<MyAdc> thermistor(config, &adc);
+thermistor.Initialize();
+
+// Read complete temperature information
+ntc_reading_t reading;
+if (thermistor.ReadTemperature(&reading) == NTC_SUCCESS && reading.is_valid) {
+    printf("Temperature: %.2f°C (%.2f°F, %.2fK)\n",
+           reading.temperature_celsius,
+           reading.temperature_fahrenheit,
+           reading.temperature_kelvin);
+    printf("Resistance: %.2fΩ, Voltage: %.3fV\n",
+           reading.resistance_ohms,
+           reading.voltage_volts);
+}
+```
+
 ## 📖 API Reference
 
 ### Core Functions
 
-- `Initialize()` - Initialize the thermistor driver
-- `ReadTemperatureCelsius()` - Read temperature in Celsius
-- `ReadTemperatureFahrenheit()` - Read temperature in Fahrenheit
-- `ReadTemperatureKelvin()` - Read temperature in Kelvin
-- `GetResistance()` - Get thermistor resistance
-- `Calibrate()` - Calibrate the thermistor
-- `SetCalibrationOffset()` - Set calibration offset
+#### Initialization
+- `Initialize()` - Initialize the thermistor driver (must be called before use)
+- `Deinitialize()` - Clean up resources
+- `IsInitialized()` - Check initialization status
 
-### Configuration
+#### Temperature Reading
+- `ReadTemperatureCelsius(float* temp)` - Read temperature in Celsius
+- `ReadTemperatureFahrenheit(float* temp)` - Read temperature in Fahrenheit
+- `ReadTemperatureKelvin(float* temp)` - Read temperature in Kelvin
+- `ReadTemperature(ntc_reading_t* reading)` - Read complete temperature information
 
-- `SetConversionMethod()` - Choose between lookup table and mathematical conversion
-- `SetVoltageDivider()` - Configure voltage divider parameters
-- `SetReferenceVoltage()` - Set ADC reference voltage
-- `SetBetaValue()` - Set thermistor beta value
+#### Resistance and Voltage
+- `GetResistance(float* resistance)` - Get thermistor resistance (ohms)
+- `GetVoltage(float* voltage)` - Get voltage across thermistor (V)
+- `GetRawAdcValue(uint32_t* value)` - Get raw ADC reading
+
+#### Calibration
+- `Calibrate(float reference_temp)` - Calibrate using known reference temperature
+- `SetCalibrationOffset(float offset)` - Set calibration offset (°C)
+- `GetCalibrationOffset(float* offset)` - Get current calibration offset
+- `ResetCalibration()` - Reset calibration to zero
+
+### Configuration Methods
+
+- `SetConfiguration(const ntc_config_t& config)` - Set complete configuration
+- `GetConfiguration(ntc_config_t* config)` - Get current configuration
+- `SetConversionMethod(ntc_conversion_method_t method)` - Choose conversion method
+- `SetVoltageDivider(float series_resistance)` - Configure voltage divider
+- `SetReferenceVoltage(float voltage)` - Set ADC reference voltage
+- `SetBetaValue(float beta)` - Set thermistor beta value
+- `SetAdcChannel(uint8_t channel)` - Set ADC channel
+- `SetSamplingParameters(uint32_t count, uint32_t delay_ms)` - Configure sampling
+- `SetFiltering(bool enable, float alpha)` - Enable/disable filtering
+
+### Utility Functions
+
+- `CelsiusToFahrenheit(float celsius)` - Static conversion function
+- `FahrenheitToCelsius(float fahrenheit)` - Static conversion function
+- `CelsiusToKelvin(float celsius)` - Static conversion function
+- `KelvinToCelsius(float kelvin)` - Static conversion function
+- `GetErrorString(ntc_err_t error)` - Get human-readable error message
+- `GetTypeString(ntc_type_t type)` - Get NTC type name string
 
 ## 🔧 Installation
 
@@ -102,7 +177,68 @@ idf_component_register(
 
 ## 📊 Examples
 
-For ESP32 examples, see the [examples/esp32](examples/esp32/) directory.
+### Architecture Overview
+
+The NTC thermistor driver uses a **CRTP (Curiously Recurring Template Pattern)** design for hardware abstraction:
+
+```
+┌─────────────────────────────────────┐
+│   NtcThermistor<AdcType>            │
+│   (Main Driver Class)               │
+└──────────────┬──────────────────────┘
+               │ uses
+               ▼
+┌─────────────────────────────────────┐
+│   NTC::NtcAdcInterface<AdcType>     │
+│   (CRTP Base Interface)             │
+└──────────────┬──────────────────────┘
+               │ implements
+               ▼
+┌─────────────────────────────────────┐
+│ YourAdc : NtcAdcInterface<YourAdc>  │
+│ (Platform-Specific Implementation)  │
+└─────────────────────────────────────┘
+```
+
+### Key Design Features
+
+1. **Hardware Agnostic**: Works with any ADC by implementing the interface
+2. **Zero Virtual Overhead**: CRTP provides compile-time polymorphism
+3. **Type Safe**: Template-based design catches errors at compile time
+4. **Modular**: Separate modules for conversion, lookup tables, and types
+
+### Conversion Methods
+
+The driver supports two conversion methods:
+
+1. **Lookup Table** (`NTC_CONVERSION_LOOKUP_TABLE`)
+   - Fast, pre-calculated values
+   - Lower memory usage
+   - Slightly less accurate
+   - Best for real-time applications
+
+2. **Mathematical** (`NTC_CONVERSION_MATHEMATICAL`)
+   - Uses Steinhart-Hart or Beta equations
+   - Higher accuracy
+   - More computational overhead
+   - Best for precision applications
+
+3. **Auto** (`NTC_CONVERSION_AUTO`)
+   - Automatically selects best method
+   - Balances speed and accuracy
+
+### Best Practices
+
+1. **Always check return values**: Functions return `ntc_err_t` error codes
+2. **Initialize before use**: Call `Initialize()` before reading temperatures
+3. **Validate readings**: Check `is_valid` flag in `ntc_reading_t` structures
+4. **Configure appropriately**: Set ADC channel, series resistance, and reference voltage correctly
+5. **Use filtering for noisy signals**: Enable filtering with appropriate alpha value
+6. **Calibrate when needed**: Use `Calibrate()` for improved accuracy
+
+### ESP32 Examples
+
+For complete ESP32 examples, see the [examples/esp32](examples/esp32/) directory.
 
 ## 📚 Documentation
 
@@ -110,7 +246,7 @@ For detailed documentation, see the [docs](docs/) directory.
 
 ## 🤝 Contributing
 
-Pull requests and suggestions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Pull requests and suggestions are welcome! Please see the main HardFOC coding standards for contribution guidelines.
 
 ## 📄 License
 

@@ -107,7 +107,7 @@ cd your-esp-idf-project
 # CI/CD Usage:
 jobs:
   build:
-    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@v1
+    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@v1
     with:
       project_dir: examples/esp32
       project_tools_dir: examples/esp32/hf-espidf-project-tools  # Points to submodule
@@ -127,7 +127,7 @@ jobs:
 # CI/CD Usage:
 jobs:
   build:
-    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@v1
+    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@v1
     with:
       project_dir: examples/esp32
       # project_tools_dir not needed - auto-detects hf-espidf-project-tools
@@ -147,7 +147,7 @@ jobs:
 # CI/CD Usage:
 jobs:
   build:
-    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@v1
+    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@v1
     with:
       project_dir: firmware/esp32
       project_tools_dir: build-tools
@@ -171,13 +171,13 @@ jobs:
 # CI/CD Usage:
 jobs:
   build-project-a:
-    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@v1
+    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@v1
     with:
       project_dir: projects/project-a
       project_tools_dir: shared-tools  # Shared across all projects
       
   build-project-b:
-    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@v1
+    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@v1
     with:
       project_dir: projects/project-b
       project_tools_dir: shared-tools  # Same shared tools directory
@@ -216,7 +216,7 @@ Works with the [ESP-IDF CI Tools](https://github.com/N3b3x/hf-espidf-ci-tools) f
 
 ```yaml
 - name: Build ESP-IDF Applications
-  uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@v1
+  uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@v1
   with:
     project_dir: examples/esp32
     project_tools_dir: examples/esp32/scripts

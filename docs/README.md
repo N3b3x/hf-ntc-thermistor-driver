@@ -8,7 +8,7 @@ The HF-NTC-Thermistor driver provides a comprehensive solution for temperature m
 
 ## Features
 
-- **Hardware Agnostic**: Works with any ADC interface that implements BaseAdc
+- **Hardware Agnostic**: Works with any ADC interface that implements NtcAdcInterface
 - **Multiple NTC Types**: Support for various NTC thermistor specifications
 - **Dual Conversion Methods**: Lookup table and mathematical (Steinhart-Hart) conversion
 - **High Accuracy**: Optimized for precision temperature measurement
@@ -54,5 +54,12 @@ if (thermistor.Initialize()) {
 
 - [Main README](../README.md) - Complete driver documentation
 - [Examples](../examples/) - Usage examples
-- [Contributing](../CONTRIBUTING.md) - Contribution guidelines
+- [Datasheets](../datasheet/) - NTC thermistor datasheets
+
+## Documentation Structure
+
+- **API Reference**: See the main README.md for complete API documentation
+- **Examples**: See `examples/esp32/` for ESP32 usage examples
+- **Doxygen**: Full API documentation available via Doxygen (when generated)
+- **Architecture**: See main README.md for architecture overview and design patterns
 

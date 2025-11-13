@@ -76,7 +76,7 @@ Checks: |
   modernize-*
 
 # =============================================================================
-# DISABLED CHECKS (with explanations)
+# DISABLED CHECKS
 # =============================================================================
 
   # Disable trailing return type enforcement (can be verbose for simple functions)

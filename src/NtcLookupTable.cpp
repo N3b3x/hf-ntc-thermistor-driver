@@ -5,13 +5,13 @@
  * This file contains lookup tables and functions for fast temperature conversion
  * from resistance values using pre-calculated tables for common NTC types.
  *
- * @author HardFOC Development Team
+ * @author Nebiyu Tadesse
  * @date 2025
  * @copyright HardFOC
  */
 
 #include "NtcLookupTable.h"
-#include "NtcThermistor.h"
+#include "NtcTypes.h"
 #include <algorithm>
 #include <cmath>
 

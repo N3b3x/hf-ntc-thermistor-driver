@@ -34,7 +34,7 @@ on:
 
 jobs:
   build:
-    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@main
+    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@main
     with:
       project_dir: "your-esp-idf-project"  # Path to your ESP-IDF project directory
       project_tools_dir: "scripts"  # Path to your scripts directory, maybe [your-esp-idf-project/scripts] or...
@@ -114,7 +114,7 @@ Set a maximum firmware size to fail builds that exceed limits:
 ```yaml
 jobs:
 build:
-    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@main
+    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@main
     with:
       project_dir: "."
       project_tools_dir: "scripts"
@@ -128,7 +128,7 @@ If your project has a different structure:
 ```yaml
 jobs:
   build:
-    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@main
+    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@main
       with:
       project_dir: "firmware"  # ESP-IDF project in subdirectory
       project_tools_dir: "tools/scripts"  # Scripts in different location

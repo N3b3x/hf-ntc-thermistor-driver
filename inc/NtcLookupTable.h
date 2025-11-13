@@ -5,7 +5,13 @@
  * This header provides lookup table functionality for fast temperature conversion
  * from resistance values. It includes pre-calculated tables for common NTC types.
  *
- * @author HardFOC Development Team
+ * Lookup tables provide a balance between speed and accuracy, making them ideal
+ * for real-time applications where computational resources are limited.
+ *
+ * @note Lookup tables use binary search and linear interpolation for efficient
+ *       temperature lookups. Accuracy depends on table resolution.
+ *
+ * @author Nebiyu Tadesse
  * @date 2025
  * @copyright HardFOC
  */
@@ -50,8 +56,16 @@ typedef struct {
 
 /**
  * @brief Get lookup table for NTC type
- * @param ntc_type NTC thermistor type
- * @return Pointer to lookup table (nullptr if not available)
+ *
+ * Retrieves the pre-calculated lookup table for a specific NTC thermistor type.
+ * Lookup tables are optimized for fast temperature conversion with minimal
+ * computational overhead.
+ *
+ * @param ntc_type NTC thermistor type (e.g., NTC_TYPE_NTCG163JFT103FT1S)
+ * @return Pointer to lookup table (nullptr if not available for this type)
+ *
+ * @note Not all NTC types have pre-calculated lookup tables. Use
+ *       NTC_CONVERSION_MATHEMATICAL for unsupported types.
  */
 const ntc_lookup_table_t* GetNtcLookupTable(int ntc_type) noexcept;
 

@@ -5,14 +5,14 @@
  * This header provides a mock ADC implementation that simulates ADC readings
  * for testing the NTC thermistor driver without actual hardware.
  *
- * @author HardFOC Development Team
+ * @author Nebiyu Tadesse
  * @date 2025
  * @copyright HardFOC
  */
 
 #pragma once
 
-#include "BaseAdc.h"
+#include "NtcAdcInterface.h"
 
 #include <cmath>
 
@@ -22,8 +22,10 @@
  * This class provides a simulated ADC interface that can be used for testing
  * the NTC thermistor driver. It simulates realistic ADC readings based on
  * configurable parameters.
+ *
+ * Uses CRTP pattern with NTC::NtcAdcInterface
  */
-class MockEsp32Adc : public NTC::BaseAdc {
+class MockEsp32Adc : public NTC::NtcAdcInterface<MockEsp32Adc> {
 public:
   /**
    * @brief Constructor
@@ -31,27 +33,27 @@ public:
    * @param resolution_bits ADC resolution in bits (default: 12-bit for ESP32-C6)
    */
   explicit MockEsp32Adc(float reference_voltage = 3.3f, uint8_t resolution_bits = 12)
-      : initialized_(false),
-        reference_voltage_(reference_voltage),
-        resolution_bits_(resolution_bits),
-        max_count_((1U << resolution_bits) - 1) {}
+      : initialized_(false), reference_voltage_(reference_voltage),
+        resolution_bits_(resolution_bits), max_count_((1U << resolution_bits) - 1) {}
 
   /**
    * @brief Destructor
    */
-  ~MockEsp32Adc() override = default;
+  ~MockEsp32Adc() = default;
 
   /**
    * @brief Check if ADC is initialized
    * @return true if initialized
    */
-  bool IsInitialized() const override { return initialized_; }
+  bool IsInitialized() const {
+    return initialized_;
+  }
 
   /**
    * @brief Ensure ADC is initialized
    * @return true on success
    */
-  bool EnsureInitialized() override {
+  bool EnsureInitialized() {
     if (!initialized_) {
       initialized_ = true;
     }
@@ -63,7 +65,7 @@ public:
    * @param channel ADC channel (0-6 for ESP32-C6)
    * @return true if channel is valid
    */
-  bool IsChannelAvailable(uint8_t channel) const override {
+  bool IsChannelAvailable(uint8_t channel) const {
     // ESP32-C6 has ADC1 with channels 0-6
     return channel <= 6;
   }
@@ -74,7 +76,7 @@ public:
    * @param count Output parameter for count value
    * @return AdcError::SUCCESS on success
    */
-  NTC::AdcError ReadChannelCount(uint8_t channel, uint32_t* count) override {
+  NTC::AdcError ReadChannelCount(uint8_t channel, uint32_t* count) {
     if (!initialized_) {
       return NTC::AdcError::NOT_INITIALIZED;
     }
@@ -89,7 +91,7 @@ public:
 
     // Simulate ADC reading - return mid-scale value with some variation
     // This simulates ~1.65V reading (mid-point)
-    *count = max_count_ / 2 + (channel * 100);  // Add some channel-dependent variation
+    *count = max_count_ / 2 + (channel * 100); // Add some channel-dependent variation
 
     return NTC::AdcError::SUCCESS;
   }
@@ -100,7 +102,7 @@ public:
    * @param voltage_v Output parameter for voltage in volts
    * @return AdcError::SUCCESS on success
    */
-  NTC::AdcError ReadChannelV(uint8_t channel, float* voltage_v) override {
+  NTC::AdcError ReadChannelV(uint8_t channel, float* voltage_v) {
     if (!initialized_) {
       return NTC::AdcError::NOT_INITIALIZED;
     }
@@ -129,13 +131,17 @@ public:
    * @brief Get reference voltage
    * @return Reference voltage in volts
    */
-  float GetReferenceVoltage() const override { return reference_voltage_; }
+  float GetReferenceVoltage() const {
+    return reference_voltage_;
+  }
 
   /**
    * @brief Get ADC resolution
    * @return Resolution in bits
    */
-  uint8_t GetResolutionBits() const override { return resolution_bits_; }
+  uint8_t GetResolutionBits() const {
+    return resolution_bits_;
+  }
 
   /**
    * @brief Set simulated voltage for testing
@@ -165,5 +171,5 @@ private:
   float reference_voltage_;
   uint8_t resolution_bits_;
   uint32_t max_count_;
-  float simulated_voltage_ = 1.65f;  // Default mid-scale voltage
+  float simulated_voltage_ = 1.65f; // Default mid-scale voltage
 };

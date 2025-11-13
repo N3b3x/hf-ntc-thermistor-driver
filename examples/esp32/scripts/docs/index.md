@@ -119,7 +119,7 @@ your-esp-idf-project/
 # .github/workflows/build.yml
 jobs:
   build:
-    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@v1
+    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@v1
     with:
       project_dir: examples/esp32
       project_tools_dir: examples/esp32/scripts  # Submodule path
@@ -130,7 +130,7 @@ jobs:
 # .github/workflows/build.yml
 jobs:
   build:
-    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/build.yml@v1
+    uses: N3b3x/hf-espidf-ci-tools/.github/workflows/ru-build.yml@v1
     with:
       project_dir: firmware/esp32
       project_tools_dir: build-tools  # Shared tools directory
