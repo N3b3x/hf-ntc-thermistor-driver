@@ -1,6 +1,6 @@
 var classMockEsp32Adc =
 [
-    [ "MockEsp32Adc", "classMockEsp32Adc.html#a5bec97dace7d51487ea64ae4aaa4442f", null ],
+    [ "MockEsp32Adc", "classMockEsp32Adc.html#ab2ac54874f4df76df9fe04de7b35b73f", null ],
     [ "~MockEsp32Adc", "classMockEsp32Adc.html#a3703344d06d3913d15ae760966c18441", null ],
     [ "EnsureInitialized", "classMockEsp32Adc.html#a853d99a55edf601b8859d0985d64be8f", null ],
     [ "GetReferenceVoltage", "classMockEsp32Adc.html#ac43c0b6c7df753218e40e9ab0e769dd5", null ],

@@ -7,7 +7,7 @@ var TestFramework_8h =
     [ "RUN_TEST_GROUP_IF_ENABLED", "TestFramework_8h.html#a069d023efb0dd03f8c2304a56b4a9564", null ],
     [ "RUN_TEST_IN_TASK", "TestFramework_8h.html#a214e38e25939e45e31ae73a073fca47f", null ],
     [ "RUN_TEST_SECTION_IF_ENABLED", "TestFramework_8h.html#a742c0e25111e9ee95def05464cab957b", null ],
-    [ "RUN_TEST_SECTION_IF_ENABLED_AUTO_PROGRESS", "TestFramework_8h.html#a42013656a31f033788afe39c84e96bec", null ],
+    [ "RUN_TEST_SECTION_IF_ENABLED_AUTO_PROGRESS", "TestFramework_8h.html#acae8970e8680071cf6435a1543377a09", null ],
     [ "RUN_TEST_SECTION_IF_ENABLED_WITH_PATTERN", "TestFramework_8h.html#ab72cc2ae0fb724218e81479185ab38c6", null ],
     [ "RUN_TEST_SECTION_IF_ENABLED_WITH_PROGRESS", "TestFramework_8h.html#a75c45174f9dde97eb43339fcd0ac79c8", null ],
     [ "cleanup_test_progress_indicator", "TestFramework_8h.html#a5c86314094f10701c597cf07a95a4bae", null ],

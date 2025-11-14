@@ -109,102 +109,94 @@ $(function(){initNavTree('MockEsp32Adc_8h_source.html',''); initResizable(); });
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html">   28</a></span><span class="keyword">class </span><a class="code hl_class" href="classMockEsp32Adc.html">MockEsp32Adc</a> : <span class="keyword">public</span> <a class="code hl_class" href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a>&lt;MockEsp32Adc&gt; {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a5bec97dace7d51487ea64ae4aaa4442f">   35</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classMockEsp32Adc.html#a5bec97dace7d51487ea64ae4aaa4442f">MockEsp32Adc</a>(<span class="keywordtype">float</span> reference_voltage = 3.3f, uint8_t resolution_bits = 12)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      : initialized_(false), reference_voltage_(reference_voltage),</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        resolution_bits_(resolution_bits), max_count_((1U &lt;&lt; resolution_bits) - 1) {}</div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#ab2ac54874f4df76df9fe04de7b35b73f">   37</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classMockEsp32Adc.html#ab2ac54874f4df76df9fe04de7b35b73f">MockEsp32Adc</a>(<span class="keywordtype">float</span> reference_voltage = 3.3F,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                        uint8_t resolution_bits = 12)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      : initialized_(false), reference_voltage_(reference_voltage),</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        resolution_bits_(resolution_bits),</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        max_count_((1U &lt;&lt; resolution_bits) - 1) {}</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a3703344d06d3913d15ae760966c18441">   42</a></span>  <a class="code hl_function" href="classMockEsp32Adc.html#a3703344d06d3913d15ae760966c18441">~MockEsp32Adc</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a47e052c240bf1a3df95f002373786d21">   48</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classMockEsp32Adc.html#a47e052c240bf1a3df95f002373786d21">IsInitialized</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> initialized_;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a3703344d06d3913d15ae760966c18441">   46</a></span>  <a class="code hl_function" href="classMockEsp32Adc.html#a3703344d06d3913d15ae760966c18441">~MockEsp32Adc</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a47e052c240bf1a3df95f002373786d21">   52</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classMockEsp32Adc.html#a47e052c240bf1a3df95f002373786d21">IsInitialized</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> initialized_; }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a853d99a55edf601b8859d0985d64be8f">   58</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classMockEsp32Adc.html#a853d99a55edf601b8859d0985d64be8f">EnsureInitialized</a>() {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (!initialized_) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      initialized_ = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> initialized_;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  }</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a853d99a55edf601b8859d0985d64be8f">   56</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classMockEsp32Adc.html#a853d99a55edf601b8859d0985d64be8f">EnsureInitialized</a>() {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (!initialized_) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      initialized_ = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">return</span> initialized_;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472">   70</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472">IsChannelAvailable</a>(uint8_t channel)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// ESP32-C6 has ADC1 with channels 0-6</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">return</span> channel &lt;= 6;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
 </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472">   68</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472">IsChannelAvailable</a>(uint8_t channel)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// ESP32-C6 has ADC1 with channels 0-6</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span> channel &lt;= 6;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
-</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a85462408c5fa1d65da6a73eb8d70491d">   79</a></span>  <a class="code hl_enumeration" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a> <a class="code hl_function" href="classMockEsp32Adc.html#a85462408c5fa1d65da6a73eb8d70491d">ReadChannelCount</a>(uint8_t channel, uint32_t* count) {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (!initialized_) {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a02de9649e258d1dd94056e676061e969">NTC::AdcError::NOT_INITIALIZED</a>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472">IsChannelAvailable</a>(channel)) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a141b94509ad9973b5ff2f08830956e07">NTC::AdcError::INVALID_CHANNEL</a>;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (count == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a89fe56ed105248667fe799031276ab23">NTC::AdcError::HARDWARE_ERROR</a>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">// Simulate ADC reading - return mid-scale value with some variation</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">// This simulates ~1.65V reading (mid-point)</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    *count = max_count_ / 2 + (channel * 100); <span class="comment">// Add some channel-dependent variation</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03ad0749aaba8b833466dfcbb0428e4f89c">NTC::AdcError::SUCCESS</a>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  }</div>
-</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a85462408c5fa1d65da6a73eb8d70491d">   81</a></span>  <a class="code hl_enumeration" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a> <a class="code hl_function" href="classMockEsp32Adc.html#a85462408c5fa1d65da6a73eb8d70491d">ReadChannelCount</a>(uint8_t channel, uint32_t *count) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span> (!initialized_) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6">NTC::AdcError::NotInitialized</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472">IsChannelAvailable</a>(channel)) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4">NTC::AdcError::InvalidChannel</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span> (count == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03">NTC::AdcError::HardwareError</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">// Simulate ADC reading - return mid-scale value with some variation</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="comment">// This simulates ~1.65V reading (mid-point)</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    *count = max_count_ / 2 +</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>             (channel * 100); <span class="comment">// Add some channel-dependent variation</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#ad933f3885316b55a50907a4f7f19ec61">  105</a></span>  <a class="code hl_enumeration" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a> <a class="code hl_function" href="classMockEsp32Adc.html#ad933f3885316b55a50907a4f7f19ec61">ReadChannelV</a>(uint8_t channel, <span class="keywordtype">float</span>* voltage_v) {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">if</span> (!initialized_) {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a02de9649e258d1dd94056e676061e969">NTC::AdcError::NOT_INITIALIZED</a>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472">IsChannelAvailable</a>(channel)) {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a141b94509ad9973b5ff2f08830956e07">NTC::AdcError::INVALID_CHANNEL</a>;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">if</span> (voltage_v == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a89fe56ed105248667fe799031276ab23">NTC::AdcError::HARDWARE_ERROR</a>;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    uint32_t count = 0;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_enumeration" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a> err = <a class="code hl_function" href="classMockEsp32Adc.html#a85462408c5fa1d65da6a73eb8d70491d">ReadChannelCount</a>(channel, &amp;count);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">if</span> (err != <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03ad0749aaba8b833466dfcbb0428e4f89c">NTC::AdcError::SUCCESS</a>) {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <span class="keywordflow">return</span> err;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="comment">// Convert count to voltage</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    *voltage_v = (<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(count) * reference_voltage_) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(max_count_);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38">NTC::AdcError::Success</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#ad933f3885316b55a50907a4f7f19ec61">  108</a></span>  <a class="code hl_enumeration" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a> <a class="code hl_function" href="classMockEsp32Adc.html#ad933f3885316b55a50907a4f7f19ec61">ReadChannelV</a>(uint8_t channel, <span class="keywordtype">float</span> *voltage_v) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (!initialized_) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6">NTC::AdcError::NotInitialized</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472">IsChannelAvailable</a>(channel)) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4">NTC::AdcError::InvalidChannel</a>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">if</span> (voltage_v == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03">NTC::AdcError::HardwareError</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    uint32_t count = 0;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_enumeration" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a> err = <a class="code hl_function" href="classMockEsp32Adc.html#a85462408c5fa1d65da6a73eb8d70491d">ReadChannelCount</a>(channel, &amp;count);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">if</span> (err != <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38">NTC::AdcError::Success</a>) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <span class="keywordflow">return</span> err;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03ad0749aaba8b833466dfcbb0428e4f89c">NTC::AdcError::SUCCESS</a>;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="comment">// Convert count to voltage</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    *voltage_v = (<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(count) * reference_voltage_) /</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                 <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(max_count_);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38">NTC::AdcError::Success</a>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
 </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#ac43c0b6c7df753218e40e9ab0e769dd5">  134</a></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="classMockEsp32Adc.html#ac43c0b6c7df753218e40e9ab0e769dd5">GetReferenceVoltage</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">return</span> reference_voltage_;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  }</div>
-</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a3c511e67fe8b09afc568ce14ea8d0a1d">  142</a></span>  uint8_t <a class="code hl_function" href="classMockEsp32Adc.html#a3c511e67fe8b09afc568ce14ea8d0a1d">GetResolutionBits</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">return</span> resolution_bits_;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  }</div>
-</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#ac43c0b6c7df753218e40e9ab0e769dd5">  138</a></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="classMockEsp32Adc.html#ac43c0b6c7df753218e40e9ab0e769dd5">GetReferenceVoltage</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> reference_voltage_; }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a3c511e67fe8b09afc568ce14ea8d0a1d">  144</a></span>  uint8_t <a class="code hl_function" href="classMockEsp32Adc.html#a3c511e67fe8b09afc568ce14ea8d0a1d">GetResolutionBits</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> resolution_bits_; }</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
 <div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classMockEsp32Adc.html#a9495939a768b2388384cfc1a4d0df1e3">  150</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classMockEsp32Adc.html#a9495939a768b2388384cfc1a4d0df1e3">SetSimulatedVoltage</a>(<span class="keywordtype">float</span> voltage) {</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    simulated_voltage_ = voltage;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">if</span> (simulated_voltage_ &lt; 0.0f) {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      simulated_voltage_ = 0.0f;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">if</span> (simulated_voltage_ &lt; 0.0F) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      simulated_voltage_ = 0.0F;</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">if</span> (simulated_voltage_ &gt; reference_voltage_) {</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      simulated_voltage_ = reference_voltage_;</div>
@@ -224,28 +216,28 @@ $(function(){initNavTree('MockEsp32Adc_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keywordtype">float</span> reference_voltage_;</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  uint8_t resolution_bits_;</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  uint32_t max_count_;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="keywordtype">float</span> simulated_voltage_ = 1.65f; <span class="comment">// Default mid-scale voltage</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="keywordtype">float</span> simulated_voltage_ = 1.65F; <span class="comment">// Default mid-scale voltage</span></div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>};</div>
 </div>
 <div class="ttc" id="aNtcAdcInterface_8h_html"><div class="ttname"><a href="NtcAdcInterface_8h.html">NtcAdcInterface.h</a></div><div class="ttdoc">CRTP-based template interface for ADC used by NTC thermistor driver.</div></div>
 <div class="ttc" id="aclassMockEsp32Adc_html"><div class="ttname"><a href="classMockEsp32Adc.html">MockEsp32Adc</a></div><div class="ttdoc">Mock ADC implementation for testing.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:28</div></div>
-<div class="ttc" id="aclassMockEsp32Adc_html_a34feb932d5d1a680225e832c3ee9a472"><div class="ttname"><a href="classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472">MockEsp32Adc::IsChannelAvailable</a></div><div class="ttdeci">bool IsChannelAvailable(uint8_t channel) const</div><div class="ttdoc">Check if channel is available.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:68</div></div>
+<div class="ttc" id="aclassMockEsp32Adc_html_a34feb932d5d1a680225e832c3ee9a472"><div class="ttname"><a href="classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472">MockEsp32Adc::IsChannelAvailable</a></div><div class="ttdeci">bool IsChannelAvailable(uint8_t channel) const</div><div class="ttdoc">Check if channel is available.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:70</div></div>
 <div class="ttc" id="aclassMockEsp32Adc_html_a3703344d06d3913d15ae760966c18441"><div class="ttname"><a href="classMockEsp32Adc.html#a3703344d06d3913d15ae760966c18441">MockEsp32Adc::~MockEsp32Adc</a></div><div class="ttdeci">~MockEsp32Adc()=default</div><div class="ttdoc">Destructor.</div></div>
-<div class="ttc" id="aclassMockEsp32Adc_html_a3c511e67fe8b09afc568ce14ea8d0a1d"><div class="ttname"><a href="classMockEsp32Adc.html#a3c511e67fe8b09afc568ce14ea8d0a1d">MockEsp32Adc::GetResolutionBits</a></div><div class="ttdeci">uint8_t GetResolutionBits() const</div><div class="ttdoc">Get ADC resolution.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:142</div></div>
-<div class="ttc" id="aclassMockEsp32Adc_html_a47e052c240bf1a3df95f002373786d21"><div class="ttname"><a href="classMockEsp32Adc.html#a47e052c240bf1a3df95f002373786d21">MockEsp32Adc::IsInitialized</a></div><div class="ttdeci">bool IsInitialized() const</div><div class="ttdoc">Check if ADC is initialized.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:48</div></div>
-<div class="ttc" id="aclassMockEsp32Adc_html_a5bec97dace7d51487ea64ae4aaa4442f"><div class="ttname"><a href="classMockEsp32Adc.html#a5bec97dace7d51487ea64ae4aaa4442f">MockEsp32Adc::MockEsp32Adc</a></div><div class="ttdeci">MockEsp32Adc(float reference_voltage=3.3f, uint8_t resolution_bits=12)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:35</div></div>
-<div class="ttc" id="aclassMockEsp32Adc_html_a853d99a55edf601b8859d0985d64be8f"><div class="ttname"><a href="classMockEsp32Adc.html#a853d99a55edf601b8859d0985d64be8f">MockEsp32Adc::EnsureInitialized</a></div><div class="ttdeci">bool EnsureInitialized()</div><div class="ttdoc">Ensure ADC is initialized.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:56</div></div>
-<div class="ttc" id="aclassMockEsp32Adc_html_a85462408c5fa1d65da6a73eb8d70491d"><div class="ttname"><a href="classMockEsp32Adc.html#a85462408c5fa1d65da6a73eb8d70491d">MockEsp32Adc::ReadChannelCount</a></div><div class="ttdeci">NTC::AdcError ReadChannelCount(uint8_t channel, uint32_t *count)</div><div class="ttdoc">Read raw ADC count.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:79</div></div>
+<div class="ttc" id="aclassMockEsp32Adc_html_a3c511e67fe8b09afc568ce14ea8d0a1d"><div class="ttname"><a href="classMockEsp32Adc.html#a3c511e67fe8b09afc568ce14ea8d0a1d">MockEsp32Adc::GetResolutionBits</a></div><div class="ttdeci">uint8_t GetResolutionBits() const</div><div class="ttdoc">Get ADC resolution.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:144</div></div>
+<div class="ttc" id="aclassMockEsp32Adc_html_a47e052c240bf1a3df95f002373786d21"><div class="ttname"><a href="classMockEsp32Adc.html#a47e052c240bf1a3df95f002373786d21">MockEsp32Adc::IsInitialized</a></div><div class="ttdeci">bool IsInitialized() const</div><div class="ttdoc">Check if ADC is initialized.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:52</div></div>
+<div class="ttc" id="aclassMockEsp32Adc_html_a853d99a55edf601b8859d0985d64be8f"><div class="ttname"><a href="classMockEsp32Adc.html#a853d99a55edf601b8859d0985d64be8f">MockEsp32Adc::EnsureInitialized</a></div><div class="ttdeci">bool EnsureInitialized()</div><div class="ttdoc">Ensure ADC is initialized.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:58</div></div>
+<div class="ttc" id="aclassMockEsp32Adc_html_a85462408c5fa1d65da6a73eb8d70491d"><div class="ttname"><a href="classMockEsp32Adc.html#a85462408c5fa1d65da6a73eb8d70491d">MockEsp32Adc::ReadChannelCount</a></div><div class="ttdeci">NTC::AdcError ReadChannelCount(uint8_t channel, uint32_t *count)</div><div class="ttdoc">Read raw ADC count.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:81</div></div>
 <div class="ttc" id="aclassMockEsp32Adc_html_a9495939a768b2388384cfc1a4d0df1e3"><div class="ttname"><a href="classMockEsp32Adc.html#a9495939a768b2388384cfc1a4d0df1e3">MockEsp32Adc::SetSimulatedVoltage</a></div><div class="ttdeci">void SetSimulatedVoltage(float voltage)</div><div class="ttdoc">Set simulated voltage for testing.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:150</div></div>
+<div class="ttc" id="aclassMockEsp32Adc_html_ab2ac54874f4df76df9fe04de7b35b73f"><div class="ttname"><a href="classMockEsp32Adc.html#ab2ac54874f4df76df9fe04de7b35b73f">MockEsp32Adc::MockEsp32Adc</a></div><div class="ttdeci">MockEsp32Adc(float reference_voltage=3.3F, uint8_t resolution_bits=12)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:37</div></div>
 <div class="ttc" id="aclassMockEsp32Adc_html_ab6925fdf99d2cca6c64fb3e1aec4e7fc"><div class="ttname"><a href="classMockEsp32Adc.html#ab6925fdf99d2cca6c64fb3e1aec4e7fc">MockEsp32Adc::Initialize</a></div><div class="ttdeci">bool Initialize()</div><div class="ttdoc">Initialize the mock ADC.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:164</div></div>
-<div class="ttc" id="aclassMockEsp32Adc_html_ac43c0b6c7df753218e40e9ab0e769dd5"><div class="ttname"><a href="classMockEsp32Adc.html#ac43c0b6c7df753218e40e9ab0e769dd5">MockEsp32Adc::GetReferenceVoltage</a></div><div class="ttdeci">float GetReferenceVoltage() const</div><div class="ttdoc">Get reference voltage.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:134</div></div>
-<div class="ttc" id="aclassMockEsp32Adc_html_ad933f3885316b55a50907a4f7f19ec61"><div class="ttname"><a href="classMockEsp32Adc.html#ad933f3885316b55a50907a4f7f19ec61">MockEsp32Adc::ReadChannelV</a></div><div class="ttdeci">NTC::AdcError ReadChannelV(uint8_t channel, float *voltage_v)</div><div class="ttdoc">Read voltage from ADC channel.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:105</div></div>
-<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a></div><div class="ttdoc">CRTP-based template interface for ADC operations.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:57</div></div>
-<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a></div><div class="ttdeci">AdcError</div><div class="ttdoc">ADC error codes.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:23</div></div>
-<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03a02de9649e258d1dd94056e676061e969"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a02de9649e258d1dd94056e676061e969">NTC::AdcError::NOT_INITIALIZED</a></div><div class="ttdeci">@ NOT_INITIALIZED</div><div class="ttdoc">ADC not initialized.</div></div>
-<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03a141b94509ad9973b5ff2f08830956e07"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a141b94509ad9973b5ff2f08830956e07">NTC::AdcError::INVALID_CHANNEL</a></div><div class="ttdeci">@ INVALID_CHANNEL</div><div class="ttdoc">Invalid ADC channel.</div></div>
-<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03a89fe56ed105248667fe799031276ab23"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a89fe56ed105248667fe799031276ab23">NTC::AdcError::HARDWARE_ERROR</a></div><div class="ttdeci">@ HARDWARE_ERROR</div><div class="ttdoc">Hardware-level error.</div></div>
-<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03ad0749aaba8b833466dfcbb0428e4f89c"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03ad0749aaba8b833466dfcbb0428e4f89c">NTC::AdcError::SUCCESS</a></div><div class="ttdeci">@ SUCCESS</div><div class="ttdoc">Operation successful.</div></div>
+<div class="ttc" id="aclassMockEsp32Adc_html_ac43c0b6c7df753218e40e9ab0e769dd5"><div class="ttname"><a href="classMockEsp32Adc.html#ac43c0b6c7df753218e40e9ab0e769dd5">MockEsp32Adc::GetReferenceVoltage</a></div><div class="ttdeci">float GetReferenceVoltage() const</div><div class="ttdoc">Get reference voltage.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:138</div></div>
+<div class="ttc" id="aclassMockEsp32Adc_html_ad933f3885316b55a50907a4f7f19ec61"><div class="ttname"><a href="classMockEsp32Adc.html#ad933f3885316b55a50907a4f7f19ec61">MockEsp32Adc::ReadChannelV</a></div><div class="ttdeci">NTC::AdcError ReadChannelV(uint8_t channel, float *voltage_v)</div><div class="ttdoc">Read voltage from ADC channel.</div><div class="ttdef"><b>Definition</b> MockEsp32Adc.h:108</div></div>
+<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a></div><div class="ttdoc">CRTP-based template interface for ADC operations.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:58</div></div>
+<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a></div><div class="ttdeci">AdcError</div><div class="ttdoc">ADC error codes.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:25</div></div>
+<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03">NTC::AdcError::HardwareError</a></div><div class="ttdeci">@ HardwareError</div><div class="ttdoc">Hardware-level error.</div></div>
+<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38">NTC::AdcError::Success</a></div><div class="ttdeci">@ Success</div><div class="ttdoc">Operation successful.</div></div>
+<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4">NTC::AdcError::InvalidChannel</a></div><div class="ttdeci">@ InvalidChannel</div><div class="ttdoc">Invalid ADC channel.</div></div>
+<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6">NTC::AdcError::NotInitialized</a></div><div class="ttdeci">@ NotInitialized</div><div class="ttdoc">ADC not initialized.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

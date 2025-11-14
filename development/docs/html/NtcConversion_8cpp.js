@@ -1,8 +1,8 @@
 var NtcConversion_8cpp =
 [
-    [ "CalculateBetaValue", "NtcConversion_8cpp.html#ac4b3964149a9bfc632b9ad20feadcf56", null ],
+    [ "CalculateBetaValue", "NtcConversion_8cpp.html#a3aa1c0b7798e904490f700199d6beabb", null ],
     [ "CalculateOptimalSeriesResistance", "NtcConversion_8cpp.html#a260a070fbec159b99ca6cb53b94c4bab", null ],
-    [ "CalculateSteinhartHartCoefficients", "NtcConversion_8cpp.html#a0b5218798a344f0ff0f8971d1f7114dd", null ],
+    [ "CalculateSteinhartHartCoefficients", "NtcConversion_8cpp.html#ae5bf0e39d8f221537e40dd49da8e6648", null ],
     [ "CalculateTemperatureAccuracy", "NtcConversion_8cpp.html#aba47c745aa859f4d61c17aa771400c19", null ],
     [ "CalculateThermistorResistance", "NtcConversion_8cpp.html#a3dba5bc1207f378228c44251ebe2c0b1", null ],
     [ "CalculateThermistorVoltage", "NtcConversion_8cpp.html#a49a98f22f74a9627322087ff8696aaad", null ],

@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['calculatebetavalue_0',['CalculateBetaValue',['../namespaceNTC.html#ac4b3964149a9bfc632b9ad20feadcf56',1,'NTC']]],
+  ['calculatebetavalue_0',['CalculateBetaValue',['../namespaceNTC.html#a3aa1c0b7798e904490f700199d6beabb',1,'NTC']]],
   ['calculateoptimalseriesresistance_1',['CalculateOptimalSeriesResistance',['../namespaceNTC.html#a260a070fbec159b99ca6cb53b94c4bab',1,'NTC']]],
-  ['calculatesteinharthartcoefficients_2',['CalculateSteinhartHartCoefficients',['../namespaceNTC.html#a0b5218798a344f0ff0f8971d1f7114dd',1,'NTC']]],
+  ['calculatesteinharthartcoefficients_2',['CalculateSteinhartHartCoefficients',['../namespaceNTC.html#ae5bf0e39d8f221537e40dd49da8e6648',1,'NTC']]],
   ['calculatetemperatureaccuracy_3',['CalculateTemperatureAccuracy',['../namespaceNTC.html#aba47c745aa859f4d61c17aa771400c19',1,'NTC']]],
   ['calculatethermistorresistance_4',['CalculateThermistorResistance',['../namespaceNTC.html#a3dba5bc1207f378228c44251ebe2c0b1',1,'NTC']]],
   ['calculatethermistorvoltage_5',['CalculateThermistorVoltage',['../namespaceNTC.html#a49a98f22f74a9627322087ff8696aaad',1,'NTC']]],
   ['calculatevoltagedividerratio_6',['CalculateVoltageDividerRatio',['../namespaceNTC.html#a404bd477b5a2f7ae77570a0f28aa5a9e',1,'NTC']]],
-  ['calibrate_7',['Calibrate',['../classNtcThermistor.html#a96178e7ad8cf264cf28b2a2be22b6980',1,'NtcThermistor']]],
+  ['calibrate_7',['Calibrate',['../classNtcThermistor.html#aff226e4010c830261a9f1eab84beb302',1,'NtcThermistor']]],
   ['celsiustofahrenheit_8',['CelsiusToFahrenheit',['../classNtcThermistor.html#a9f1c76053ef3029a40a5aa25f2687105',1,'NtcThermistor']]],
   ['celsiustokelvin_9',['CelsiusToKelvin',['../classNtcThermistor.html#a3fe4d28a0ba0c7b59dfea1aa0d80a4bb',1,'NtcThermistor']]],
   ['cleanup_5ftest_5fprogress_5findicator_10',['cleanup_test_progress_indicator',['../TestFramework_8h.html#a5c86314094f10701c597cf07a95a4bae',1,'TestFramework.h']]],

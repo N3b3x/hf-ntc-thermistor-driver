@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['tag_0',['tag',['../structTestTaskContext.html#ae51f49c33ea802bc7f8bdde560a27304',1,'TestTaskContext']]],
-  ['temperature_5fcelsius_1',['temperature_celsius',['../structntc__lookup__entry__t.html#ad8678ddd8aeef1e7729e389b68627425',1,'ntc_lookup_entry_t::temperature_celsius'],['../structntc__reading__t.html#a9b9f6ee06ea49887efd8dbdac0268bff',1,'ntc_reading_t::temperature_celsius']]],
-  ['temperature_5ffahrenheit_2',['temperature_fahrenheit',['../structntc__reading__t.html#a9aecb844c8d8005347a6d71f1dc9a664',1,'ntc_reading_t']]],
-  ['temperature_5fkelvin_3',['temperature_kelvin',['../structntc__reading__t.html#a710b01fb1bf264b2821403509ec57e77',1,'ntc_reading_t']]],
-  ['test_5ffunc_4',['test_func',['../structTestTaskContext.html#aa72faa223fd0ff992772b12458f62ec8',1,'TestTaskContext']]],
-  ['test_5fname_5',['test_name',['../structTestTaskContext.html#abcf19d2762ab98990c3fdc1eacf86130',1,'TestTaskContext']]],
-  ['timestamp_5fus_6',['timestamp_us',['../structntc__reading__t.html#ab2233cc82368b63a9b6fd0a3e81eacee',1,'ntc_reading_t']]],
-  ['total_5fexecution_5ftime_5fus_7',['total_execution_time_us',['../structTestResults.html#a7eddc258a4288ac5f0a36a1008c9d014',1,'TestResults']]],
-  ['total_5ftests_8',['total_tests',['../structTestResults.html#afe20b168a13950ffca7296c0c56d4359',1,'TestResults']]],
-  ['type_9',['type',['../structntc__config__t.html#a3062d766b9ed0e324d4b70905cc2b03d',1,'ntc_config_t']]]
+  ['reference_5ftemperature_5fc_5f_0',['REFERENCE_TEMPERATURE_C_',['../namespaceNTC_1_1Constants.html#ac7835186987a5e507df73fb03e86e0a6',1,'NTC::Constants']]],
+  ['reference_5fvoltage_1',['reference_voltage',['../structntc__config__t.html#a316c032b5d95fdbe5ac5e0f95ad3344d',1,'ntc_config_t']]],
+  ['resistance_5fat_5f25c_2',['resistance_at_25c',['../structntc__config__t.html#a98b465db8acf050066f820204513f613',1,'ntc_config_t']]],
+  ['resistance_5fohms_3',['resistance_ohms',['../structNTC_1_1ntc__lookup__entry__t.html#a218566c61426646cb1b44922715d12da',1,'NTC::ntc_lookup_entry_t::resistance_ohms'],['../structntc__reading__t.html#ab6b28ef3b5ef7089a7aaba3762a2d1e0',1,'ntc_reading_t::resistance_ohms']]],
+  ['resistance_5fstep_4',['resistance_step',['../structNTC_1_1ntc__lookup__table__t.html#aa24942db1f9f994bb4a5b2e5cedf6437',1,'NTC::ntc_lookup_table_t']]],
+  ['results_5',['results',['../structTestTaskContext.html#a1c97680bd267a35637278ea10a3fae0e',1,'TestTaskContext']]]
 ];

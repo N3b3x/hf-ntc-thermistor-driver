@@ -1,7 +1,16 @@
 var searchData=
 [
-  ['enable_5ffiltering_0',['enable_filtering',['../structntc__config__t.html#a99b4a5952c2626e9c6fb19dd49f0d7c5',1,'ntc_config_t']]],
-  ['entries_1',['entries',['../structntc__lookup__table__t.html#acb28d46a864b456adb1824b57a893e2e',1,'ntc_lookup_table_t']]],
-  ['entry_5fcount_2',['entry_count',['../structntc__lookup__table__t.html#acb69f04344150bc76b4a67b70e8942eb',1,'ntc_lookup_table_t']]],
-  ['error_3',['error',['../structntc__reading__t.html#ad1f0fdb54c6ef0b6346e623f7225f9d0',1,'ntc_reading_t']]]
+  ['default_5fadc_5fchannel_5f_0',['DEFAULT_ADC_CHANNEL_',['../namespaceNTC_1_1DefaultConfig.html#ab2c9e30c3e5cc6baf0ecdf20c80c08a6',1,'NTC::DefaultConfig']]],
+  ['default_5fadc_5fresolution_5fbits_5f_1',['DEFAULT_ADC_RESOLUTION_BITS_',['../namespaceNTC_1_1DefaultConfig.html#aad84d529485b3c5ff4b0dae8b1bd82b7',1,'NTC::DefaultConfig']]],
+  ['default_5fbeta_5fvalue_5f_2',['DEFAULT_BETA_VALUE_',['../namespaceNTC_1_1DefaultConfig.html#a31c4d7effc30e1417e5190d308f9435b',1,'NTC::DefaultConfig']]],
+  ['default_5fcalibration_5foffset_5f_3',['DEFAULT_CALIBRATION_OFFSET_',['../namespaceNTC_1_1DefaultConfig.html#a6c35d753be62f1abf14d2e4cef82f15f',1,'NTC::DefaultConfig']]],
+  ['default_5fenable_5ffiltering_5f_4',['DEFAULT_ENABLE_FILTERING_',['../namespaceNTC_1_1DefaultConfig.html#a1f7026007a8706caa3f827f9cf3f4a1f',1,'NTC::DefaultConfig']]],
+  ['default_5ffilter_5falpha_5f_5',['DEFAULT_FILTER_ALPHA_',['../namespaceNTC_1_1DefaultConfig.html#a68bf50d7fcccb5abe8023c0c346c578a',1,'NTC::DefaultConfig']]],
+  ['default_5fmax_5ftemperature_5f_6',['DEFAULT_MAX_TEMPERATURE_',['../namespaceNTC_1_1DefaultConfig.html#ade18d2319bbd9972f3080b4698256eaf',1,'NTC::DefaultConfig']]],
+  ['default_5fmin_5ftemperature_5f_7',['DEFAULT_MIN_TEMPERATURE_',['../namespaceNTC_1_1DefaultConfig.html#a14e7188593993a7df151a6874aaa9887',1,'NTC::DefaultConfig']]],
+  ['default_5freference_5fvoltage_5f_8',['DEFAULT_REFERENCE_VOLTAGE_',['../namespaceNTC_1_1DefaultConfig.html#a98371f2911f7eaed769fa125dfcec3a0',1,'NTC::DefaultConfig']]],
+  ['default_5fresistance_5fat_5f25c_5f_9',['DEFAULT_RESISTANCE_AT_25C_',['../namespaceNTC_1_1DefaultConfig.html#adbd76fc576906fd4ad887b170ebc08fa',1,'NTC::DefaultConfig']]],
+  ['default_5fsample_5fcount_5f_10',['DEFAULT_SAMPLE_COUNT_',['../namespaceNTC_1_1DefaultConfig.html#a50641dda199863eacfe8495e4a39a31e',1,'NTC::DefaultConfig']]],
+  ['default_5fsample_5fdelay_5fms_5f_11',['DEFAULT_SAMPLE_DELAY_MS_',['../namespaceNTC_1_1DefaultConfig.html#aef8164bc9ecc9c72b96c7beca6cefc40',1,'NTC::DefaultConfig']]],
+  ['default_5fseries_5fresistance_5f_12',['DEFAULT_SERIES_RESISTANCE_',['../namespaceNTC_1_1DefaultConfig.html#afddec17c4619b5c66f6bf6d3b2cb6eec',1,'NTC::DefaultConfig']]]
 ];

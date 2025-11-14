@@ -1,7 +1,7 @@
 var searchData=
 [
   ['validatebetavalue_0',['ValidateBetaValue',['../namespaceNTC.html#a895ef2228af8265dd4bb03c8893bdf79',1,'NTC']]],
-  ['validatelookuptable_1',['ValidateLookupTable',['../NtcLookupTable_8cpp.html#ab888aae07b143eb64a7e86360a42eacf',1,'ValidateLookupTable(const ntc_lookup_table_t *table) noexcept:&#160;NtcLookupTable.cpp'],['../NtcLookupTable_8h.html#ab888aae07b143eb64a7e86360a42eacf',1,'ValidateLookupTable(const ntc_lookup_table_t *table) noexcept:&#160;NtcLookupTable.cpp']]],
+  ['validatelookuptable_1',['ValidateLookupTable',['../NtcLookupTable_8cpp.html#ab888aae07b143eb64a7e86360a42eacf',1,'ValidateLookupTable():&#160;NtcLookupTable.cpp'],['../namespaceNTC.html#aa04b45d9a1c58a0031d7278be9a1978a',1,'NTC::ValidateLookupTable(const ntc_lookup_table_t *table) noexcept']]],
   ['validateresistance_2',['ValidateResistance',['../namespaceNTC.html#a0a9d814d0b847ab45a21a8af0a32052f',1,'NTC']]],
   ['validatesteinharthartcoefficients_3',['ValidateSteinhartHartCoefficients',['../namespaceNTC.html#ae1e1ac0e9f0bc8f3e50f10b216c89ebe',1,'NTC']]],
   ['validatetemperature_4',['ValidateTemperature',['../namespaceNTC.html#a80214511ed3af0a94ef16e14829f88c0',1,'NTC']]],

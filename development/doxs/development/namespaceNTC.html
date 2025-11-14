@@ -103,7 +103,6 @@ $(function(){initNavTree('namespaceNTC.html',''); initResizable(); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceNTC_1_1Constants" id="r_namespaceNTC_1_1Constants"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html">Constants</a></td></tr>
-<tr class="memdesc:namespaceNTC_1_1Constants"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical constants for <a class="el" href="namespaceNTC.html">NTC</a> calculations. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceNTC_1_1DefaultConfig" id="r_namespaceNTC_1_1DefaultConfig"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1DefaultConfig.html">DefaultConfig</a></td></tr>
 <tr class="memdesc:namespaceNTC_1_1DefaultConfig"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default <a class="el" href="namespaceNTC.html">NTC</a> configuration constants. <br /></td></tr>
@@ -111,6 +110,12 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNTC_1_1ntc__lookup__entry__t.html">ntc_lookup_entry_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup table entry structure.  <a href="structNTC_1_1ntc__lookup__entry__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup table structure.  <a href="structNTC_1_1ntc__lookup__table__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRTP-based template interface for ADC operations.  <a href="classNTC_1_1NtcAdcInterface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,13 +123,13 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a38b88f41b2a4e17b568fa3edfdde6b03" id="r_a38b88f41b2a4e17b568fa3edfdde6b03"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03">AdcError</a> : uint8_t { <br />
-&#160;&#160;<a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03ad0749aaba8b833466dfcbb0428e4f89c">SUCCESS</a> = 0
-, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a02de9649e258d1dd94056e676061e969">NOT_INITIALIZED</a>
-, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a141b94509ad9973b5ff2f08830956e07">INVALID_CHANNEL</a>
-, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a82fbe87835b941addda10c26ff6e98d6">READ_FAILED</a>
+&#160;&#160;<a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38">Success</a> = 0
+, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6">NotInitialized</a>
+, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4">InvalidChannel</a>
+, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a723ee677cab1d41ba376d588d78146ed">ReadFailed</a>
 , <br />
-&#160;&#160;<a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a070a0fb40f6c308ab544b227660aadff">TIMEOUT</a>
-, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a89fe56ed105248667fe799031276ab23">HARDWARE_ERROR</a>
+&#160;&#160;<a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03ac85a251cc457840f1e032f1b733e9398">Timeout</a>
+, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03">HardwareError</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a38b88f41b2a4e17b568fa3edfdde6b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC error codes.  <a href="#a38b88f41b2a4e17b568fa3edfdde6b03">More...</a><br /></td></tr>
@@ -174,18 +179,48 @@ Functions</h2></td></tr>
 <tr class="memitem:ae1e1ac0e9f0bc8f3e50f10b216c89ebe" id="r_ae1e1ac0e9f0bc8f3e50f10b216c89ebe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1e1ac0e9f0bc8f3e50f10b216c89ebe">ValidateSteinhartHartCoefficients</a> (float coeff_a, float coeff_b, float coeff_c) noexcept</td></tr>
 <tr class="memdesc:ae1e1ac0e9f0bc8f3e50f10b216c89ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate Steinhart-Hart coefficients.  <br /></td></tr>
 <tr class="separator:ae1e1ac0e9f0bc8f3e50f10b216c89ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4b3964149a9bfc632b9ad20feadcf56" id="r_ac4b3964149a9bfc632b9ad20feadcf56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4b3964149a9bfc632b9ad20feadcf56">CalculateBetaValue</a> (float t1, float r1, float t2, float r2, float *beta_value) noexcept</td></tr>
-<tr class="memdesc:ac4b3964149a9bfc632b9ad20feadcf56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate beta value from two temperature-resistance pairs.  <br /></td></tr>
-<tr class="separator:ac4b3964149a9bfc632b9ad20feadcf56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b5218798a344f0ff0f8971d1f7114dd" id="r_a0b5218798a344f0ff0f8971d1f7114dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b5218798a344f0ff0f8971d1f7114dd">CalculateSteinhartHartCoefficients</a> (float t1, float r1, float t2, float r2, float t3, float r3, float *coeff_a, float *coeff_b, float *coeff_c) noexcept</td></tr>
-<tr class="memdesc:a0b5218798a344f0ff0f8971d1f7114dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Steinhart-Hart coefficients from three temperature-resistance pairs.  <br /></td></tr>
-<tr class="separator:a0b5218798a344f0ff0f8971d1f7114dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa1c0b7798e904490f700199d6beabb" id="r_a3aa1c0b7798e904490f700199d6beabb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3aa1c0b7798e904490f700199d6beabb">CalculateBetaValue</a> (float temp1_celsius, float resistance1_ohms, float temp2_celsius, float resistance2_ohms, float *beta_value) noexcept</td></tr>
+<tr class="memdesc:a3aa1c0b7798e904490f700199d6beabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate beta value from two temperature-resistance pairs.  <br /></td></tr>
+<tr class="separator:a3aa1c0b7798e904490f700199d6beabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5bf0e39d8f221537e40dd49da8e6648" id="r_ae5bf0e39d8f221537e40dd49da8e6648"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5bf0e39d8f221537e40dd49da8e6648">CalculateSteinhartHartCoefficients</a> (float temp1_celsius, float resistance1_ohms, float temp2_celsius, float resistance2_ohms, float temp3_celsius, float resistance3_ohms, float *coeff_a, float *coeff_b, float *coeff_c) noexcept</td></tr>
+<tr class="memdesc:ae5bf0e39d8f221537e40dd49da8e6648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Steinhart-Hart coefficients from three temperature-resistance pairs.  <br /></td></tr>
+<tr class="separator:ae5bf0e39d8f221537e40dd49da8e6648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba47c745aa859f4d61c17aa771400c19" id="r_aba47c745aa859f4d61c17aa771400c19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba47c745aa859f4d61c17aa771400c19">CalculateTemperatureAccuracy</a> (float resistance_ohms, float resistance_tolerance, float beta_tolerance, float *accuracy_celsius) noexcept</td></tr>
 <tr class="memdesc:aba47c745aa859f4d61c17aa771400c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate temperature accuracy estimate.  <br /></td></tr>
 <tr class="separator:aba47c745aa859f4d61c17aa771400c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a260a070fbec159b99ca6cb53b94c4bab" id="r_a260a070fbec159b99ca6cb53b94c4bab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a260a070fbec159b99ca6cb53b94c4bab">CalculateOptimalSeriesResistance</a> (float thermistor_resistance_at_25c, float min_temperature, float max_temperature, float *optimal_resistance) noexcept</td></tr>
 <tr class="memdesc:a260a070fbec159b99ca6cb53b94c4bab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate optimal series resistance for voltage divider.  <br /></td></tr>
 <tr class="separator:a260a070fbec159b99ca6cb53b94c4bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f4370d062be80682f51e690d7033cb" id="r_ae9f4370d062be80682f51e690d7033cb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9f4370d062be80682f51e690d7033cb">GetNtcLookupTable</a> (int ntc_type) noexcept</td></tr>
+<tr class="memdesc:ae9f4370d062be80682f51e690d7033cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lookup table for <a class="el" href="namespaceNTC.html">NTC</a> type.  <br /></td></tr>
+<tr class="separator:ae9f4370d062be80682f51e690d7033cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03641f0b725bcdc1f76d2c21bd77b887" id="r_a03641f0b725bcdc1f76d2c21bd77b887"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03641f0b725bcdc1f76d2c21bd77b887">FindTemperatureFromLookupTable</a> (const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *table, float resistance_ohms, float *temperature_celsius) noexcept</td></tr>
+<tr class="memdesc:a03641f0b725bcdc1f76d2c21bd77b887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find temperature using lookup table.  <br /></td></tr>
+<tr class="separator:a03641f0b725bcdc1f76d2c21bd77b887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6553b07d26df8eb952a9435b0733c346" id="r_a6553b07d26df8eb952a9435b0733c346"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6553b07d26df8eb952a9435b0733c346">FindResistanceFromLookupTable</a> (const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *table, float temperature_celsius, float *resistance_ohms) noexcept</td></tr>
+<tr class="memdesc:a6553b07d26df8eb952a9435b0733c346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find resistance using lookup table.  <br /></td></tr>
+<tr class="separator:a6553b07d26df8eb952a9435b0733c346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7040106672a420a4d9fc81604e12ff" id="r_a9a7040106672a420a4d9fc81604e12ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a7040106672a420a4d9fc81604e12ff">InterpolateLookupEntries</a> (const <a class="el" href="structNTC_1_1ntc__lookup__entry__t.html">ntc_lookup_entry_t</a> &amp;entry1, const <a class="el" href="structNTC_1_1ntc__lookup__entry__t.html">ntc_lookup_entry_t</a> &amp;entry2, float resistance_ohms, float *temperature_celsius) noexcept</td></tr>
+<tr class="memdesc:a9a7040106672a420a4d9fc81604e12ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate between two lookup table entries.  <br /></td></tr>
+<tr class="separator:a9a7040106672a420a4d9fc81604e12ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada06b0b3be062dec1351057d2a30ad7b" id="r_ada06b0b3be062dec1351057d2a30ad7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada06b0b3be062dec1351057d2a30ad7b">BinarySearchLookupTable</a> (const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *table, float resistance_ohms, size_t *lower_index, size_t *upper_index) noexcept</td></tr>
+<tr class="memdesc:ada06b0b3be062dec1351057d2a30ad7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binary search in lookup table.  <br /></td></tr>
+<tr class="separator:ada06b0b3be062dec1351057d2a30ad7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa04b45d9a1c58a0031d7278be9a1978a" id="r_aa04b45d9a1c58a0031d7278be9a1978a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa04b45d9a1c58a0031d7278be9a1978a">ValidateLookupTable</a> (const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *table) noexcept</td></tr>
+<tr class="memdesc:aa04b45d9a1c58a0031d7278be9a1978a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate lookup table.  <br /></td></tr>
+<tr class="separator:aa04b45d9a1c58a0031d7278be9a1978a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97153a082bce98d23da1dd159e00b29e" id="r_a97153a082bce98d23da1dd159e00b29e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97153a082bce98d23da1dd159e00b29e">GetLookupTableStats</a> (const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *table, float *min_resistance, float *max_resistance, float *min_temperature, float *max_temperature, size_t *entry_count) noexcept</td></tr>
+<tr class="memdesc:a97153a082bce98d23da1dd159e00b29e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lookup table statistics.  <br /></td></tr>
+<tr class="separator:a97153a082bce98d23da1dd159e00b29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ca7327314a4d0f8a041fc904f332ac2" id="r_a0ca7327314a4d0f8a041fc904f332ac2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ca7327314a4d0f8a041fc904f332ac2">GetNtcG163Jft103Ft1sLookupTable</a> () noexcept</td></tr>
+<tr class="memdesc:a0ca7327314a4d0f8a041fc904f332ac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get NTCG163JFT103FT1S lookup table.  <br /></td></tr>
+<tr class="separator:a0ca7327314a4d0f8a041fc904f332ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f1182493f0efa43e9c7cd93abab1c0" id="r_a12f1182493f0efa43e9c7cd93abab1c0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12f1182493f0efa43e9c7cd93abab1c0">GetNtcG164Jf103Ft1sLookupTable</a> () noexcept</td></tr>
+<tr class="memdesc:a12f1182493f0efa43e9c7cd93abab1c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get NTCG164JF103FT1S lookup table.  <br /></td></tr>
+<tr class="separator:a12f1182493f0efa43e9c7cd93abab1c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b6cb12400525c268d9bf212b6e73d36" id="r_a1b6cb12400525c268d9bf212b6e73d36"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b6cb12400525c268d9bf212b6e73d36">GetNtcG163Jf103Ft1sLookupTable</a> () noexcept</td></tr>
+<tr class="memdesc:a1b6cb12400525c268d9bf212b6e73d36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get NTCG163JF103FT1S lookup table.  <br /></td></tr>
+<tr class="separator:a1b6cb12400525c268d9bf212b6e73d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a38b88f41b2a4e17b568fa3edfdde6b03" name="a38b88f41b2a4e17b568fa3edfdde6b03"></a>
@@ -210,25 +245,76 @@ Functions</h2></td></tr>
 
 <p>ADC error codes. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03ad0749aaba8b833466dfcbb0428e4f89c" name="a38b88f41b2a4e17b568fa3edfdde6b03ad0749aaba8b833466dfcbb0428e4f89c"></a>SUCCESS&#160;</td><td class="fielddoc"><p>Operation successful. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38" name="a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38"></a>Success&#160;</td><td class="fielddoc"><p>Operation successful. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a02de9649e258d1dd94056e676061e969" name="a38b88f41b2a4e17b568fa3edfdde6b03a02de9649e258d1dd94056e676061e969"></a>NOT_INITIALIZED&#160;</td><td class="fielddoc"><p>ADC not initialized. </p>
+<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6" name="a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6"></a>NotInitialized&#160;</td><td class="fielddoc"><p>ADC not initialized. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a141b94509ad9973b5ff2f08830956e07" name="a38b88f41b2a4e17b568fa3edfdde6b03a141b94509ad9973b5ff2f08830956e07"></a>INVALID_CHANNEL&#160;</td><td class="fielddoc"><p>Invalid ADC channel. </p>
+<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4" name="a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4"></a>InvalidChannel&#160;</td><td class="fielddoc"><p>Invalid ADC channel. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a82fbe87835b941addda10c26ff6e98d6" name="a38b88f41b2a4e17b568fa3edfdde6b03a82fbe87835b941addda10c26ff6e98d6"></a>READ_FAILED&#160;</td><td class="fielddoc"><p>ADC read operation failed. </p>
+<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a723ee677cab1d41ba376d588d78146ed" name="a38b88f41b2a4e17b568fa3edfdde6b03a723ee677cab1d41ba376d588d78146ed"></a>ReadFailed&#160;</td><td class="fielddoc"><p>ADC read operation failed. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a070a0fb40f6c308ab544b227660aadff" name="a38b88f41b2a4e17b568fa3edfdde6b03a070a0fb40f6c308ab544b227660aadff"></a>TIMEOUT&#160;</td><td class="fielddoc"><p>Operation timeout. </p>
+<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03ac85a251cc457840f1e032f1b733e9398" name="a38b88f41b2a4e17b568fa3edfdde6b03ac85a251cc457840f1e032f1b733e9398"></a>Timeout&#160;</td><td class="fielddoc"><p>Operation timeout. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a89fe56ed105248667fe799031276ab23" name="a38b88f41b2a4e17b568fa3edfdde6b03a89fe56ed105248667fe799031276ab23"></a>HARDWARE_ERROR&#160;</td><td class="fielddoc"><p>Hardware-level error. </p>
+<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03" name="a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03"></a>HardwareError&#160;</td><td class="fielddoc"><p>Hardware-level error. </p>
 </td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ac4b3964149a9bfc632b9ad20feadcf56" name="ac4b3964149a9bfc632b9ad20feadcf56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4b3964149a9bfc632b9ad20feadcf56">&#9670;&#160;</a></span>CalculateBetaValue()</h2>
+<a id="ada06b0b3be062dec1351057d2a30ad7b" name="ada06b0b3be062dec1351057d2a30ad7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada06b0b3be062dec1351057d2a30ad7b">&#9670;&#160;</a></span>BinarySearchLookupTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::BinarySearchLookupTable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *</td>          <td class="paramname"><span class="paramname"><em>lower_index</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *</td>          <td class="paramname"><span class="paramname"><em>upper_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Binary search in lookup table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>Lookup table </td></tr>
+    <tr><td class="paramname">resistance_ohms</td><td>Target resistance </td></tr>
+    <tr><td class="paramname">lower_index</td><td>Pointer to store lower index </td></tr>
+    <tr><td class="paramname">upper_index</td><td>Pointer to store upper index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if found, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a3aa1c0b7798e904490f700199d6beabb" name="a3aa1c0b7798e904490f700199d6beabb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aa1c0b7798e904490f700199d6beabb">&#9670;&#160;</a></span>CalculateBetaValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,22 +325,22 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool NTC::CalculateBetaValue </td>
           <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t1</em>, </span></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>temp1_celsius</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>r1</em>, </span></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance1_ohms</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t2</em>, </span></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>temp2_celsius</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>r2</em>, </span></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance2_ohms</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -272,10 +358,10 @@ Functions</h2></td></tr>
 <p>Calculate beta value from two temperature-resistance pairs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t1</td><td>First temperature (°C) </td></tr>
-    <tr><td class="paramname">r1</td><td>First resistance (ohms) </td></tr>
-    <tr><td class="paramname">t2</td><td>Second temperature (°C) </td></tr>
-    <tr><td class="paramname">r2</td><td>Second resistance (ohms) </td></tr>
+    <tr><td class="paramname">temp1_celsius</td><td>First temperature (°C) </td></tr>
+    <tr><td class="paramname">resistance1_ohms</td><td>First resistance (ohms) </td></tr>
+    <tr><td class="paramname">temp2_celsius</td><td>Second temperature (°C) </td></tr>
+    <tr><td class="paramname">resistance2_ohms</td><td>Second resistance (ohms) </td></tr>
     <tr><td class="paramname">beta_value</td><td>Pointer to store calculated beta value </td></tr>
   </table>
   </dd>
@@ -335,8 +421,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0b5218798a344f0ff0f8971d1f7114dd" name="a0b5218798a344f0ff0f8971d1f7114dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b5218798a344f0ff0f8971d1f7114dd">&#9670;&#160;</a></span>CalculateSteinhartHartCoefficients()</h2>
+<a id="ae5bf0e39d8f221537e40dd49da8e6648" name="ae5bf0e39d8f221537e40dd49da8e6648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5bf0e39d8f221537e40dd49da8e6648">&#9670;&#160;</a></span>CalculateSteinhartHartCoefficients()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,32 +433,32 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool NTC::CalculateSteinhartHartCoefficients </td>
           <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t1</em>, </span></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>temp1_celsius</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>r1</em>, </span></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance1_ohms</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t2</em>, </span></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>temp2_celsius</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>r2</em>, </span></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance2_ohms</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t3</em>, </span></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>temp3_celsius</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>r3</em>, </span></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance3_ohms</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -400,15 +486,15 @@ Functions</h2></td></tr>
 <p>Calculate Steinhart-Hart coefficients from three temperature-resistance pairs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t1</td><td>First temperature (°C) </td></tr>
-    <tr><td class="paramname">r1</td><td>First resistance (ohms) </td></tr>
-    <tr><td class="paramname">t2</td><td>Second temperature (°C) </td></tr>
-    <tr><td class="paramname">r2</td><td>Second resistance (ohms) </td></tr>
-    <tr><td class="paramname">t3</td><td>Third temperature (°C) </td></tr>
-    <tr><td class="paramname">r3</td><td>Third resistance (ohms) </td></tr>
-    <tr><td class="paramname">a</td><td>Pointer to store coefficient A </td></tr>
-    <tr><td class="paramname">b</td><td>Pointer to store coefficient B </td></tr>
-    <tr><td class="paramname">c</td><td>Pointer to store coefficient C </td></tr>
+    <tr><td class="paramname">temp1_celsius</td><td>First temperature (°C) </td></tr>
+    <tr><td class="paramname">resistance1_ohms</td><td>First resistance (ohms) </td></tr>
+    <tr><td class="paramname">temp2_celsius</td><td>Second temperature (°C) </td></tr>
+    <tr><td class="paramname">resistance2_ohms</td><td>Second resistance (ohms) </td></tr>
+    <tr><td class="paramname">temp3_celsius</td><td>Third temperature (°C) </td></tr>
+    <tr><td class="paramname">resistance3_ohms</td><td>Third resistance (ohms) </td></tr>
+    <tr><td class="paramname">coeff_a</td><td>Pointer to store coefficient A </td></tr>
+    <tr><td class="paramname">coeff_b</td><td>Pointer to store coefficient B </td></tr>
+    <tr><td class="paramname">coeff_c</td><td>Pointer to store coefficient C </td></tr>
   </table>
   </dd>
 </dl>
@@ -915,6 +1001,329 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6553b07d26df8eb952a9435b0733c346" name="a6553b07d26df8eb952a9435b0733c346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6553b07d26df8eb952a9435b0733c346">&#9670;&#160;</a></span>FindResistanceFromLookupTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::FindResistanceFromLookupTable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find resistance using lookup table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>Lookup table </td></tr>
+    <tr><td class="paramname">temperature_celsius</td><td>Temperature value </td></tr>
+    <tr><td class="paramname">resistance_ohms</td><td>Pointer to store resistance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if found, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a03641f0b725bcdc1f76d2c21bd77b887" name="a03641f0b725bcdc1f76d2c21bd77b887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03641f0b725bcdc1f76d2c21bd77b887">&#9670;&#160;</a></span>FindTemperatureFromLookupTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::FindTemperatureFromLookupTable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find temperature using lookup table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>Lookup table </td></tr>
+    <tr><td class="paramname">resistance_ohms</td><td>Resistance value </td></tr>
+    <tr><td class="paramname">temperature_celsius</td><td>Pointer to store temperature </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if found, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a97153a082bce98d23da1dd159e00b29e" name="a97153a082bce98d23da1dd159e00b29e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97153a082bce98d23da1dd159e00b29e">&#9670;&#160;</a></span>GetLookupTableStats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NTC::GetLookupTableStats </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>min_resistance</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>max_resistance</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>min_temperature</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>max_temperature</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *</td>          <td class="paramname"><span class="paramname"><em>entry_count</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get lookup table statistics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>Lookup table </td></tr>
+    <tr><td class="paramname">min_resistance</td><td>Pointer to store minimum resistance </td></tr>
+    <tr><td class="paramname">max_resistance</td><td>Pointer to store maximum resistance </td></tr>
+    <tr><td class="paramname">min_temperature</td><td>Pointer to store minimum temperature </td></tr>
+    <tr><td class="paramname">max_temperature</td><td>Pointer to store maximum temperature </td></tr>
+    <tr><td class="paramname">entry_count</td><td>Pointer to store entry count </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1b6cb12400525c268d9bf212b6e73d36" name="a1b6cb12400525c268d9bf212b6e73d36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b6cb12400525c268d9bf212b6e73d36">&#9670;&#160;</a></span>GetNtcG163Jf103Ft1sLookupTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> * NTC::GetNtcG163Jf103Ft1sLookupTable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get NTCG163JF103FT1S lookup table. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to lookup table </dd></dl>
+
+</div>
+</div>
+<a id="a0ca7327314a4d0f8a041fc904f332ac2" name="a0ca7327314a4d0f8a041fc904f332ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ca7327314a4d0f8a041fc904f332ac2">&#9670;&#160;</a></span>GetNtcG163Jft103Ft1sLookupTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> * NTC::GetNtcG163Jft103Ft1sLookupTable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get NTCG163JFT103FT1S lookup table. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to lookup table </dd></dl>
+
+</div>
+</div>
+<a id="a12f1182493f0efa43e9c7cd93abab1c0" name="a12f1182493f0efa43e9c7cd93abab1c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f1182493f0efa43e9c7cd93abab1c0">&#9670;&#160;</a></span>GetNtcG164Jf103Ft1sLookupTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> * NTC::GetNtcG164Jf103Ft1sLookupTable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get NTCG164JF103FT1S lookup table. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to lookup table </dd></dl>
+
+</div>
+</div>
+<a id="ae9f4370d062be80682f51e690d7033cb" name="ae9f4370d062be80682f51e690d7033cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9f4370d062be80682f51e690d7033cb">&#9670;&#160;</a></span>GetNtcLookupTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> * NTC::GetNtcLookupTable </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ntc_type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get lookup table for <a class="el" href="namespaceNTC.html">NTC</a> type. </p>
+<p>Retrieves the pre-calculated lookup table for a specific <a class="el" href="namespaceNTC.html">NTC</a> thermistor type. Lookup tables are optimized for fast temperature conversion with minimal computational overhead.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ntc_type</td><td><a class="el" href="namespaceNTC.html">NTC</a> thermistor type (e.g., NTC_TYPE_NTCG163JFT103FT1S) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to lookup table (nullptr if not available for this type)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Not all <a class="el" href="namespaceNTC.html">NTC</a> types have pre-calculated lookup tables. Use NTC_CONVERSION_MATHEMATICAL for unsupported types. </dd></dl>
+
+</div>
+</div>
+<a id="a9a7040106672a420a4d9fc81604e12ff" name="a9a7040106672a420a4d9fc81604e12ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7040106672a420a4d9fc81604e12ff">&#9670;&#160;</a></span>InterpolateLookupEntries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::InterpolateLookupEntries </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structNTC_1_1ntc__lookup__entry__t.html">ntc_lookup_entry_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>entry1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structNTC_1_1ntc__lookup__entry__t.html">ntc_lookup_entry_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>entry2</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Interpolate between two lookup table entries. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry1</td><td>First entry </td></tr>
+    <tr><td class="paramname">entry2</td><td>Second entry </td></tr>
+    <tr><td class="paramname">resistance_ohms</td><td>Target resistance </td></tr>
+    <tr><td class="paramname">temperature_celsius</td><td>Pointer to store interpolated temperature </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if interpolation successful, false otherwise </dd></dl>
+
+</div>
+</div>
 <a id="a895ef2228af8265dd4bb03c8893bdf79" name="a895ef2228af8265dd4bb03c8893bdf79"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a895ef2228af8265dd4bb03c8893bdf79">&#9670;&#160;</a></span>ValidateBetaValue()</h2>
 
@@ -942,6 +1351,40 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">beta_value</td><td>Beta value to validate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aa04b45d9a1c58a0031d7278be9a1978a" name="aa04b45d9a1c58a0031d7278be9a1978a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04b45d9a1c58a0031d7278be9a1978a">&#9670;&#160;</a></span>ValidateLookupTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ValidateLookupTable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate lookup table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>Lookup table to validate </td></tr>
   </table>
   </dd>
 </dl>

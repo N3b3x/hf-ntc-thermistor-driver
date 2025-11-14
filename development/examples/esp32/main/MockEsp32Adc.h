@@ -29,12 +29,16 @@ class MockEsp32Adc : public NTC::NtcAdcInterface<MockEsp32Adc> {
 public:
   /**
    * @brief Constructor
-   * @param reference_voltage Reference voltage in volts (default: 3.3V for ESP32-C6)
-   * @param resolution_bits ADC resolution in bits (default: 12-bit for ESP32-C6)
+   * @param reference_voltage Reference voltage in volts (default: 3.3V for
+   * ESP32-C6)
+   * @param resolution_bits ADC resolution in bits (default: 12-bit for
+   * ESP32-C6)
    */
-  explicit MockEsp32Adc(float reference_voltage = 3.3f, uint8_t resolution_bits = 12)
+  explicit MockEsp32Adc(float reference_voltage = 3.3F,
+                        uint8_t resolution_bits = 12)
       : initialized_(false), reference_voltage_(reference_voltage),
-        resolution_bits_(resolution_bits), max_count_((1U << resolution_bits) - 1) {}
+        resolution_bits_(resolution_bits),
+        max_count_((1U << resolution_bits) - 1) {}
 
   /**
    * @brief Destructor
@@ -45,9 +49,7 @@ public:
    * @brief Check if ADC is initialized
    * @return true if initialized
    */
-  bool IsInitialized() const {
-    return initialized_;
-  }
+  bool IsInitialized() const { return initialized_; }
 
   /**
    * @brief Ensure ADC is initialized
@@ -74,74 +76,72 @@ public:
    * @brief Read raw ADC count
    * @param channel ADC channel to read
    * @param count Output parameter for count value
-   * @return AdcError::SUCCESS on success
+   * @return AdcError::Success on success
    */
-  NTC::AdcError ReadChannelCount(uint8_t channel, uint32_t* count) {
+  NTC::AdcError ReadChannelCount(uint8_t channel, uint32_t *count) {
     if (!initialized_) {
-      return NTC::AdcError::NOT_INITIALIZED;
+      return NTC::AdcError::NotInitialized;
     }
 
     if (!IsChannelAvailable(channel)) {
-      return NTC::AdcError::INVALID_CHANNEL;
+      return NTC::AdcError::InvalidChannel;
     }
 
     if (count == nullptr) {
-      return NTC::AdcError::HARDWARE_ERROR;
+      return NTC::AdcError::HardwareError;
     }
 
     // Simulate ADC reading - return mid-scale value with some variation
     // This simulates ~1.65V reading (mid-point)
-    *count = max_count_ / 2 + (channel * 100); // Add some channel-dependent variation
+    *count = max_count_ / 2 +
+             (channel * 100); // Add some channel-dependent variation
 
-    return NTC::AdcError::SUCCESS;
+    return NTC::AdcError::Success;
   }
 
   /**
    * @brief Read voltage from ADC channel
    * @param channel ADC channel to read
    * @param voltage_v Output parameter for voltage in volts
-   * @return AdcError::SUCCESS on success
+   * @return AdcError::Success on success
    */
-  NTC::AdcError ReadChannelV(uint8_t channel, float* voltage_v) {
+  NTC::AdcError ReadChannelV(uint8_t channel, float *voltage_v) {
     if (!initialized_) {
-      return NTC::AdcError::NOT_INITIALIZED;
+      return NTC::AdcError::NotInitialized;
     }
 
     if (!IsChannelAvailable(channel)) {
-      return NTC::AdcError::INVALID_CHANNEL;
+      return NTC::AdcError::InvalidChannel;
     }
 
     if (voltage_v == nullptr) {
-      return NTC::AdcError::HARDWARE_ERROR;
+      return NTC::AdcError::HardwareError;
     }
 
     uint32_t count = 0;
     NTC::AdcError err = ReadChannelCount(channel, &count);
-    if (err != NTC::AdcError::SUCCESS) {
+    if (err != NTC::AdcError::Success) {
       return err;
     }
 
     // Convert count to voltage
-    *voltage_v = (static_cast<float>(count) * reference_voltage_) / static_cast<float>(max_count_);
+    *voltage_v = (static_cast<float>(count) * reference_voltage_) /
+                 static_cast<float>(max_count_);
 
-    return NTC::AdcError::SUCCESS;
+    return NTC::AdcError::Success;
   }
 
   /**
    * @brief Get reference voltage
    * @return Reference voltage in volts
    */
-  float GetReferenceVoltage() const {
-    return reference_voltage_;
-  }
+  float GetReferenceVoltage() const { return reference_voltage_; }
 
   /**
    * @brief Get ADC resolution
    * @return Resolution in bits
    */
-  uint8_t GetResolutionBits() const {
-    return resolution_bits_;
-  }
+  uint8_t GetResolutionBits() const { return resolution_bits_; }
 
   /**
    * @brief Set simulated voltage for testing
@@ -149,8 +149,8 @@ public:
    */
   void SetSimulatedVoltage(float voltage) {
     simulated_voltage_ = voltage;
-    if (simulated_voltage_ < 0.0f) {
-      simulated_voltage_ = 0.0f;
+    if (simulated_voltage_ < 0.0F) {
+      simulated_voltage_ = 0.0F;
     }
     if (simulated_voltage_ > reference_voltage_) {
       simulated_voltage_ = reference_voltage_;
@@ -171,5 +171,5 @@ private:
   float reference_voltage_;
   uint8_t resolution_bits_;
   uint32_t max_count_;
-  float simulated_voltage_ = 1.65f; // Default mid-scale voltage
+  float simulated_voltage_ = 1.65F; // Default mid-scale voltage
 };

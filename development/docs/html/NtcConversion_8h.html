@@ -93,7 +93,6 @@ $(function(){initNavTree('NtcConversion_8h.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">NtcConversion.h File Reference</div></div>
@@ -122,21 +121,7 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceNTC" id="r_namespaceNTC"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC.html">NTC</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceNTC_1_1Constants" id="r_namespaceNTC_1_1Constants"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html">NTC::Constants</a></td></tr>
-<tr class="memdesc:namespaceNTC_1_1Constants"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical constants for <a class="el" href="namespaceNTC.html">NTC</a> calculations. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:acc8a86c7ad1a6bd199fa2f5c170bb5d4" id="r_acc8a86c7ad1a6bd199fa2f5c170bb5d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc8a86c7ad1a6bd199fa2f5c170bb5d4">NTC_ABSOLUTE_ZERO_CELSIUS</a>&#160;&#160;&#160;<a class="el" href="namespaceNTC_1_1Constants.html#aa19c93f3d2d7593f5e12e838a7d87409">NTC::Constants::kAbsoluteZeroCelsius</a></td></tr>
-<tr class="separator:acc8a86c7ad1a6bd199fa2f5c170bb5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02cb374eb826ee59ece4bbaa8c531afa" id="r_a02cb374eb826ee59ece4bbaa8c531afa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02cb374eb826ee59ece4bbaa8c531afa">NTC_REFERENCE_TEMPERATURE_C</a>&#160;&#160;&#160;<a class="el" href="namespaceNTC_1_1Constants.html#ab128372070a3d8e3758bc20dab780075">NTC::Constants::kReferenceTemperatureC</a></td></tr>
-<tr class="separator:a02cb374eb826ee59ece4bbaa8c531afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab11f985225405a877216ba3fcf71e8f9" id="r_ab11f985225405a877216ba3fcf71e8f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab11f985225405a877216ba3fcf71e8f9">NTC_STEINHART_HART_A</a>&#160;&#160;&#160;<a class="el" href="namespaceNTC_1_1Constants.html#a38aff86a497bccaba3e54a1fce384755">NTC::Constants::kSteinhartHartA</a></td></tr>
-<tr class="separator:ab11f985225405a877216ba3fcf71e8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63550bd2a81ce8cf99df4741c359e54c" id="r_a63550bd2a81ce8cf99df4741c359e54c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63550bd2a81ce8cf99df4741c359e54c">NTC_STEINHART_HART_B</a>&#160;&#160;&#160;<a class="el" href="namespaceNTC_1_1Constants.html#a892ee705e06872ec97957ea7f9c1640d">NTC::Constants::kSteinhartHartB</a></td></tr>
-<tr class="separator:a63550bd2a81ce8cf99df4741c359e54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fb00c0cc89c040acfa46f870d6695cc" id="r_a2fb00c0cc89c040acfa46f870d6695cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fb00c0cc89c040acfa46f870d6695cc">NTC_STEINHART_HART_C</a>&#160;&#160;&#160;<a class="el" href="namespaceNTC_1_1Constants.html#a8b59379d3fe0aebf57f2a4202438168f">NTC::Constants::kSteinhartHartC</a></td></tr>
-<tr class="separator:a2fb00c0cc89c040acfa46f870d6695cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -182,12 +167,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ae1e1ac0e9f0bc8f3e50f10b216c89ebe" id="r_ae1e1ac0e9f0bc8f3e50f10b216c89ebe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC.html#ae1e1ac0e9f0bc8f3e50f10b216c89ebe">NTC::ValidateSteinhartHartCoefficients</a> (float coeff_a, float coeff_b, float coeff_c) noexcept</td></tr>
 <tr class="memdesc:ae1e1ac0e9f0bc8f3e50f10b216c89ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate Steinhart-Hart coefficients.  <br /></td></tr>
 <tr class="separator:ae1e1ac0e9f0bc8f3e50f10b216c89ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4b3964149a9bfc632b9ad20feadcf56" id="r_ac4b3964149a9bfc632b9ad20feadcf56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC.html#ac4b3964149a9bfc632b9ad20feadcf56">NTC::CalculateBetaValue</a> (float t1, float r1, float t2, float r2, float *beta_value) noexcept</td></tr>
-<tr class="memdesc:ac4b3964149a9bfc632b9ad20feadcf56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate beta value from two temperature-resistance pairs.  <br /></td></tr>
-<tr class="separator:ac4b3964149a9bfc632b9ad20feadcf56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b5218798a344f0ff0f8971d1f7114dd" id="r_a0b5218798a344f0ff0f8971d1f7114dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC.html#a0b5218798a344f0ff0f8971d1f7114dd">NTC::CalculateSteinhartHartCoefficients</a> (float t1, float r1, float t2, float r2, float t3, float r3, float *coeff_a, float *coeff_b, float *coeff_c) noexcept</td></tr>
-<tr class="memdesc:a0b5218798a344f0ff0f8971d1f7114dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Steinhart-Hart coefficients from three temperature-resistance pairs.  <br /></td></tr>
-<tr class="separator:a0b5218798a344f0ff0f8971d1f7114dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa1c0b7798e904490f700199d6beabb" id="r_a3aa1c0b7798e904490f700199d6beabb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC.html#a3aa1c0b7798e904490f700199d6beabb">NTC::CalculateBetaValue</a> (float temp1_celsius, float resistance1_ohms, float temp2_celsius, float resistance2_ohms, float *beta_value) noexcept</td></tr>
+<tr class="memdesc:a3aa1c0b7798e904490f700199d6beabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate beta value from two temperature-resistance pairs.  <br /></td></tr>
+<tr class="separator:a3aa1c0b7798e904490f700199d6beabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5bf0e39d8f221537e40dd49da8e6648" id="r_ae5bf0e39d8f221537e40dd49da8e6648"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC.html#ae5bf0e39d8f221537e40dd49da8e6648">NTC::CalculateSteinhartHartCoefficients</a> (float temp1_celsius, float resistance1_ohms, float temp2_celsius, float resistance2_ohms, float temp3_celsius, float resistance3_ohms, float *coeff_a, float *coeff_b, float *coeff_c) noexcept</td></tr>
+<tr class="memdesc:ae5bf0e39d8f221537e40dd49da8e6648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Steinhart-Hart coefficients from three temperature-resistance pairs.  <br /></td></tr>
+<tr class="separator:ae5bf0e39d8f221537e40dd49da8e6648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba47c745aa859f4d61c17aa771400c19" id="r_aba47c745aa859f4d61c17aa771400c19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC.html#aba47c745aa859f4d61c17aa771400c19">NTC::CalculateTemperatureAccuracy</a> (float resistance_ohms, float resistance_tolerance, float beta_tolerance, float *accuracy_celsius) noexcept</td></tr>
 <tr class="memdesc:aba47c745aa859f4d61c17aa771400c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate temperature accuracy estimate.  <br /></td></tr>
 <tr class="separator:aba47c745aa859f4d61c17aa771400c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,66 +182,66 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa19c93f3d2d7593f5e12e838a7d87409" id="r_aa19c93f3d2d7593f5e12e838a7d87409"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#aa19c93f3d2d7593f5e12e838a7d87409">NTC::Constants::kAbsoluteZeroCelsius</a> = -273.15f</td></tr>
-<tr class="memdesc:aa19c93f3d2d7593f5e12e838a7d87409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute zero in Celsius.  <br /></td></tr>
-<tr class="separator:aa19c93f3d2d7593f5e12e838a7d87409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add1be3d7639c47e60d44f04525582cff" id="r_add1be3d7639c47e60d44f04525582cff"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#add1be3d7639c47e60d44f04525582cff">NTC::Constants::kKelvinOffset</a> = 273.15f</td></tr>
-<tr class="memdesc:add1be3d7639c47e60d44f04525582cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Celsius to Kelvin conversion offset.  <br /></td></tr>
-<tr class="separator:add1be3d7639c47e60d44f04525582cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab128372070a3d8e3758bc20dab780075" id="r_ab128372070a3d8e3758bc20dab780075"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ab128372070a3d8e3758bc20dab780075">NTC::Constants::kReferenceTemperatureC</a> = 25.0f</td></tr>
-<tr class="memdesc:ab128372070a3d8e3758bc20dab780075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference temperature (25°C)  <br /></td></tr>
-<tr class="separator:ab128372070a3d8e3758bc20dab780075"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38aff86a497bccaba3e54a1fce384755" id="r_a38aff86a497bccaba3e54a1fce384755"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a38aff86a497bccaba3e54a1fce384755">NTC::Constants::kSteinhartHartA</a> = 1.129241e-3f</td></tr>
-<tr class="memdesc:a38aff86a497bccaba3e54a1fce384755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steinhart-Hart coefficient A.  <br /></td></tr>
-<tr class="separator:a38aff86a497bccaba3e54a1fce384755"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a892ee705e06872ec97957ea7f9c1640d" id="r_a892ee705e06872ec97957ea7f9c1640d"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a892ee705e06872ec97957ea7f9c1640d">NTC::Constants::kSteinhartHartB</a> = 2.341077e-4f</td></tr>
-<tr class="memdesc:a892ee705e06872ec97957ea7f9c1640d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steinhart-Hart coefficient B.  <br /></td></tr>
-<tr class="separator:a892ee705e06872ec97957ea7f9c1640d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b59379d3fe0aebf57f2a4202438168f" id="r_a8b59379d3fe0aebf57f2a4202438168f"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a8b59379d3fe0aebf57f2a4202438168f">NTC::Constants::kSteinhartHartC</a> = 8.775468e-8f</td></tr>
-<tr class="memdesc:a8b59379d3fe0aebf57f2a4202438168f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steinhart-Hart coefficient C.  <br /></td></tr>
-<tr class="separator:a8b59379d3fe0aebf57f2a4202438168f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa426bdde1f5b7756220baa15060654f5" id="r_aa426bdde1f5b7756220baa15060654f5"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#aa426bdde1f5b7756220baa15060654f5">NTC::Constants::kMinResistanceOhms</a> = 0.1f</td></tr>
-<tr class="memdesc:aa426bdde1f5b7756220baa15060654f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum valid resistance (ohms)  <br /></td></tr>
-<tr class="separator:aa426bdde1f5b7756220baa15060654f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff569c1e07fd12152113d818394d0edb" id="r_aff569c1e07fd12152113d818394d0edb"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#aff569c1e07fd12152113d818394d0edb">NTC::Constants::kMaxResistanceOhms</a> = 1000000.0f</td></tr>
-<tr class="memdesc:aff569c1e07fd12152113d818394d0edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum valid resistance (ohms)  <br /></td></tr>
-<tr class="separator:aff569c1e07fd12152113d818394d0edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45d4afcdda9e8905bce923a7ac91d459" id="r_a45d4afcdda9e8905bce923a7ac91d459"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a45d4afcdda9e8905bce923a7ac91d459">NTC::Constants::kMinTemperatureCelsius</a> = -273.15f</td></tr>
-<tr class="memdesc:a45d4afcdda9e8905bce923a7ac91d459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum valid temperature (°C)  <br /></td></tr>
-<tr class="separator:a45d4afcdda9e8905bce923a7ac91d459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a978b1617f0171d27a43dbfc4be200701" id="r_a978b1617f0171d27a43dbfc4be200701"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a978b1617f0171d27a43dbfc4be200701">NTC::Constants::kMaxTemperatureCelsius</a> = 1000.0f</td></tr>
-<tr class="memdesc:a978b1617f0171d27a43dbfc4be200701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum valid temperature (°C)  <br /></td></tr>
-<tr class="separator:a978b1617f0171d27a43dbfc4be200701"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad85e2306f31d602b71e7aa8e310d24b6" id="r_ad85e2306f31d602b71e7aa8e310d24b6"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ad85e2306f31d602b71e7aa8e310d24b6">NTC::Constants::kMinBetaValue</a> = 1000.0f</td></tr>
-<tr class="memdesc:ad85e2306f31d602b71e7aa8e310d24b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum valid beta value (K)  <br /></td></tr>
-<tr class="separator:ad85e2306f31d602b71e7aa8e310d24b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f73b556b53c9395cf9e860f8b5c71f5" id="r_a0f73b556b53c9395cf9e860f8b5c71f5"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a0f73b556b53c9395cf9e860f8b5c71f5">NTC::Constants::kMaxBetaValue</a> = 5000.0f</td></tr>
-<tr class="memdesc:a0f73b556b53c9395cf9e860f8b5c71f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum valid beta value (K)  <br /></td></tr>
-<tr class="separator:a0f73b556b53c9395cf9e860f8b5c71f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd9150b48379f5310711d078569fe437" id="r_abd9150b48379f5310711d078569fe437"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#abd9150b48379f5310711d078569fe437">NTC::Constants::kEpsilonFloat</a> = 1e-6f</td></tr>
-<tr class="memdesc:abd9150b48379f5310711d078569fe437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Float comparison epsilon.  <br /></td></tr>
-<tr class="separator:abd9150b48379f5310711d078569fe437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae57219a099c878946de7acce8ea1c5e6" id="r_ae57219a099c878946de7acce8ea1c5e6"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ae57219a099c878946de7acce8ea1c5e6">NTC::Constants::kEpsilonDouble</a> = 1e-12f</td></tr>
-<tr class="memdesc:ae57219a099c878946de7acce8ea1c5e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Double precision epsilon.  <br /></td></tr>
-<tr class="separator:ae57219a099c878946de7acce8ea1c5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63904e4c545a66b9fb32694ccb9e60ad" id="r_a63904e4c545a66b9fb32694ccb9e60ad"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a63904e4c545a66b9fb32694ccb9e60ad">NTC::Constants::kOneFloat</a> = 1.0f</td></tr>
-<tr class="memdesc:a63904e4c545a66b9fb32694ccb9e60ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">One as float.  <br /></td></tr>
-<tr class="separator:a63904e4c545a66b9fb32694ccb9e60ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac8fcbbf44772abedf8e0dc3af1de1fa" id="r_aac8fcbbf44772abedf8e0dc3af1de1fa"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#aac8fcbbf44772abedf8e0dc3af1de1fa">NTC::Constants::kZeroFloat</a> = 0.0f</td></tr>
-<tr class="memdesc:aac8fcbbf44772abedf8e0dc3af1de1fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zero as float.  <br /></td></tr>
-<tr class="separator:aac8fcbbf44772abedf8e0dc3af1de1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af73a7503959f1f79237f5590925910c6" id="r_af73a7503959f1f79237f5590925910c6"><td class="memItemLeft" align="right" valign="top">constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#af73a7503959f1f79237f5590925910c6">NTC::Constants::kMillisecondsPerSecond</a> = 1000U</td></tr>
-<tr class="memdesc:af73a7503959f1f79237f5590925910c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Milliseconds per second.  <br /></td></tr>
-<tr class="separator:af73a7503959f1f79237f5590925910c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1156c1c2443657f336e228242b02f02" id="r_ae1156c1c2443657f336e228242b02f02"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ae1156c1c2443657f336e228242b02f02">NTC::Constants::kCelsiusToFahrenheitMultiplier</a> = 9.0f / 5.0f</td></tr>
-<tr class="memdesc:ae1156c1c2443657f336e228242b02f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Celsius to Fahrenheit multiplier.  <br /></td></tr>
-<tr class="separator:ae1156c1c2443657f336e228242b02f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6f118a7fb9ae78a7289cb1037591918" id="r_ad6f118a7fb9ae78a7289cb1037591918"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ad6f118a7fb9ae78a7289cb1037591918">NTC::Constants::kFahrenheitOffset</a> = 32.0f</td></tr>
-<tr class="memdesc:ad6f118a7fb9ae78a7289cb1037591918"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fahrenheit offset.  <br /></td></tr>
-<tr class="separator:ad6f118a7fb9ae78a7289cb1037591918"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd23ae725b03e2cc01cb168933e6d0d5" id="r_abd23ae725b03e2cc01cb168933e6d0d5"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#abd23ae725b03e2cc01cb168933e6d0d5">NTC::Constants::kFahrenheitToCelsiusMultiplier</a> = 5.0f / 9.0f</td></tr>
-<tr class="memdesc:abd23ae725b03e2cc01cb168933e6d0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fahrenheit to Celsius multiplier.  <br /></td></tr>
-<tr class="separator:abd23ae725b03e2cc01cb168933e6d0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9134ad4841f4f0b7447b62b6dad8e55a" id="r_a9134ad4841f4f0b7447b62b6dad8e55a"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a9134ad4841f4f0b7447b62b6dad8e55a">NTC::Constants::ABSOLUTE_ZERO_CELSIUS_</a> = -273.15F</td></tr>
+<tr class="memdesc:a9134ad4841f4f0b7447b62b6dad8e55a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute zero in Celsius.  <br /></td></tr>
+<tr class="separator:a9134ad4841f4f0b7447b62b6dad8e55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae739c7f359d6ec09b5a0196ed7014f7b" id="r_ae739c7f359d6ec09b5a0196ed7014f7b"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ae739c7f359d6ec09b5a0196ed7014f7b">NTC::Constants::KELVIN_OFFSET_</a></td></tr>
+<tr class="memdesc:ae739c7f359d6ec09b5a0196ed7014f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Celsius to Kelvin conversion offset.  <br /></td></tr>
+<tr class="separator:ae739c7f359d6ec09b5a0196ed7014f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7835186987a5e507df73fb03e86e0a6" id="r_ac7835186987a5e507df73fb03e86e0a6"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ac7835186987a5e507df73fb03e86e0a6">NTC::Constants::REFERENCE_TEMPERATURE_C_</a></td></tr>
+<tr class="memdesc:ac7835186987a5e507df73fb03e86e0a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference temperature (25°C)  <br /></td></tr>
+<tr class="separator:ac7835186987a5e507df73fb03e86e0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad17bf0e376a2a231654a20e09b1ce934" id="r_ad17bf0e376a2a231654a20e09b1ce934"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ad17bf0e376a2a231654a20e09b1ce934">NTC::Constants::STEINHART_HART_A_</a></td></tr>
+<tr class="memdesc:ad17bf0e376a2a231654a20e09b1ce934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steinhart-Hart coefficient A.  <br /></td></tr>
+<tr class="separator:ad17bf0e376a2a231654a20e09b1ce934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af245fa0d038cd5d5d214333af43bc3f8" id="r_af245fa0d038cd5d5d214333af43bc3f8"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#af245fa0d038cd5d5d214333af43bc3f8">NTC::Constants::STEINHART_HART_B_</a></td></tr>
+<tr class="memdesc:af245fa0d038cd5d5d214333af43bc3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steinhart-Hart coefficient B.  <br /></td></tr>
+<tr class="separator:af245fa0d038cd5d5d214333af43bc3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab27b77c8d2e42e55dec30aec18d3cbac" id="r_ab27b77c8d2e42e55dec30aec18d3cbac"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ab27b77c8d2e42e55dec30aec18d3cbac">NTC::Constants::STEINHART_HART_C_</a></td></tr>
+<tr class="memdesc:ab27b77c8d2e42e55dec30aec18d3cbac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steinhart-Hart coefficient C.  <br /></td></tr>
+<tr class="separator:ab27b77c8d2e42e55dec30aec18d3cbac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f9c9e486faf574a1b3a864f461e2911" id="r_a9f9c9e486faf574a1b3a864f461e2911"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a9f9c9e486faf574a1b3a864f461e2911">NTC::Constants::MIN_RESISTANCE_OHMS_</a></td></tr>
+<tr class="memdesc:a9f9c9e486faf574a1b3a864f461e2911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum valid resistance (ohms)  <br /></td></tr>
+<tr class="separator:a9f9c9e486faf574a1b3a864f461e2911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c23f0e6cdded596201bda6448e19302" id="r_a8c23f0e6cdded596201bda6448e19302"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a8c23f0e6cdded596201bda6448e19302">NTC::Constants::MAX_RESISTANCE_OHMS_</a></td></tr>
+<tr class="memdesc:a8c23f0e6cdded596201bda6448e19302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum valid resistance (ohms)  <br /></td></tr>
+<tr class="separator:a8c23f0e6cdded596201bda6448e19302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a805a5a40cfd05bc829c7eba3ff131" id="r_a74a805a5a40cfd05bc829c7eba3ff131"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a74a805a5a40cfd05bc829c7eba3ff131">NTC::Constants::MIN_TEMPERATURE_CELSIUS_</a></td></tr>
+<tr class="memdesc:a74a805a5a40cfd05bc829c7eba3ff131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum valid temperature (°C)  <br /></td></tr>
+<tr class="separator:a74a805a5a40cfd05bc829c7eba3ff131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fa9acdcfea5a16f9451f6f802d20c4e" id="r_a3fa9acdcfea5a16f9451f6f802d20c4e"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a3fa9acdcfea5a16f9451f6f802d20c4e">NTC::Constants::MAX_TEMPERATURE_CELSIUS_</a></td></tr>
+<tr class="memdesc:a3fa9acdcfea5a16f9451f6f802d20c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum valid temperature (°C)  <br /></td></tr>
+<tr class="separator:a3fa9acdcfea5a16f9451f6f802d20c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b3288f80a6aca0fbf7c1dc1a39f5c2" id="r_a77b3288f80a6aca0fbf7c1dc1a39f5c2"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a77b3288f80a6aca0fbf7c1dc1a39f5c2">NTC::Constants::MIN_BETA_VALUE_</a> = 1000.0F</td></tr>
+<tr class="memdesc:a77b3288f80a6aca0fbf7c1dc1a39f5c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum valid beta value (K)  <br /></td></tr>
+<tr class="separator:a77b3288f80a6aca0fbf7c1dc1a39f5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28559eab890eff100542cfb492b7a019" id="r_a28559eab890eff100542cfb492b7a019"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a28559eab890eff100542cfb492b7a019">NTC::Constants::MAX_BETA_VALUE_</a> = 5000.0F</td></tr>
+<tr class="memdesc:a28559eab890eff100542cfb492b7a019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum valid beta value (K)  <br /></td></tr>
+<tr class="separator:a28559eab890eff100542cfb492b7a019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c77c62394ef474a0aded2c5ba9b05b" id="r_a85c77c62394ef474a0aded2c5ba9b05b"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a85c77c62394ef474a0aded2c5ba9b05b">NTC::Constants::EPSILON_FLOAT_</a> = 1e-6F</td></tr>
+<tr class="memdesc:a85c77c62394ef474a0aded2c5ba9b05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Float comparison epsilon.  <br /></td></tr>
+<tr class="separator:a85c77c62394ef474a0aded2c5ba9b05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47a53086f86dc64db8a018f411846a8b" id="r_a47a53086f86dc64db8a018f411846a8b"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a47a53086f86dc64db8a018f411846a8b">NTC::Constants::EPSILON_DOUBLE_</a> = 1e-12F</td></tr>
+<tr class="memdesc:a47a53086f86dc64db8a018f411846a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Double precision epsilon.  <br /></td></tr>
+<tr class="separator:a47a53086f86dc64db8a018f411846a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7fe5a0ece5d39fe7901fdaadf75f974" id="r_ad7fe5a0ece5d39fe7901fdaadf75f974"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ad7fe5a0ece5d39fe7901fdaadf75f974">NTC::Constants::ONE_FLOAT_</a> = 1.0F</td></tr>
+<tr class="memdesc:ad7fe5a0ece5d39fe7901fdaadf75f974"><td class="mdescLeft">&#160;</td><td class="mdescRight">One as float.  <br /></td></tr>
+<tr class="separator:ad7fe5a0ece5d39fe7901fdaadf75f974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a824c3ea7f7c9fd41de01565abd98ff13" id="r_a824c3ea7f7c9fd41de01565abd98ff13"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a824c3ea7f7c9fd41de01565abd98ff13">NTC::Constants::ZERO_FLOAT_</a> = 0.0F</td></tr>
+<tr class="memdesc:a824c3ea7f7c9fd41de01565abd98ff13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zero as float.  <br /></td></tr>
+<tr class="separator:a824c3ea7f7c9fd41de01565abd98ff13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0654e58a7f7eee308f2f04a33a3c9bd" id="r_ac0654e58a7f7eee308f2f04a33a3c9bd"><td class="memItemLeft" align="right" valign="top">constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ac0654e58a7f7eee308f2f04a33a3c9bd">NTC::Constants::MILLISECONDS_PER_SECOND_</a></td></tr>
+<tr class="memdesc:ac0654e58a7f7eee308f2f04a33a3c9bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Milliseconds per second.  <br /></td></tr>
+<tr class="separator:ac0654e58a7f7eee308f2f04a33a3c9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a252917811331d0acb6d796a00434657e" id="r_a252917811331d0acb6d796a00434657e"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#a252917811331d0acb6d796a00434657e">NTC::Constants::CELSIUS_TO_FAHRENHEIT_MULTIPLIER_</a></td></tr>
+<tr class="memdesc:a252917811331d0acb6d796a00434657e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Celsius to Fahrenheit multiplier.  <br /></td></tr>
+<tr class="separator:a252917811331d0acb6d796a00434657e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac444cfcc9cf303a63df3ee914841c20e" id="r_ac444cfcc9cf303a63df3ee914841c20e"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ac444cfcc9cf303a63df3ee914841c20e">NTC::Constants::FAHRENHEIT_OFFSET_</a> = 32.0F</td></tr>
+<tr class="memdesc:ac444cfcc9cf303a63df3ee914841c20e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fahrenheit offset.  <br /></td></tr>
+<tr class="separator:ac444cfcc9cf303a63df3ee914841c20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a9a1995f8bc79a6dec322b5fea5bf0" id="r_ab1a9a1995f8bc79a6dec322b5fea5bf0"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html#ab1a9a1995f8bc79a6dec322b5fea5bf0">NTC::Constants::FAHRENHEIT_TO_CELSIUS_MULTIPLIER_</a></td></tr>
+<tr class="memdesc:ab1a9a1995f8bc79a6dec322b5fea5bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fahrenheit to Celsius multiplier.  <br /></td></tr>
+<tr class="separator:ab1a9a1995f8bc79a6dec322b5fea5bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Mathematical conversion functions for <a class="el" href="namespaceNTC.html">NTC</a> thermistor temperature calculation. </p>
@@ -265,78 +250,7 @@ Variables</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Nebiyu Tadesse </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>HardFOC </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="acc8a86c7ad1a6bd199fa2f5c170bb5d4" name="acc8a86c7ad1a6bd199fa2f5c170bb5d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc8a86c7ad1a6bd199fa2f5c170bb5d4">&#9670;&#160;</a></span>NTC_ABSOLUTE_ZERO_CELSIUS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NTC_ABSOLUTE_ZERO_CELSIUS&#160;&#160;&#160;<a class="el" href="namespaceNTC_1_1Constants.html#aa19c93f3d2d7593f5e12e838a7d87409">NTC::Constants::kAbsoluteZeroCelsius</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a02cb374eb826ee59ece4bbaa8c531afa" name="a02cb374eb826ee59ece4bbaa8c531afa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02cb374eb826ee59ece4bbaa8c531afa">&#9670;&#160;</a></span>NTC_REFERENCE_TEMPERATURE_C</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NTC_REFERENCE_TEMPERATURE_C&#160;&#160;&#160;<a class="el" href="namespaceNTC_1_1Constants.html#ab128372070a3d8e3758bc20dab780075">NTC::Constants::kReferenceTemperatureC</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab11f985225405a877216ba3fcf71e8f9" name="ab11f985225405a877216ba3fcf71e8f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab11f985225405a877216ba3fcf71e8f9">&#9670;&#160;</a></span>NTC_STEINHART_HART_A</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NTC_STEINHART_HART_A&#160;&#160;&#160;<a class="el" href="namespaceNTC_1_1Constants.html#a38aff86a497bccaba3e54a1fce384755">NTC::Constants::kSteinhartHartA</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a63550bd2a81ce8cf99df4741c359e54c" name="a63550bd2a81ce8cf99df4741c359e54c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63550bd2a81ce8cf99df4741c359e54c">&#9670;&#160;</a></span>NTC_STEINHART_HART_B</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NTC_STEINHART_HART_B&#160;&#160;&#160;<a class="el" href="namespaceNTC_1_1Constants.html#a892ee705e06872ec97957ea7f9c1640d">NTC::Constants::kSteinhartHartB</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2fb00c0cc89c040acfa46f870d6695cc" name="a2fb00c0cc89c040acfa46f870d6695cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fb00c0cc89c040acfa46f870d6695cc">&#9670;&#160;</a></span>NTC_STEINHART_HART_C</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NTC_STEINHART_HART_C&#160;&#160;&#160;<a class="el" href="namespaceNTC_1_1Constants.html#a8b59379d3fe0aebf57f2a4202438168f">NTC::Constants::kSteinhartHartC</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
