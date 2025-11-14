@@ -6,6 +6,5 @@ var searchData=
   ['validatesteinharthartcoefficients_3',['ValidateSteinhartHartCoefficients',['../namespaceNTC.html#ae1e1ac0e9f0bc8f3e50f10b216c89ebe',1,'NTC']]],
   ['validatetemperature_4',['ValidateTemperature',['../namespaceNTC.html#a80214511ed3af0a94ef16e14829f88c0',1,'NTC']]],
   ['validatevoltage_5',['ValidateVoltage',['../namespaceNTC.html#ab667d16a986d09de0baece8cfc5ce30a',1,'NTC']]],
-  ['voltage_6',['Resistance and Voltage',['../index.html#autotoc_md12',1,'']]],
-  ['voltage_5fvolts_7',['voltage_volts',['../structntc__reading__t.html#aa148f99413fc629fb8ffe8b1b29ccdec',1,'ntc_reading_t']]]
+  ['voltage_5fvolts_6',['voltage_volts',['../structntc__reading__t.html#aa148f99413fc629fb8ffe8b1b29ccdec',1,'ntc_reading_t']]]
 ];

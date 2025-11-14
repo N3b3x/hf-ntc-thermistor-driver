@@ -14,7 +14,6 @@ var searchData=
   ['default_5fsample_5fdelay_5fms_5f_11',['DEFAULT_SAMPLE_DELAY_MS_',['../namespaceNTC_1_1DefaultConfig.html#aef8164bc9ecc9c72b96c7beca6cefc40',1,'NTC::DefaultConfig']]],
   ['default_5fseries_5fresistance_5f_12',['DEFAULT_SERIES_RESISTANCE_',['../namespaceNTC_1_1DefaultConfig.html#afddec17c4619b5c66f6bf6d3b2cb6eec',1,'NTC::DefaultConfig']]],
   ['deinitialize_13',['Deinitialize',['../classNtcThermistor.html#af59f294174e28354624dcc1cb820fa69',1,'NtcThermistor']]],
-  ['design_20features_14',['Key Design Features',['../index.html#autotoc_md19',1,'']]],
-  ['documentation_15',['📚 Documentation',['../index.html#autotoc_md23',1,'']]],
-  ['driver_16',['HF-NTC-Thermistor Driver',['../index.html',1,'']]]
+  ['documentation_14',['📚 Documentation',['../index.html#autotoc_md8',1,'']]],
+  ['driver_15',['HF-NTC-Thermistor Driver',['../index.html',1,'']]]
 ];

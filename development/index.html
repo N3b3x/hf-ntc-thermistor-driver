@@ -166,7 +166,11 @@
   <nav aria-label="Main" id="site-nav" class="site-nav">
   
   
-    <ul class="nav-list"><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/" class="nav-list-link">HardFOC NTC Thermistor Driver</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/datasheet/" class="nav-list-link">Datasheet Directory</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/" class="nav-list-link">HF-NTC-Thermistor Documentation</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/examples/esp32/" class="nav-list-link">NTC Thermistor ESP32-C6 Comprehensive Test Suite</a></li></ul>
+    <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in HardFOC NTC Thermistor Driver category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/hf-ntc-thermistor-driver/development/" class="nav-list-link">HardFOC NTC Thermistor Driver</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in 📚 Documentation category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/hf-ntc-thermistor-driver/development/docs/" class="nav-list-link">📚 Documentation</a><ul class="nav-list"><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/installation/" class="nav-list-link">🛠️ Installation</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/quickstart/" class="nav-list-link">⚡ Quick Start</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/hardware_setup/" class="nav-list-link">🔌 Hardware Setup</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/platform_integration/" class="nav-list-link">🔧 Platform Integration</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/configuration/" class="nav-list-link">⚙️ Configuration</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/api_reference/" class="nav-list-link">📖 API Reference</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/examples/" class="nav-list-link">💡 Examples</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/troubleshooting/" class="nav-list-link">🐛 Troubleshooting</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/datasheet/" class="nav-list-link">Datasheet Directory</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/examples/esp32/" class="nav-list-link">NTC Thermistor ESP32-C6 Comprehensive Test Suite</a></li></ul>
   
 </nav>
 
@@ -252,9 +256,10 @@
   
 </h1>
     
-<p><strong>Hardware-agnostic NTC thermistor driver for the HardFOC system</strong></p>
+<p><strong>Hardware-agnostic NTC thermistor driver for temperature measurement</strong></p>
 
-<p><a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3" /></a></p>
+<p><a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3" /></a>
+<a href="https://github.com/N3b3x/hf-ntc-thermistor-driver/actions/workflows/esp32-component-ci.yml"><img src="https://github.com/N3b3x/hf-ntc-thermistor-driver/actions/workflows/esp32-component-ci.yml/badge.svg?branch=main" alt="CI Build" /></a></p>
 <h2 id="-table-of-contents">
   
   
@@ -288,7 +293,9 @@
 Interactive guides, examples, and step-by-step tutorials</p>
 </blockquote>
 
-<p>This driver provides a comprehensive solution for temperature measurement using NTC thermistors. It supports various NTC types including the NTCG163JFT103FT1S and provides both lookup table and mathematical conversion methods for accurate temperature readings.</p>
+<p>An <strong>NTC (Negative Temperature Coefficient) thermistor</strong> is a temperature-sensitive resistor whose resistance decreases as temperature increases. This driver provides a comprehensive, hardware-agnostic solution for temperature measurement using NTC thermistors in a voltage divider configuration. The driver supports multiple NTC types (including NTCG163JFT103FT1S, NTCG164JF103FT1S, and custom types), dual conversion methods (lookup table for speed, mathematical for accuracy), built-in calibration, filtering, and multi-sample averaging for precise temperature readings.</p>
+
+<p>The driver uses a <strong>CRTP (Curiously Recurring Template Pattern)</strong> design for zero-overhead hardware abstraction, requiring only an ADC interface implementation for your platform. This makes it ideal for embedded systems where performance and memory efficiency are critical.</p>
 <h2 id="-features">
   
   
@@ -299,65 +306,17 @@ Interactive guides, examples, and step-by-step tutorials</p>
     
 
 <ul>
-  <li><strong>Hardware Agnostic</strong>: Works with any ADC interface that implements AdcInterface</li>
-  <li><strong>Multiple NTC Types</strong>: Support for various NTC thermistor specifications</li>
-  <li><strong>Dual Conversion Methods</strong>: Lookup table and mathematical (Steinhart-Hart) conversion</li>
-  <li><strong>High Accuracy</strong>: Optimized for precision temperature measurement</li>
-  <li><strong>Calibration Support</strong>: Built-in calibration and offset compensation</li>
-  <li><strong>Temperature Units</strong>: Support for Celsius, Fahrenheit, and Kelvin</li>
-  <li><strong>Error Handling</strong>: Comprehensive error reporting and validation</li>
-  <li><strong>Thread Safe</strong>: Designed for multi-threaded applications</li>
+  <li>✅ <strong>Hardware Agnostic</strong>: CRTP-based ADC interface for platform independence</li>
+  <li>✅ <strong>Multiple NTC Types</strong>: Pre-configured support for common NTC thermistors</li>
+  <li>✅ <strong>Dual Conversion Methods</strong>: Lookup table (fast) and mathematical (accurate)</li>
+  <li>✅ <strong>Modern C++</strong>: C++11 compatible with template-based design</li>
+  <li>✅ <strong>Zero Overhead</strong>: CRTP design for compile-time polymorphism</li>
+  <li>✅ <strong>Calibration Support</strong>: Built-in calibration and offset compensation</li>
+  <li>✅ <strong>Filtering</strong>: Optional exponential filtering for noise reduction</li>
+  <li>✅ <strong>Multi-Sample Averaging</strong>: Configurable sampling for improved accuracy</li>
+  <li>✅ <strong>Multiple Units</strong>: Celsius, Fahrenheit, and Kelvin support</li>
+  <li>✅ <strong>Comprehensive Error Handling</strong>: Detailed error codes for debugging</li>
 </ul>
-<h2 id="supported-ntc-types">
-  
-  
-    <a href="#supported-ntc-types" class="anchor-heading" aria-labelledby="supported-ntc-types"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Supported NTC Types
-  
-  
-</h2>
-    
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th>NTC Type</th>
-      <th>Resistance at 25°C</th>
-      <th>Beta Value</th>
-      <th>Temperature Range</th>
-      <th>Accuracy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>NTCG163JFT103FT1S</td>
-      <td>10kΩ</td>
-      <td>3435K</td>
-      <td>-40°C to +125°C</td>
-      <td>±1%</td>
-    </tr>
-    <tr>
-      <td>NTCG164JF103FT1S</td>
-      <td>10kΩ</td>
-      <td>3435K</td>
-      <td>-40°C to +125°C</td>
-      <td>±1%</td>
-    </tr>
-    <tr>
-      <td>NTCG163JF103FT1S</td>
-      <td>10kΩ</td>
-      <td>3435K</td>
-      <td>-40°C to +125°C</td>
-      <td>±1%</td>
-    </tr>
-    <tr>
-      <td>Custom</td>
-      <td>Configurable</td>
-      <td>Configurable</td>
-      <td>Configurable</td>
-      <td>Configurable</td>
-    </tr>
-  </tbody>
-</table></div>
 <h2 id="-quick-start">
   
   
@@ -365,14 +324,6 @@ Interactive guides, examples, and step-by-step tutorials</p>
   
   
 </h2>
-    
-<h3 id="basic-example">
-  
-  
-    <a href="#basic-example" class="anchor-heading" aria-labelledby="basic-example"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Basic Example
-  
-  
-</h3>
     
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -402,203 +353,36 @@ Interactive guides, examples, and step-by-step tutorials</p>
 25
 26
 27
-28
-29
-</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">"NtcThermistor.h"</span><span class="cp">
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">"ntc_thermistor.hpp"</span><span class="cp">
 </span>
-<span class="c1">// 1. Define your ADC implementation (must inherit from ntc::AdcInterface)</span>
+<span class="c1">// 1. Implement the ADC interface (see platform_integration.md)</span>
 <span class="k">class</span> <span class="nc">MyAdc</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ntc</span><span class="o">::</span><span class="n">AdcInterface</span><span class="o">&lt;</span><span class="n">MyAdc</span><span class="o">&gt;</span> <span class="p">{</span>
 <span class="nl">public:</span>
     <span class="kt">bool</span> <span class="n">IsInitialized</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">initialized_</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">bool</span> <span class="n">EnsureInitialized</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* initialize ADC */</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">EnsureInitialized</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* your init code */</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
     <span class="kt">bool</span> <span class="n">IsChannelAvailable</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">channel</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">;</span> <span class="p">}</span>
-    <span class="n">AdcError</span> <span class="n">ReadChannelCount</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">uint32_t</span><span class="o">*</span> <span class="n">count</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
-    <span class="n">AdcError</span> <span class="n">ReadChannelV</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">voltage_v</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+    <span class="n">ntc</span><span class="o">::</span><span class="n">AdcError</span> <span class="n">ReadChannelCount</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">uint32_t</span><span class="o">*</span> <span class="n">count</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+    <span class="n">ntc</span><span class="o">::</span><span class="n">AdcError</span> <span class="n">ReadChannelV</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">voltage_v</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
     <span class="kt">float</span> <span class="n">GetReferenceVoltage</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="mf">3.3</span><span class="n">f</span><span class="p">;</span> <span class="p">}</span>
     <span class="kt">uint8_t</span> <span class="n">GetResolutionBits</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">12</span><span class="p">;</span> <span class="p">}</span>
 <span class="nl">private:</span>
     <span class="kt">bool</span> <span class="n">initialized_</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 <span class="p">};</span>
 
-<span class="c1">// 2. Create ADC and NTC instances</span>
+<span class="c1">// 2. Create instances</span>
 <span class="n">MyAdc</span> <span class="n">adc</span><span class="p">;</span>
-<span class="n">adc</span><span class="p">.</span><span class="n">Initialize</span><span class="p">();</span>
-
-<span class="n">NtcThermistor</span><span class="o">&lt;</span><span class="n">MyAdc</span><span class="o">&gt;</span> <span class="n">thermistor</span><span class="p">(</span><span class="n">NTC_TYPE_NTCG163JFT103FT1S</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">adc</span><span class="p">);</span>
+<span class="n">NtcThermistor</span><span class="o">&lt;</span><span class="n">MyAdc</span><span class="o">&gt;</span> <span class="n">thermistor</span><span class="p">(</span><span class="n">NtcType</span><span class="o">::</span><span class="n">NtcG163Jft103Ft1S</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">adc</span><span class="p">);</span>
 
 <span class="c1">// 3. Initialize and read temperature</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">thermistor</span><span class="p">.</span><span class="n">Initialize</span><span class="p">())</span> <span class="p">{</span>
-    <span class="kt">float</span> <span class="n">temperature</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">thermistor</span><span class="p">.</span><span class="n">ReadTemperatureCelsius</span><span class="p">(</span><span class="o">&amp;</span><span class="n">temperature</span><span class="p">)</span> <span class="o">==</span> <span class="n">NTC_SUCCESS</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">"Temperature: %.2f°C</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">temperature</span><span class="p">);</span>
+    <span class="kt">float</span> <span class="n">temp_c</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">thermistor</span><span class="p">.</span><span class="n">ReadTemperatureCelsius</span><span class="p">(</span><span class="o">&amp;</span><span class="n">temp_c</span><span class="p">)</span> <span class="o">==</span> <span class="n">NtcError</span><span class="o">::</span><span class="n">Success</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Temperature: %.2f°C</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">temp_c</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></div></code></pre></div></div>
-<h3 id="custom-configuration-example">
-  
-  
-    <a href="#custom-configuration-example" class="anchor-heading" aria-labelledby="custom-configuration-example"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Custom Configuration Example
-  
-  
-</h3>
-    
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-</pre></td><td class="rouge-code"><pre><span class="c1">// Create custom configuration</span>
-<span class="n">ntc_config_t</span> <span class="n">config</span> <span class="o">=</span> <span class="n">NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S</span><span class="p">();</span>
-<span class="n">config</span><span class="p">.</span><span class="n">adc_channel</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                              <span class="c1">// Use ADC channel 1</span>
-<span class="n">config</span><span class="p">.</span><span class="n">series_resistance</span> <span class="o">=</span> <span class="mf">10000.0</span><span class="n">f</span><span class="p">;</span>                 <span class="c1">// 10kΩ series resistor</span>
-<span class="n">config</span><span class="p">.</span><span class="n">conversion_method</span> <span class="o">=</span> <span class="n">NTC_CONVERSION_MATHEMATICAL</span><span class="p">;</span> <span class="c1">// Use math conversion</span>
-<span class="n">config</span><span class="p">.</span><span class="n">enable_filtering</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>                      <span class="c1">// Enable filtering</span>
-<span class="n">config</span><span class="p">.</span><span class="n">filter_alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="n">f</span><span class="p">;</span>                          <span class="c1">// Filter coefficient</span>
-<span class="n">config</span><span class="p">.</span><span class="n">sample_count</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>                             <span class="c1">// Average 5 samples</span>
-<span class="n">config</span><span class="p">.</span><span class="n">sample_delay_ms</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>                         <span class="c1">// 10ms between samples</span>
-
-<span class="n">NtcThermistor</span><span class="o">&lt;</span><span class="n">MyAdc</span><span class="o">&gt;</span> <span class="n">thermistor</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">adc</span><span class="p">);</span>
-<span class="n">thermistor</span><span class="p">.</span><span class="n">Initialize</span><span class="p">();</span>
-
-<span class="c1">// Read complete temperature information</span>
-<span class="n">ntc_reading_t</span> <span class="n">reading</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">thermistor</span><span class="p">.</span><span class="n">ReadTemperature</span><span class="p">(</span><span class="o">&amp;</span><span class="n">reading</span><span class="p">)</span> <span class="o">==</span> <span class="n">NTC_SUCCESS</span> <span class="o">&amp;&amp;</span> <span class="n">reading</span><span class="p">.</span><span class="n">is_valid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">"Temperature: %.2f°C (%.2f°F, %.2fK)</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
-           <span class="n">reading</span><span class="p">.</span><span class="n">temperature_celsius</span><span class="p">,</span>
-           <span class="n">reading</span><span class="p">.</span><span class="n">temperature_fahrenheit</span><span class="p">,</span>
-           <span class="n">reading</span><span class="p">.</span><span class="n">temperature_kelvin</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">"Resistance: %.2fΩ, Voltage: %.3fV</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
-           <span class="n">reading</span><span class="p">.</span><span class="n">resistance_ohms</span><span class="p">,</span>
-           <span class="n">reading</span><span class="p">.</span><span class="n">voltage_volts</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h2 id="-api-reference">
-  
-  
-    <a href="#-api-reference" class="anchor-heading" aria-labelledby="-api-reference"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 📖 API Reference
-  
-  
-</h2>
-    
-<h3 id="core-functions">
-  
-  
-    <a href="#core-functions" class="anchor-heading" aria-labelledby="core-functions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Core Functions
-  
-  
-</h3>
-    
-<h4 id="initialization">
-  
-  
-    <a href="#initialization" class="anchor-heading" aria-labelledby="initialization"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Initialization
-  
-  
-</h4>
-    
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Initialize()</code> - Initialize the thermistor driver (must be called before use)</li>
-  <li><code class="language-plaintext highlighter-rouge">Deinitialize()</code> - Clean up resources</li>
-  <li><code class="language-plaintext highlighter-rouge">IsInitialized()</code> - Check initialization status</li>
-</ul>
-<h4 id="temperature-reading">
-  
-  
-    <a href="#temperature-reading" class="anchor-heading" aria-labelledby="temperature-reading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Temperature Reading
-  
-  
-</h4>
-    
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">ReadTemperatureCelsius(float* temp)</code> - Read temperature in Celsius</li>
-  <li><code class="language-plaintext highlighter-rouge">ReadTemperatureFahrenheit(float* temp)</code> - Read temperature in Fahrenheit</li>
-  <li><code class="language-plaintext highlighter-rouge">ReadTemperatureKelvin(float* temp)</code> - Read temperature in Kelvin</li>
-  <li><code class="language-plaintext highlighter-rouge">ReadTemperature(ntc_reading_t* reading)</code> - Read complete temperature information</li>
-</ul>
-<h4 id="resistance-and-voltage">
-  
-  
-    <a href="#resistance-and-voltage" class="anchor-heading" aria-labelledby="resistance-and-voltage"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Resistance and Voltage
-  
-  
-</h4>
-    
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">GetResistance(float* resistance)</code> - Get thermistor resistance (ohms)</li>
-  <li><code class="language-plaintext highlighter-rouge">GetVoltage(float* voltage)</code> - Get voltage across thermistor (V)</li>
-  <li><code class="language-plaintext highlighter-rouge">GetRawAdcValue(uint32_t* value)</code> - Get raw ADC reading</li>
-</ul>
-<h4 id="calibration">
-  
-  
-    <a href="#calibration" class="anchor-heading" aria-labelledby="calibration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Calibration
-  
-  
-</h4>
-    
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Calibrate(float reference_temp)</code> - Calibrate using known reference temperature</li>
-  <li><code class="language-plaintext highlighter-rouge">SetCalibrationOffset(float offset)</code> - Set calibration offset (°C)</li>
-  <li><code class="language-plaintext highlighter-rouge">GetCalibrationOffset(float* offset)</code> - Get current calibration offset</li>
-  <li><code class="language-plaintext highlighter-rouge">ResetCalibration()</code> - Reset calibration to zero</li>
-</ul>
-<h3 id="configuration-methods">
-  
-  
-    <a href="#configuration-methods" class="anchor-heading" aria-labelledby="configuration-methods"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Configuration Methods
-  
-  
-</h3>
-    
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">SetConfiguration(const ntc_config_t&amp; config)</code> - Set complete configuration</li>
-  <li><code class="language-plaintext highlighter-rouge">GetConfiguration(ntc_config_t* config)</code> - Get current configuration</li>
-  <li><code class="language-plaintext highlighter-rouge">SetConversionMethod(ntc_conversion_method_t method)</code> - Choose conversion method</li>
-  <li><code class="language-plaintext highlighter-rouge">SetVoltageDivider(float series_resistance)</code> - Configure voltage divider</li>
-  <li><code class="language-plaintext highlighter-rouge">SetReferenceVoltage(float voltage)</code> - Set ADC reference voltage</li>
-  <li><code class="language-plaintext highlighter-rouge">SetBetaValue(float beta)</code> - Set thermistor beta value</li>
-  <li><code class="language-plaintext highlighter-rouge">SetAdcChannel(uint8_t channel)</code> - Set ADC channel</li>
-  <li><code class="language-plaintext highlighter-rouge">SetSamplingParameters(uint32_t count, uint32_t delay_ms)</code> - Configure sampling</li>
-  <li><code class="language-plaintext highlighter-rouge">SetFiltering(bool enable, float alpha)</code> - Enable/disable filtering</li>
-</ul>
-<h3 id="utility-functions">
-  
-  
-    <a href="#utility-functions" class="anchor-heading" aria-labelledby="utility-functions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Utility Functions
-  
-  
-</h3>
-    
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">CelsiusToFahrenheit(float celsius)</code> - Static conversion function</li>
-  <li><code class="language-plaintext highlighter-rouge">FahrenheitToCelsius(float fahrenheit)</code> - Static conversion function</li>
-  <li><code class="language-plaintext highlighter-rouge">CelsiusToKelvin(float celsius)</code> - Static conversion function</li>
-  <li><code class="language-plaintext highlighter-rouge">KelvinToCelsius(float kelvin)</code> - Static conversion function</li>
-  <li><code class="language-plaintext highlighter-rouge">GetErrorString(ntc_err_t error)</code> - Get human-readable error message</li>
-  <li><code class="language-plaintext highlighter-rouge">GetTypeString(ntc_type_t type)</code> - Get NTC type name string</li>
-</ul>
+<p>For detailed setup, see <a href="/hf-ntc-thermistor-driver/development/docs/installation/">Installation</a> and <a href="/hf-ntc-thermistor-driver/development/docs/quickstart/">Quick Start Guide</a>.</p>
 <h2 id="-installation">
   
   
@@ -609,21 +393,66 @@ Interactive guides, examples, and step-by-step tutorials</p>
     
 
 <ol>
-  <li>Add to your project’s <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code>:
-    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nb">set</span><span class="p">(</span>EXTRA_COMPONENT_DIRS <span class="si">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="si">}</span>/utils-and-drivers/hf-core-drivers/external/hf-ntc-thermistor-driver<span class="p">)</span>
-</pre></td></tr></tbody></table></div></code></pre></div>    </div>
+  <li><strong>Clone or copy</strong> the driver files into your project</li>
+  <li><strong>Implement the ADC interface</strong> for your platform (see <a href="/hf-ntc-thermistor-driver/development/docs/platform_integration/">Platform Integration</a>)</li>
+  <li><strong>Include the header</strong> in your code:
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">"ntc_thermistor.hpp"</span><span class="cp">
+</span></pre></td></tr></tbody></table></div></code></pre></div>    </div>
   </li>
-  <li>Include in your component’s <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code>:
-    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="nf">idf_component_register</span><span class="p">(</span>
- REQUIRES hf-ntc-thermistor-driver
-<span class="p">)</span>
-</pre></td></tr></tbody></table></div></code></pre></div>    </div>
-  </li>
+  <li>Compile with a <strong>C++11</strong> or newer compiler</li>
 </ol>
+
+<p>For detailed installation instructions, see <a href="/hf-ntc-thermistor-driver/development/docs/installation/">docs/installation.md</a>.</p>
+<h2 id="-api-reference">
+  
+  
+    <a href="#-api-reference" class="anchor-heading" aria-labelledby="-api-reference"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 📖 API Reference
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Initialize()</code></td>
+      <td>Initialize the driver</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ReadTemperatureCelsius(float*)</code></td>
+      <td>Read temperature in Celsius</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ReadTemperatureFahrenheit(float*)</code></td>
+      <td>Read temperature in Fahrenheit</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ReadTemperatureKelvin(float*)</code></td>
+      <td>Read temperature in Kelvin</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ReadTemperature(ntc_reading_t*)</code></td>
+      <td>Read complete temperature information</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Calibrate(float)</code></td>
+      <td>Calibrate using reference temperature</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SetFiltering(bool, float)</code></td>
+      <td>Enable/disable filtering</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>For complete API documentation with source code links, see <a href="/hf-ntc-thermistor-driver/development/docs/api_reference/">docs/api_reference.md</a>.</p>
 <h2 id="-examples">
   
   
@@ -632,127 +461,11 @@ Interactive guides, examples, and step-by-step tutorials</p>
   
 </h2>
     
-<h3 id="architecture-overview">
-  
-  
-    <a href="#architecture-overview" class="anchor-heading" aria-labelledby="architecture-overview"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Architecture Overview
-  
-  
-</h3>
-    
 
-<p>The NTC thermistor driver uses a <strong>CRTP (Curiously Recurring Template Pattern)</strong> design for hardware abstraction:</p>
+<p>For ESP32 examples, see the <a href="examples/esp32/">examples/esp32</a> directory.
+Additional examples for other platforms are available in the <a href="examples/">examples</a> directory.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="rouge-code"><pre>┌─────────────────────────────────────┐
-│   NtcThermistor&lt;AdcType&gt;            │
-│   (Main Driver Class)               │
-└──────────────┬──────────────────────┘
-               │ uses
-               ▼
-┌─────────────────────────────────────┐
-│   ntc::AdcInterface&lt;AdcType&gt;     │
-│   (CRTP Base Interface)             │
-└──────────────┬──────────────────────┘
-               │ implements
-               ▼
-┌─────────────────────────────────────┐
-│ YourAdc : AdcInterface&lt;YourAdc&gt;  │
-│ (Platform-Specific Implementation)  │
-└─────────────────────────────────────┘
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h3 id="key-design-features">
-  
-  
-    <a href="#key-design-features" class="anchor-heading" aria-labelledby="key-design-features"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Key Design Features
-  
-  
-</h3>
-    
-
-<ol>
-  <li><strong>Hardware Agnostic</strong>: Works with any ADC by implementing the interface</li>
-  <li><strong>Zero Virtual Overhead</strong>: CRTP provides compile-time polymorphism</li>
-  <li><strong>Type Safe</strong>: Template-based design catches errors at compile time</li>
-  <li><strong>Modular</strong>: Separate modules for conversion, lookup tables, and types</li>
-</ol>
-<h3 id="conversion-methods">
-  
-  
-    <a href="#conversion-methods" class="anchor-heading" aria-labelledby="conversion-methods"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Conversion Methods
-  
-  
-</h3>
-    
-
-<p>The driver supports two conversion methods:</p>
-
-<ol>
-  <li><strong>Lookup Table</strong> (<code class="language-plaintext highlighter-rouge">NTC_CONVERSION_LOOKUP_TABLE</code>)
-    <ul>
-      <li>Fast, pre-calculated values</li>
-      <li>Lower memory usage</li>
-      <li>Slightly less accurate</li>
-      <li>Best for real-time applications</li>
-    </ul>
-  </li>
-  <li><strong>Mathematical</strong> (<code class="language-plaintext highlighter-rouge">NTC_CONVERSION_MATHEMATICAL</code>)
-    <ul>
-      <li>Uses Steinhart-Hart or Beta equations</li>
-      <li>Higher accuracy</li>
-      <li>More computational overhead</li>
-      <li>Best for precision applications</li>
-    </ul>
-  </li>
-  <li><strong>Auto</strong> (<code class="language-plaintext highlighter-rouge">NTC_CONVERSION_AUTO</code>)
-    <ul>
-      <li>Automatically selects best method</li>
-      <li>Balances speed and accuracy</li>
-    </ul>
-  </li>
-</ol>
-<h3 id="best-practices">
-  
-  
-    <a href="#best-practices" class="anchor-heading" aria-labelledby="best-practices"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Best Practices
-  
-  
-</h3>
-    
-
-<ol>
-  <li><strong>Always check return values</strong>: Functions return <code class="language-plaintext highlighter-rouge">ntc_err_t</code> error codes</li>
-  <li><strong>Initialize before use</strong>: Call <code class="language-plaintext highlighter-rouge">Initialize()</code> before reading temperatures</li>
-  <li><strong>Validate readings</strong>: Check <code class="language-plaintext highlighter-rouge">is_valid</code> flag in <code class="language-plaintext highlighter-rouge">ntc_reading_t</code> structures</li>
-  <li><strong>Configure appropriately</strong>: Set ADC channel, series resistance, and reference voltage correctly</li>
-  <li><strong>Use filtering for noisy signals</strong>: Enable filtering with appropriate alpha value</li>
-  <li><strong>Calibrate when needed</strong>: Use <code class="language-plaintext highlighter-rouge">Calibrate()</code> for improved accuracy</li>
-</ol>
-<h3 id="esp32-examples">
-  
-  
-    <a href="#esp32-examples" class="anchor-heading" aria-labelledby="esp32-examples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> ESP32 Examples
-  
-  
-</h3>
-    
-
-<p>For complete ESP32 examples, see the <a href="examples/esp32/">examples/esp32</a> directory.</p>
+<p>Detailed example walkthroughs are available in <a href="/hf-ntc-thermistor-driver/development/docs/examples/">docs/examples.md</a>.</p>
 <h2 id="-documentation">
   
   
@@ -762,7 +475,7 @@ Interactive guides, examples, and step-by-step tutorials</p>
 </h2>
     
 
-<p>For detailed documentation, see the <a href="docs/">docs</a> directory.</p>
+<p>For complete documentation, see the <a href="/hf-ntc-thermistor-driver/development/docs/">docs directory</a>.</p>
 <h2 id="-contributing">
   
   
@@ -772,7 +485,7 @@ Interactive guides, examples, and step-by-step tutorials</p>
 </h2>
     
 
-<p>Pull requests and suggestions are welcome! Please see the main HardFOC coding standards for contribution guidelines.</p>
+<p>Pull requests and suggestions are welcome! Please follow the existing code style and include tests for new features.</p>
 <h2 id="-license">
   
   
@@ -782,13 +495,22 @@ Interactive guides, examples, and step-by-step tutorials</p>
 </h2>
     
 
-<p>This project is licensed under the <strong>GNU General Public License v3.0</strong>.<br />
+<p>This project is licensed under the <strong>GNU General Public License v3.0</strong>.
 See the <a href="/hf-ntc-thermistor-driver/development/LICENSE">LICENSE</a> file for details.</p>
 
           
 
           
-            
+            <hr>
+<h2 class="text-delta">Table of contents</h2>
+
+<ul>
+  
+  <li>
+    <a href="/hf-ntc-thermistor-driver/development/docs/">📚 Documentation</a>
+  </li>
+  
+</ul>
           
         </main>
         

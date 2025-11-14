@@ -14,9 +14,10 @@
   <style id="jtd-nav-activation">
   
 
+    .site-nav > ul.nav-list:first-child > li > a,
     
-    .site-nav > ul.nav-list:first-child > li:not(:nth-child(3)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li a {
+    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
       background-image: none;
     }
 
@@ -25,12 +26,14 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(1) > ul > li:nth-child(1) > a {
       font-weight: 600;
       text-decoration: none;
-    }.site-nav > ul.nav-list:first-child > li:nth-child(3) > button svg {
+    }.site-nav > ul.nav-list:first-child > li:nth-child(1) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(1) > ul > li:nth-child(1) > button svg {
       transform: rotate(-90deg);
-    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list {
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(1) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
       display: block;
     }
   </style>
@@ -50,21 +53,21 @@
 
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>HF-NTC-Thermistor Documentation | HardFOC NTC Thermistor Driver - development</title>
+<title>📚 Documentation | HardFOC NTC Thermistor Driver - development</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="HF-NTC-Thermistor Documentation" />
+<meta property="og:title" content="📚 Documentation" />
 <meta name="author" content="N3b3x" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Hardware-agnostic NTC thermistor driver with lookup table and mathematical conversion methods for accurate temperature readings" />
-<meta property="og:description" content="Hardware-agnostic NTC thermistor driver with lookup table and mathematical conversion methods for accurate temperature readings" />
+<meta name="description" content="Complete documentation for the HardFOC NTC Thermistor Driver" />
+<meta property="og:description" content="Complete documentation for the HardFOC NTC Thermistor Driver" />
 <link rel="canonical" href="https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/" />
 <meta property="og:url" content="https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/" />
 <meta property="og:site_name" content="HardFOC NTC Thermistor Driver - development" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="HF-NTC-Thermistor Documentation" />
+<meta property="twitter:title" content="📚 Documentation" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"N3b3x","url":"https://github.com/n3b3x"},"description":"Hardware-agnostic NTC thermistor driver with lookup table and mathematical conversion methods for accurate temperature readings","headline":"HF-NTC-Thermistor Documentation","url":"https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"N3b3x","url":"https://github.com/n3b3x"},"description":"Complete documentation for the HardFOC NTC Thermistor Driver","headline":"📚 Documentation","url":"https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -166,7 +169,11 @@
   <nav aria-label="Main" id="site-nav" class="site-nav">
   
   
-    <ul class="nav-list"><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/" class="nav-list-link">HardFOC NTC Thermistor Driver</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/datasheet/" class="nav-list-link">Datasheet Directory</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/" class="nav-list-link">HF-NTC-Thermistor Documentation</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/examples/esp32/" class="nav-list-link">NTC Thermistor ESP32-C6 Comprehensive Test Suite</a></li></ul>
+    <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in HardFOC NTC Thermistor Driver category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/hf-ntc-thermistor-driver/development/" class="nav-list-link">HardFOC NTC Thermistor Driver</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in 📚 Documentation category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/hf-ntc-thermistor-driver/development/docs/" class="nav-list-link">📚 Documentation</a><ul class="nav-list"><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/installation/" class="nav-list-link">🛠️ Installation</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/quickstart/" class="nav-list-link">⚡ Quick Start</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/hardware_setup/" class="nav-list-link">🔌 Hardware Setup</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/platform_integration/" class="nav-list-link">🔧 Platform Integration</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/configuration/" class="nav-list-link">⚙️ Configuration</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/api_reference/" class="nav-list-link">📖 API Reference</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/examples/" class="nav-list-link">💡 Examples</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/troubleshooting/" class="nav-list-link">🐛 Troubleshooting</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/datasheet/" class="nav-list-link">Datasheet Directory</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/examples/esp32/" class="nav-list-link">NTC Thermistor ESP32-C6 Comprehensive Test Suite</a></li></ul>
   
 </nav>
 
@@ -240,7 +247,14 @@
 </div>
 
     <div class="main-content-wrap">
-      
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/hf-ntc-thermistor-driver/development/">HardFOC NTC Thermistor Driver</a></li>
+    <li class="breadcrumb-nav-list-item"><span>📚 Documentation</span></li>
+  </ol>
+</nav>
+
+
       <div id="main-content" class="main-content">
         <main>
           
@@ -253,170 +267,144 @@
 </h1>
     
 
-<p>Welcome! This directory contains documentation for the <strong>HF-NTC-Thermistor</strong> driver library.</p>
-<h2 id="overview">
+<p>Welcome! This directory contains step-by-step guides for installing, building, and using the <strong>HF-NTC-Thermistor</strong> library.</p>
+<h2 id="-documentation-structure">
   
   
-    <a href="#overview" class="anchor-heading" aria-labelledby="overview"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Overview
+    <a href="#-documentation-structure" class="anchor-heading" aria-labelledby="-documentation-structure"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 📚 Documentation Structure
+  
+  
+</h2>
+    
+<h3 id="getting-started">
+  
+  
+    <a href="#getting-started" class="anchor-heading" aria-labelledby="getting-started"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Getting Started</strong>
+  
+  
+</h3>
+    
+
+<ol>
+  <li><strong><a href="/hf-ntc-thermistor-driver/development/docs/installation/">🛠️ Installation</a></strong> – Prerequisites and how to obtain the source</li>
+  <li><strong><a href="/hf-ntc-thermistor-driver/development/docs/quickstart/">⚡ Quick Start</a></strong> – Minimal working example to get you running</li>
+  <li><strong><a href="/hf-ntc-thermistor-driver/development/docs/hardware_setup/">🔌 Hardware Setup</a></strong> – Wiring diagrams and voltage divider circuit</li>
+</ol>
+<h3 id="integration">
+  
+  
+    <a href="#integration" class="anchor-heading" aria-labelledby="integration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Integration</strong>
+  
+  
+</h3>
+    
+
+<ol>
+  <li><strong><a href="/hf-ntc-thermistor-driver/development/docs/platform_integration/">🔧 Platform Integration</a></strong> – Implement the CRTP ADC interface for your platform</li>
+  <li><strong><a href="/hf-ntc-thermistor-driver/development/docs/configuration/">⚙️ Configuration</a></strong> – Configuration options and NTC types</li>
+</ol>
+<h3 id="reference">
+  
+  
+    <a href="#reference" class="anchor-heading" aria-labelledby="reference"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Reference</strong>
+  
+  
+</h3>
+    
+
+<ol>
+  <li><strong><a href="/hf-ntc-thermistor-driver/development/docs/api_reference/">📖 API Reference</a></strong> – Complete API documentation</li>
+  <li><strong><a href="/hf-ntc-thermistor-driver/development/docs/examples/">💡 Examples</a></strong> – Detailed example walkthroughs</li>
+</ol>
+<h3 id="troubleshooting">
+  
+  
+    <a href="#troubleshooting" class="anchor-heading" aria-labelledby="troubleshooting"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Troubleshooting</strong>
+  
+  
+</h3>
+    
+
+<ol>
+  <li><strong><a href="/hf-ntc-thermistor-driver/development/docs/troubleshooting/">🐛 Troubleshooting</a></strong> – Common issues and solutions</li>
+</ol><hr />
+<h2 id="-quick-start-path">
+  
+  
+    <a href="#-quick-start-path" class="anchor-heading" aria-labelledby="-quick-start-path"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🚀 Quick Start Path
   
   
 </h2>
     
 
-<p>The HF-NTC-Thermistor driver provides a comprehensive solution for temperature measurement using NTC (Negative Temperature Coefficient) thermistors. It supports various NTC types and provides both lookup table and mathematical conversion methods for accurate temperature readings.</p>
-<h2 id="features">
-  
-  
-    <a href="#features" class="anchor-heading" aria-labelledby="features"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Features
-  
-  
-</h2>
-    
+<p><strong>New to NTC Thermistors?</strong> Follow this recommended path:</p>
 
-<ul>
-  <li><strong>Hardware Agnostic</strong>: Works with any ADC interface that implements <code class="language-plaintext highlighter-rouge">ntc::AdcInterface</code></li>
-  <li><strong>Multiple NTC Types</strong>: Support for various NTC thermistor specifications</li>
-  <li><strong>Dual Conversion Methods</strong>: Lookup table and mathematical (Steinhart-Hart) conversion</li>
-  <li><strong>High Accuracy</strong>: Optimized for precision temperature measurement</li>
-  <li><strong>Calibration Support</strong>: Built-in calibration and offset compensation</li>
-  <li><strong>Temperature Units</strong>: Support for Celsius, Fahrenheit, and Kelvin</li>
-  <li><strong>Error Handling</strong>: Comprehensive error reporting and validation</li>
-  <li><strong>Thread Safe</strong>: Designed for multi-threaded applications</li>
-</ul>
-<h2 id="supported-ntc-types">
+<ol>
+  <li>Start with <strong><a href="/hf-ntc-thermistor-driver/development/docs/installation/">Installation</a></strong> to prepare your environment</li>
+  <li>Follow <strong><a href="/hf-ntc-thermistor-driver/development/docs/hardware_setup/">Hardware Setup</a></strong> to wire your voltage divider circuit</li>
+  <li>Read <strong><a href="/hf-ntc-thermistor-driver/development/docs/quickstart/">Quick Start</a></strong> for a minimal working example</li>
+  <li>Check <strong><a href="/hf-ntc-thermistor-driver/development/docs/platform_integration/">Platform Integration</a></strong> to implement the ADC interface</li>
+  <li>Explore <strong><a href="/hf-ntc-thermistor-driver/development/docs/examples/">Examples</a></strong> for more advanced usage</li>
+</ol><hr />
+<h2 id="-need-help">
   
   
-    <a href="#supported-ntc-types" class="anchor-heading" aria-labelledby="supported-ntc-types"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Supported NTC Types
-  
-  
-</h2>
-    
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th>NTC Type</th>
-      <th>Resistance at 25°C</th>
-      <th>Beta Value</th>
-      <th>Temperature Range</th>
-      <th>Accuracy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>NTCG163JFT103FT1S</td>
-      <td>10kΩ</td>
-      <td>3435K</td>
-      <td>-40°C to +125°C</td>
-      <td>±1%</td>
-    </tr>
-    <tr>
-      <td>NTCG164JF103FT1S</td>
-      <td>10kΩ</td>
-      <td>3435K</td>
-      <td>-40°C to +125°C</td>
-      <td>±1%</td>
-    </tr>
-    <tr>
-      <td>NTCG163JF103FT1S</td>
-      <td>10kΩ</td>
-      <td>3435K</td>
-      <td>-40°C to +125°C</td>
-      <td>±1%</td>
-    </tr>
-    <tr>
-      <td>Custom</td>
-      <td>Configurable</td>
-      <td>Configurable</td>
-      <td>Configurable</td>
-      <td>Configurable</td>
-    </tr>
-  </tbody>
-</table></div>
-<h2 id="quick-start">
-  
-  
-    <a href="#quick-start" class="anchor-heading" aria-labelledby="quick-start"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Quick Start
-  
-  
-</h2>
-    
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">"NtcThermistor.h"</span><span class="cp">
-</span>
-<span class="c1">// Create NTC thermistor instance</span>
-<span class="n">NtcThermistor</span> <span class="nf">thermistor</span><span class="p">(</span><span class="n">NTC_TYPE_NTCG163JFT103FT1S</span><span class="p">,</span> <span class="n">adc_interface</span><span class="p">);</span>
-
-<span class="c1">// Initialize</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">thermistor</span><span class="p">.</span><span class="n">Initialize</span><span class="p">())</span> <span class="p">{</span>
-    <span class="c1">// Read temperature</span>
-    <span class="kt">float</span> <span class="n">temperature</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">thermistor</span><span class="p">.</span><span class="n">ReadTemperatureCelsius</span><span class="p">(</span><span class="o">&amp;</span><span class="n">temperature</span><span class="p">)</span> <span class="o">==</span> <span class="n">NTC_SUCCESS</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">"Temperature: %.2f°C</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">temperature</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h2 id="documentation-structure">
-  
-  
-    <a href="#documentation-structure" class="anchor-heading" aria-labelledby="documentation-structure"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Documentation Structure
+    <a href="#-need-help" class="anchor-heading" aria-labelledby="-need-help"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 💡 Need Help?
   
   
 </h2>
     
 
 <ul>
-  <li><strong>API Reference</strong>: See the main README.md for API documentation</li>
-  <li><strong>Examples</strong>: See <code class="language-plaintext highlighter-rouge">examples/esp32/</code> for ESP32 usage examples</li>
-  <li><strong>Doxygen</strong>: Full API documentation available via Doxygen</li>
-</ul>
-<h2 id="additional-resources">
-  
-  
-    <a href="#additional-resources" class="anchor-heading" aria-labelledby="additional-resources"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Additional Resources
-  
-  
-</h2>
-    
+  <li><strong>🐛 Found a bug?</strong> Check the <a href="/hf-ntc-thermistor-driver/development/docs/troubleshooting/">Troubleshooting</a> guide</li>
+  <li><strong>❓ Have questions?</strong> Review the <a href="/hf-ntc-thermistor-driver/development/docs/api_reference/">API Reference</a></li>
+  <li><strong>📝 Want to contribute?</strong> See the contributing guidelines in the main README</li>
+</ul><hr />
 
-<ul>
-  <li><a href="/hf-ntc-thermistor-driver/development/">Main README</a> - Complete driver documentation</li>
-  <li><a href="../examples/">Examples</a> - Usage examples</li>
-  <li><a href="../datasheet/">Datasheets</a> - NTC thermistor datasheets</li>
-</ul>
-<h2 id="documentation-structure-1">
-  
-  
-    <a href="#documentation-structure-1" class="anchor-heading" aria-labelledby="documentation-structure-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Documentation Structure
-  
-  
-</h2>
-    
-
-<ul>
-  <li><strong>API Reference</strong>: See the main README.md for complete API documentation</li>
-  <li><strong>Examples</strong>: See <code class="language-plaintext highlighter-rouge">examples/esp32/</code> for ESP32 usage examples</li>
-  <li><strong>Doxygen</strong>: Full API documentation available via Doxygen (when generated)</li>
-  <li><strong>Architecture</strong>: See main README.md for architecture overview and design patterns</li>
-</ul>
+<p><strong>Navigation</strong>
+➡️ <a href="/hf-ntc-thermistor-driver/development/docs/installation/">Installation</a></p>
 
           
 
           
-            
+            <hr>
+<h2 class="text-delta">Table of contents</h2>
+
+<ul>
+  
+  <li>
+    <a href="/hf-ntc-thermistor-driver/development/docs/installation/">🛠️ Installation</a>
+  </li>
+  
+  <li>
+    <a href="/hf-ntc-thermistor-driver/development/docs/quickstart/">⚡ Quick Start</a>
+  </li>
+  
+  <li>
+    <a href="/hf-ntc-thermistor-driver/development/docs/hardware_setup/">🔌 Hardware Setup</a>
+  </li>
+  
+  <li>
+    <a href="/hf-ntc-thermistor-driver/development/docs/platform_integration/">🔧 Platform Integration</a>
+  </li>
+  
+  <li>
+    <a href="/hf-ntc-thermistor-driver/development/docs/configuration/">⚙️ Configuration</a>
+  </li>
+  
+  <li>
+    <a href="/hf-ntc-thermistor-driver/development/docs/api_reference/">📖 API Reference</a>
+  </li>
+  
+  <li>
+    <a href="/hf-ntc-thermistor-driver/development/docs/examples/">💡 Examples</a>
+  </li>
+  
+  <li>
+    <a href="/hf-ntc-thermistor-driver/development/docs/troubleshooting/">🐛 Troubleshooting</a>
+  </li>
+  
+</ul>
           
         </main>
         

@@ -11,9 +11,7 @@ var searchData=
   ['adcreadfailed_8',['AdcReadFailed',['../ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9daa5ec11235080e7ea6652c2409ccfc1bb1',1,'ntc_types.hpp']]],
   ['add_5fresult_9',['add_result',['../structTestResults.html#a257eba3a9005a5c19c68ae27774948f7',1,'TestResults']]],
   ['alreadyinitialized_10',['AlreadyInitialized',['../ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9daaac5706c6b4c156062a2be0889a9e7946',1,'ntc_types.hpp']]],
-  ['and_20voltage_11',['Resistance and Voltage',['../index.html#autotoc_md12',1,'']]],
-  ['api_20reference_12',['📖 API Reference',['../index.html#autotoc_md8',1,'']]],
-  ['app_5fmain_13',['app_main',['../ntc__thermistor__comprehensive__test_8cpp.html#abce06be17fc37d675118a678a8100a36',1,'ntc_thermistor_comprehensive_test.cpp']]],
-  ['architecture_20overview_14',['Architecture Overview',['../index.html#autotoc_md18',1,'']]],
-  ['auto_15',['Auto',['../ntc__types_8hpp.html#aa0270dbb8c335c8cf792195e2d6188e2a06b9281e396db002010bde1de57262eb',1,'ntc_types.hpp']]]
+  ['api_20reference_11',['📖 API Reference',['../index.html#autotoc_md6',1,'']]],
+  ['app_5fmain_12',['app_main',['../ntc__thermistor__comprehensive__test_8cpp.html#abce06be17fc37d675118a678a8100a36',1,'ntc_thermistor_comprehensive_test.cpp']]],
+  ['auto_13',['Auto',['../ntc__types_8hpp.html#aa0270dbb8c335c8cf792195e2d6188e2a06b9281e396db002010bde1de57262eb',1,'ntc_types.hpp']]]
 ];
