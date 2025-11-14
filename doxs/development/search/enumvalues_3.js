@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['read_5ffailed_0',['READ_FAILED',['../namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a82fbe87835b941addda10c26ff6e98d6',1,'NTC']]]
+  ['hardwareerror_0',['HardwareError',['../namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03',1,'NTC']]],
+  ['hardwarefault_1',['HardwareFault',['../NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9daa5244c8608d582d05f15f03dcab8ca91b',1,'NtcTypes.h']]]
 ];

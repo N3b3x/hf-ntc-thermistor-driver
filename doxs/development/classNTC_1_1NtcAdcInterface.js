@@ -1,8 +1,8 @@
 var classNTC_1_1NtcAdcInterface =
 [
-    [ "NtcAdcInterface", "classNTC_1_1NtcAdcInterface.html#adbd35699af59dca6c2f7b1fac99d2123", null ],
     [ "NtcAdcInterface", "classNTC_1_1NtcAdcInterface.html#a9930fb65f2c87e866de7598c9182ba15", null ],
     [ "NtcAdcInterface", "classNTC_1_1NtcAdcInterface.html#a89295277c92565905dd4045ad9328d0b", null ],
+    [ "NtcAdcInterface", "classNTC_1_1NtcAdcInterface.html#adbd35699af59dca6c2f7b1fac99d2123", null ],
     [ "~NtcAdcInterface", "classNTC_1_1NtcAdcInterface.html#a7838291c708bfcc16a8ce6189ef1fa13", null ],
     [ "EnsureInitialized", "classNTC_1_1NtcAdcInterface.html#a44634333343db2c1291a7e90930f2fee", null ],
     [ "GetReferenceVoltage", "classNTC_1_1NtcAdcInterface.html#a96fc5ce5eae1bc8ed679d77eec00d6c2", null ],

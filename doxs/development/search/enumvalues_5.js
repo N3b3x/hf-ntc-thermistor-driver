@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['timeout_0',['TIMEOUT',['../namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a070a0fb40f6c308ab544b227660aadff',1,'NTC']]]
+  ['lookuptable_0',['LookupTable',['../NtcTypes_8h.html#aa0270dbb8c335c8cf792195e2d6188e2ad1f2b2f9de4adcc3f87174749c854d51',1,'NtcTypes.h']]],
+  ['lookuptableerror_1',['LookupTableError',['../NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9daa311f803cf65cfc685e610106007f38ce',1,'NtcTypes.h']]]
 ];

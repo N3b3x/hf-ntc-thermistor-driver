@@ -147,8 +147,8 @@ Macros</h2></td></tr>
 <tr class="separator:a069d023efb0dd03f8c2304a56b4a9564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75c45174f9dde97eb43339fcd0ac79c8" id="r_a75c45174f9dde97eb43339fcd0ac79c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75c45174f9dde97eb43339fcd0ac79c8">RUN_TEST_SECTION_IF_ENABLED_WITH_PROGRESS</a>(define_name,  section_name,  progress_func, ...)</td></tr>
 <tr class="separator:a75c45174f9dde97eb43339fcd0ac79c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42013656a31f033788afe39c84e96bec" id="r_a42013656a31f033788afe39c84e96bec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42013656a31f033788afe39c84e96bec">RUN_TEST_SECTION_IF_ENABLED_AUTO_PROGRESS</a>(define_name,  section_name, ...)</td></tr>
-<tr class="separator:a42013656a31f033788afe39c84e96bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae8970e8680071cf6435a1543377a09" id="r_acae8970e8680071cf6435a1543377a09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acae8970e8680071cf6435a1543377a09">RUN_TEST_SECTION_IF_ENABLED_AUTO_PROGRESS</a>(define_name,  section_name,  ...)</td></tr>
+<tr class="separator:acae8970e8680071cf6435a1543377a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab72cc2ae0fb724218e81479185ab38c6" id="r_ab72cc2ae0fb724218e81479185ab38c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab72cc2ae0fb724218e81479185ab38c6">RUN_TEST_SECTION_IF_ENABLED_WITH_PATTERN</a>(define_name,  section_name,  blink_count, ...)</td></tr>
 <tr class="separator:ab72cc2ae0fb724218e81479185ab38c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -225,14 +225,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                                             \</div>
-<div class="line">    ensure_gpio14_initialized();                                                                   \</div>
-<div class="line">    if (define_name) {                                                                             \</div>
-<div class="line">      RUN_TEST_IN_TASK(test_name, test_func, stack_size, priority);                                \</div>
-<div class="line">      flip_test_progress_indicator();                                                              \</div>
-<div class="line">    } <span class="keywordflow">else</span> {                                                                                       \</div>
-<div class="line">      ESP_LOGI(TAG, <span class="stringliteral">&quot;Test &#39;%s&#39; disabled by configuration&quot;</span>, test_name);                             \</div>
-<div class="line">    }                                                                                              \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                         \</div>
+<div class="line">    ensure_gpio14_initialized();                                               \</div>
+<div class="line">    if (define_name) {                                                         \</div>
+<div class="line">      RUN_TEST_IN_TASK(test_name, test_func, stack_size, priority);            \</div>
+<div class="line">      flip_test_progress_indicator();                                          \</div>
+<div class="line">    } <span class="keywordflow">else</span> {                                                                   \</div>
+<div class="line">      ESP_LOGI(TAG, <span class="stringliteral">&quot;Test &#39;%s&#39; disabled by configuration&quot;</span>, test_name);         \</div>
+<div class="line">    }                                                                          \</div>
 <div class="line">  } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->
 </div>
@@ -251,24 +251,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                                             \</div>
-<div class="line">    ensure_gpio14_initialized();                                                                   \</div>
-<div class="line">    ESP_LOGI(TAG,                                                                                  \</div>
-<div class="line">             <span class="stringliteral">&quot;\n&quot;</span>                                                                                  \</div>
-<div class="line">             <span class="stringliteral">&quot;╔══════════════════════════════════════════════════════════════════════════════╗\n&quot;</span>  \</div>
-<div class="line">             <span class="stringliteral">&quot;║ Running: &quot;</span> #test_func <span class="stringliteral">&quot;                                                     \n&quot;</span>    \</div>
-<div class="line">             <span class="stringliteral">&quot;╚══════════════════════════════════════════════════════════════════════════════╝&quot;</span>);  \</div>
-<div class="line">    uint64_t start_time = esp_timer_get_time();                                                    \</div>
-<div class="line">    <span class="keywordtype">bool</span> result = test_func();                                                                     \</div>
-<div class="line">    uint64_t end_time = esp_timer_get_time();                                                      \</div>
-<div class="line">    uint64_t execution_time = end_time - start_time;                                               \</div>
-<div class="line">    g_test_results.add_result(result, execution_time);                                             \</div>
-<div class="line">    if (result) {                                                                                  \</div>
-<div class="line">      ESP_LOGI(TAG, <span class="stringliteral">&quot;[SUCCESS] PASSED: &quot;</span> #test_func <span class="stringliteral">&quot; (%.2f ms)&quot;</span>, execution_time / 1000.0);        \</div>
-<div class="line">    } <span class="keywordflow">else</span> {                                                                                       \</div>
-<div class="line">      ESP_LOGE(TAG, <span class="stringliteral">&quot;[FAILED] FAILED: &quot;</span> #test_func <span class="stringliteral">&quot; (%.2f ms)&quot;</span>, execution_time / 1000.0);         \</div>
-<div class="line">    }                                                                                              \</div>
-<div class="line">    vTaskDelay(pdMS_TO_TICKS(100));                                                                \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                         \</div>
+<div class="line">    ensure_gpio14_initialized();                                               \</div>
+<div class="line">    ESP_LOGI(TAG, <span class="stringliteral">&quot;\n&quot;</span>                                                         \</div>
+<div class="line">                  <span class="stringliteral">&quot;╔═════════════════════════════════════════════════════════&quot;</span> \</div>
+<div class="line">                  <span class="stringliteral">&quot;═════════════════════╗\n&quot;</span>                                   \</div>
+<div class="line">                  <span class="stringliteral">&quot;║ Running: &quot;</span> #test_func                                     \</div>
+<div class="line">                  <span class="stringliteral">&quot;                                                     \n&quot;</span>    \</div>
+<div class="line">                  <span class="stringliteral">&quot;╚═════════════════════════════════════════════════════════&quot;</span> \</div>
+<div class="line">                  <span class="stringliteral">&quot;═════════════════════╝&quot;</span>);                                   \</div>
+<div class="line">    uint64_t start_time = esp_timer_get_time();                                \</div>
+<div class="line">    <span class="keywordtype">bool</span> result = test_func();                                                 \</div>
+<div class="line">    uint64_t end_time = esp_timer_get_time();                                  \</div>
+<div class="line">    uint64_t execution_time = end_time - start_time;                           \</div>
+<div class="line">    g_test_results.add_result(result, execution_time);                         \</div>
+<div class="line">    if (result) {                                                              \</div>
+<div class="line">      ESP_LOGI(TAG, <span class="stringliteral">&quot;[SUCCESS] PASSED: &quot;</span> #test_func <span class="stringliteral">&quot; (%.2F ms)&quot;</span>,              \</div>
+<div class="line">               execution_time / 1000.0);                                       \</div>
+<div class="line">    } <span class="keywordflow">else</span> {                                                                   \</div>
+<div class="line">      ESP_LOGE(TAG, <span class="stringliteral">&quot;[FAILED] FAILED: &quot;</span> #test_func <span class="stringliteral">&quot; (%.2F ms)&quot;</span>,               \</div>
+<div class="line">               execution_time / 1000.0);                                       \</div>
+<div class="line">    }                                                                          \</div>
+<div class="line">    vTaskDelay(pdMS_TO_TICKS(100));                                            \</div>
 <div class="line">  } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->
 <p>Standardized test execution macro with timing and result tracking. </p>
@@ -383,16 +387,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                                             \</div>
-<div class="line">    ensure_gpio14_initialized();                                                                   \</div>
-<div class="line">    if (define_name) {                                                                             \</div>
-<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">true</span>);                                          \</div>
-<div class="line">      __VA_ARGS__                                                                                  \</div>
-<div class="line">      print_test_section_footer(TAG, section_name, <span class="keyword">true</span>);                                          \</div>
-<div class="line">    } <span class="keywordflow">else</span> {                                                                                       \</div>
-<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">false</span>);                                         \</div>
-<div class="line">      ESP_LOGI(TAG, <span class="stringliteral">&quot;Section disabled by configuration&quot;</span>);                                          \</div>
-<div class="line">    }                                                                                              \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                         \</div>
+<div class="line">    ensure_gpio14_initialized();                                               \</div>
+<div class="line">    if (define_name) {                                                         \</div>
+<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">true</span>);                      \</div>
+<div class="line">      __VA_ARGS__                                                              \</div>
+<div class="line">      print_test_section_footer(TAG, section_name, <span class="keyword">true</span>);                      \</div>
+<div class="line">    } <span class="keywordflow">else</span> {                                                                   \</div>
+<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">false</span>);                     \</div>
+<div class="line">      ESP_LOGI(TAG, <span class="stringliteral">&quot;Section disabled by configuration&quot;</span>);                      \</div>
+<div class="line">    }                                                                          \</div>
 <div class="line">  } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->
 <p>Test section configuration helper macros. </p>
@@ -404,8 +408,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a42013656a31f033788afe39c84e96bec" name="a42013656a31f033788afe39c84e96bec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42013656a31f033788afe39c84e96bec">&#9670;&#160;</a></span>RUN_TEST_SECTION_IF_ENABLED_AUTO_PROGRESS</h2>
+<a id="acae8970e8680071cf6435a1543377a09" name="acae8970e8680071cf6435a1543377a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae8970e8680071cf6435a1543377a09">&#9670;&#160;</a></span>RUN_TEST_SECTION_IF_ENABLED_AUTO_PROGRESS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -427,10 +431,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#a75c45174f9dde97eb43339fcd0ac79c8">RUN_TEST_SECTION_IF_ENABLED_WITH_PROGRESS</a>(define_name, section_name,                             \</div>
-<div class="line">                                            <a class="code hl_function" href="#a7bb80345e5681c19686df292fa897daf">flip_test_progress_indicator</a>, __VA_ARGS__)</div>
-<div class="ttc" id="aTestFramework_8h_html_a75c45174f9dde97eb43339fcd0ac79c8"><div class="ttname"><a href="#a75c45174f9dde97eb43339fcd0ac79c8">RUN_TEST_SECTION_IF_ENABLED_WITH_PROGRESS</a></div><div class="ttdeci">#define RUN_TEST_SECTION_IF_ENABLED_WITH_PROGRESS(define_name, section_name, progress_func,...)</div><div class="ttdef"><b>Definition</b> TestFramework.h:442</div></div>
-<div class="ttc" id="aTestFramework_8h_html_a7bb80345e5681c19686df292fa897daf"><div class="ttname"><a href="#a7bb80345e5681c19686df292fa897daf">flip_test_progress_indicator</a></div><div class="ttdeci">void flip_test_progress_indicator() noexcept</div><div class="ttdoc">Flip the test progression indicator to show next test.</div><div class="ttdef"><b>Definition</b> TestFramework.h:84</div></div>
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#a75c45174f9dde97eb43339fcd0ac79c8">RUN_TEST_SECTION_IF_ENABLED_WITH_PROGRESS</a>(                                   \</div>
+<div class="line">      define_name, section_name, <a class="code hl_function" href="#a7bb80345e5681c19686df292fa897daf">flip_test_progress_indicator</a>, __VA_ARGS__)</div>
+<div class="ttc" id="aTestFramework_8h_html_a75c45174f9dde97eb43339fcd0ac79c8"><div class="ttname"><a href="#a75c45174f9dde97eb43339fcd0ac79c8">RUN_TEST_SECTION_IF_ENABLED_WITH_PROGRESS</a></div><div class="ttdeci">#define RUN_TEST_SECTION_IF_ENABLED_WITH_PROGRESS(define_name, section_name, progress_func,...)</div><div class="ttdef"><b>Definition</b> TestFramework.h:475</div></div>
+<div class="ttc" id="aTestFramework_8h_html_a7bb80345e5681c19686df292fa897daf"><div class="ttname"><a href="#a7bb80345e5681c19686df292fa897daf">flip_test_progress_indicator</a></div><div class="ttdeci">void flip_test_progress_indicator() noexcept</div><div class="ttdoc">Flip the test progression indicator to show next test.</div><div class="ttdef"><b>Definition</b> TestFramework.h:85</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -462,18 +466,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                                             \</div>
-<div class="line">    ensure_gpio14_initialized();                                                                   \</div>
-<div class="line">    if (define_name) {                                                                             \</div>
-<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">true</span>);                                          \</div>
-<div class="line">      output_section_indicator(blink_count); <span class="comment">/* Section start indicator */</span>                         \</div>
-<div class="line">      __VA_ARGS__                                                                                  \</div>
-<div class="line">      output_section_indicator(blink_count); <span class="comment">/* Section end indicator */</span>                           \</div>
-<div class="line">      print_test_section_footer(TAG, section_name, <span class="keyword">true</span>);                                          \</div>
-<div class="line">    } <span class="keywordflow">else</span> {                                                                                       \</div>
-<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">false</span>);                                         \</div>
-<div class="line">      ESP_LOGI(TAG, <span class="stringliteral">&quot;Section disabled by configuration&quot;</span>);                                          \</div>
-<div class="line">    }                                                                                              \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                         \</div>
+<div class="line">    ensure_gpio14_initialized();                                               \</div>
+<div class="line">    if (define_name) {                                                         \</div>
+<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">true</span>);                      \</div>
+<div class="line">      output_section_indicator(blink_count); <span class="comment">/* Section start indicator */</span>     \</div>
+<div class="line">      __VA_ARGS__                                                              \</div>
+<div class="line">      output_section_indicator(blink_count); <span class="comment">/* Section end indicator */</span>       \</div>
+<div class="line">      print_test_section_footer(TAG, section_name, <span class="keyword">true</span>);                      \</div>
+<div class="line">    } <span class="keywordflow">else</span> {                                                                   \</div>
+<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">false</span>);                     \</div>
+<div class="line">      ESP_LOGI(TAG, <span class="stringliteral">&quot;Section disabled by configuration&quot;</span>);                      \</div>
+<div class="line">    }                                                                          \</div>
 <div class="line">  } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->
 </div>
@@ -506,18 +510,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                                             \</div>
-<div class="line">    ensure_gpio14_initialized();                                                                   \</div>
-<div class="line">    if (define_name) {                                                                             \</div>
-<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">true</span>);                                          \</div>
-<div class="line">      __VA_ARGS__                                                                                  \</div>
-<div class="line">      if (progress_func)                                                                           \</div>
-<div class="line">        progress_func();                                                                           \</div>
-<div class="line">      print_test_section_footer(TAG, section_name, <span class="keyword">true</span>);                                          \</div>
-<div class="line">    } <span class="keywordflow">else</span> {                                                                                       \</div>
-<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">false</span>);                                         \</div>
-<div class="line">      ESP_LOGI(TAG, <span class="stringliteral">&quot;Section disabled by configuration&quot;</span>);                                          \</div>
-<div class="line">    }                                                                                              \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                         \</div>
+<div class="line">    ensure_gpio14_initialized();                                               \</div>
+<div class="line">    if (define_name) {                                                         \</div>
+<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">true</span>);                      \</div>
+<div class="line">      __VA_ARGS__                                                              \</div>
+<div class="line">      if (progress_func)                                                       \</div>
+<div class="line">        progress_func();                                                       \</div>
+<div class="line">      print_test_section_footer(TAG, section_name, <span class="keyword">true</span>);                      \</div>
+<div class="line">    } <span class="keywordflow">else</span> {                                                                   \</div>
+<div class="line">      print_test_section_header(TAG, section_name, <span class="keyword">false</span>);                     \</div>
+<div class="line">      ESP_LOGI(TAG, <span class="stringliteral">&quot;Section disabled by configuration&quot;</span>);                      \</div>
+<div class="line">    }                                                                          \</div>
 <div class="line">  } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->
 </div>

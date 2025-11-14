@@ -127,12 +127,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a677a62da6c55f0799c1ecf2172f90727" id="r_a677a62da6c55f0799c1ecf2172f90727"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a677a62da6c55f0799c1ecf2172f90727">GetResolutionBits</a> () const</td></tr>
 <tr class="memdesc:a677a62da6c55f0799c1ecf2172f90727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ADC resolution in bits.  <br /></td></tr>
 <tr class="separator:a677a62da6c55f0799c1ecf2172f90727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:adbd35699af59dca6c2f7b1fac99d2123" id="r_adbd35699af59dca6c2f7b1fac99d2123"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbd35699af59dca6c2f7b1fac99d2123">NtcAdcInterface</a> ()=default</td></tr>
-<tr class="memdesc:adbd35699af59dca6c2f7b1fac99d2123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected constructor to prevent direct instantiation.  <br /></td></tr>
-<tr class="separator:adbd35699af59dca6c2f7b1fac99d2123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9930fb65f2c87e866de7598c9182ba15" id="r_a9930fb65f2c87e866de7598c9182ba15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9930fb65f2c87e866de7598c9182ba15">NtcAdcInterface</a> (const <a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;)=delete</td></tr>
 <tr class="separator:a9930fb65f2c87e866de7598c9182ba15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49187a7b7eb0f2202a8ded60a23c8059" id="r_a49187a7b7eb0f2202a8ded60a23c8059"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49187a7b7eb0f2202a8ded60a23c8059">operator=</a> (const <a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;)=delete</td></tr>
@@ -141,6 +135,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a89295277c92565905dd4045ad9328d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42c61b403792bbe7ab65ca8afc6807e2" id="r_a42c61b403792bbe7ab65ca8afc6807e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42c61b403792bbe7ab65ca8afc6807e2">operator=</a> (<a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a42c61b403792bbe7ab65ca8afc6807e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:adbd35699af59dca6c2f7b1fac99d2123" id="r_adbd35699af59dca6c2f7b1fac99d2123"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbd35699af59dca6c2f7b1fac99d2123">NtcAdcInterface</a> ()=default</td></tr>
+<tr class="memdesc:adbd35699af59dca6c2f7b1fac99d2123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected constructor to prevent direct instantiation.  <br /></td></tr>
+<tr class="separator:adbd35699af59dca6c2f7b1fac99d2123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7838291c708bfcc16a8ce6189ef1fa13" id="r_a7838291c708bfcc16a8ce6189ef1fa13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7838291c708bfcc16a8ce6189ef1fa13">~NtcAdcInterface</a> ()=default</td></tr>
 <tr class="memdesc:a7838291c708bfcc16a8ce6189ef1fa13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected destructor.  <br /></td></tr>
 <tr class="separator:a7838291c708bfcc16a8ce6189ef1fa13"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,7 +160,7 @@ class NTC::NtcAdcInterface&lt; Derived &gt;</div><p>CRTP-based template interfac
 <div class="line">  <span class="keywordtype">bool</span> EnsureInitialized() { ... }</div>
 <div class="line">  <span class="comment">// ... implement other methods</span></div>
 <div class="line">};</div>
-<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a></div><div class="ttdoc">CRTP-based template interface for ADC operations.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:57</div></div>
+<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a></div><div class="ttdoc">CRTP-based template interface for ADC operations.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:58</div></div>
 </div><!-- fragment --><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Derived</td><td>The derived class type (CRTP pattern) </td></tr>
@@ -170,8 +170,62 @@ class NTC::NtcAdcInterface&lt; Derived &gt;</div><p>CRTP-based template interfac
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Basic-example.html#_a0">Basic</a>.</dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9930fb65f2c87e866de7598c9182ba15" name="a9930fb65f2c87e866de7598c9182ba15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9930fb65f2c87e866de7598c9182ba15">&#9670;&#160;</a></span>NtcAdcInterface() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a>&lt; Derived &gt;::NtcAdcInterface </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a>&lt; Derived &gt; &amp;</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89295277c92565905dd4045ad9328d0b" name="a89295277c92565905dd4045ad9328d0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89295277c92565905dd4045ad9328d0b">&#9670;&#160;</a></span>NtcAdcInterface() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a>&lt; Derived &gt;::NtcAdcInterface </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a>&lt; Derived &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="adbd35699af59dca6c2f7b1fac99d2123" name="adbd35699af59dca6c2f7b1fac99d2123"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbd35699af59dca6c2f7b1fac99d2123">&#9670;&#160;</a></span>NtcAdcInterface() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adbd35699af59dca6c2f7b1fac99d2123">&#9670;&#160;</a></span>NtcAdcInterface() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,60 +250,6 @@ template&lt;typename Derived &gt; </div>
 </div><div class="memdoc">
 
 <p>Protected constructor to prevent direct instantiation. </p>
-
-</div>
-</div>
-<a id="a9930fb65f2c87e866de7598c9182ba15" name="a9930fb65f2c87e866de7598c9182ba15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9930fb65f2c87e866de7598c9182ba15">&#9670;&#160;</a></span>NtcAdcInterface() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Derived &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a>&lt; Derived &gt;::NtcAdcInterface </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a>&lt; Derived &gt; &amp;</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a89295277c92565905dd4045ad9328d0b" name="a89295277c92565905dd4045ad9328d0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89295277c92565905dd4045ad9328d0b">&#9670;&#160;</a></span>NtcAdcInterface() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Derived &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a>&lt; Derived &gt;::NtcAdcInterface </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a>&lt; Derived &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -464,7 +464,7 @@ template&lt;typename Derived &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">delete</span></span>  </td>
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -491,7 +491,7 @@ template&lt;typename Derived &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -535,7 +535,7 @@ template&lt;typename Derived &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03ad0749aaba8b833466dfcbb0428e4f89c" title="Operation successful.">AdcError::SUCCESS</a> on success, error code otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>AdcError::SUCCESS on success, error code otherwise </dd></dl>
 
 </div>
 </div>
@@ -576,7 +576,7 @@ template&lt;typename Derived &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03ad0749aaba8b833466dfcbb0428e4f89c" title="Operation successful.">AdcError::SUCCESS</a> on success, error code otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>AdcError::SUCCESS on success, error code otherwise </dd></dl>
 
 </div>
 </div>
