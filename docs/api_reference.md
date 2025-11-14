@@ -1,12 +1,3 @@
----
-layout: default
-title: "📖 API Reference"
-description: "Complete API documentation for the NTC Thermistor driver"
-nav_order: 6
-parent: "📚 Documentation"
-permalink: /docs/api_reference/
----
-
 # API Reference
 
 Complete reference documentation for all public methods and types in the NTC Thermistor driver.
@@ -18,7 +9,7 @@ Complete reference documentation for all public methods and types in the NTC The
 - **ADC Interface**: [`inc/ntc_adc_interface.hpp`](../inc/ntc_adc_interface.hpp)
 - **Types**: [`inc/ntc_types.hpp`](../inc/ntc_types.hpp)
 
-## Core Classes
+## Core Class
 
 ### `NtcThermistor<AdcType>`
 
@@ -40,234 +31,81 @@ NtcThermistor(const ntc_config_t& config, AdcType* adc_interface);
 
 ### Initialization
 
-#### `Initialize()`
-
-Initialize the driver and prepare it for use.
-
-**Signature:**
-```cpp
-bool Initialize() noexcept;
-```
-
-**Location**: [`src/ntc_thermistor.cpp#L68`](../src/ntc_thermistor.cpp#L68)
-
-**Returns:**
-- `true` if initialization succeeded
-- `false` if initialization failed
-
-**Example:**
-```cpp
-if (!thermistor.Initialize()) {
-    // Handle initialization error
-}
-```
-
----
-
-#### `Deinitialize()`
-
-Clean up resources and deinitialize the driver.
-
-**Signature:**
-```cpp
-bool Deinitialize() noexcept;
-```
-
-**Location**: [`src/ntc_thermistor.cpp#L105`](../src/ntc_thermistor.cpp#L105)
-
----
-
-#### `IsInitialized()`
-
-Check if the driver is initialized.
-
-**Signature:**
-```cpp
-bool IsInitialized() const noexcept;
-```
-
-**Location**: [`inc/ntc_thermistor.hpp#L161`](../inc/ntc_thermistor.hpp#L161)
-
----
+| Method | Signature | Location |
+|--------|-----------|----------|
+| `Initialize()` | `bool Initialize() noexcept` | [`src/ntc_thermistor.cpp#L68`](../src/ntc_thermistor.cpp#L68) |
+| `Deinitialize()` | `bool Deinitialize() noexcept` | [`src/ntc_thermistor.cpp#L105`](../src/ntc_thermistor.cpp#L105) |
+| `IsInitialized()` | `bool IsInitialized() const noexcept` | [`inc/ntc_thermistor.hpp#L161`](../inc/ntc_thermistor.hpp#L161) |
+| `GetConfiguration()` | `NtcError GetConfiguration(ntc_config_t *config) const noexcept` | [`inc/ntc_thermistor.hpp#L168`](../inc/ntc_thermistor.hpp#L168) |
+| `SetConfiguration()` | `NtcError SetConfiguration(const ntc_config_t &config) noexcept` | [`inc/ntc_thermistor.hpp#L175`](../inc/ntc_thermistor.hpp#L175) |
 
 ### Temperature Reading
 
-#### `ReadTemperatureCelsius(float*)`
+| Method | Signature | Location |
+|--------|-----------|----------|
+| `ReadTemperatureCelsius()` | `NtcError ReadTemperatureCelsius(float *temperature_celsius) noexcept` | [`src/ntc_thermistor.cpp#L197`](../src/ntc_thermistor.cpp#L197) |
+| `ReadTemperatureFahrenheit()` | `NtcError ReadTemperatureFahrenheit(float *temperature_fahrenheit) noexcept` | [`src/ntc_thermistor.cpp#L204`](../src/ntc_thermistor.cpp#L204) |
+| `ReadTemperatureKelvin()` | `NtcError ReadTemperatureKelvin(float *temperature_kelvin) noexcept` | [`src/ntc_thermistor.cpp#L211`](../src/ntc_thermistor.cpp#L211) |
+| `ReadTemperature()` | `NtcError ReadTemperature(ntc_reading_t *reading) noexcept` | [`src/ntc_thermistor.cpp#L218`](../src/ntc_thermistor.cpp#L218) |
 
-Read temperature in Celsius.
+### Resistance and Voltage
 
-**Signature:**
-```cpp
-NtcError ReadTemperatureCelsius(float* temperature_celsius) noexcept;
-```
-
-**Location**: [`inc/ntc_thermistor.hpp#L197`](../inc/ntc_thermistor.hpp#L197)
-
-**Parameters:**
-- `temperature_celsius`: Pointer to store temperature (°C)
-
-**Returns:**
-- `NtcError::Success` on success
-- Error code on failure
-
-**Example:**
-```cpp
-float temp_c;
-if (thermistor.ReadTemperatureCelsius(&temp_c) == NtcError::Success) {
-    printf("Temperature: %.2f°C\n", temp_c);
-}
-```
-
----
-
-#### `ReadTemperatureFahrenheit(float*)`
-
-Read temperature in Fahrenheit.
-
-**Signature:**
-```cpp
-NtcError ReadTemperatureFahrenheit(float* temperature_fahrenheit) noexcept;
-```
-
-**Location**: [`inc/ntc_thermistor.hpp#L204`](../inc/ntc_thermistor.hpp#L204)
-
----
-
-#### `ReadTemperatureKelvin(float*)`
-
-Read temperature in Kelvin.
-
-**Signature:**
-```cpp
-NtcError ReadTemperatureKelvin(float* temperature_kelvin) noexcept;
-```
-
-**Location**: [`inc/ntc_thermistor.hpp#L211`](../inc/ntc_thermistor.hpp#L211)
-
----
-
-#### `ReadTemperature(ntc_reading_t*)`
-
-Read complete temperature information including all units, resistance, and voltage.
-
-**Signature:**
-```cpp
-NtcError ReadTemperature(ntc_reading_t* reading) noexcept;
-```
-
-**Location**: [`inc/ntc_thermistor.hpp#L218`](../inc/ntc_thermistor.hpp#L218)
-
-**Parameters:**
-- `reading`: Pointer to `ntc_reading_t` structure to store complete reading
-
-**Returns:**
-- `NtcError::Success` on success
-- Error code on failure
-
----
-
-### Configuration
-
-#### `GetConfiguration(ntc_config_t*)`
-
-Get current configuration.
-
-**Signature:**
-```cpp
-NtcError GetConfiguration(ntc_config_t* config) const noexcept;
-```
-
-**Location**: [`inc/ntc_thermistor.hpp#L168`](../inc/ntc_thermistor.hpp#L168)
-
----
-
-#### `SetConfiguration(const ntc_config_t&)`
-
-Set complete configuration.
-
-**Signature:**
-```cpp
-NtcError SetConfiguration(const ntc_config_t& config) noexcept;
-```
-
-**Location**: [`inc/ntc_thermistor.hpp#L175`](../inc/ntc_thermistor.hpp#L175)
-
----
+| Method | Signature | Location |
+|--------|-----------|----------|
+| `GetResistance()` | `NtcError GetResistance(float *resistance_ohms) noexcept` | [`src/ntc_thermistor.cpp#L229`](../src/ntc_thermistor.cpp#L229) |
+| `GetVoltage()` | `NtcError GetVoltage(float *voltage_volts) noexcept` | [`src/ntc_thermistor.cpp#L236`](../src/ntc_thermistor.cpp#L236) |
+| `GetRawAdcValue()` | `NtcError GetRawAdcValue(uint32_t *adc_value) noexcept` | [`src/ntc_thermistor.cpp#L243`](../src/ntc_thermistor.cpp#L243) |
 
 ### Calibration
 
-#### `Calibrate(float)`
+| Method | Signature | Location |
+|--------|-----------|----------|
+| `Calibrate()` | `NtcError Calibrate(float reference_temperature_celsius) noexcept` | [`src/ntc_thermistor.cpp#L254`](../src/ntc_thermistor.cpp#L254) |
+| `SetCalibrationOffset()` | `NtcError SetCalibrationOffset(float offset_celsius) noexcept` | [`src/ntc_thermistor.cpp#L261`](../src/ntc_thermistor.cpp#L261) |
+| `GetCalibrationOffset()` | `NtcError GetCalibrationOffset(float *offset_celsius) const noexcept` | [`src/ntc_thermistor.cpp#L268`](../src/ntc_thermistor.cpp#L268) |
+| `ResetCalibration()` | `NtcError ResetCalibration() noexcept` | [`src/ntc_thermistor.cpp#L274`](../src/ntc_thermistor.cpp#L274) |
 
-Calibrate using a known reference temperature.
+### Configuration
 
-**Signature:**
-```cpp
-NtcError Calibrate(float reference_temperature_celsius) noexcept;
-```
+| Method | Signature | Location |
+|--------|-----------|----------|
+| `SetConversionMethod()` | `NtcError SetConversionMethod(NtcConversionMethod method) noexcept` | [`src/ntc_thermistor.cpp#L285`](../src/ntc_thermistor.cpp#L285) |
+| `SetVoltageDivider()` | `NtcError SetVoltageDivider(float series_resistance) noexcept` | [`src/ntc_thermistor.cpp#L292`](../src/ntc_thermistor.cpp#L292) |
+| `SetReferenceVoltage()` | `NtcError SetReferenceVoltage(float reference_voltage) noexcept` | [`src/ntc_thermistor.cpp#L299`](../src/ntc_thermistor.cpp#L299) |
+| `SetBetaValue()` | `NtcError SetBetaValue(float beta_value) noexcept` | [`src/ntc_thermistor.cpp#L306`](../src/ntc_thermistor.cpp#L306) |
+| `SetAdcChannel()` | `NtcError SetAdcChannel(uint8_t adc_channel) noexcept` | [`src/ntc_thermistor.cpp#L313`](../src/ntc_thermistor.cpp#L313) |
+| `SetSamplingParameters()` | `NtcError SetSamplingParameters(uint32_t sample_count, uint32_t sample_delay_ms) noexcept` | [`src/ntc_thermistor.cpp#L321`](../src/ntc_thermistor.cpp#L321) |
+| `SetFiltering()` | `NtcError SetFiltering(bool enable, float alpha = 0.1F) noexcept` | [`src/ntc_thermistor.cpp#L330`](../src/ntc_thermistor.cpp#L330) |
 
-**Location**: [`inc/ntc_thermistor.hpp#L254`](../inc/ntc_thermistor.hpp#L254)
+### Utility Functions
 
-**Parameters:**
-- `reference_temperature_celsius`: Known reference temperature (°C)
+| Method | Signature | Location |
+|--------|-----------|----------|
+| `CelsiusToFahrenheit()` | `static float CelsiusToFahrenheit(float celsius) noexcept` | [`inc/ntc_thermistor.hpp#L341`](../inc/ntc_thermistor.hpp#L341) |
+| `FahrenheitToCelsius()` | `static float FahrenheitToCelsius(float fahrenheit) noexcept` | [`inc/ntc_thermistor.hpp#L348`](../inc/ntc_thermistor.hpp#L348) |
+| `CelsiusToKelvin()` | `static float CelsiusToKelvin(float celsius) noexcept` | [`inc/ntc_thermistor.hpp#L355`](../inc/ntc_thermistor.hpp#L355) |
+| `KelvinToCelsius()` | `static float KelvinToCelsius(float kelvin) noexcept` | [`inc/ntc_thermistor.hpp#L362`](../inc/ntc_thermistor.hpp#L362) |
+| `GetErrorString()` | `static const char *GetErrorString(NtcError error) noexcept` | [`inc/ntc_thermistor.hpp#L369`](../inc/ntc_thermistor.hpp#L369) |
+| `GetTypeString()` | `static const char *GetTypeString(NtcType type) noexcept` | [`inc/ntc_thermistor.hpp#L376`](../inc/ntc_thermistor.hpp#L376) |
 
-**Example:**
-```cpp
-// Calibrate at 25°C room temperature
-thermistor.Calibrate(25.0f);
-```
+## Types
 
----
+### Enumerations
 
-## Error Handling
+| Type | Values | Location |
+|------|--------|----------|
+| `NtcError` | `NTC_SUCCESS`, `NTC_ERROR_INIT`, `NTC_ERROR_ADC`, etc. | [`inc/ntc_types.hpp`](../inc/ntc_types.hpp) |
+| `NtcType` | `NTC_TYPE_NTCG163JFT103FT1S`, etc. | [`inc/ntc_types.hpp`](../inc/ntc_types.hpp) |
+| `NtcConversionMethod` | `NTC_METHOD_STEINHART_HART`, `NTC_METHOD_BETA`, `NTC_METHOD_LOOKUP_TABLE` | [`inc/ntc_types.hpp`](../inc/ntc_types.hpp) |
 
-The driver uses the `NtcError` enum for error reporting.
+### Structures
 
-**Location**: [`inc/ntc_types.hpp#L37`](../inc/ntc_types.hpp#L37)
-
-| Code | Name | Description |
-|------|------|-------------|
-| `Success` | Success | Operation succeeded |
-| `NotInitialized` | Not initialized | Driver not initialized |
-| `InvalidParameter` | Invalid parameter | Invalid method parameter |
-| `AdcReadFailed` | ADC read failed | ADC read operation failed |
-| `TemperatureOutOfRange` | Temperature out of range | Temperature outside valid range |
-| `ConversionFailed` | Conversion failed | Temperature conversion failed |
-
-## Type Definitions
-
-### `NtcError` Enum
-
-Error code enumeration.
-
-**Location**: [`inc/ntc_types.hpp#L37`](../inc/ntc_types.hpp#L37)
-
-### `NtcType` Enum
-
-NTC thermistor type enumeration.
-
-**Location**: [`inc/ntc_types.hpp#L71`](../inc/ntc_types.hpp#L71)
-
-### `ntc_config_t` Structure
-
-Configuration structure.
-
-**Location**: [`inc/ntc_types.hpp#L120`](../inc/ntc_types.hpp#L120)
-
-### `ntc_reading_t` Structure
-
-Temperature reading structure.
-
-**Location**: [`inc/ntc_types.hpp#L149`](../inc/ntc_types.hpp#L149)
-
-## Thread Safety
-
-The driver is **not thread-safe**. If used in a multi-threaded environment:
-- Each `NtcThermistor` instance should be used by a single thread
-- Use external synchronization (mutex, etc.) for shared access
-- ADC interface access must be thread-safe in your ADC implementation
+| Type | Description | Location |
+|------|-------------|----------|
+| `ntc_config_t` | NTC configuration structure | [`inc/ntc_types.hpp`](../inc/ntc_types.hpp) |
+| `ntc_reading_t` | Temperature reading structure | [`inc/ntc_types.hpp`](../inc/ntc_types.hpp) |
 
 ---
 
 **Navigation**
 ⬅️ [Configuration](configuration.md) | [Next: Examples ➡️](examples.md) | [Back to Index](index.md)
-
