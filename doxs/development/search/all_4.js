@@ -8,7 +8,5 @@ var searchData=
   ['epsilon_5fdouble_5f_5',['EPSILON_DOUBLE_',['../namespaceNTC_1_1Constants.html#a47a53086f86dc64db8a018f411846a8b',1,'NTC::Constants']]],
   ['epsilon_5ffloat_5f_6',['EPSILON_FLOAT_',['../namespaceNTC_1_1Constants.html#a85c77c62394ef474a0aded2c5ba9b05b',1,'NTC::Constants']]],
   ['error_7',['error',['../structntc__reading__t.html#ae9ee0a0cf41971bed68f7bf849eb62d0',1,'ntc_reading_t']]],
-  ['esp32_20examples_8',['ESP32 Examples',['../index.html#autotoc_md22',1,'']]],
-  ['example_9',['Example',['../index.html#autotoc_md6',1,'Basic Example'],['../index.html#autotoc_md7',1,'Custom Configuration Example']]],
-  ['examples_10',['Examples',['../index.html#autotoc_md17',1,'📊 Examples'],['../index.html#autotoc_md22',1,'ESP32 Examples']]]
+  ['examples_8',['📊 Examples',['../index.html#autotoc_md7',1,'']]]
 ];
