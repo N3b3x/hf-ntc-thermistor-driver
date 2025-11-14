@@ -166,7 +166,7 @@
   <nav aria-label="Main" id="site-nav" class="site-nav">
   
   
-    <ul class="nav-list"><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/" class="nav-list-link">HardFOC NTC Thermistor Driver</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/datasheet/" class="nav-list-link">Datasheet Directory</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/" class="nav-list-link">HF-NTC-Thermistor Documentation</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/examples/esp32/" class="nav-list-link">PCAL9555 ESP32-C6 Comprehensive Test Suite</a></li></ul>
+    <ul class="nav-list"><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/" class="nav-list-link">HardFOC NTC Thermistor Driver</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/datasheet/" class="nav-list-link">Datasheet Directory</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/" class="nav-list-link">HF-NTC-Thermistor Documentation</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/examples/esp32/" class="nav-list-link">NTC Thermistor ESP32-C6 Comprehensive Test Suite</a></li></ul>
   
 </nav>
 
@@ -274,7 +274,7 @@
     
 
 <ul>
-  <li><strong>Hardware Agnostic</strong>: Works with any ADC interface that implements BaseAdc</li>
+  <li><strong>Hardware Agnostic</strong>: Works with any ADC interface that implements NtcAdcInterface</li>
   <li><strong>Multiple NTC Types</strong>: Support for various NTC thermistor specifications</li>
   <li><strong>Dual Conversion Methods</strong>: Lookup table and mathematical (Steinhart-Hart) conversion</li>
   <li><strong>High Accuracy</strong>: Optimized for precision temperature measurement</li>
@@ -395,7 +395,22 @@
 <ul>
   <li><a href="/hf-ntc-thermistor-driver/development/">Main README</a> - Complete driver documentation</li>
   <li><a href="../examples/">Examples</a> - Usage examples</li>
-  <li><a href="../CONTRIBUTING.md">Contributing</a> - Contribution guidelines</li>
+  <li><a href="../datasheet/">Datasheets</a> - NTC thermistor datasheets</li>
+</ul>
+<h2 id="documentation-structure-1">
+  
+  
+    <a href="#documentation-structure-1" class="anchor-heading" aria-labelledby="documentation-structure-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Documentation Structure
+  
+  
+</h2>
+    
+
+<ul>
+  <li><strong>API Reference</strong>: See the main README.md for complete API documentation</li>
+  <li><strong>Examples</strong>: See <code class="language-plaintext highlighter-rouge">examples/esp32/</code> for ESP32 usage examples</li>
+  <li><strong>Doxygen</strong>: Full API documentation available via Doxygen (when generated)</li>
+  <li><strong>Architecture</strong>: See main README.md for architecture overview and design patterns</li>
 </ul>
 
           

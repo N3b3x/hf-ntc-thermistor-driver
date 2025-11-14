@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['deinitialize_0',['Deinitialize',['../classNtcThermistor.html#a84a6f11997eb3f93cc5d47875f810939',1,'NtcThermistor']]]
+  ['deinitialize_0',['Deinitialize',['../classNtcThermistor.html#af59f294174e28354624dcc1cb820fa69',1,'NtcThermistor']]]
 ];

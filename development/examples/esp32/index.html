@@ -50,9 +50,9 @@
 
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>PCAL9555 ESP32-C6 Comprehensive Test Suite | HardFOC NTC Thermistor Driver - development</title>
+<title>NTC Thermistor ESP32-C6 Comprehensive Test Suite | HardFOC NTC Thermistor Driver - development</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="PCAL9555 ESP32-C6 Comprehensive Test Suite" />
+<meta property="og:title" content="NTC Thermistor ESP32-C6 Comprehensive Test Suite" />
 <meta name="author" content="N3b3x" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="Hardware-agnostic NTC thermistor driver with lookup table and mathematical conversion methods for accurate temperature readings" />
@@ -62,9 +62,9 @@
 <meta property="og:site_name" content="HardFOC NTC Thermistor Driver - development" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="PCAL9555 ESP32-C6 Comprehensive Test Suite" />
+<meta property="twitter:title" content="NTC Thermistor ESP32-C6 Comprehensive Test Suite" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"N3b3x","url":"https://github.com/n3b3x"},"description":"Hardware-agnostic NTC thermistor driver with lookup table and mathematical conversion methods for accurate temperature readings","headline":"PCAL9555 ESP32-C6 Comprehensive Test Suite","url":"https://n3b3x.github.io/hf-ntc-thermistor-driver/development/examples/esp32/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"N3b3x","url":"https://github.com/n3b3x"},"description":"Hardware-agnostic NTC thermistor driver with lookup table and mathematical conversion methods for accurate temperature readings","headline":"NTC Thermistor ESP32-C6 Comprehensive Test Suite","url":"https://n3b3x.github.io/hf-ntc-thermistor-driver/development/examples/esp32/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -166,7 +166,7 @@
   <nav aria-label="Main" id="site-nav" class="site-nav">
   
   
-    <ul class="nav-list"><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/" class="nav-list-link">HardFOC NTC Thermistor Driver</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/datasheet/" class="nav-list-link">Datasheet Directory</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/" class="nav-list-link">HF-NTC-Thermistor Documentation</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/examples/esp32/" class="nav-list-link">PCAL9555 ESP32-C6 Comprehensive Test Suite</a></li></ul>
+    <ul class="nav-list"><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/" class="nav-list-link">HardFOC NTC Thermistor Driver</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/datasheet/" class="nav-list-link">Datasheet Directory</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/" class="nav-list-link">HF-NTC-Thermistor Documentation</a></li><li class="nav-list-item"><a href="/hf-ntc-thermistor-driver/development/examples/esp32/" class="nav-list-link">NTC Thermistor ESP32-C6 Comprehensive Test Suite</a></li></ul>
   
 </nav>
 
@@ -244,16 +244,16 @@
       <div id="main-content" class="main-content">
         <main>
           
-            <h1 id="pcal9555-esp32-c6-comprehensive-test-suite">
+            <h1 id="ntc-thermistor-esp32-c6-comprehensive-test-suite">
   
   
-    <a href="#pcal9555-esp32-c6-comprehensive-test-suite" class="anchor-heading" aria-labelledby="pcal9555-esp32-c6-comprehensive-test-suite"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PCAL9555 ESP32-C6 Comprehensive Test Suite
+    <a href="#ntc-thermistor-esp32-c6-comprehensive-test-suite" class="anchor-heading" aria-labelledby="ntc-thermistor-esp32-c6-comprehensive-test-suite"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> NTC Thermistor ESP32-C6 Comprehensive Test Suite
   
   
 </h1>
     
 
-<p>This directory contains comprehensive test suites for the PCAL9555 16-bit I/O expander driver using the ESP32-C6 DevKit-M-1.</p>
+<p>This directory contains comprehensive test suites for the NTC Thermistor driver using the ESP32-C6 DevKit-M-1.</p>
 <h2 id="-table-of-contents">
   
   
@@ -265,8 +265,7 @@
 
 <ul>
   <li><a href="#-hardware-overview">Hardware Overview</a></li>
-  <li><a href="#-pin-connections">Pin Connections</a></li>
-  <li><a href="#-hardware-setup">Hardware Setup</a></li>
+  <li><a href="#-test-setup">Test Setup</a></li>
   <li><a href="#-building-the-tests">Building the Tests</a></li>
   <li><a href="#-running-the-tests">Running the Tests</a></li>
   <li><a href="#-test-suites">Test Suites</a></li>
@@ -289,7 +288,7 @@
 </h3>
     
 
-<p>The ESP32-C6 DevKit-M-1 serves as the host controller for communicating with the PCAL9555 GPIO expander via I2C.</p>
+<p>The ESP32-C6 DevKit-M-1 serves as the host controller for testing the NTC thermistor driver.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -312,7 +311,7 @@
 │  │        ESP32-C6 Microcontroller          │   │
 │  │                                          │   │
 │  │  GPIO Pins:                              │   │
-│  │  • I2C: SDA (GPIO4), SCL (GPIO5)         │   │
+│  │  • ADC: GPIO0-GPIO5 (ADC1 channels)      │   │
 │  │  • Test Indicator: GPIO14                │   │
 │  └──────────────────────────────────────────┘   │
 │                                                 │
@@ -320,16 +319,16 @@
 │  (Power + Serial Communication)                 │
 └─────────────────────────────────────────────────┘
 </pre></td></tr></tbody></table></div></code></pre></div></div>
-<h3 id="pcal9555-gpio-expander">
+<h3 id="ntc-thermistor-circuit">
   
   
-    <a href="#pcal9555-gpio-expander" class="anchor-heading" aria-labelledby="pcal9555-gpio-expander"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PCAL9555 GPIO Expander
+    <a href="#ntc-thermistor-circuit" class="anchor-heading" aria-labelledby="ntc-thermistor-circuit"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> NTC Thermistor Circuit
   
   
 </h3>
     
 
-<p>The PCAL9555 is a 16-bit I/O expander with I²C interface, providing 16 GPIO pins organized into two 8-bit ports.</p>
+<p>The NTC thermistor is connected in a voltage divider configuration:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -352,57 +351,75 @@
 19
 20
 21
-22
-23
-24
-25
 </pre></td><td class="rouge-code"><pre>┌─────────────────────────────────────────────────┐
-│      PCAL9555 GPIO Expander                     │
+│      NTC Thermistor Circuit                     │
 │                                                 │
-│  ┌──────────────────────────────────────────┐   │
-│  │        PCAL9555 IC                       │   │
-│  │                                          │   │
-│  │  Features:                               │   │
-│  │  • 16 GPIO pins (PORT_0: P0.0-P0.7)      │   │
-│  │  • 16 GPIO pins (PORT_1: P1.0-P1.7)      │   │
-│  │  • I2C interface (7-bit address)         │   │
-│  │  • Configurable pull-up/pull-down        │   │
-│  │  • Programmable drive strength           │   │
-│  │  • Interrupt support                     │   │
-│  │  • Input latch capability                │   │
-│  │  • Polarity inversion                    │   │
-│  │  • Open-drain output mode                │   │
-│  └──────────────────────────────────────────┘   │
+│  ┌───────────────────────────────────────────┐  │
+│  │        Voltage Divider                    │  │
+│  │                                           │  │
+│  │  3.3V                                     │  │
+│  │   │                                       │  │
+│  │   ├── [Series Resistor] ──┬── ADC ────    │  │
+│  │                           │  Channel      │  │
+│  │                           │               │  │
+│  │                    [NTC Thermistor]       │  │
+│  │                           │               │  │
+│  │                          GND              │  │
+│  └───────────────────────────────────────────┘  │
 │                                                 │
-│  I2C Connections:                               │
-│  • SDA (I2C Data)                               │
-│  • SCL (I2C Clock)                              │
-│  • VDD (3.3V Power)                             │
-│  • GND (Ground)                                 │
-│  • INT (Interrupt Output, optional)             │
+│  Typical Values:                                │
+│  • NTC: 10kΩ @ 25°C (NTCG163JFT103FT1S)         │
+│  • Series Resistor: 10kΩ                        │
+│  • Reference Voltage: 3.3V                      │
 └─────────────────────────────────────────────────┘
 </pre></td></tr></tbody></table></div></code></pre></div></div><hr />
-<h2 id="-pin-connections">
+<h2 id="-test-setup">
   
   
-    <a href="#-pin-connections" class="anchor-heading" aria-labelledby="-pin-connections"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 📌 Pin Connections
+    <a href="#-test-setup" class="anchor-heading" aria-labelledby="-test-setup"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 📌 Test Setup
   
   
 </h2>
     
-<h3 id="i2c-bus-connections">
+<h3 id="mock-adc-testing">
   
   
-    <a href="#i2c-bus-connections" class="anchor-heading" aria-labelledby="i2c-bus-connections"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> I2C Bus Connections
+    <a href="#mock-adc-testing" class="anchor-heading" aria-labelledby="mock-adc-testing"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Mock ADC Testing
   
   
 </h3>
     
 
+<p>The comprehensive test suite uses a <strong>Mock ADC</strong> implementation that simulates ADC readings without requiring actual hardware. This allows for:</p>
+
+<ul>
+  <li><strong>Unit Testing</strong>: Test driver logic without hardware</li>
+  <li><strong>CI/CD Integration</strong>: Run tests in automated pipelines</li>
+  <li><strong>Rapid Development</strong>: Iterate quickly without physical setup</li>
+</ul>
+<h3 id="hardware-testing-optional">
+  
+  
+    <a href="#hardware-testing-optional" class="anchor-heading" aria-labelledby="hardware-testing-optional"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Hardware Testing (Optional)
+  
+  
+</h3>
+    
+
+<p>For hardware testing with a real NTC thermistor:</p>
+<h4 id="pin-connections">
+  
+  
+    <a href="#pin-connections" class="anchor-heading" aria-labelledby="pin-connections"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Pin Connections
+  
+  
+</h4>
+    
+
 <div class="table-wrapper"><table>
   <thead>
     <tr>
-      <th>PCAL9555 Pin</th>
+      <th>Component</th>
       <th>ESP32-C6 GPIO</th>
       <th>Function</th>
       <th>Notes</th>
@@ -410,203 +427,63 @@
   </thead>
   <tbody>
     <tr>
-      <td>SDA</td>
-      <td>GPIO4</td>
-      <td>I2C Data</td>
-      <td>With 4.7kΩ pull-up to 3.3V</td>
+      <td>NTC Voltage Divider</td>
+      <td>GPIO0-GPIO5</td>
+      <td>ADC Input</td>
+      <td>Any ADC1 channel</td>
     </tr>
     <tr>
-      <td>SCL</td>
-      <td>GPIO5</td>
-      <td>I2C Clock</td>
-      <td>With 4.7kΩ pull-up to 3.3V</td>
+      <td>Series Resistor</td>
+      <td>-</td>
+      <td>Voltage Divider</td>
+      <td>10kΩ typical</td>
     </tr>
     <tr>
-      <td>VDD</td>
-      <td>3.3V</td>
-      <td>Power Supply</td>
-      <td> </td>
+      <td>NTC Thermistor</td>
+      <td>-</td>
+      <td>Temperature Sensor</td>
+      <td>10kΩ @ 25°C typical</td>
     </tr>
     <tr>
-      <td>GND</td>
-      <td>GND</td>
-      <td>Ground</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>INT</td>
-      <td>GPIO15 (optional)</td>
-      <td>Interrupt Output</td>
-      <td>Open-drain, requires pull-up</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="test-indicator">
-  
-  
-    <a href="#test-indicator" class="anchor-heading" aria-labelledby="test-indicator"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Indicator
-  
-  
-</h3>
-    
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th>Signal</th>
-      <th>ESP32-C6 GPIO</th>
-      <th>Function</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Test Progress</td>
+      <td>Test Indicator</td>
       <td>GPIO14</td>
-      <td>Visual test progression indicator</td>
+      <td>Visual Progress</td>
+      <td>Optional</td>
     </tr>
   </tbody>
 </table></div>
-<h3 id="i2c-address-configuration">
+<h4 id="circuit-configuration">
   
   
-    <a href="#i2c-address-configuration" class="anchor-heading" aria-labelledby="i2c-address-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> I2C Address Configuration
+    <a href="#circuit-configuration" class="anchor-heading" aria-labelledby="circuit-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Circuit Configuration
   
   
-</h3>
-    
-
-<p>The PCAL9555 I2C address is determined by the A0, A1, and A2 address pins:</p>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th>A2</th>
-      <th>A1</th>
-      <th>A0</th>
-      <th>I2C Address (7-bit)</th>
-      <th>I2C Address (8-bit)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GND</td>
-      <td>GND</td>
-      <td>GND</td>
-      <td>0x20</td>
-      <td>0x40</td>
-    </tr>
-    <tr>
-      <td>GND</td>
-      <td>GND</td>
-      <td>VDD</td>
-      <td>0x21</td>
-      <td>0x42</td>
-    </tr>
-    <tr>
-      <td>GND</td>
-      <td>VDD</td>
-      <td>GND</td>
-      <td>0x22</td>
-      <td>0x44</td>
-    </tr>
-    <tr>
-      <td>GND</td>
-      <td>VDD</td>
-      <td>VDD</td>
-      <td>0x23</td>
-      <td>0x46</td>
-    </tr>
-    <tr>
-      <td>VDD</td>
-      <td>GND</td>
-      <td>GND</td>
-      <td>0x24</td>
-      <td>0x48</td>
-    </tr>
-    <tr>
-      <td>VDD</td>
-      <td>GND</td>
-      <td>VDD</td>
-      <td>0x25</td>
-      <td>0x4A</td>
-    </tr>
-    <tr>
-      <td>VDD</td>
-      <td>VDD</td>
-      <td>GND</td>
-      <td>0x26</td>
-      <td>0x4C</td>
-    </tr>
-    <tr>
-      <td>VDD</td>
-      <td>VDD</td>
-      <td>VDD</td>
-      <td>0x27</td>
-      <td>0x4E</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<p><strong>Default</strong>: All address pins to GND = <strong>0x20</strong> (used in examples)</p><hr />
-<h2 id="️-hardware-setup">
-  
-  
-    <a href="#️-hardware-setup" class="anchor-heading" aria-labelledby="️-hardware-setup"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🛠️ Hardware Setup
-  
-  
-</h2>
-    
-<h3 id="basic-setup">
-  
-  
-    <a href="#basic-setup" class="anchor-heading" aria-labelledby="basic-setup"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Basic Setup
-  
-  
-</h3>
+</h4>
     
 
 <ol>
-  <li><strong>Connect I2C Bus</strong>:
+  <li><strong>Voltage Divider Setup</strong>:
     <ul>
-      <li>Connect PCAL9555 SDA to ESP32-C6 GPIO4</li>
-      <li>Connect PCAL9555 SCL to ESP32-C6 GPIO5</li>
-      <li>Add 4.7kΩ pull-up resistors on both SDA and SCL to 3.3V</li>
+      <li>Connect 3.3V to series resistor (10kΩ)</li>
+      <li>Connect series resistor to NTC thermistor</li>
+      <li>Connect NTC thermistor to GND</li>
+      <li>Connect ADC channel to junction between resistor and NTC</li>
     </ul>
   </li>
   <li><strong>Power Connections</strong>:
     <ul>
-      <li>Connect PCAL9555 VDD to ESP32-C6 3.3V</li>
-      <li>Connect PCAL9555 GND to ESP32-C6 GND</li>
+      <li>Connect ESP32-C6 3.3V to voltage divider</li>
+      <li>Connect ESP32-C6 GND to circuit ground</li>
     </ul>
   </li>
-  <li><strong>Optional Interrupt</strong>:
+  <li><strong>ADC Configuration</strong>:
     <ul>
-      <li>Connect PCAL9555 INT to ESP32-C6 GPIO15 (with pull-up resistor)</li>
+      <li>Configure ADC channel in driver configuration</li>
+      <li>Set reference voltage (typically 3.3V)</li>
+      <li>Set ADC resolution (12-bit for ESP32-C6)</li>
     </ul>
   </li>
-  <li><strong>Address Configuration</strong>:
-    <ul>
-      <li>Connect A0, A1, A2 to GND for default address 0x20</li>
-      <li>Or configure for different address if needed</li>
-    </ul>
-  </li>
-</ol>
-<h3 id="test-setup">
-  
-  
-    <a href="#test-setup" class="anchor-heading" aria-labelledby="test-setup"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Setup
-  
-  
-</h3>
-    
-
-<p>For comprehensive testing, you can connect:</p>
-<ul>
-  <li>LEDs to output pins (with current-limiting resistors)</li>
-  <li>Switches/buttons to input pins</li>
-  <li>External pull-up/pull-down resistors for testing</li>
-  <li>Logic analyzer on I2C bus for protocol verification</li>
-</ul><hr />
+</ol><hr />
 <h2 id="-building-the-tests">
   
   
@@ -633,507 +510,21 @@
 3
 4
 5
-6
-7
-8
-9
-10
-11
-12
-13
 </pre></td><td class="rouge-code"><pre><span class="c"># Clone ESP-IDF</span>
 git clone <span class="nt">--recursive</span> https://github.com/espressif/esp-idf.git
 <span class="nb">cd </span>esp-idf
-   
-<span class="c"># Checkout release version 5.5</span>
-git checkout release/v5.5
-git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
-   
-<span class="c"># Install ESP-IDF (Linux/macOS)</span>
 ./install.sh esp32c6
-   
-<span class="c"># Set up environment (add to ~/.bashrc or ~/.zshrc for persistence)</span>
 <span class="nb">.</span> ./export.sh
 </pre></td></tr></tbody></table></div></code></pre></div>    </div>
   </li>
   <li>
-    <p><strong>Navigate to ESP32 Examples</strong>:</p>
+    <p><strong>Navigate to examples directory</strong>:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nb">cd </span>examples/esp32
-</pre></td></tr></tbody></table></div></code></pre></div>    </div>
-  </li>
-  <li>
-    <p><strong>Setup Repository</strong> (First time only):</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="c"># Make scripts executable and setup the build environment</span>
-<span class="nb">chmod</span> +x scripts/<span class="k">*</span>.sh
-./scripts/setup_repo.sh
+</pre></td><td class="rouge-code"><pre><span class="nb">cd </span>external/hf-ntc-thermistor-driver/examples/esp32
 </pre></td></tr></tbody></table></div></code></pre></div>    </div>
   </li>
 </ol>
-<h3 id="available-test-applications">
-  
-  
-    <a href="#available-test-applications" class="anchor-heading" aria-labelledby="available-test-applications"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Available Test Applications
-  
-  
-</h3>
-    
-
-<p>The test suites use a centralized build system with scripts. Available applications:</p>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th><strong>Application Name</strong></th>
-      <th><strong>Description</strong></th>
-      <th><strong>Hardware Required</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">pcal9555_comprehensive_test</code></td>
-      <td>Comprehensive PCAL9555 GPIO expander testing with all features</td>
-      <td>PCAL9555 board</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="list-available-applications">
-  
-  
-    <a href="#list-available-applications" class="anchor-heading" aria-labelledby="list-available-applications"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> List Available Applications
-  
-  
-</h3>
-    
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="c"># List all available applications</span>
-./scripts/build_app.sh list
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h3 id="build-an-application">
-  
-  
-    <a href="#build-an-application" class="anchor-heading" aria-labelledby="build-an-application"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Build an Application
-  
-  
-</h3>
-    
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="c"># Build comprehensive test (Debug build)</span>
-./scripts/build_app.sh pcal9555_comprehensive_test Debug
-
-<span class="c"># Build comprehensive test (Release build)</span>
-./scripts/build_app.sh pcal9555_comprehensive_test Release
-</pre></td></tr></tbody></table></div></code></pre></div></div><hr />
-<h2 id="-running-the-tests">
-  
-  
-    <a href="#-running-the-tests" class="anchor-heading" aria-labelledby="-running-the-tests"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 📤 Running the Tests
-  
-  
-</h2>
-    
-<h3 id="flash-application">
-  
-  
-    <a href="#flash-application" class="anchor-heading" aria-labelledby="flash-application"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Flash Application
-  
-  
-</h3>
-    
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="c"># Flash the application to ESP32-C6</span>
-./scripts/flash_app.sh pcal9555_comprehensive_test Debug
-
-<span class="c"># Or manually:</span>
-idf.py <span class="nt">-p</span> /dev/ttyUSB0 flash
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h3 id="monitor-output">
-  
-  
-    <a href="#monitor-output" class="anchor-heading" aria-labelledby="monitor-output"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Monitor Output
-  
-  
-</h3>
-    
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="c"># Monitor serial output</span>
-idf.py <span class="nt">-p</span> /dev/ttyUSB0 monitor
-
-<span class="c"># Or use the flash script which includes monitoring</span>
-./scripts/flash_app.sh pcal9555_comprehensive_test Debug
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h3 id="auto-detect-port">
-  
-  
-    <a href="#auto-detect-port" class="anchor-heading" aria-labelledby="auto-detect-port"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Auto-detect Port
-  
-  
-</h3>
-    
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="c"># The scripts can auto-detect the port</span>
-./scripts/detect_ports.sh
-</pre></td></tr></tbody></table></div></code></pre></div></div><hr />
-<h2 id="-test-suites">
-  
-  
-    <a href="#-test-suites" class="anchor-heading" aria-labelledby="-test-suites"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🧪 Test Suites
-  
-  
-</h2>
-    
-<h3 id="comprehensive-test-suite">
-  
-  
-    <a href="#comprehensive-test-suite" class="anchor-heading" aria-labelledby="comprehensive-test-suite"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Comprehensive Test Suite
-  
-  
-</h3>
-    
-
-<p><strong>Application</strong>: <code class="language-plaintext highlighter-rouge">pcal9555_comprehensive_test</code></p>
-
-<p>This comprehensive test suite validates all PCAL9555 functionality:</p>
-<h4 id="test-sections">
-  
-  
-    <a href="#test-sections" class="anchor-heading" aria-labelledby="test-sections"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Sections
-  
-  
-</h4>
-    
-
-<ol>
-  <li><strong>Initialization Tests</strong>
-    <ul>
-      <li>I2C bus initialization</li>
-      <li>Driver initialization</li>
-      <li>Reset to default state</li>
-    </ul>
-  </li>
-  <li><strong>GPIO Direction Tests</strong>
-    <ul>
-      <li>Single pin direction configuration (input/output)</li>
-      <li>Multiple pin direction configuration</li>
-      <li>Port-level direction control</li>
-    </ul>
-  </li>
-  <li><strong>GPIO Read/Write Tests</strong>
-    <ul>
-      <li>Pin write operations (HIGH/LOW)</li>
-      <li>Pin read operations</li>
-      <li>Pin toggle operations</li>
-      <li>Port-level read/write</li>
-    </ul>
-  </li>
-  <li><strong>Pull Resistor Tests</strong>
-    <ul>
-      <li>Pull-up resistor configuration</li>
-      <li>Pull-down resistor configuration</li>
-      <li>Pull enable/disable</li>
-      <li>Per-pin pull configuration</li>
-    </ul>
-  </li>
-  <li><strong>Drive Strength Tests</strong>
-    <ul>
-      <li>All drive strength levels (Level0-Level3)</li>
-      <li>Per-pin drive strength configuration</li>
-    </ul>
-  </li>
-  <li><strong>Output Mode Tests</strong>
-    <ul>
-      <li>Push-pull mode configuration</li>
-      <li>Open-drain mode configuration</li>
-      <li>Port-level output mode control</li>
-    </ul>
-  </li>
-  <li><strong>Polarity Tests</strong>
-    <ul>
-      <li>Input polarity inversion (normal/inverted)</li>
-      <li>Single pin polarity configuration</li>
-      <li>Multiple pin polarity configuration</li>
-    </ul>
-  </li>
-  <li><strong>Input Latch Tests</strong>
-    <ul>
-      <li>Input latch enable/disable</li>
-      <li>Single pin latch configuration</li>
-      <li>Multiple pin latch configuration</li>
-    </ul>
-  </li>
-  <li><strong>Interrupt Tests</strong>
-    <ul>
-      <li>Interrupt mask configuration</li>
-      <li>Interrupt status reading</li>
-      <li>Interrupt callback registration</li>
-    </ul>
-  </li>
-  <li><strong>Port Operation Tests</strong>
-    <ul>
-      <li>Port 0 operations (pins 0-7)</li>
-      <li>Port 1 operations (pins 8-15)</li>
-      <li>Mixed port operations</li>
-    </ul>
-  </li>
-  <li><strong>Error Handling Tests</strong>
-    <ul>
-      <li>Invalid pin handling</li>
-      <li>Error flag management</li>
-      <li>Error recovery</li>
-    </ul>
-  </li>
-  <li><strong>Stress Tests</strong>
-    <ul>
-      <li>Rapid pin operations</li>
-      <li>Continuous read/write cycles</li>
-      <li>Multi-pin simultaneous operations</li>
-    </ul>
-  </li>
-</ol>
-<h4 id="test-configuration">
-  
-  
-    <a href="#test-configuration" class="anchor-heading" aria-labelledby="test-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Configuration
-  
-  
-</h4>
-    
-
-<p>You can enable/disable specific test sections by editing the test file:</p>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="c1">// In PCAL9555ComprehensiveTest.cpp</span>
-<span class="k">static</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">ENABLE_INITIALIZATION_TESTS</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="k">static</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">ENABLE_GPIO_DIRECTION_TESTS</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="c1">// ... etc</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h4 id="test-results">
-  
-  
-    <a href="#test-results" class="anchor-heading" aria-labelledby="test-results"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Results
-  
-  
-</h4>
-    
-
-<p>The test framework provides:</p>
-<ul>
-  <li>Automatic pass/fail tracking</li>
-  <li>Execution time measurement</li>
-  <li>GPIO14 progress indicator (toggles on each test)</li>
-  <li>Comprehensive test summary</li>
-  <li>Success percentage calculation</li>
-</ul><hr />
-<h2 id="-configuration">
-  
-  
-    <a href="#-configuration" class="anchor-heading" aria-labelledby="-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🔧 Configuration
-  
-  
-</h2>
-    
-<h3 id="i2c-bus-configuration">
-  
-  
-    <a href="#i2c-bus-configuration" class="anchor-heading" aria-labelledby="i2c-bus-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> I2C Bus Configuration
-  
-  
-</h3>
-    
-
-<p>Default I2C configuration (can be modified in test file):</p>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="rouge-code"><pre><span class="n">Esp32Pcal9555Bus</span><span class="o">::</span><span class="n">I2CConfig</span> <span class="n">config</span><span class="p">;</span>
-<span class="n">config</span><span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">I2C_NUM_0</span><span class="p">;</span>
-<span class="n">config</span><span class="p">.</span><span class="n">sda_pin</span> <span class="o">=</span> <span class="n">GPIO_NUM_4</span><span class="p">;</span>      <span class="c1">// SDA pin</span>
-<span class="n">config</span><span class="p">.</span><span class="n">scl_pin</span> <span class="o">=</span> <span class="n">GPIO_NUM_5</span><span class="p">;</span>       <span class="c1">// SCL pin</span>
-<span class="n">config</span><span class="p">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mi">400000</span><span class="p">;</span>         <span class="c1">// 400 kHz</span>
-<span class="n">config</span><span class="p">.</span><span class="n">pullup_enable</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>        <span class="c1">// Enable internal pullups</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h3 id="pcal9555-address">
-  
-  
-    <a href="#pcal9555-address" class="anchor-heading" aria-labelledby="pcal9555-address"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PCAL9555 Address
-  
-  
-</h3>
-    
-
-<p>Default I2C address (can be modified in test file):</p>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="k">static</span> <span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">PCAL9555_I2C_ADDRESS</span> <span class="o">=</span> <span class="mh">0x20</span><span class="p">;</span>  <span class="c1">// Default address</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div><hr />
-<h2 id="-troubleshooting">
-  
-  
-    <a href="#-troubleshooting" class="anchor-heading" aria-labelledby="-troubleshooting"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🐛 Troubleshooting
-  
-  
-</h2>
-    
-<h3 id="i2c-communication-failures">
-  
-  
-    <a href="#i2c-communication-failures" class="anchor-heading" aria-labelledby="i2c-communication-failures"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> I2C Communication Failures
-  
-  
-</h3>
-    
-
-<p><strong>Symptoms</strong>: Tests fail with I2C errors</p>
-
-<p><strong>Solutions</strong>:</p>
-<ol>
-  <li><strong>Check I2C connections</strong>:
-    <ul>
-      <li>Verify SDA/SCL connections</li>
-      <li>Check pull-up resistors (4.7kΩ recommended)</li>
-      <li>Ensure proper power connections</li>
-    </ul>
-  </li>
-  <li><strong>Verify I2C address</strong>:
-    <ul>
-      <li>Check A0, A1, A2 pin configuration</li>
-      <li>Use I2C scanner to detect device address</li>
-      <li>Update <code class="language-plaintext highlighter-rouge">PCAL9555_I2C_ADDRESS</code> if different</li>
-    </ul>
-  </li>
-  <li><strong>Check I2C bus speed</strong>:
-    <ul>
-      <li>Reduce frequency if using long wires</li>
-      <li>Try 100 kHz instead of 400 kHz</li>
-    </ul>
-  </li>
-  <li><strong>Verify power supply</strong>:
-    <ul>
-      <li>Ensure 3.3V is stable</li>
-      <li>Check for voltage drops</li>
-    </ul>
-  </li>
-</ol>
-<h3 id="build-errors">
-  
-  
-    <a href="#build-errors" class="anchor-heading" aria-labelledby="build-errors"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Build Errors
-  
-  
-</h3>
-    
-
-<p><strong>Symptoms</strong>: CMake or compilation errors</p>
-
-<p><strong>Solutions</strong>:</p>
-<ol>
-  <li><strong>Verify ESP-IDF version</strong>:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>idf.py <span class="nt">--version</span>
-<span class="c"># Should show ESP-IDF v5.5 or compatible</span>
-</pre></td></tr></tbody></table></div></code></pre></div>    </div>
-  </li>
-  <li><strong>Clean and rebuild</strong>:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>idf.py fullclean
-./scripts/build_app.sh pcal9555_comprehensive_test Debug
-</pre></td></tr></tbody></table></div></code></pre></div>    </div>
-  </li>
-  <li><strong>Check component paths</strong>:
-    <ul>
-      <li>Verify component CMakeLists.txt paths</li>
-      <li>Ensure source files are accessible</li>
-    </ul>
-  </li>
-</ol>
-<h3 id="test-failures">
-  
-  
-    <a href="#test-failures" class="anchor-heading" aria-labelledby="test-failures"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Failures
-  
-  
-</h3>
-    
-
-<p><strong>Symptoms</strong>: Specific tests fail</p>
-
-<p><strong>Solutions</strong>:</p>
-<ol>
-  <li><strong>Check hardware connections</strong>:
-    <ul>
-      <li>Verify all pins are properly connected</li>
-      <li>Check for loose connections</li>
-    </ul>
-  </li>
-  <li><strong>Review test logs</strong>:
-    <ul>
-      <li>Check which specific test failed</li>
-      <li>Review error messages in serial output</li>
-    </ul>
-  </li>
-  <li><strong>Verify device state</strong>:
-    <ul>
-      <li>Reset PCAL9555 (power cycle)</li>
-      <li>Run reset test first</li>
-    </ul>
-  </li>
-</ol><hr />
-<h2 id="-additional-resources">
-  
-  
-    <a href="#-additional-resources" class="anchor-heading" aria-labelledby="-additional-resources"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 📚 Additional Resources
-  
-  
-</h2>
-    
-
-<ul>
-  <li><a href="../../datasheet/PCAL9555A.pdf">PCAL9555 Datasheet</a></li>
-  <li><a href="../../docs/api_reference.md">Driver API Documentation</a></li>
-  <li><a href="../../docs/platform_integration.md">Platform Integration Guide</a></li>
-  <li><a href="../../docs/hardware_overview.md">Hardware Overview</a></li>
-</ul><hr />
-<h2 id="-quick-reference">
-  
-  
-    <a href="#-quick-reference" class="anchor-heading" aria-labelledby="-quick-reference"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🎯 Quick Reference
-  
-  
-</h2>
-    
 <h3 id="build-commands">
   
   
@@ -1154,11 +545,61 @@ idf.py <span class="nt">-p</span> /dev/ttyUSB0 monitor
 </pre></td><td class="rouge-code"><pre><span class="c"># List available apps</span>
 ./scripts/build_app.sh list
 
-<span class="c"># Build comprehensive test</span>
-./scripts/build_app.sh pcal9555_comprehensive_test Debug
+<span class="c"># Build comprehensive test (Debug)</span>
+./scripts/build_app.sh ntc_thermistor_comprehensive_test Debug
 
-<span class="c"># Flash and monitor</span>
-./scripts/flash_app.sh pcal9555_comprehensive_test Debug
+<span class="c"># Build comprehensive test (Release)</span>
+./scripts/build_app.sh ntc_thermistor_comprehensive_test Release
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+<h3 id="build-output">
+  
+  
+    <a href="#build-output" class="anchor-heading" aria-labelledby="build-output"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Build Output
+  
+  
+</h3>
+    
+
+<p>The build process will:</p>
+<ul>
+  <li>Compile the NTC thermistor driver</li>
+  <li>Compile the test suite</li>
+  <li>Link all dependencies</li>
+  <li>Generate binary files in <code class="language-plaintext highlighter-rouge">build-app-ntc_thermistor_comprehensive_test-type-{Debug|Release}-target-esp32c6-idf-{version}/</code></li>
+</ul><hr />
+<h2 id="-running-the-tests">
+  
+  
+    <a href="#-running-the-tests" class="anchor-heading" aria-labelledby="-running-the-tests"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🏃 Running the Tests
+  
+  
+</h2>
+    
+<h3 id="flash-and-monitor">
+  
+  
+    <a href="#flash-and-monitor" class="anchor-heading" aria-labelledby="flash-and-monitor"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Flash and Monitor
+  
+  
+</h3>
+    
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c"># Flash and monitor (Debug)</span>
+./scripts/flash_app.sh flash_monitor ntc_thermistor_comprehensive_test Debug
+
+<span class="c"># Flash only</span>
+./scripts/flash_app.sh flash ntc_thermistor_comprehensive_test Debug
+
+<span class="c"># Monitor only</span>
+./scripts/flash_app.sh monitor
 </pre></td></tr></tbody></table></div></code></pre></div></div>
 <h3 id="test-execution">
   
@@ -1190,6 +631,329 @@ idf.py <span class="nt">-p</span> /dev/ttyUSB0 monitor
   <li>Useful for automated test verification</li>
   <li>Blinks 5 times at section start/end</li>
 </ul><hr />
+<h2 id="-test-suites">
+  
+  
+    <a href="#-test-suites" class="anchor-heading" aria-labelledby="-test-suites"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🧪 Test Suites
+  
+  
+</h2>
+    
+<h3 id="basic-tests">
+  
+  
+    <a href="#basic-tests" class="anchor-heading" aria-labelledby="basic-tests"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Basic Tests
+  
+  
+</h3>
+    
+
+<p>The comprehensive test suite includes:</p>
+
+<ol>
+  <li><strong>Initialization Tests</strong>:
+    <ul>
+      <li>Driver initialization</li>
+      <li>Configuration validation</li>
+      <li>ADC interface verification</li>
+    </ul>
+  </li>
+  <li><strong>Temperature Reading Tests</strong>:
+    <ul>
+      <li>Celsius, Fahrenheit, and Kelvin readings</li>
+      <li>Complete reading structure validation</li>
+      <li>Error handling verification</li>
+    </ul>
+  </li>
+  <li><strong>Configuration Tests</strong>:
+    <ul>
+      <li>Configuration setting/getting</li>
+      <li>Conversion method selection</li>
+      <li>Filtering configuration</li>
+    </ul>
+  </li>
+  <li><strong>Calibration Tests</strong>:
+    <ul>
+      <li>Calibration offset</li>
+      <li>Calibration reset</li>
+      <li>Calibration persistence</li>
+    </ul>
+  </li>
+</ol>
+<h4 id="test-results">
+  
+  
+    <a href="#test-results" class="anchor-heading" aria-labelledby="test-results"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Results
+  
+  
+</h4>
+    
+
+<p>The test framework provides:</p>
+<ul>
+  <li>Automatic pass/fail tracking</li>
+  <li>Execution time measurement</li>
+  <li>GPIO14 progress indicator (toggles on each test)</li>
+  <li>Comprehensive test summary</li>
+  <li>Success percentage calculation</li>
+</ul><hr />
+<h2 id="-configuration">
+  
+  
+    <a href="#-configuration" class="anchor-heading" aria-labelledby="-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🔧 Configuration
+  
+  
+</h2>
+    
+<h3 id="mock-adc-configuration">
+  
+  
+    <a href="#mock-adc-configuration" class="anchor-heading" aria-labelledby="mock-adc-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Mock ADC Configuration
+  
+  
+</h3>
+    
+
+<p>Default mock ADC configuration (in test file):</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">MockEsp32Adc</span> <span class="nf">mock_adc</span><span class="p">(</span><span class="mf">3.3</span><span class="n">f</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>  <span class="c1">// 3.3V reference, 12-bit resolution</span>
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+<h3 id="ntc-configuration">
+  
+  
+    <a href="#ntc-configuration" class="anchor-heading" aria-labelledby="ntc-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> NTC Configuration
+  
+  
+</h3>
+    
+
+<p>Default NTC configuration (in test file):</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">NtcThermistor</span><span class="o">&lt;</span><span class="n">MockEsp32Adc</span><span class="o">&gt;</span> <span class="n">thermistor</span><span class="p">(</span>
+    <span class="n">NTC_TYPE_NTCG163JFT103FT1S</span><span class="p">,</span>  <span class="c1">// NTC type</span>
+    <span class="o">&amp;</span><span class="n">mock_adc</span>                    <span class="c1">// ADC interface</span>
+<span class="p">);</span>
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+<h3 id="custom-configuration">
+  
+  
+    <a href="#custom-configuration" class="anchor-heading" aria-labelledby="custom-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Custom Configuration
+  
+  
+</h3>
+    
+
+<p>For custom NTC setups:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="n">ntc_config_t</span> <span class="n">config</span> <span class="o">=</span> <span class="n">NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S</span><span class="p">();</span>
+<span class="n">config</span><span class="p">.</span><span class="n">adc_channel</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                              <span class="c1">// ADC channel</span>
+<span class="n">config</span><span class="p">.</span><span class="n">series_resistance</span> <span class="o">=</span> <span class="mf">10000.0</span><span class="n">f</span><span class="p">;</span>                 <span class="c1">// 10kΩ series resistor</span>
+<span class="n">config</span><span class="p">.</span><span class="n">conversion_method</span> <span class="o">=</span> <span class="n">NTC_CONVERSION_MATHEMATICAL</span><span class="p">;</span> <span class="c1">// Conversion method</span>
+<span class="n">config</span><span class="p">.</span><span class="n">enable_filtering</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>                      <span class="c1">// Enable filtering</span>
+<span class="n">config</span><span class="p">.</span><span class="n">filter_alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="n">f</span><span class="p">;</span>                          <span class="c1">// Filter coefficient</span>
+
+<span class="n">NtcThermistor</span><span class="o">&lt;</span><span class="n">MockEsp32Adc</span><span class="o">&gt;</span> <span class="n">thermistor</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mock_adc</span><span class="p">);</span>
+</pre></td></tr></tbody></table></div></code></pre></div></div><hr />
+<h2 id="-troubleshooting">
+  
+  
+    <a href="#-troubleshooting" class="anchor-heading" aria-labelledby="-troubleshooting"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🐛 Troubleshooting
+  
+  
+</h2>
+    
+<h3 id="build-errors">
+  
+  
+    <a href="#build-errors" class="anchor-heading" aria-labelledby="build-errors"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Build Errors
+  
+  
+</h3>
+    
+
+<p><strong>Symptoms</strong>: CMake or compilation errors</p>
+
+<p><strong>Solutions</strong>:</p>
+<ol>
+  <li><strong>Verify ESP-IDF version</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>idf.py <span class="nt">--version</span>
+<span class="c"># Should show ESP-IDF v5.5 or compatible</span>
+</pre></td></tr></tbody></table></div></code></pre></div>    </div>
+  </li>
+  <li><strong>Clean and rebuild</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>idf.py fullclean
+./scripts/build_app.sh ntc_thermistor_comprehensive_test Debug
+</pre></td></tr></tbody></table></div></code></pre></div>    </div>
+  </li>
+  <li><strong>Check component paths</strong>:
+    <ul>
+      <li>Verify component CMakeLists.txt paths</li>
+      <li>Ensure source files are accessible</li>
+    </ul>
+  </li>
+</ol>
+<h3 id="test-failures">
+  
+  
+    <a href="#test-failures" class="anchor-heading" aria-labelledby="test-failures"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Failures
+  
+  
+</h3>
+    
+
+<p><strong>Symptoms</strong>: Specific tests fail</p>
+
+<p><strong>Solutions</strong>:</p>
+<ol>
+  <li><strong>Check mock ADC configuration</strong>:
+    <ul>
+      <li>Verify reference voltage matches expected values</li>
+      <li>Check ADC resolution settings</li>
+    </ul>
+  </li>
+  <li><strong>Review test logs</strong>:
+    <ul>
+      <li>Check which specific test failed</li>
+      <li>Review error messages in serial output</li>
+    </ul>
+  </li>
+  <li><strong>Verify driver state</strong>:
+    <ul>
+      <li>Ensure driver is properly initialized</li>
+      <li>Check configuration values</li>
+    </ul>
+  </li>
+</ol>
+<h3 id="hardware-testing-issues">
+  
+  
+    <a href="#hardware-testing-issues" class="anchor-heading" aria-labelledby="hardware-testing-issues"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Hardware Testing Issues
+  
+  
+</h3>
+    
+
+<p><strong>Symptoms</strong>: Incorrect temperature readings with real hardware</p>
+
+<p><strong>Solutions</strong>:</p>
+<ol>
+  <li><strong>Check circuit connections</strong>:
+    <ul>
+      <li>Verify voltage divider connections</li>
+      <li>Check series resistor value (should match configuration)</li>
+      <li>Ensure proper power connections</li>
+    </ul>
+  </li>
+  <li><strong>Verify ADC configuration</strong>:
+    <ul>
+      <li>Check ADC channel matches physical connection</li>
+      <li>Verify reference voltage (typically 3.3V)</li>
+      <li>Confirm ADC resolution settings</li>
+    </ul>
+  </li>
+  <li><strong>Calibrate if needed</strong>:
+    <ul>
+      <li>Use known reference temperature</li>
+      <li>Apply calibration offset</li>
+      <li>Verify with multiple temperature points</li>
+    </ul>
+  </li>
+</ol><hr />
+<h2 id="-additional-resources">
+  
+  
+    <a href="#-additional-resources" class="anchor-heading" aria-labelledby="-additional-resources"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 📚 Additional Resources
+  
+  
+</h2>
+    
+
+<ul>
+  <li><a href="/hf-ntc-thermistor-driver/development/">NTC Driver Documentation</a> - Complete driver documentation</li>
+  <li><a href="../../docs/">API Reference</a> - Detailed API documentation</li>
+  <li><a href="../../datasheet/">Datasheets</a> - NTC thermistor datasheets</li>
+</ul><hr />
+<h2 id="-quick-reference">
+  
+  
+    <a href="#-quick-reference" class="anchor-heading" aria-labelledby="-quick-reference"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🎯 Quick Reference
+  
+  
+</h2>
+    
+<h3 id="build-commands-1">
+  
+  
+    <a href="#build-commands-1" class="anchor-heading" aria-labelledby="build-commands-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Build Commands
+  
+  
+</h3>
+    
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c"># List available apps</span>
+./scripts/build_app.sh list
+
+<span class="c"># Build comprehensive test</span>
+./scripts/build_app.sh ntc_thermistor_comprehensive_test Debug
+
+<span class="c"># Flash and monitor</span>
+./scripts/flash_app.sh flash_monitor ntc_thermistor_comprehensive_test Debug
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+<h3 id="test-execution-1">
+  
+  
+    <a href="#test-execution-1" class="anchor-heading" aria-labelledby="test-execution-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Execution
+  
+  
+</h3>
+    
+
+<p>The comprehensive test suite runs automatically on boot and provides:</p>
+<ul>
+  <li>Real-time test progress via GPIO14 indicator</li>
+  <li>Serial output with detailed test results</li>
+  <li>Automatic test summary at completion</li>
+</ul>
+<h3 id="gpio14-test-indicator-1">
+  
+  
+    <a href="#gpio14-test-indicator-1" class="anchor-heading" aria-labelledby="gpio14-test-indicator-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> GPIO14 Test Indicator
+  
+  
+</h3>
+    
+
+<p>GPIO14 toggles between HIGH/LOW for each completed test, providing visual feedback:</p>
+<ul>
+  <li>Use oscilloscope or logic analyzer to monitor</li>
+  <li>Useful for automated test verification</li>
+  <li>Blinks 5 times at section start/end</li>
+</ul><hr />
 <h2 id="-notes">
   
   
@@ -1200,15 +964,15 @@ idf.py <span class="nt">-p</span> /dev/ttyUSB0 monitor
     
 
 <ul>
-  <li><strong>I2C Pull-ups</strong>: External pull-up resistors (4.7kΩ) are recommended even if internal pullups are enabled</li>
-  <li><strong>Address Configuration</strong>: Default address is 0x20. Modify if using different A0/A1/A2 configuration</li>
-  <li><strong>Test Duration</strong>: Comprehensive test suite takes approximately 2-5 minutes to complete</li>
-  <li><strong>Hardware Requirements</strong>: Basic tests work without external hardware; some tests benefit from LEDs/switches</li>
+  <li><strong>Mock ADC</strong>: Tests use mock ADC for hardware-independent testing</li>
+  <li><strong>Hardware Testing</strong>: Optional - connect real NTC thermistor for hardware validation</li>
+  <li><strong>Test Duration</strong>: Comprehensive test suite takes approximately 1-2 minutes to complete</li>
+  <li><strong>Hardware Requirements</strong>: Basic tests work with mock ADC; hardware tests require NTC thermistor circuit</li>
 </ul><hr />
 
 <div style="text-align: center; margin: 2em 0; padding: 1em; background: #f8f9fa; border-radius: 8px;">
-  <strong>🎯 Ready to test the PCAL9555?</strong><br />
-  Start with: <code>./scripts/build_app.sh pcal9555_comprehensive_test Debug</code>
+  <strong>🎯 Ready to test the NTC Thermistor driver?</strong><br />
+  Start with: <code>./scripts/build_app.sh ntc_thermistor_comprehensive_test Debug</code>
 </div>
 
           

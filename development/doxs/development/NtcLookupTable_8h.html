@@ -110,7 +110,7 @@ Include dependency graph for NtcLookupTable.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="NtcLookupTable_8h__dep__incl.svg" width="374" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="NtcLookupTable_8h__dep__incl.svg" width="403" height="286"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="NtcLookupTable_8h_source.html">Go to the source code of this file.</a></p>
@@ -160,7 +160,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Lookup table implementation for <a class="el" href="namespaceNTC.html">NTC</a> thermistor temperature conversion. </p>
 <p>This header provides lookup table functionality for fast temperature conversion from resistance values. It includes pre-calculated tables for common <a class="el" href="namespaceNTC.html">NTC</a> types.</p>
-<dl class="section author"><dt>Author</dt><dd>HardFOC Development Team </dd></dl>
+<p>Lookup tables provide a balance between speed and accuracy, making them ideal for real-time applications where computational resources are limited.</p>
+<dl class="section note"><dt>Note</dt><dd>Lookup tables use binary search and linear interpolation for efficient temperature lookups. Accuracy depends on table resolution.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Nebiyu Tadesse </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>HardFOC </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -475,13 +477,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get lookup table for <a class="el" href="namespaceNTC.html">NTC</a> type. </p>
+<p>Retrieves the pre-calculated lookup table for a specific <a class="el" href="namespaceNTC.html">NTC</a> thermistor type. Lookup tables are optimized for fast temperature conversion with minimal computational overhead.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ntc_type</td><td><a class="el" href="namespaceNTC.html">NTC</a> thermistor type </td></tr>
+    <tr><td class="paramname">ntc_type</td><td><a class="el" href="namespaceNTC.html">NTC</a> thermistor type (e.g., NTC_TYPE_NTCG163JFT103FT1S) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to lookup table (nullptr if not available) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to lookup table (nullptr if not available for this type)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Not all <a class="el" href="namespaceNTC.html">NTC</a> types have pre-calculated lookup tables. Use NTC_CONVERSION_MATHEMATICAL for unsupported types. </dd></dl>
 
 </div>
 </div>

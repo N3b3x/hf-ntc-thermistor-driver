@@ -100,13 +100,13 @@ $(function(){initNavTree('NtcLookupTable_8cpp.html',''); initResizable(); });
 <p>Lookup table implementation for <a class="el" href="namespaceNTC.html">NTC</a> thermistor temperature conversion.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="NtcLookupTable_8h_source.html">NtcLookupTable.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NtcThermistor_8h_source.html">NtcThermistor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NtcTypes_8h_source.html">NtcTypes.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for NtcLookupTable.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="NtcLookupTable_8cpp__incl.svg" width="507" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="NtcLookupTable_8cpp__incl.svg" width="462" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -145,7 +145,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Lookup table implementation for <a class="el" href="namespaceNTC.html">NTC</a> thermistor temperature conversion. </p>
 <p>This file contains lookup tables and functions for fast temperature conversion from resistance values using pre-calculated tables for common <a class="el" href="namespaceNTC.html">NTC</a> types.</p>
-<dl class="section author"><dt>Author</dt><dd>HardFOC Development Team </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Nebiyu Tadesse </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>HardFOC </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -460,13 +460,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get lookup table for <a class="el" href="namespaceNTC.html">NTC</a> type. </p>
+<p>Retrieves the pre-calculated lookup table for a specific <a class="el" href="namespaceNTC.html">NTC</a> thermistor type. Lookup tables are optimized for fast temperature conversion with minimal computational overhead.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ntc_type</td><td><a class="el" href="namespaceNTC.html">NTC</a> thermistor type </td></tr>
+    <tr><td class="paramname">ntc_type</td><td><a class="el" href="namespaceNTC.html">NTC</a> thermistor type (e.g., NTC_TYPE_NTCG163JFT103FT1S) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to lookup table (nullptr if not available) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to lookup table (nullptr if not available for this type)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Not all <a class="el" href="namespaceNTC.html">NTC</a> types have pre-calculated lookup tables. Use NTC_CONVERSION_MATHEMATICAL for unsupported types. </dd></dl>
 
 </div>
 </div>

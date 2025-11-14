@@ -101,11 +101,11 @@ $(function(){initNavTree('structntc__config__t.html',''); initResizable(); });
 <p><a class="el" href="namespaceNTC.html">NTC</a> thermistor configuration structure.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="NtcThermistor_8h_source.html">NtcThermistor.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="NtcTypes_8h_source.html">NtcTypes.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a3062d766b9ed0e324d4b70905cc2b03d" id="r_a3062d766b9ed0e324d4b70905cc2b03d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcThermistor_8h.html#ace43706329887586ece3193d84444070">ntc_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3062d766b9ed0e324d4b70905cc2b03d">type</a></td></tr>
+<tr class="memitem:a3062d766b9ed0e324d4b70905cc2b03d" id="r_a3062d766b9ed0e324d4b70905cc2b03d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#ace43706329887586ece3193d84444070">ntc_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3062d766b9ed0e324d4b70905cc2b03d">type</a></td></tr>
 <tr class="memdesc:a3062d766b9ed0e324d4b70905cc2b03d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceNTC.html">NTC</a> type.  <br /></td></tr>
 <tr class="separator:a3062d766b9ed0e324d4b70905cc2b03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98b465db8acf050066f820204513f613" id="r_a98b465db8acf050066f820204513f613"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98b465db8acf050066f820204513f613">resistance_at_25c</a></td></tr>
@@ -123,7 +123,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:abf4c362acc5e44cae04710cf30daf0b2" id="r_abf4c362acc5e44cae04710cf30daf0b2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf4c362acc5e44cae04710cf30daf0b2">calibration_offset</a></td></tr>
 <tr class="memdesc:abf4c362acc5e44cae04710cf30daf0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calibration offset (°C)  <br /></td></tr>
 <tr class="separator:abf4c362acc5e44cae04710cf30daf0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb45bc69957ca7f98c1ce4ec2e102247" id="r_adb45bc69957ca7f98c1ce4ec2e102247"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcThermistor_8h.html#aec3ad4e3c5c534e2cdd9cd82d53d8da9">ntc_conversion_method_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb45bc69957ca7f98c1ce4ec2e102247">conversion_method</a></td></tr>
+<tr class="memitem:adb45bc69957ca7f98c1ce4ec2e102247" id="r_adb45bc69957ca7f98c1ce4ec2e102247"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#aec3ad4e3c5c534e2cdd9cd82d53d8da9">ntc_conversion_method_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb45bc69957ca7f98c1ce4ec2e102247">conversion_method</a></td></tr>
 <tr class="memdesc:adb45bc69957ca7f98c1ce4ec2e102247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion method.  <br /></td></tr>
 <tr class="separator:adb45bc69957ca7f98c1ce4ec2e102247"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3b26d7c225e6c2d62de570becfc250f" id="r_ae3b26d7c225e6c2d62de570becfc250f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3b26d7c225e6c2d62de570becfc250f">adc_channel</a></td></tr>
@@ -153,6 +153,14 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="namespaceNTC.html">NTC</a> thermistor configuration structure. </p>
+<p>Complete configuration for an <a class="el" href="namespaceNTC.html">NTC</a> thermistor instance. All parameters must be set appropriately for accurate temperature readings.</p>
+<dl class="section note"><dt>Note</dt><dd>Use <a class="el" href="NtcTypes_8h.html#a4513d8605267b0a954d6898910937d0b" title="Default NTC configuration.">NTC_CONFIG_DEFAULT()</a> or <a class="el" href="NtcTypes_8h.html#af91ad0e0c342dd2c186735fc88702302">NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S()</a> macros to initialize with sensible defaults, then modify as needed.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Invalid configuration values (e.g., negative resistance) will cause initialization or reading functions to fail.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classNtcThermistor.html#aedbcdc506b612680d5d9baa5a51541eb" title="Set configuration.">NtcThermistor::SetConfiguration()</a> </dd>
+<dd>
+<a class="el" href="classNtcThermistor.html#a3b0ab1931849ee01f834ed76fc9bc711" title="Get current configuration.">NtcThermistor::GetConfiguration()</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2hf-ntc-thermistor-driver_2hf-ntc-thermistor-driver_2inc_2NtcTypes_8h-example.html#_a0">/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcTypes.h</a>, and <a class="el" href="Custom-example.html#_a0">Custom</a>.</dd>
+</dl>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="ae3b26d7c225e6c2d62de570becfc250f" name="ae3b26d7c225e6c2d62de570becfc250f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3b26d7c225e6c2d62de570becfc250f">&#9670;&#160;</a></span>adc_channel</h2>
@@ -167,6 +175,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>ADC channel number. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2hf-ntc-thermistor-driver_2hf-ntc-thermistor-driver_2inc_2NtcTypes_8h-example.html#a2">/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcTypes.h</a>, and <a class="el" href="Custom-example.html#a2">Custom</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -225,12 +235,14 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcThermistor_8h.html#aec3ad4e3c5c534e2cdd9cd82d53d8da9">ntc_conversion_method_t</a> ntc_config_t::conversion_method</td>
+          <td class="memname"><a class="el" href="NtcTypes_8h.html#aec3ad4e3c5c534e2cdd9cd82d53d8da9">ntc_conversion_method_t</a> ntc_config_t::conversion_method</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Conversion method. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Custom-example.html#a4">Custom</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -247,6 +259,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Enable temperature filtering. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Custom-example.html#a6">Custom</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -263,6 +277,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Filter alpha value (0.0-1.0) </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Custom-example.html#a7">Custom</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -375,6 +391,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Series resistance in voltage divider (ohms) </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Custom-example.html#a3">Custom</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -385,7 +403,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcThermistor_8h.html#ace43706329887586ece3193d84444070">ntc_type_t</a> ntc_config_t::type</td>
+          <td class="memname"><a class="el" href="NtcTypes_8h.html#ace43706329887586ece3193d84444070">ntc_type_t</a> ntc_config_t::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -395,7 +413,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>inc/<a class="el" href="NtcThermistor_8h_source.html">NtcThermistor.h</a></li>
+<li>inc/<a class="el" href="NtcTypes_8h_source.html">NtcTypes.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

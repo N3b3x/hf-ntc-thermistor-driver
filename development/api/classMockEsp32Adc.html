@@ -105,12 +105,12 @@ $(function(){initNavTree('classMockEsp32Adc.html',''); initResizable(); });
 <div class="dynheader">
 Inheritance diagram for MockEsp32Adc:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMockEsp32Adc__inherit__graph.svg" width="131" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMockEsp32Adc__inherit__graph.svg" width="171" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for MockEsp32Adc:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMockEsp32Adc__coll__graph.svg" width="131" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMockEsp32Adc__coll__graph.svg" width="171" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -118,59 +118,81 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5bec97dace7d51487ea64ae4aaa4442f" id="r_a5bec97dace7d51487ea64ae4aaa4442f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bec97dace7d51487ea64ae4aaa4442f">MockEsp32Adc</a> (float reference_voltage=3.3f, uint8_t resolution_bits=12)</td></tr>
 <tr class="memdesc:a5bec97dace7d51487ea64ae4aaa4442f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
 <tr class="separator:a5bec97dace7d51487ea64ae4aaa4442f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f29496b89fa1651662f35939a577494" id="r_a7f29496b89fa1651662f35939a577494"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f29496b89fa1651662f35939a577494">~MockEsp32Adc</a> () override=default</td></tr>
-<tr class="memdesc:a7f29496b89fa1651662f35939a577494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
-<tr class="separator:a7f29496b89fa1651662f35939a577494"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e2666dc7fa9018c554cbd93d329d78b" id="r_a3e2666dc7fa9018c554cbd93d329d78b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e2666dc7fa9018c554cbd93d329d78b">IsInitialized</a> () const override</td></tr>
-<tr class="memdesc:a3e2666dc7fa9018c554cbd93d329d78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if ADC is initialized.  <br /></td></tr>
-<tr class="separator:a3e2666dc7fa9018c554cbd93d329d78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4cf42a203e1631720b022c1200e2f72" id="r_aa4cf42a203e1631720b022c1200e2f72"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4cf42a203e1631720b022c1200e2f72">EnsureInitialized</a> () override</td></tr>
-<tr class="memdesc:aa4cf42a203e1631720b022c1200e2f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure ADC is initialized.  <br /></td></tr>
-<tr class="separator:aa4cf42a203e1631720b022c1200e2f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac97c17789dba752896628bc5815391b" id="r_aac97c17789dba752896628bc5815391b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac97c17789dba752896628bc5815391b">IsChannelAvailable</a> (uint8_t channel) const override</td></tr>
-<tr class="memdesc:aac97c17789dba752896628bc5815391b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if channel is available.  <br /></td></tr>
-<tr class="separator:aac97c17789dba752896628bc5815391b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a124419d8167c6ca3bea9bc63e9fd58f4" id="r_a124419d8167c6ca3bea9bc63e9fd58f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a124419d8167c6ca3bea9bc63e9fd58f4">ReadChannelCount</a> (uint8_t channel, uint32_t *count) override</td></tr>
-<tr class="memdesc:a124419d8167c6ca3bea9bc63e9fd58f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read raw ADC count.  <br /></td></tr>
-<tr class="separator:a124419d8167c6ca3bea9bc63e9fd58f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2ff3e888619aa24363270f1e63e0f69" id="r_aa2ff3e888619aa24363270f1e63e0f69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2ff3e888619aa24363270f1e63e0f69">ReadChannelV</a> (uint8_t channel, float *voltage_v) override</td></tr>
-<tr class="memdesc:aa2ff3e888619aa24363270f1e63e0f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read voltage from ADC channel.  <br /></td></tr>
-<tr class="separator:aa2ff3e888619aa24363270f1e63e0f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31cd90dd3e165985094132314bd4cd46" id="r_a31cd90dd3e165985094132314bd4cd46"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31cd90dd3e165985094132314bd4cd46">GetReferenceVoltage</a> () const override</td></tr>
-<tr class="memdesc:a31cd90dd3e165985094132314bd4cd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get reference voltage.  <br /></td></tr>
-<tr class="separator:a31cd90dd3e165985094132314bd4cd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f8f1d20d58be577da039eb4f1e16a67" id="r_a4f8f1d20d58be577da039eb4f1e16a67"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f8f1d20d58be577da039eb4f1e16a67">GetResolutionBits</a> () const override</td></tr>
-<tr class="memdesc:a4f8f1d20d58be577da039eb4f1e16a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get ADC resolution.  <br /></td></tr>
-<tr class="separator:a4f8f1d20d58be577da039eb4f1e16a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3703344d06d3913d15ae760966c18441" id="r_a3703344d06d3913d15ae760966c18441"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3703344d06d3913d15ae760966c18441">~MockEsp32Adc</a> ()=default</td></tr>
+<tr class="memdesc:a3703344d06d3913d15ae760966c18441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
+<tr class="separator:a3703344d06d3913d15ae760966c18441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47e052c240bf1a3df95f002373786d21" id="r_a47e052c240bf1a3df95f002373786d21"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47e052c240bf1a3df95f002373786d21">IsInitialized</a> () const</td></tr>
+<tr class="memdesc:a47e052c240bf1a3df95f002373786d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if ADC is initialized.  <br /></td></tr>
+<tr class="separator:a47e052c240bf1a3df95f002373786d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a853d99a55edf601b8859d0985d64be8f" id="r_a853d99a55edf601b8859d0985d64be8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a853d99a55edf601b8859d0985d64be8f">EnsureInitialized</a> ()</td></tr>
+<tr class="memdesc:a853d99a55edf601b8859d0985d64be8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure ADC is initialized.  <br /></td></tr>
+<tr class="separator:a853d99a55edf601b8859d0985d64be8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34feb932d5d1a680225e832c3ee9a472" id="r_a34feb932d5d1a680225e832c3ee9a472"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34feb932d5d1a680225e832c3ee9a472">IsChannelAvailable</a> (uint8_t channel) const</td></tr>
+<tr class="memdesc:a34feb932d5d1a680225e832c3ee9a472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if channel is available.  <br /></td></tr>
+<tr class="separator:a34feb932d5d1a680225e832c3ee9a472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85462408c5fa1d65da6a73eb8d70491d" id="r_a85462408c5fa1d65da6a73eb8d70491d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85462408c5fa1d65da6a73eb8d70491d">ReadChannelCount</a> (uint8_t channel, uint32_t *count)</td></tr>
+<tr class="memdesc:a85462408c5fa1d65da6a73eb8d70491d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read raw ADC count.  <br /></td></tr>
+<tr class="separator:a85462408c5fa1d65da6a73eb8d70491d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad933f3885316b55a50907a4f7f19ec61" id="r_ad933f3885316b55a50907a4f7f19ec61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad933f3885316b55a50907a4f7f19ec61">ReadChannelV</a> (uint8_t channel, float *voltage_v)</td></tr>
+<tr class="memdesc:ad933f3885316b55a50907a4f7f19ec61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read voltage from ADC channel.  <br /></td></tr>
+<tr class="separator:ad933f3885316b55a50907a4f7f19ec61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac43c0b6c7df753218e40e9ab0e769dd5" id="r_ac43c0b6c7df753218e40e9ab0e769dd5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac43c0b6c7df753218e40e9ab0e769dd5">GetReferenceVoltage</a> () const</td></tr>
+<tr class="memdesc:ac43c0b6c7df753218e40e9ab0e769dd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get reference voltage.  <br /></td></tr>
+<tr class="separator:ac43c0b6c7df753218e40e9ab0e769dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c511e67fe8b09afc568ce14ea8d0a1d" id="r_a3c511e67fe8b09afc568ce14ea8d0a1d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c511e67fe8b09afc568ce14ea8d0a1d">GetResolutionBits</a> () const</td></tr>
+<tr class="memdesc:a3c511e67fe8b09afc568ce14ea8d0a1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get ADC resolution.  <br /></td></tr>
+<tr class="separator:a3c511e67fe8b09afc568ce14ea8d0a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9495939a768b2388384cfc1a4d0df1e3" id="r_a9495939a768b2388384cfc1a4d0df1e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9495939a768b2388384cfc1a4d0df1e3">SetSimulatedVoltage</a> (float voltage)</td></tr>
 <tr class="memdesc:a9495939a768b2388384cfc1a4d0df1e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set simulated voltage for testing.  <br /></td></tr>
 <tr class="separator:a9495939a768b2388384cfc1a4d0df1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6925fdf99d2cca6c64fb3e1aec4e7fc" id="r_ab6925fdf99d2cca6c64fb3e1aec4e7fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6925fdf99d2cca6c64fb3e1aec4e7fc">Initialize</a> ()</td></tr>
 <tr class="memdesc:ab6925fdf99d2cca6c64fb3e1aec4e7fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the mock ADC.  <br /></td></tr>
 <tr class="separator:ab6925fdf99d2cca6c64fb3e1aec4e7fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classNTC_1_1BaseAdc"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classNTC_1_1BaseAdc')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classNTC_1_1BaseAdc.html">NTC::BaseAdc</a></td></tr>
-<tr class="memitem:aaea477a28bb366444eba8da9d872459b inherit pub_methods_classNTC_1_1BaseAdc" id="r_aaea477a28bb366444eba8da9d872459b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1BaseAdc.html#aaea477a28bb366444eba8da9d872459b">~BaseAdc</a> ()=default</td></tr>
-<tr class="memdesc:aaea477a28bb366444eba8da9d872459b inherit pub_methods_classNTC_1_1BaseAdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
-<tr class="separator:aaea477a28bb366444eba8da9d872459b inherit pub_methods_classNTC_1_1BaseAdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classNTC_1_1NtcAdcInterface"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classNTC_1_1NtcAdcInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface&lt; MockEsp32Adc &gt;</a></td></tr>
+<tr class="memitem:a28cd5fffada1d46d42afb7d39cf9f820 inherit pub_methods_classNTC_1_1NtcAdcInterface" id="r_a28cd5fffada1d46d42afb7d39cf9f820"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a28cd5fffada1d46d42afb7d39cf9f820">IsInitialized</a> () const</td></tr>
+<tr class="memdesc:a28cd5fffada1d46d42afb7d39cf9f820 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if ADC is initialized.  <br /></td></tr>
+<tr class="separator:a28cd5fffada1d46d42afb7d39cf9f820 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44634333343db2c1291a7e90930f2fee inherit pub_methods_classNTC_1_1NtcAdcInterface" id="r_a44634333343db2c1291a7e90930f2fee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a44634333343db2c1291a7e90930f2fee">EnsureInitialized</a> ()</td></tr>
+<tr class="memdesc:a44634333343db2c1291a7e90930f2fee inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure ADC is initialized, initializing if necessary.  <br /></td></tr>
+<tr class="separator:a44634333343db2c1291a7e90930f2fee inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09f7ed9762f106b80f7680f0fea61a7 inherit pub_methods_classNTC_1_1NtcAdcInterface" id="r_ac09f7ed9762f106b80f7680f0fea61a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#ac09f7ed9762f106b80f7680f0fea61a7">IsChannelAvailable</a> (uint8_t channel) const</td></tr>
+<tr class="memdesc:ac09f7ed9762f106b80f7680f0fea61a7 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a specific ADC channel is available.  <br /></td></tr>
+<tr class="separator:ac09f7ed9762f106b80f7680f0fea61a7 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e3b5ff558cc20c17a1662a88f5e543 inherit pub_methods_classNTC_1_1NtcAdcInterface" id="r_a19e3b5ff558cc20c17a1662a88f5e543"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">AdcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a19e3b5ff558cc20c17a1662a88f5e543">ReadChannelCount</a> (uint8_t channel, uint32_t *count)</td></tr>
+<tr class="memdesc:a19e3b5ff558cc20c17a1662a88f5e543 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read raw ADC count value from specified channel.  <br /></td></tr>
+<tr class="separator:a19e3b5ff558cc20c17a1662a88f5e543 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173e85eefb34161f3dd2e51acc8e0d48 inherit pub_methods_classNTC_1_1NtcAdcInterface" id="r_a173e85eefb34161f3dd2e51acc8e0d48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">AdcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a173e85eefb34161f3dd2e51acc8e0d48">ReadChannelV</a> (uint8_t channel, float *voltage_v)</td></tr>
+<tr class="memdesc:a173e85eefb34161f3dd2e51acc8e0d48 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read voltage value from specified channel.  <br /></td></tr>
+<tr class="separator:a173e85eefb34161f3dd2e51acc8e0d48 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96fc5ce5eae1bc8ed679d77eec00d6c2 inherit pub_methods_classNTC_1_1NtcAdcInterface" id="r_a96fc5ce5eae1bc8ed679d77eec00d6c2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a96fc5ce5eae1bc8ed679d77eec00d6c2">GetReferenceVoltage</a> () const</td></tr>
+<tr class="memdesc:a96fc5ce5eae1bc8ed679d77eec00d6c2 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reference voltage of the ADC.  <br /></td></tr>
+<tr class="separator:a96fc5ce5eae1bc8ed679d77eec00d6c2 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a677a62da6c55f0799c1ecf2172f90727 inherit pub_methods_classNTC_1_1NtcAdcInterface" id="r_a677a62da6c55f0799c1ecf2172f90727"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a677a62da6c55f0799c1ecf2172f90727">GetResolutionBits</a> () const</td></tr>
+<tr class="memdesc:a677a62da6c55f0799c1ecf2172f90727 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ADC resolution in bits.  <br /></td></tr>
+<tr class="separator:a677a62da6c55f0799c1ecf2172f90727 inherit pub_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classNTC_1_1BaseAdc"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classNTC_1_1BaseAdc')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classNTC_1_1BaseAdc.html">NTC::BaseAdc</a></td></tr>
-<tr class="memitem:a631f2083210ec6eb545fe62476eb8ce9 inherit pro_methods_classNTC_1_1BaseAdc" id="r_a631f2083210ec6eb545fe62476eb8ce9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1BaseAdc.html#a631f2083210ec6eb545fe62476eb8ce9">BaseAdc</a> ()=default</td></tr>
-<tr class="memdesc:a631f2083210ec6eb545fe62476eb8ce9 inherit pro_methods_classNTC_1_1BaseAdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected constructor to prevent direct instantiation.  <br /></td></tr>
-<tr class="separator:a631f2083210ec6eb545fe62476eb8ce9 inherit pro_methods_classNTC_1_1BaseAdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbf32465aee6966e2e86eb1feaaca448 inherit pro_methods_classNTC_1_1BaseAdc" id="r_afbf32465aee6966e2e86eb1feaaca448"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1BaseAdc.html#afbf32465aee6966e2e86eb1feaaca448">BaseAdc</a> (const <a class="el" href="classNTC_1_1BaseAdc.html">BaseAdc</a> &amp;)=delete</td></tr>
-<tr class="separator:afbf32465aee6966e2e86eb1feaaca448 inherit pro_methods_classNTC_1_1BaseAdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a285be854ddcddc2b1c92bea7a0ede8e4 inherit pro_methods_classNTC_1_1BaseAdc" id="r_a285be854ddcddc2b1c92bea7a0ede8e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNTC_1_1BaseAdc.html">BaseAdc</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1BaseAdc.html#a285be854ddcddc2b1c92bea7a0ede8e4">operator=</a> (const <a class="el" href="classNTC_1_1BaseAdc.html">BaseAdc</a> &amp;)=delete</td></tr>
-<tr class="separator:a285be854ddcddc2b1c92bea7a0ede8e4 inherit pro_methods_classNTC_1_1BaseAdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a276047b256667cfe0e6f9cb44e33c96d inherit pro_methods_classNTC_1_1BaseAdc" id="r_a276047b256667cfe0e6f9cb44e33c96d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1BaseAdc.html#a276047b256667cfe0e6f9cb44e33c96d">BaseAdc</a> (<a class="el" href="classNTC_1_1BaseAdc.html">BaseAdc</a> &amp;&amp;)=default</td></tr>
-<tr class="separator:a276047b256667cfe0e6f9cb44e33c96d inherit pro_methods_classNTC_1_1BaseAdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae8d6c057c5ac6f914b66e3bd73a0af7 inherit pro_methods_classNTC_1_1BaseAdc" id="r_aae8d6c057c5ac6f914b66e3bd73a0af7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNTC_1_1BaseAdc.html">BaseAdc</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1BaseAdc.html#aae8d6c057c5ac6f914b66e3bd73a0af7">operator=</a> (<a class="el" href="classNTC_1_1BaseAdc.html">BaseAdc</a> &amp;&amp;)=default</td></tr>
-<tr class="separator:aae8d6c057c5ac6f914b66e3bd73a0af7 inherit pro_methods_classNTC_1_1BaseAdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classNTC_1_1NtcAdcInterface"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classNTC_1_1NtcAdcInterface')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface&lt; MockEsp32Adc &gt;</a></td></tr>
+<tr class="memitem:adbd35699af59dca6c2f7b1fac99d2123 inherit pro_methods_classNTC_1_1NtcAdcInterface" id="r_adbd35699af59dca6c2f7b1fac99d2123"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#adbd35699af59dca6c2f7b1fac99d2123">NtcAdcInterface</a> ()=default</td></tr>
+<tr class="memdesc:adbd35699af59dca6c2f7b1fac99d2123 inherit pro_methods_classNTC_1_1NtcAdcInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected constructor to prevent direct instantiation.  <br /></td></tr>
+<tr class="separator:adbd35699af59dca6c2f7b1fac99d2123 inherit pro_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9930fb65f2c87e866de7598c9182ba15 inherit pro_methods_classNTC_1_1NtcAdcInterface" id="r_a9930fb65f2c87e866de7598c9182ba15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a9930fb65f2c87e866de7598c9182ba15">NtcAdcInterface</a> (const <a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;)=delete</td></tr>
+<tr class="separator:a9930fb65f2c87e866de7598c9182ba15 inherit pro_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89295277c92565905dd4045ad9328d0b inherit pro_methods_classNTC_1_1NtcAdcInterface" id="r_a89295277c92565905dd4045ad9328d0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a89295277c92565905dd4045ad9328d0b">NtcAdcInterface</a> (<a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a89295277c92565905dd4045ad9328d0b inherit pro_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49187a7b7eb0f2202a8ded60a23c8059 inherit pro_methods_classNTC_1_1NtcAdcInterface" id="r_a49187a7b7eb0f2202a8ded60a23c8059"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a49187a7b7eb0f2202a8ded60a23c8059">operator=</a> (const <a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;)=delete</td></tr>
+<tr class="separator:a49187a7b7eb0f2202a8ded60a23c8059 inherit pro_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42c61b403792bbe7ab65ca8afc6807e2 inherit pro_methods_classNTC_1_1NtcAdcInterface" id="r_a42c61b403792bbe7ab65ca8afc6807e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a42c61b403792bbe7ab65ca8afc6807e2">operator=</a> (<a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a42c61b403792bbe7ab65ca8afc6807e2 inherit pro_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7838291c708bfcc16a8ce6189ef1fa13 inherit pro_methods_classNTC_1_1NtcAdcInterface" id="r_a7838291c708bfcc16a8ce6189ef1fa13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html#a7838291c708bfcc16a8ce6189ef1fa13">~NtcAdcInterface</a> ()=default</td></tr>
+<tr class="memdesc:a7838291c708bfcc16a8ce6189ef1fa13 inherit pro_methods_classNTC_1_1NtcAdcInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected destructor.  <br /></td></tr>
+<tr class="separator:a7838291c708bfcc16a8ce6189ef1fa13 inherit pro_methods_classNTC_1_1NtcAdcInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Mock ADC implementation for testing. </p>
-<p>This class provides a simulated ADC interface that can be used for testing the <a class="el" href="namespaceNTC.html">NTC</a> thermistor driver. It simulates realistic ADC readings based on configurable parameters. </p>
+<p>This class provides a simulated ADC interface that can be used for testing the <a class="el" href="namespaceNTC.html">NTC</a> thermistor driver. It simulates realistic ADC readings based on configurable parameters.</p>
+<p>Uses CRTP pattern with <a class="el" href="classNTC_1_1NtcAdcInterface.html" title="CRTP-based template interface for ADC operations.">NTC::NtcAdcInterface</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5bec97dace7d51487ea64ae4aaa4442f" name="a5bec97dace7d51487ea64ae4aaa4442f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5bec97dace7d51487ea64ae4aaa4442f">&#9670;&#160;</a></span>MockEsp32Adc()</h2>
@@ -210,8 +232,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a7f29496b89fa1651662f35939a577494" name="a7f29496b89fa1651662f35939a577494"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f29496b89fa1651662f35939a577494">&#9670;&#160;</a></span>~MockEsp32Adc()</h2>
+<a id="a3703344d06d3913d15ae760966c18441" name="a3703344d06d3913d15ae760966c18441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3703344d06d3913d15ae760966c18441">&#9670;&#160;</a></span>~MockEsp32Adc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,7 +250,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -238,8 +260,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa4cf42a203e1631720b022c1200e2f72" name="aa4cf42a203e1631720b022c1200e2f72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4cf42a203e1631720b022c1200e2f72">&#9670;&#160;</a></span>EnsureInitialized()</h2>
+<a id="a853d99a55edf601b8859d0985d64be8f" name="a853d99a55edf601b8859d0985d64be8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a853d99a55edf601b8859d0985d64be8f">&#9670;&#160;</a></span>EnsureInitialized()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,7 +278,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -264,12 +286,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Ensure ADC is initialized. </p>
 <dl class="section return"><dt>Returns</dt><dd>true on success </dd></dl>
 
-<p>Implements <a class="el" href="classNTC_1_1BaseAdc.html#a17ae172ac76da087f9f95744140d21b3">NTC::BaseAdc</a>.</p>
-
 </div>
 </div>
-<a id="a31cd90dd3e165985094132314bd4cd46" name="a31cd90dd3e165985094132314bd4cd46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31cd90dd3e165985094132314bd4cd46">&#9670;&#160;</a></span>GetReferenceVoltage()</h2>
+<a id="ac43c0b6c7df753218e40e9ab0e769dd5" name="ac43c0b6c7df753218e40e9ab0e769dd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac43c0b6c7df753218e40e9ab0e769dd5">&#9670;&#160;</a></span>GetReferenceVoltage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -286,7 +306,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -294,12 +314,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Get reference voltage. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference voltage in volts </dd></dl>
 
-<p>Implements <a class="el" href="classNTC_1_1BaseAdc.html#add1bf5321961a42482cdeb409baad2d0">NTC::BaseAdc</a>.</p>
-
 </div>
 </div>
-<a id="a4f8f1d20d58be577da039eb4f1e16a67" name="a4f8f1d20d58be577da039eb4f1e16a67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f8f1d20d58be577da039eb4f1e16a67">&#9670;&#160;</a></span>GetResolutionBits()</h2>
+<a id="a3c511e67fe8b09afc568ce14ea8d0a1d" name="a3c511e67fe8b09afc568ce14ea8d0a1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c511e67fe8b09afc568ce14ea8d0a1d">&#9670;&#160;</a></span>GetResolutionBits()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -316,15 +334,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Get ADC resolution. </p>
 <dl class="section return"><dt>Returns</dt><dd>Resolution in bits </dd></dl>
-
-<p>Implements <a class="el" href="classNTC_1_1BaseAdc.html#afa99eacd640cb61d5e691e97ac63346d">NTC::BaseAdc</a>.</p>
 
 </div>
 </div>
@@ -356,8 +372,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aac97c17789dba752896628bc5815391b" name="aac97c17789dba752896628bc5815391b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac97c17789dba752896628bc5815391b">&#9670;&#160;</a></span>IsChannelAvailable()</h2>
+<a id="a34feb932d5d1a680225e832c3ee9a472" name="a34feb932d5d1a680225e832c3ee9a472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34feb932d5d1a680225e832c3ee9a472">&#9670;&#160;</a></span>IsChannelAvailable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -374,7 +390,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -388,12 +404,10 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if channel is valid </dd></dl>
 
-<p>Implements <a class="el" href="classNTC_1_1BaseAdc.html#a6e0c8fcf615015ea78c883275821d717">NTC::BaseAdc</a>.</p>
-
 </div>
 </div>
-<a id="a3e2666dc7fa9018c554cbd93d329d78b" name="a3e2666dc7fa9018c554cbd93d329d78b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e2666dc7fa9018c554cbd93d329d78b">&#9670;&#160;</a></span>IsInitialized()</h2>
+<a id="a47e052c240bf1a3df95f002373786d21" name="a47e052c240bf1a3df95f002373786d21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47e052c240bf1a3df95f002373786d21">&#9670;&#160;</a></span>IsInitialized()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,7 +424,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -418,12 +432,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Check if ADC is initialized. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if initialized </dd></dl>
 
-<p>Implements <a class="el" href="classNTC_1_1BaseAdc.html#ad2bc3397f4ba456479ee59f472cf75e5">NTC::BaseAdc</a>.</p>
-
 </div>
 </div>
-<a id="a124419d8167c6ca3bea9bc63e9fd58f4" name="a124419d8167c6ca3bea9bc63e9fd58f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a124419d8167c6ca3bea9bc63e9fd58f4">&#9670;&#160;</a></span>ReadChannelCount()</h2>
+<a id="a85462408c5fa1d65da6a73eb8d70491d" name="a85462408c5fa1d65da6a73eb8d70491d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85462408c5fa1d65da6a73eb8d70491d">&#9670;&#160;</a></span>ReadChannelCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -444,7 +456,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -459,12 +471,10 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>AdcError::SUCCESS on success </dd></dl>
 
-<p>Implements <a class="el" href="classNTC_1_1BaseAdc.html#ae1b195ab59f83ecd4e3b49e0ce473a25">NTC::BaseAdc</a>.</p>
-
 </div>
 </div>
-<a id="aa2ff3e888619aa24363270f1e63e0f69" name="aa2ff3e888619aa24363270f1e63e0f69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2ff3e888619aa24363270f1e63e0f69">&#9670;&#160;</a></span>ReadChannelV()</h2>
+<a id="ad933f3885316b55a50907a4f7f19ec61" name="ad933f3885316b55a50907a4f7f19ec61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad933f3885316b55a50907a4f7f19ec61">&#9670;&#160;</a></span>ReadChannelV()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -485,7 +495,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -499,8 +509,6 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>AdcError::SUCCESS on success </dd></dl>
-
-<p>Implements <a class="el" href="classNTC_1_1BaseAdc.html#a56d19083b1cd31c1ef5f3a2d9246420e">NTC::BaseAdc</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kelvintocelsius_0',['KelvinToCelsius',['../classNtcThermistor.html#ad14ffda13983c830b804f6593b246d7a',1,'NtcThermistor']]]
+  ['kelvintocelsius_0',['KelvinToCelsius',['../classNtcThermistor.html#a7526498293e2a6da849d3908ff0caf31',1,'NtcThermistor']]]
 ];

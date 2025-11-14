@@ -1,7 +1,7 @@
 var annotated_dup =
 [
     [ "NTC", "namespaceNTC.html", [
-      [ "BaseAdc", "classNTC_1_1BaseAdc.html", "classNTC_1_1BaseAdc" ]
+      [ "NtcAdcInterface", "classNTC_1_1NtcAdcInterface.html", "classNTC_1_1NtcAdcInterface" ]
     ] ],
     [ "MockEsp32Adc", "classMockEsp32Adc.html", "classMockEsp32Adc" ],
     [ "ntc_config_t", "structntc__config__t.html", "structntc__config__t" ],

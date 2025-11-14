@@ -92,16 +92,27 @@ $(function(){initNavTree('namespaceNTC.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">NTC Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceNTC_1_1Constants" id="r_namespaceNTC_1_1Constants"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1Constants.html">Constants</a></td></tr>
+<tr class="memdesc:namespaceNTC_1_1Constants"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical constants for <a class="el" href="namespaceNTC.html">NTC</a> calculations. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceNTC_1_1DefaultConfig" id="r_namespaceNTC_1_1DefaultConfig"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNTC_1_1DefaultConfig.html">DefaultConfig</a></td></tr>
+<tr class="memdesc:namespaceNTC_1_1DefaultConfig"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default <a class="el" href="namespaceNTC.html">NTC</a> configuration constants. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1BaseAdc.html">BaseAdc</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for ADC interface.  <a href="classNTC_1_1BaseAdc.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRTP-based template interface for ADC operations.  <a href="classNTC_1_1NtcAdcInterface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -118,6 +129,63 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a38b88f41b2a4e17b568fa3edfdde6b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC error codes.  <a href="#a38b88f41b2a4e17b568fa3edfdde6b03">More...</a><br /></td></tr>
 <tr class="separator:a38b88f41b2a4e17b568fa3edfdde6b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2241358b1f0b0a19e1b59bf7e55298a8" id="r_a2241358b1f0b0a19e1b59bf7e55298a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2241358b1f0b0a19e1b59bf7e55298a8">ConvertResistanceToTemperatureBeta</a> (float resistance_ohms, float resistance_at_25c, float beta_value, float *temperature_celsius) noexcept</td></tr>
+<tr class="memdesc:a2241358b1f0b0a19e1b59bf7e55298a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert resistance to temperature using beta parameter.  <br /></td></tr>
+<tr class="separator:a2241358b1f0b0a19e1b59bf7e55298a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49c71b1b1bef9c63600d16f6af7a7b7" id="r_af49c71b1b1bef9c63600d16f6af7a7b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af49c71b1b1bef9c63600d16f6af7a7b7">ConvertTemperatureToResistanceBeta</a> (float temperature_celsius, float resistance_at_25c, float beta_value, float *resistance_ohms) noexcept</td></tr>
+<tr class="memdesc:af49c71b1b1bef9c63600d16f6af7a7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert temperature to resistance using beta parameter.  <br /></td></tr>
+<tr class="separator:af49c71b1b1bef9c63600d16f6af7a7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1785d9467faa154b30d4d3710ca12b9" id="r_aa1785d9467faa154b30d4d3710ca12b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1785d9467faa154b30d4d3710ca12b9">ConvertResistanceToTemperatureSteinhartHart</a> (float resistance_ohms, float coeff_a, float coeff_b, float coeff_c, float *temperature_celsius) noexcept</td></tr>
+<tr class="memdesc:aa1785d9467faa154b30d4d3710ca12b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert resistance to temperature using Steinhart-Hart equation.  <br /></td></tr>
+<tr class="separator:aa1785d9467faa154b30d4d3710ca12b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a409b9386c346fdac5dbf35602763bc0b" id="r_a409b9386c346fdac5dbf35602763bc0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a409b9386c346fdac5dbf35602763bc0b">ConvertTemperatureToResistanceSteinhartHart</a> (float temperature_celsius, float coeff_a, float coeff_b, float coeff_c, float *resistance_ohms) noexcept</td></tr>
+<tr class="memdesc:a409b9386c346fdac5dbf35602763bc0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert temperature to resistance using Steinhart-Hart equation.  <br /></td></tr>
+<tr class="separator:a409b9386c346fdac5dbf35602763bc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cca1b35b9d4de92cb2388323033bcd1" id="r_a8cca1b35b9d4de92cb2388323033bcd1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cca1b35b9d4de92cb2388323033bcd1">ConvertResistanceToTemperatureDefault</a> (float resistance_ohms, float *temperature_celsius) noexcept</td></tr>
+<tr class="memdesc:a8cca1b35b9d4de92cb2388323033bcd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert resistance to temperature using default Steinhart-Hart coefficients.  <br /></td></tr>
+<tr class="separator:a8cca1b35b9d4de92cb2388323033bcd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa922d3f7ff526eac78cd1bc3a1fffb25" id="r_aa922d3f7ff526eac78cd1bc3a1fffb25"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa922d3f7ff526eac78cd1bc3a1fffb25">ConvertTemperatureToResistanceDefault</a> (float temperature_celsius, float *resistance_ohms) noexcept</td></tr>
+<tr class="memdesc:aa922d3f7ff526eac78cd1bc3a1fffb25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert temperature to resistance using default Steinhart-Hart coefficients.  <br /></td></tr>
+<tr class="separator:aa922d3f7ff526eac78cd1bc3a1fffb25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dba5bc1207f378228c44251ebe2c0b1" id="r_a3dba5bc1207f378228c44251ebe2c0b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dba5bc1207f378228c44251ebe2c0b1">CalculateThermistorResistance</a> (float voltage_thermistor, float reference_voltage, float series_resistance, float *resistance_ohms) noexcept</td></tr>
+<tr class="memdesc:a3dba5bc1207f378228c44251ebe2c0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate thermistor resistance from voltage divider.  <br /></td></tr>
+<tr class="separator:a3dba5bc1207f378228c44251ebe2c0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a98f22f74a9627322087ff8696aaad" id="r_a49a98f22f74a9627322087ff8696aaad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49a98f22f74a9627322087ff8696aaad">CalculateThermistorVoltage</a> (float resistance_ohms, float reference_voltage, float series_resistance, float *voltage_thermistor) noexcept</td></tr>
+<tr class="memdesc:a49a98f22f74a9627322087ff8696aaad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate voltage across thermistor from resistance.  <br /></td></tr>
+<tr class="separator:a49a98f22f74a9627322087ff8696aaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a404bd477b5a2f7ae77570a0f28aa5a9e" id="r_a404bd477b5a2f7ae77570a0f28aa5a9e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a404bd477b5a2f7ae77570a0f28aa5a9e">CalculateVoltageDividerRatio</a> (float resistance_ohms, float series_resistance, float *ratio) noexcept</td></tr>
+<tr class="memdesc:a404bd477b5a2f7ae77570a0f28aa5a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate voltage divider ratio.  <br /></td></tr>
+<tr class="separator:a404bd477b5a2f7ae77570a0f28aa5a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a9d814d0b847ab45a21a8af0a32052f" id="r_a0a9d814d0b847ab45a21a8af0a32052f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a9d814d0b847ab45a21a8af0a32052f">ValidateResistance</a> (float resistance_ohms, float min_resistance, float max_resistance) noexcept</td></tr>
+<tr class="memdesc:a0a9d814d0b847ab45a21a8af0a32052f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate resistance value.  <br /></td></tr>
+<tr class="separator:a0a9d814d0b847ab45a21a8af0a32052f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80214511ed3af0a94ef16e14829f88c0" id="r_a80214511ed3af0a94ef16e14829f88c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80214511ed3af0a94ef16e14829f88c0">ValidateTemperature</a> (float temperature_celsius, float min_temperature, float max_temperature) noexcept</td></tr>
+<tr class="memdesc:a80214511ed3af0a94ef16e14829f88c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate temperature value.  <br /></td></tr>
+<tr class="separator:a80214511ed3af0a94ef16e14829f88c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab667d16a986d09de0baece8cfc5ce30a" id="r_ab667d16a986d09de0baece8cfc5ce30a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab667d16a986d09de0baece8cfc5ce30a">ValidateVoltage</a> (float voltage_volts, float min_voltage, float max_voltage) noexcept</td></tr>
+<tr class="memdesc:ab667d16a986d09de0baece8cfc5ce30a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate voltage value.  <br /></td></tr>
+<tr class="separator:ab667d16a986d09de0baece8cfc5ce30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895ef2228af8265dd4bb03c8893bdf79" id="r_a895ef2228af8265dd4bb03c8893bdf79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a895ef2228af8265dd4bb03c8893bdf79">ValidateBetaValue</a> (float beta_value) noexcept</td></tr>
+<tr class="memdesc:a895ef2228af8265dd4bb03c8893bdf79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate beta value.  <br /></td></tr>
+<tr class="separator:a895ef2228af8265dd4bb03c8893bdf79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1e1ac0e9f0bc8f3e50f10b216c89ebe" id="r_ae1e1ac0e9f0bc8f3e50f10b216c89ebe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1e1ac0e9f0bc8f3e50f10b216c89ebe">ValidateSteinhartHartCoefficients</a> (float coeff_a, float coeff_b, float coeff_c) noexcept</td></tr>
+<tr class="memdesc:ae1e1ac0e9f0bc8f3e50f10b216c89ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate Steinhart-Hart coefficients.  <br /></td></tr>
+<tr class="separator:ae1e1ac0e9f0bc8f3e50f10b216c89ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b3964149a9bfc632b9ad20feadcf56" id="r_ac4b3964149a9bfc632b9ad20feadcf56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4b3964149a9bfc632b9ad20feadcf56">CalculateBetaValue</a> (float t1, float r1, float t2, float r2, float *beta_value) noexcept</td></tr>
+<tr class="memdesc:ac4b3964149a9bfc632b9ad20feadcf56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate beta value from two temperature-resistance pairs.  <br /></td></tr>
+<tr class="separator:ac4b3964149a9bfc632b9ad20feadcf56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b5218798a344f0ff0f8971d1f7114dd" id="r_a0b5218798a344f0ff0f8971d1f7114dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b5218798a344f0ff0f8971d1f7114dd">CalculateSteinhartHartCoefficients</a> (float t1, float r1, float t2, float r2, float t3, float r3, float *coeff_a, float *coeff_b, float *coeff_c) noexcept</td></tr>
+<tr class="memdesc:a0b5218798a344f0ff0f8971d1f7114dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Steinhart-Hart coefficients from three temperature-resistance pairs.  <br /></td></tr>
+<tr class="separator:a0b5218798a344f0ff0f8971d1f7114dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba47c745aa859f4d61c17aa771400c19" id="r_aba47c745aa859f4d61c17aa771400c19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba47c745aa859f4d61c17aa771400c19">CalculateTemperatureAccuracy</a> (float resistance_ohms, float resistance_tolerance, float beta_tolerance, float *accuracy_celsius) noexcept</td></tr>
+<tr class="memdesc:aba47c745aa859f4d61c17aa771400c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate temperature accuracy estimate.  <br /></td></tr>
+<tr class="separator:aba47c745aa859f4d61c17aa771400c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260a070fbec159b99ca6cb53b94c4bab" id="r_a260a070fbec159b99ca6cb53b94c4bab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a260a070fbec159b99ca6cb53b94c4bab">CalculateOptimalSeriesResistance</a> (float thermistor_resistance_at_25c, float min_temperature, float max_temperature, float *optimal_resistance) noexcept</td></tr>
+<tr class="memdesc:a260a070fbec159b99ca6cb53b94c4bab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate optimal series resistance for voltage divider.  <br /></td></tr>
+<tr class="separator:a260a070fbec159b99ca6cb53b94c4bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a38b88f41b2a4e17b568fa3edfdde6b03" name="a38b88f41b2a4e17b568fa3edfdde6b03"></a>
@@ -155,6 +223,909 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a89fe56ed105248667fe799031276ab23" name="a38b88f41b2a4e17b568fa3edfdde6b03a89fe56ed105248667fe799031276ab23"></a>HARDWARE_ERROR&#160;</td><td class="fielddoc"><p>Hardware-level error. </p>
 </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ac4b3964149a9bfc632b9ad20feadcf56" name="ac4b3964149a9bfc632b9ad20feadcf56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4b3964149a9bfc632b9ad20feadcf56">&#9670;&#160;</a></span>CalculateBetaValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::CalculateBetaValue </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>r1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t2</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>r2</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>beta_value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate beta value from two temperature-resistance pairs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t1</td><td>First temperature (°C) </td></tr>
+    <tr><td class="paramname">r1</td><td>First resistance (ohms) </td></tr>
+    <tr><td class="paramname">t2</td><td>Second temperature (°C) </td></tr>
+    <tr><td class="paramname">r2</td><td>Second resistance (ohms) </td></tr>
+    <tr><td class="paramname">beta_value</td><td>Pointer to store calculated beta value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a260a070fbec159b99ca6cb53b94c4bab" name="a260a070fbec159b99ca6cb53b94c4bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a260a070fbec159b99ca6cb53b94c4bab">&#9670;&#160;</a></span>CalculateOptimalSeriesResistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::CalculateOptimalSeriesResistance </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>thermistor_resistance_at_25c</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>min_temperature</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>max_temperature</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>optimal_resistance</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate optimal series resistance for voltage divider. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">thermistor_resistance_at_25c</td><td>Thermistor resistance at 25°C (ohms) </td></tr>
+    <tr><td class="paramname">min_temperature</td><td>Minimum temperature (°C) </td></tr>
+    <tr><td class="paramname">max_temperature</td><td>Maximum temperature (°C) </td></tr>
+    <tr><td class="paramname">optimal_resistance</td><td>Pointer to store optimal series resistance (ohms) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a0b5218798a344f0ff0f8971d1f7114dd" name="a0b5218798a344f0ff0f8971d1f7114dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b5218798a344f0ff0f8971d1f7114dd">&#9670;&#160;</a></span>CalculateSteinhartHartCoefficients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::CalculateSteinhartHartCoefficients </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>r1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t2</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>r2</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t3</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>r3</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>coeff_a</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>coeff_b</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>coeff_c</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate Steinhart-Hart coefficients from three temperature-resistance pairs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t1</td><td>First temperature (°C) </td></tr>
+    <tr><td class="paramname">r1</td><td>First resistance (ohms) </td></tr>
+    <tr><td class="paramname">t2</td><td>Second temperature (°C) </td></tr>
+    <tr><td class="paramname">r2</td><td>Second resistance (ohms) </td></tr>
+    <tr><td class="paramname">t3</td><td>Third temperature (°C) </td></tr>
+    <tr><td class="paramname">r3</td><td>Third resistance (ohms) </td></tr>
+    <tr><td class="paramname">a</td><td>Pointer to store coefficient A </td></tr>
+    <tr><td class="paramname">b</td><td>Pointer to store coefficient B </td></tr>
+    <tr><td class="paramname">c</td><td>Pointer to store coefficient C </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aba47c745aa859f4d61c17aa771400c19" name="aba47c745aa859f4d61c17aa771400c19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba47c745aa859f4d61c17aa771400c19">&#9670;&#160;</a></span>CalculateTemperatureAccuracy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::CalculateTemperatureAccuracy </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_tolerance</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>beta_tolerance</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>accuracy_celsius</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate temperature accuracy estimate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resistance_ohms</td><td>Thermistor resistance (ohms) </td></tr>
+    <tr><td class="paramname">resistance_tolerance</td><td>Resistance tolerance (fraction) </td></tr>
+    <tr><td class="paramname">beta_tolerance</td><td>Beta tolerance (fraction) </td></tr>
+    <tr><td class="paramname">accuracy_celsius</td><td>Pointer to store accuracy estimate (°C) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a3dba5bc1207f378228c44251ebe2c0b1" name="a3dba5bc1207f378228c44251ebe2c0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dba5bc1207f378228c44251ebe2c0b1">&#9670;&#160;</a></span>CalculateThermistorResistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::CalculateThermistorResistance </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>voltage_thermistor</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>reference_voltage</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>series_resistance</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate thermistor resistance from voltage divider. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">voltage_thermistor</td><td>Voltage across thermistor (V) </td></tr>
+    <tr><td class="paramname">reference_voltage</td><td>Reference voltage (V) </td></tr>
+    <tr><td class="paramname">series_resistance</td><td>Series resistance (ohms) </td></tr>
+    <tr><td class="paramname">resistance_ohms</td><td>Pointer to store thermistor resistance (ohms) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a49a98f22f74a9627322087ff8696aaad" name="a49a98f22f74a9627322087ff8696aaad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a98f22f74a9627322087ff8696aaad">&#9670;&#160;</a></span>CalculateThermistorVoltage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::CalculateThermistorVoltage </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>reference_voltage</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>series_resistance</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>voltage_thermistor</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate voltage across thermistor from resistance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resistance_ohms</td><td>Thermistor resistance (ohms) </td></tr>
+    <tr><td class="paramname">reference_voltage</td><td>Reference voltage (V) </td></tr>
+    <tr><td class="paramname">series_resistance</td><td>Series resistance (ohms) </td></tr>
+    <tr><td class="paramname">voltage_thermistor</td><td>Pointer to store voltage across thermistor (V) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a404bd477b5a2f7ae77570a0f28aa5a9e" name="a404bd477b5a2f7ae77570a0f28aa5a9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a404bd477b5a2f7ae77570a0f28aa5a9e">&#9670;&#160;</a></span>CalculateVoltageDividerRatio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::CalculateVoltageDividerRatio </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>series_resistance</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>ratio</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate voltage divider ratio. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resistance_ohms</td><td>Thermistor resistance (ohms) </td></tr>
+    <tr><td class="paramname">series_resistance</td><td>Series resistance (ohms) </td></tr>
+    <tr><td class="paramname">ratio</td><td>Pointer to store voltage ratio </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a2241358b1f0b0a19e1b59bf7e55298a8" name="a2241358b1f0b0a19e1b59bf7e55298a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2241358b1f0b0a19e1b59bf7e55298a8">&#9670;&#160;</a></span>ConvertResistanceToTemperatureBeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ConvertResistanceToTemperatureBeta </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_at_25c</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>beta_value</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert resistance to temperature using beta parameter. </p>
+<p>Uses the beta parameter equation to calculate temperature from resistance. This is a simplified model that assumes a linear relationship in the temperature-resistance curve around the reference temperature.</p>
+<dl class="section note"><dt>Note</dt><dd>The beta parameter method is faster but less accurate than Steinhart-Hart, especially at temperature extremes.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resistance_ohms</td><td>Thermistor resistance (ohms) </td></tr>
+    <tr><td class="paramname">resistance_at_25c</td><td>Resistance at 25°C (ohms) </td></tr>
+    <tr><td class="paramname">beta_value</td><td>Beta value (K), typically 3000-4000K for <a class="el" href="namespaceNTC.html">NTC</a> thermistors </td></tr>
+    <tr><td class="paramname">temperature_celsius</td><td>Pointer to store temperature (°C) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Input resistance must be positive and non-zero. Beta value should be within valid range (1000-5000K). </dd></dl>
+
+</div>
+</div>
+<a id="a8cca1b35b9d4de92cb2388323033bcd1" name="a8cca1b35b9d4de92cb2388323033bcd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cca1b35b9d4de92cb2388323033bcd1">&#9670;&#160;</a></span>ConvertResistanceToTemperatureDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ConvertResistanceToTemperatureDefault </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert resistance to temperature using default Steinhart-Hart coefficients. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resistance_ohms</td><td>Thermistor resistance (ohms) </td></tr>
+    <tr><td class="paramname">temperature_celsius</td><td>Pointer to store temperature (°C) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aa1785d9467faa154b30d4d3710ca12b9" name="aa1785d9467faa154b30d4d3710ca12b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1785d9467faa154b30d4d3710ca12b9">&#9670;&#160;</a></span>ConvertResistanceToTemperatureSteinhartHart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ConvertResistanceToTemperatureSteinhartHart </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>coeff_a</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>coeff_b</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>coeff_c</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert resistance to temperature using Steinhart-Hart equation. </p>
+<p>Uses the Steinhart-Hart equation for high-accuracy temperature calculation. This method provides better accuracy across a wider temperature range compared to the beta parameter method.</p>
+<p>The Steinhart-Hart equation: 1/T = A + B*ln(R) + C*ln(R)³</p>
+<dl class="section note"><dt>Note</dt><dd>This method is more computationally expensive but provides superior accuracy, especially at temperature extremes.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resistance_ohms</td><td>Thermistor resistance (ohms) </td></tr>
+    <tr><td class="paramname">a</td><td>Steinhart-Hart coefficient A (typically ~1.129e-3) </td></tr>
+    <tr><td class="paramname">b</td><td>Steinhart-Hart coefficient B (typically ~2.341e-4) </td></tr>
+    <tr><td class="paramname">c</td><td>Steinhart-Hart coefficient C (typically ~8.775e-8) </td></tr>
+    <tr><td class="paramname">temperature_celsius</td><td>Pointer to store temperature (°C) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ae1e1ac0e9f0bc8f3e50f10b216c89ebe" title="Validate Steinhart-Hart coefficients.">ValidateSteinhartHartCoefficients()</a> to validate coefficients </dd></dl>
+
+</div>
+</div>
+<a id="af49c71b1b1bef9c63600d16f6af7a7b7" name="af49c71b1b1bef9c63600d16f6af7a7b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49c71b1b1bef9c63600d16f6af7a7b7">&#9670;&#160;</a></span>ConvertTemperatureToResistanceBeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ConvertTemperatureToResistanceBeta </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_at_25c</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>beta_value</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert temperature to resistance using beta parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temperature_celsius</td><td>Temperature (°C) </td></tr>
+    <tr><td class="paramname">resistance_at_25c</td><td>Resistance at 25°C (ohms) </td></tr>
+    <tr><td class="paramname">beta_value</td><td>Beta value (K) </td></tr>
+    <tr><td class="paramname">resistance_ohms</td><td>Pointer to store resistance (ohms) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aa922d3f7ff526eac78cd1bc3a1fffb25" name="aa922d3f7ff526eac78cd1bc3a1fffb25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa922d3f7ff526eac78cd1bc3a1fffb25">&#9670;&#160;</a></span>ConvertTemperatureToResistanceDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ConvertTemperatureToResistanceDefault </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert temperature to resistance using default Steinhart-Hart coefficients. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temperature_celsius</td><td>Temperature (°C) </td></tr>
+    <tr><td class="paramname">resistance_ohms</td><td>Pointer to store resistance (ohms) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a409b9386c346fdac5dbf35602763bc0b" name="a409b9386c346fdac5dbf35602763bc0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a409b9386c346fdac5dbf35602763bc0b">&#9670;&#160;</a></span>ConvertTemperatureToResistanceSteinhartHart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ConvertTemperatureToResistanceSteinhartHart </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>coeff_a</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>coeff_b</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>coeff_c</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert temperature to resistance using Steinhart-Hart equation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temperature_celsius</td><td>Temperature (°C) </td></tr>
+    <tr><td class="paramname">a</td><td>Steinhart-Hart coefficient A </td></tr>
+    <tr><td class="paramname">b</td><td>Steinhart-Hart coefficient B </td></tr>
+    <tr><td class="paramname">c</td><td>Steinhart-Hart coefficient C </td></tr>
+    <tr><td class="paramname">resistance_ohms</td><td>Pointer to store resistance (ohms) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a895ef2228af8265dd4bb03c8893bdf79" name="a895ef2228af8265dd4bb03c8893bdf79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a895ef2228af8265dd4bb03c8893bdf79">&#9670;&#160;</a></span>ValidateBetaValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ValidateBetaValue </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>beta_value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate beta value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">beta_value</td><td>Beta value to validate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a0a9d814d0b847ab45a21a8af0a32052f" name="a0a9d814d0b847ab45a21a8af0a32052f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a9d814d0b847ab45a21a8af0a32052f">&#9670;&#160;</a></span>ValidateResistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ValidateResistance </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>min_resistance</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>max_resistance</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate resistance value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resistance_ohms</td><td>Resistance value to validate </td></tr>
+    <tr><td class="paramname">min_resistance</td><td>Minimum valid resistance </td></tr>
+    <tr><td class="paramname">max_resistance</td><td>Maximum valid resistance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ae1e1ac0e9f0bc8f3e50f10b216c89ebe" name="ae1e1ac0e9f0bc8f3e50f10b216c89ebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e1ac0e9f0bc8f3e50f10b216c89ebe">&#9670;&#160;</a></span>ValidateSteinhartHartCoefficients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ValidateSteinhartHartCoefficients </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>coeff_a</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>coeff_b</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>coeff_c</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate Steinhart-Hart coefficients. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Coefficient A </td></tr>
+    <tr><td class="paramname">b</td><td>Coefficient B </td></tr>
+    <tr><td class="paramname">c</td><td>Coefficient C </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a80214511ed3af0a94ef16e14829f88c0" name="a80214511ed3af0a94ef16e14829f88c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80214511ed3af0a94ef16e14829f88c0">&#9670;&#160;</a></span>ValidateTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ValidateTemperature </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>min_temperature</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>max_temperature</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate temperature value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temperature_celsius</td><td>Temperature value to validate </td></tr>
+    <tr><td class="paramname">min_temperature</td><td>Minimum valid temperature </td></tr>
+    <tr><td class="paramname">max_temperature</td><td>Maximum valid temperature </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ab667d16a986d09de0baece8cfc5ce30a" name="ab667d16a986d09de0baece8cfc5ce30a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab667d16a986d09de0baece8cfc5ce30a">&#9670;&#160;</a></span>ValidateVoltage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NTC::ValidateVoltage </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>voltage_volts</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>min_voltage</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>max_voltage</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate voltage value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">voltage_volts</td><td>Voltage value to validate </td></tr>
+    <tr><td class="paramname">min_voltage</td><td>Minimum valid voltage </td></tr>
+    <tr><td class="paramname">max_voltage</td><td>Maximum valid voltage </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise </dd></dl>
 
 </div>
 </div>

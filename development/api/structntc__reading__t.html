@@ -101,7 +101,7 @@ $(function(){initNavTree('structntc__reading__t.html',''); initResizable(); });
 <p><a class="el" href="namespaceNTC.html">NTC</a> thermistor reading structure.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="NtcThermistor_8h_source.html">NtcThermistor.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="NtcTypes_8h_source.html">NtcTypes.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -126,7 +126,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ab2233cc82368b63a9b6fd0a3e81eacee" id="r_ab2233cc82368b63a9b6fd0a3e81eacee"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2233cc82368b63a9b6fd0a3e81eacee">timestamp_us</a></td></tr>
 <tr class="memdesc:ab2233cc82368b63a9b6fd0a3e81eacee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestamp (microseconds)  <br /></td></tr>
 <tr class="separator:ab2233cc82368b63a9b6fd0a3e81eacee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1f0fdb54c6ef0b6346e623f7225f9d0" id="r_ad1f0fdb54c6ef0b6346e623f7225f9d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcThermistor_8h.html#a8a342ee9d042e4bd4eb81005ca903cb0">ntc_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1f0fdb54c6ef0b6346e623f7225f9d0">error</a></td></tr>
+<tr class="memitem:ad1f0fdb54c6ef0b6346e623f7225f9d0" id="r_ad1f0fdb54c6ef0b6346e623f7225f9d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a8a342ee9d042e4bd4eb81005ca903cb0">ntc_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1f0fdb54c6ef0b6346e623f7225f9d0">error</a></td></tr>
 <tr class="memdesc:ad1f0fdb54c6ef0b6346e623f7225f9d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error code.  <br /></td></tr>
 <tr class="separator:ad1f0fdb54c6ef0b6346e623f7225f9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c268b67c46d0a790bc0945be7c5be34" id="r_a0c268b67c46d0a790bc0945be7c5be34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c268b67c46d0a790bc0945be7c5be34">is_valid</a></td></tr>
@@ -138,6 +138,11 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="namespaceNTC.html">NTC</a> thermistor reading structure. </p>
+<p>Complete temperature reading information including all temperature units, raw ADC values, resistance, voltage, and error status.</p>
+<dl class="section note"><dt>Note</dt><dd>Always check the is_valid and error fields before using temperature values. Invalid readings may contain NaN or invalid data.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classNtcThermistor.html#acc22a032b204440df50883112d7a52c3" title="Read complete temperature information.">NtcThermistor::ReadTemperature()</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2hf-ntc-thermistor-driver_2hf-ntc-thermistor-driver_2inc_2NtcTypes_8h-example.html#_a33">/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcTypes.h</a>.</dd>
+</dl>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a3501d675bdbc5da550e9a48561dc62be" name="a3501d675bdbc5da550e9a48561dc62be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3501d675bdbc5da550e9a48561dc62be">&#9670;&#160;</a></span>accuracy_celsius</h2>
@@ -178,7 +183,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcThermistor_8h.html#a8a342ee9d042e4bd4eb81005ca903cb0">ntc_err_t</a> ntc_reading_t::error</td>
+          <td class="memname"><a class="el" href="NtcTypes_8h.html#a8a342ee9d042e4bd4eb81005ca903cb0">ntc_err_t</a> ntc_reading_t::error</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -300,7 +305,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>inc/<a class="el" href="NtcThermistor_8h_source.html">NtcThermistor.h</a></li>
+<li>inc/<a class="el" href="NtcTypes_8h_source.html">NtcTypes.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
