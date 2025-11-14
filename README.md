@@ -31,7 +31,7 @@ This driver provides a comprehensive solution for temperature measurement using 
 
 ## ✨ Features
 
-- **Hardware Agnostic**: Works with any ADC interface that implements NtcAdcInterface
+- **Hardware Agnostic**: Works with any ADC interface that implements AdcInterface
 - **Multiple NTC Types**: Support for various NTC thermistor specifications
 - **Dual Conversion Methods**: Lookup table and mathematical (Steinhart-Hart) conversion
 - **High Accuracy**: Optimized for precision temperature measurement
@@ -56,8 +56,8 @@ This driver provides a comprehensive solution for temperature measurement using 
 ```cpp
 #include "NtcThermistor.h"
 
-// 1. Define your ADC implementation (must inherit from NTC::NtcAdcInterface)
-class MyAdc : public NTC::NtcAdcInterface<MyAdc> {
+// 1. Define your ADC implementation (must inherit from ntc::AdcInterface)
+class MyAdc : public ntc::AdcInterface<MyAdc> {
 public:
     bool IsInitialized() const { return initialized_; }
     bool EnsureInitialized() { /* initialize ADC */ return true; }
@@ -189,13 +189,13 @@ The NTC thermistor driver uses a **CRTP (Curiously Recurring Template Pattern)**
                │ uses
                ▼
 ┌─────────────────────────────────────┐
-│   NTC::NtcAdcInterface<AdcType>     │
+│   ntc::AdcInterface<AdcType>     │
 │   (CRTP Base Interface)             │
 └──────────────┬──────────────────────┘
                │ implements
                ▼
 ┌─────────────────────────────────────┐
-│ YourAdc : NtcAdcInterface<YourAdc>  │
+│ YourAdc : AdcInterface<YourAdc>  │
 │ (Platform-Specific Implementation)  │
 └─────────────────────────────────────┘
 ```

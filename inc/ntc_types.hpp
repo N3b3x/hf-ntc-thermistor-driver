@@ -1,5 +1,5 @@
 /**
- * @file NtcTypes.h
+ * @file ntc_types.hpp
  * @brief Type definitions for NTC thermistor driver.
  *
  * This header contains all type definitions, enumerations, and structures

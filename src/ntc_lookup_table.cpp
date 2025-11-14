@@ -1,5 +1,5 @@
 /**
- * @file NtcLookupTable.cpp
+ * @file ntc_lookup_table.cpp
  * @brief Lookup table implementation for NTC thermistor temperature conversion.
  *
  * This file contains lookup tables and functions for fast temperature
@@ -11,8 +11,8 @@
  * @copyright HardFOC
  */
 
-#include "NtcLookupTable.h"
-#include "NtcTypes.h"
+#include "ntc_lookup_table.hpp"
+#include "ntc_types.hpp"
 #include <algorithm>
 #include <array>
 #include <cmath>

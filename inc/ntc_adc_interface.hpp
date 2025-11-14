@@ -1,5 +1,5 @@
 /**
- * @file NtcAdcInterface.h
+ * @file ntc_adc_interface.hpp
  * @brief CRTP-based template interface for ADC used by NTC thermistor driver.
  *
  * This header defines a CRTP (Curiously Recurring Template Pattern) interface
@@ -17,7 +17,7 @@
 
 #include <cstdint>
 
-namespace NTC {
+namespace ntc {
 
 /**
  * @brief ADC error codes
@@ -45,7 +45,7 @@ enum class AdcError : uint8_t {
  *
  * Example usage:
  * @code
- * class Esp32C6Adc : public NTC::NtcAdcInterface<Esp32C6Adc> {
+ * class Esp32C6Adc : public ntc::AdcInterface<Esp32C6Adc> {
  * public:
  *   bool IsInitialized() const { ... }
  *   bool EnsureInitialized() { ... }
@@ -55,7 +55,7 @@ enum class AdcError : uint8_t {
  *
  * @tparam Derived The derived class type (CRTP pattern)
  */
-template <typename Derived> class NtcAdcInterface {
+template <typename Derived> class AdcInterface {
 public:
   /**
    * @brief Check if ADC is initialized
@@ -120,26 +120,26 @@ public:
   }
 
   // Prevent copying
-  NtcAdcInterface(const NtcAdcInterface &) = delete;
-  NtcAdcInterface &operator=(const NtcAdcInterface &) = delete;
+  AdcInterface(const AdcInterface &) = delete;
+  AdcInterface &operator=(const AdcInterface &) = delete;
 
   // Allow moving
-  NtcAdcInterface(NtcAdcInterface &&) = default;
-  NtcAdcInterface &operator=(NtcAdcInterface &&) = default;
+  AdcInterface(AdcInterface &&) = default;
+  AdcInterface &operator=(AdcInterface &&) = default;
 
 protected:
   /**
    * @brief Protected constructor to prevent direct instantiation
    */
-  NtcAdcInterface() = default;
+  AdcInterface() = default;
 
   /**
    * @brief Protected destructor
    * @note Derived classes can have public destructors
    */
-  ~NtcAdcInterface() = default;
+  ~AdcInterface() = default;
 };
 
-} // namespace NTC
+} // namespace ntc
 
 #endif // NTC_ADC_INTERFACE_H

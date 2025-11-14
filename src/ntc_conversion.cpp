@@ -1,5 +1,5 @@
 /**
- * @file NtcConversion.cpp
+ * @file ntc_conversion.cpp
  * @brief Mathematical conversion functions for NTC thermistor temperature
  * calculation.
  *
@@ -12,7 +12,7 @@
  * @copyright HardFOC
  */
 
-#include "NtcConversion.h"
+#include "ntc_conversion.hpp"
 #include <algorithm>
 #include <cmath>
 

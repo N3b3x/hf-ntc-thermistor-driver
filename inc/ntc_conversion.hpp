@@ -1,5 +1,5 @@
 /**
- * @file NtcConversion.h
+ * @file ntc_conversion.hpp
  * @brief Mathematical conversion functions for NTC thermistor temperature
  * calculation.
  *

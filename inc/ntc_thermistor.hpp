@@ -1,5 +1,5 @@
 /**
- * @file NtcThermistor.h
+ * @file ntc_thermistor.hpp
  * @brief Hardware-agnostic NTC thermistor driver for temperature measurement.
  *
  * This header provides a comprehensive interface for temperature measurement
@@ -17,8 +17,8 @@
 #include <cstdint>
 #include <memory>
 
-#include "NtcAdcInterface.h"
-#include "NtcTypes.h"
+#include "ntc_adc_interface.hpp"
+#include "ntc_types.hpp"
 
 //--------------------------------------
 //  NtcThermistor Class
@@ -40,14 +40,14 @@
  * - Comprehensive error handling
  *
  * @tparam AdcType The ADC implementation type that inherits from
- * NTC::NtcAdcInterface<AdcType>
+ * ntc::AdcInterface<AdcType>
  *
- * @note The driver requires an ADC type that implements NTC::NtcAdcInterface
+ * @note The driver requires an ADC type that implements ntc::AdcInterface
  *
  * @example Basic Usage
  * @code
  * // Define your ADC implementation
- * class MyAdc : public NTC::NtcAdcInterface<MyAdc> {
+ * class MyAdc : public ntc::AdcInterface<MyAdc> {
  * public:
  *   bool IsInitialized() const { return initialized_; }
  *   bool EnsureInitialized() { return true; }
@@ -96,7 +96,7 @@ public:
    *
    * @param ntc_type NTC thermistor type (e.g., NTC_TYPE_NTCG163JFT103FT1S)
    * @param adc_interface Pointer to ADC interface (must inherit from
-   * NTC::NtcAdcInterface<AdcType>)
+   * ntc::AdcInterface<AdcType>)
    *
    * @note The ADC interface must remain valid for the lifetime of the
    *       NtcThermistor instance. The driver does not take ownership.
@@ -109,7 +109,7 @@ public:
    * @brief Constructor with custom configuration
    * @param config NTC configuration structure
    * @param adc_interface Pointer to ADC interface (must inherit from
-   * NTC::NtcAdcInterface<AdcType>)
+   * ntc::AdcInterface<AdcType>)
    */
   NtcThermistor(const ntc_config_t &config, AdcType *adc_interface) noexcept;
 
@@ -444,7 +444,7 @@ private:
 // Include template implementation
 #define NTC_THERMISTOR_HEADER_INCLUDED
 // NOLINTNEXTLINE(bugprone-suspicious-include) - Template implementation file
-#include "../src/NtcThermistor.cpp"
+#include "../src/ntc_thermistor.cpp"
 #undef NTC_THERMISTOR_HEADER_INCLUDED
 
 #endif // NTC_THERMISTOR_H

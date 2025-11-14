@@ -8,7 +8,7 @@ The HF-NTC-Thermistor driver provides a comprehensive solution for temperature m
 
 ## Features
 
-- **Hardware Agnostic**: Works with any ADC interface that implements NtcAdcInterface
+- **Hardware Agnostic**: Works with any ADC interface that implements `ntc::AdcInterface`
 - **Multiple NTC Types**: Support for various NTC thermistor specifications
 - **Dual Conversion Methods**: Lookup table and mathematical (Steinhart-Hart) conversion
 - **High Accuracy**: Optimized for precision temperature measurement

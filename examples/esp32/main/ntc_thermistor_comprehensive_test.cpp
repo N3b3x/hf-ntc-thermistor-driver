@@ -1,5 +1,5 @@
 /**
- * @file NtcThermistorComprehensiveTest.cpp
+ * @file ntc_thermistor_comprehensive_test.cpp
  * @brief Comprehensive test suite for NTC Thermistor driver on ESP32-C6
  *
  * This file contains comprehensive testing for NTC Thermistor features.
@@ -9,8 +9,8 @@
  * @copyright HardFOC
  */
 
-#include "MockEsp32Adc.h"
-#include "NtcThermistor.h"
+#include "mock_esp32_adc.hpp"
+#include "ntc_thermistor.hpp"
 #include "TestFramework.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"

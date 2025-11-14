@@ -1,5 +1,5 @@
 /**
- * @file MockEsp32Adc.h
+ * @file mock_esp32_adc.hpp
  * @brief Mock ADC implementation for ESP32-C6 testing
  *
  * This header provides a mock ADC implementation that simulates ADC readings
@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "NtcAdcInterface.h"
+#include "ntc_adc_interface.hpp"
 
 #include <cmath>
 
@@ -23,9 +23,9 @@
  * the NTC thermistor driver. It simulates realistic ADC readings based on
  * configurable parameters.
  *
- * Uses CRTP pattern with NTC::NtcAdcInterface
+ * Uses CRTP pattern with ntc::AdcInterface
  */
-class MockEsp32Adc : public NTC::NtcAdcInterface<MockEsp32Adc> {
+class MockEsp32Adc : public ntc::AdcInterface<MockEsp32Adc> {
 public:
   /**
    * @brief Constructor
@@ -78,17 +78,17 @@ public:
    * @param count Output parameter for count value
    * @return AdcError::Success on success
    */
-  NTC::AdcError ReadChannelCount(uint8_t channel, uint32_t *count) {
+  ntc::AdcError ReadChannelCount(uint8_t channel, uint32_t *count) {
     if (!initialized_) {
-      return NTC::AdcError::NotInitialized;
+      return ntc::AdcError::NotInitialized;
     }
 
     if (!IsChannelAvailable(channel)) {
-      return NTC::AdcError::InvalidChannel;
+      return ntc::AdcError::InvalidChannel;
     }
 
     if (count == nullptr) {
-      return NTC::AdcError::HardwareError;
+      return ntc::AdcError::HardwareError;
     }
 
     // Simulate ADC reading - return mid-scale value with some variation
@@ -96,7 +96,7 @@ public:
     *count = max_count_ / 2 +
              (channel * 100); // Add some channel-dependent variation
 
-    return NTC::AdcError::Success;
+    return ntc::AdcError::Success;
   }
 
   /**
@@ -105,22 +105,22 @@ public:
    * @param voltage_v Output parameter for voltage in volts
    * @return AdcError::Success on success
    */
-  NTC::AdcError ReadChannelV(uint8_t channel, float *voltage_v) {
+  ntc::AdcError ReadChannelV(uint8_t channel, float *voltage_v) {
     if (!initialized_) {
-      return NTC::AdcError::NotInitialized;
+      return ntc::AdcError::NotInitialized;
     }
 
     if (!IsChannelAvailable(channel)) {
-      return NTC::AdcError::InvalidChannel;
+      return ntc::AdcError::InvalidChannel;
     }
 
     if (voltage_v == nullptr) {
-      return NTC::AdcError::HardwareError;
+      return ntc::AdcError::HardwareError;
     }
 
     uint32_t count = 0;
-    NTC::AdcError err = ReadChannelCount(channel, &count);
-    if (err != NTC::AdcError::Success) {
+    ntc::AdcError err = ReadChannelCount(channel, &count);
+    if (err != ntc::AdcError::Success) {
       return err;
     }
 
@@ -128,7 +128,7 @@ public:
     *voltage_v = (static_cast<float>(count) * reference_voltage_) /
                  static_cast<float>(max_count_);
 
-    return NTC::AdcError::Success;
+    return ntc::AdcError::Success;
   }
 
   /**

@@ -1,5 +1,5 @@
 /**
- * @file NtcThermistor.cpp
+ * @file ntc_thermistor.cpp
  * @brief Hardware-agnostic NTC thermistor driver implementation.
  *
  * This file contains the complete implementation of the NtcThermistor class
@@ -10,7 +10,7 @@
  * @date 2025
  * @copyright HardFOC
  *
- * @note This file is included by NtcThermistor.h for template instantiation.
+ * @note This file is included by ntc_thermistor.hpp for template instantiation.
  *       It should not be compiled separately when included.
  */
 
@@ -20,13 +20,13 @@
 // When included from header, use relative path; when compiled directly, use
 // standard include
 #ifdef NTC_THERMISTOR_HEADER_INCLUDED
-#include "../inc/NtcThermistor.h"
-#include "../inc/NtcConversion.h"
-#include "../inc/NtcLookupTable.h"
+#include "../inc/ntc_thermistor.hpp"
+#include "../inc/ntc_conversion.hpp"
+#include "../inc/ntc_lookup_table.hpp"
 #else
-#include "NtcConversion.h"
-#include "NtcLookupTable.h"
-#include "NtcThermistor.h"
+#include "ntc_conversion.hpp"
+#include "ntc_lookup_table.hpp"
+#include "ntc_thermistor.hpp"
 #endif
 
 #include <algorithm>
@@ -327,19 +327,19 @@ NtcError NtcThermistor<AdcType>::GetRawAdcValue(uint32_t *adc_value) noexcept {
   }
 
   // Convert AdcError to NtcError helper
-  auto convert_error = [](NTC::AdcError err) -> NtcError {
+  auto convert_error = [](ntc::AdcError err) -> NtcError {
     switch (err) {
-    case NTC::AdcError::Success:
+    case ntc::AdcError::Success:
       return NtcError::Success;
-    case NTC::AdcError::NotInitialized:
+    case ntc::AdcError::NotInitialized:
       return NtcError::NotInitialized;
-    case NTC::AdcError::InvalidChannel:
+    case ntc::AdcError::InvalidChannel:
       return NtcError::InvalidParameter;
-    case NTC::AdcError::ReadFailed:
+    case ntc::AdcError::ReadFailed:
       return NtcError::AdcReadFailed;
-    case NTC::AdcError::Timeout:
+    case ntc::AdcError::Timeout:
       return NtcError::Timeout;
-    case NTC::AdcError::HardwareError:
+    case ntc::AdcError::HardwareError:
       return NtcError::HardwareFault;
     default:
       return NtcError::AdcReadFailed;
@@ -353,9 +353,9 @@ NtcError NtcThermistor<AdcType>::GetRawAdcValue(uint32_t *adc_value) noexcept {
 
     for (uint32_t i = 0; i < config_.sample_count; ++i) {
       uint32_t sample_value = 0;
-      NTC::AdcError err =
+      ntc::AdcError err =
           adc_interface_->ReadChannelCount(config_.adc_channel, &sample_value);
-      if (err == NTC::AdcError::Success) {
+      if (err == ntc::AdcError::Success) {
         sum += sample_value;
         successful_samples++;
       }
@@ -383,9 +383,9 @@ NtcError NtcThermistor<AdcType>::GetRawAdcValue(uint32_t *adc_value) noexcept {
   // Single sample
   {
     uint32_t sample_value = 0;
-    NTC::AdcError err =
+    ntc::AdcError err =
         adc_interface_->ReadChannelCount(config_.adc_channel, &sample_value);
-    if (err != NTC::AdcError::Success) {
+    if (err != ntc::AdcError::Success) {
       return convert_error(err);
     }
     *adc_value = sample_value;
@@ -662,19 +662,19 @@ NtcError NtcThermistor<AdcType>::readAdcVoltage(float *voltage_volts) noexcept {
   }
 
   // Convert AdcError to NtcError helper
-  auto convert_error = [](NTC::AdcError err) -> NtcError {
+  auto convert_error = [](ntc::AdcError err) -> NtcError {
     switch (err) {
-    case NTC::AdcError::Success:
+    case ntc::AdcError::Success:
       return NtcError::Success;
-    case NTC::AdcError::NotInitialized:
+    case ntc::AdcError::NotInitialized:
       return NtcError::NotInitialized;
-    case NTC::AdcError::InvalidChannel:
+    case ntc::AdcError::InvalidChannel:
       return NtcError::InvalidParameter;
-    case NTC::AdcError::ReadFailed:
+    case ntc::AdcError::ReadFailed:
       return NtcError::AdcReadFailed;
-    case NTC::AdcError::Timeout:
+    case ntc::AdcError::Timeout:
       return NtcError::Timeout;
-    case NTC::AdcError::HardwareError:
+    case ntc::AdcError::HardwareError:
       return NtcError::HardwareFault;
     default:
       return NtcError::AdcReadFailed;
@@ -688,9 +688,9 @@ NtcError NtcThermistor<AdcType>::readAdcVoltage(float *voltage_volts) noexcept {
 
     for (uint32_t i = 0; i < config_.sample_count; ++i) {
       float sample_voltage = ZERO_FLOAT_;
-      NTC::AdcError err =
+      ntc::AdcError err =
           adc_interface_->ReadChannelV(config_.adc_channel, &sample_voltage);
-      if (err == NTC::AdcError::Success) {
+      if (err == ntc::AdcError::Success) {
         sum += sample_voltage;
         successful_samples++;
       }
@@ -716,9 +716,9 @@ NtcError NtcThermistor<AdcType>::readAdcVoltage(float *voltage_volts) noexcept {
     return NtcError::Success;
   } // Single sample
   float sample_voltage = 0.0F;
-  NTC::AdcError err =
+  ntc::AdcError err =
       adc_interface_->ReadChannelV(config_.adc_channel, &sample_voltage);
-  if (err != NTC::AdcError::Success) {
+  if (err != ntc::AdcError::Success) {
     return convert_error(err);
   }
   *voltage_volts = sample_voltage;

@@ -1,5 +1,5 @@
 /**
- * @file NtcLookupTable.h
+ * @file ntc_lookup_table.hpp
  * @brief Lookup table implementation for NTC thermistor temperature conversion.
  *
  * This header provides lookup table functionality for fast temperature
