@@ -39,15 +39,6 @@ var namespaceNTC =
     ] ],
     [ "ntc_lookup_entry_t", "structNTC_1_1ntc__lookup__entry__t.html", "structNTC_1_1ntc__lookup__entry__t" ],
     [ "ntc_lookup_table_t", "structNTC_1_1ntc__lookup__table__t.html", "structNTC_1_1ntc__lookup__table__t" ],
-    [ "NtcAdcInterface", "classNTC_1_1NtcAdcInterface.html", "classNTC_1_1NtcAdcInterface" ],
-    [ "AdcError", "namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03", [
-      [ "Success", "namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38", null ],
-      [ "NotInitialized", "namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6", null ],
-      [ "InvalidChannel", "namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4", null ],
-      [ "ReadFailed", "namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a723ee677cab1d41ba376d588d78146ed", null ],
-      [ "Timeout", "namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03ac85a251cc457840f1e032f1b733e9398", null ],
-      [ "HardwareError", "namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03", null ]
-    ] ],
     [ "BinarySearchLookupTable", "namespaceNTC.html#ada06b0b3be062dec1351057d2a30ad7b", null ],
     [ "CalculateBetaValue", "namespaceNTC.html#a3aa1c0b7798e904490f700199d6beabb", null ],
     [ "CalculateOptimalSeriesResistance", "namespaceNTC.html#a260a070fbec159b99ca6cb53b94c4bab", null ],

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['readchannelcount_0',['ReadChannelCount',['../classNTC_1_1NtcAdcInterface.html#a19e3b5ff558cc20c17a1662a88f5e543',1,'NTC::NtcAdcInterface::ReadChannelCount()'],['../classMockEsp32Adc.html#a85462408c5fa1d65da6a73eb8d70491d',1,'MockEsp32Adc::ReadChannelCount()']]],
-  ['readchannelv_1',['ReadChannelV',['../classNTC_1_1NtcAdcInterface.html#a173e85eefb34161f3dd2e51acc8e0d48',1,'NTC::NtcAdcInterface::ReadChannelV()'],['../classMockEsp32Adc.html#ad933f3885316b55a50907a4f7f19ec61',1,'MockEsp32Adc::ReadChannelV()']]],
-  ['readfailed_2',['ReadFailed',['../namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a723ee677cab1d41ba376d588d78146ed',1,'NTC']]],
+  ['readchannelcount_0',['ReadChannelCount',['../classntc_1_1AdcInterface.html#ab115a271254f3f42887af6fa9b536bc1',1,'ntc::AdcInterface::ReadChannelCount()'],['../classMockEsp32Adc.html#af401849ceae818257a8d47767a62365a',1,'MockEsp32Adc::ReadChannelCount()']]],
+  ['readchannelv_1',['ReadChannelV',['../classntc_1_1AdcInterface.html#a8b406533e2399f1a3b2758869986651e',1,'ntc::AdcInterface::ReadChannelV()'],['../classMockEsp32Adc.html#ad7ed3ca030c72099174fdfce864b364b',1,'MockEsp32Adc::ReadChannelV()']]],
+  ['readfailed_2',['ReadFailed',['../namespacentc.html#a01084a88ebce86485b27e6b963fa5941a723ee677cab1d41ba376d588d78146ed',1,'ntc']]],
   ['reading_3',['Temperature Reading',['../index.html#autotoc_md11',1,'']]],
   ['readme_2emd_4',['README.md',['../README_8md.html',1,'']]],
   ['readtemperature_5',['ReadTemperature',['../classNtcThermistor.html#a763f12e7433118d41ad6dd3ef8cd8157',1,'NtcThermistor']]],

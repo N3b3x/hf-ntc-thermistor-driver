@@ -299,7 +299,7 @@ Interactive guides, examples, and step-by-step tutorials</p>
     
 
 <ul>
-  <li><strong>Hardware Agnostic</strong>: Works with any ADC interface that implements NtcAdcInterface</li>
+  <li><strong>Hardware Agnostic</strong>: Works with any ADC interface that implements AdcInterface</li>
   <li><strong>Multiple NTC Types</strong>: Support for various NTC thermistor specifications</li>
   <li><strong>Dual Conversion Methods</strong>: Lookup table and mathematical (Steinhart-Hart) conversion</li>
   <li><strong>High Accuracy</strong>: Optimized for precision temperature measurement</li>
@@ -406,8 +406,8 @@ Interactive guides, examples, and step-by-step tutorials</p>
 29
 </pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">"NtcThermistor.h"</span><span class="cp">
 </span>
-<span class="c1">// 1. Define your ADC implementation (must inherit from NTC::NtcAdcInterface)</span>
-<span class="k">class</span> <span class="nc">MyAdc</span> <span class="o">:</span> <span class="k">public</span> <span class="n">NTC</span><span class="o">::</span><span class="n">NtcAdcInterface</span><span class="o">&lt;</span><span class="n">MyAdc</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="c1">// 1. Define your ADC implementation (must inherit from ntc::AdcInterface)</span>
+<span class="k">class</span> <span class="nc">MyAdc</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ntc</span><span class="o">::</span><span class="n">AdcInterface</span><span class="o">&lt;</span><span class="n">MyAdc</span><span class="o">&gt;</span> <span class="p">{</span>
 <span class="nl">public:</span>
     <span class="kt">bool</span> <span class="n">IsInitialized</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">initialized_</span><span class="p">;</span> <span class="p">}</span>
     <span class="kt">bool</span> <span class="n">EnsureInitialized</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* initialize ADC */</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
@@ -666,13 +666,13 @@ Interactive guides, examples, and step-by-step tutorials</p>
                │ uses
                ▼
 ┌─────────────────────────────────────┐
-│   NTC::NtcAdcInterface&lt;AdcType&gt;     │
+│   ntc::AdcInterface&lt;AdcType&gt;     │
 │   (CRTP Base Interface)             │
 └──────────────┬──────────────────────┘
                │ implements
                ▼
 ┌─────────────────────────────────────┐
-│ YourAdc : NtcAdcInterface&lt;YourAdc&gt;  │
+│ YourAdc : AdcInterface&lt;YourAdc&gt;  │
 │ (Platform-Specific Implementation)  │
 └─────────────────────────────────────┘
 </pre></td></tr></tbody></table></div></code></pre></div></div>

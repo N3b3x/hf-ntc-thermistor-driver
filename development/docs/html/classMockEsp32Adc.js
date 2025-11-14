@@ -8,7 +8,7 @@ var classMockEsp32Adc =
     [ "Initialize", "classMockEsp32Adc.html#ab6925fdf99d2cca6c64fb3e1aec4e7fc", null ],
     [ "IsChannelAvailable", "classMockEsp32Adc.html#a34feb932d5d1a680225e832c3ee9a472", null ],
     [ "IsInitialized", "classMockEsp32Adc.html#a47e052c240bf1a3df95f002373786d21", null ],
-    [ "ReadChannelCount", "classMockEsp32Adc.html#a85462408c5fa1d65da6a73eb8d70491d", null ],
-    [ "ReadChannelV", "classMockEsp32Adc.html#ad933f3885316b55a50907a4f7f19ec61", null ],
+    [ "ReadChannelCount", "classMockEsp32Adc.html#af401849ceae818257a8d47767a62365a", null ],
+    [ "ReadChannelV", "classMockEsp32Adc.html#ad7ed3ca030c72099174fdfce864b364b", null ],
     [ "SetSimulatedVoltage", "classMockEsp32Adc.html#a9495939a768b2388384cfc1a4d0df1e3", null ]
 ];

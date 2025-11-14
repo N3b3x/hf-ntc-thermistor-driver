@@ -1,0 +1,9 @@
+<map id="examples/esp32/main/mock_esp32_adc.hpp" name="examples/esp32/main/mock_esp32_adc.hpp">
+<area shape="rect" id="Node000001" title="Mock ADC implementation for ESP32&#45;C6 testing." alt="" coords="74,5,241,45"/>
+<area shape="rect" id="Node000002" href="$ntc__adc__interface_8hpp.html" title="CRTP&#45;based template interface for ADC used by NTC thermistor driver." alt="" coords="5,93,171,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,47,110,84,106,81,139,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="195,93,258,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="176,44,209,81,205,84,172,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="55,167,121,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,119,91,153,85,153,85,119"/>
+</map>

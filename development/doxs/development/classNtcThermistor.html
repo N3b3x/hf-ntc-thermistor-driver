@@ -102,11 +102,11 @@ $(function(){initNavTree('classNtcThermistor.html',''); initResizable(); });
 <p>Hardware-agnostic <a class="el" href="namespaceNTC.html">NTC</a> thermistor driver.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="NtcThermistor_8h_source.html">NtcThermistor.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ntc__thermistor_8hpp_source.html">ntc_thermistor.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab70c244847544c3db5eb4121af9a2a95" id="r_ab70c244847544c3db5eb4121af9a2a95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab70c244847544c3db5eb4121af9a2a95">NtcThermistor</a> (<a class="el" href="NtcTypes_8h.html#af55611f166cbf0fe94f4aa4ae2de9bce">NtcType</a> ntc_type, AdcType *adc_interface) noexcept</td></tr>
+<tr class="memitem:ab70c244847544c3db5eb4121af9a2a95" id="r_ab70c244847544c3db5eb4121af9a2a95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab70c244847544c3db5eb4121af9a2a95">NtcThermistor</a> (<a class="el" href="ntc__types_8hpp.html#af55611f166cbf0fe94f4aa4ae2de9bce">NtcType</a> ntc_type, AdcType *adc_interface) noexcept</td></tr>
 <tr class="memdesc:ab70c244847544c3db5eb4121af9a2a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with <a class="el" href="namespaceNTC.html">NTC</a> type and ADC interface.  <br /></td></tr>
 <tr class="separator:ab70c244847544c3db5eb4121af9a2a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd81fa995089468fd3ed418bfcbc6797" id="r_afd81fa995089468fd3ed418bfcbc6797"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd81fa995089468fd3ed418bfcbc6797">NtcThermistor</a> (const <a class="el" href="structntc__config__t.html">ntc_config_t</a> &amp;config, AdcType *adc_interface) noexcept</td></tr>
@@ -136,64 +136,64 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7cc1cb03ee2b4589aafcd8e7aead17f5" id="r_a7cc1cb03ee2b4589aafcd8e7aead17f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cc1cb03ee2b4589aafcd8e7aead17f5">IsInitialized</a> () const noexcept</td></tr>
 <tr class="memdesc:a7cc1cb03ee2b4589aafcd8e7aead17f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if initialized.  <br /></td></tr>
 <tr class="separator:a7cc1cb03ee2b4589aafcd8e7aead17f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8be6996e58c278bdac963b70d051560f" id="r_a8be6996e58c278bdac963b70d051560f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8be6996e58c278bdac963b70d051560f">GetConfiguration</a> (<a class="el" href="structntc__config__t.html">ntc_config_t</a> *config) const noexcept</td></tr>
+<tr class="memitem:a8be6996e58c278bdac963b70d051560f" id="r_a8be6996e58c278bdac963b70d051560f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8be6996e58c278bdac963b70d051560f">GetConfiguration</a> (<a class="el" href="structntc__config__t.html">ntc_config_t</a> *config) const noexcept</td></tr>
 <tr class="memdesc:a8be6996e58c278bdac963b70d051560f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current configuration.  <br /></td></tr>
 <tr class="separator:a8be6996e58c278bdac963b70d051560f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c2da1a8a9726972231fa5941a089928" id="r_a1c2da1a8a9726972231fa5941a089928"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c2da1a8a9726972231fa5941a089928">SetConfiguration</a> (const <a class="el" href="structntc__config__t.html">ntc_config_t</a> &amp;config) noexcept</td></tr>
+<tr class="memitem:a1c2da1a8a9726972231fa5941a089928" id="r_a1c2da1a8a9726972231fa5941a089928"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c2da1a8a9726972231fa5941a089928">SetConfiguration</a> (const <a class="el" href="structntc__config__t.html">ntc_config_t</a> &amp;config) noexcept</td></tr>
 <tr class="memdesc:a1c2da1a8a9726972231fa5941a089928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set configuration.  <br /></td></tr>
 <tr class="separator:a1c2da1a8a9726972231fa5941a089928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18c29f6f5a00552343fdd9692a2ec814" id="r_a18c29f6f5a00552343fdd9692a2ec814"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18c29f6f5a00552343fdd9692a2ec814">ReadTemperatureCelsius</a> (float *temperature_celsius) noexcept</td></tr>
+<tr class="memitem:a18c29f6f5a00552343fdd9692a2ec814" id="r_a18c29f6f5a00552343fdd9692a2ec814"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18c29f6f5a00552343fdd9692a2ec814">ReadTemperatureCelsius</a> (float *temperature_celsius) noexcept</td></tr>
 <tr class="memdesc:a18c29f6f5a00552343fdd9692a2ec814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read temperature in Celsius.  <br /></td></tr>
 <tr class="separator:a18c29f6f5a00552343fdd9692a2ec814"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6836a216914af62c079cd72243ea5757" id="r_a6836a216914af62c079cd72243ea5757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6836a216914af62c079cd72243ea5757">ReadTemperatureFahrenheit</a> (float *temperature_fahrenheit) noexcept</td></tr>
+<tr class="memitem:a6836a216914af62c079cd72243ea5757" id="r_a6836a216914af62c079cd72243ea5757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6836a216914af62c079cd72243ea5757">ReadTemperatureFahrenheit</a> (float *temperature_fahrenheit) noexcept</td></tr>
 <tr class="memdesc:a6836a216914af62c079cd72243ea5757"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read temperature in Fahrenheit.  <br /></td></tr>
 <tr class="separator:a6836a216914af62c079cd72243ea5757"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3b63c341106a98ecbab8b8b26390143" id="r_ac3b63c341106a98ecbab8b8b26390143"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3b63c341106a98ecbab8b8b26390143">ReadTemperatureKelvin</a> (float *temperature_kelvin) noexcept</td></tr>
+<tr class="memitem:ac3b63c341106a98ecbab8b8b26390143" id="r_ac3b63c341106a98ecbab8b8b26390143"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3b63c341106a98ecbab8b8b26390143">ReadTemperatureKelvin</a> (float *temperature_kelvin) noexcept</td></tr>
 <tr class="memdesc:ac3b63c341106a98ecbab8b8b26390143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read temperature in Kelvin.  <br /></td></tr>
 <tr class="separator:ac3b63c341106a98ecbab8b8b26390143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a763f12e7433118d41ad6dd3ef8cd8157" id="r_a763f12e7433118d41ad6dd3ef8cd8157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a763f12e7433118d41ad6dd3ef8cd8157">ReadTemperature</a> (<a class="el" href="structntc__reading__t.html">ntc_reading_t</a> *reading) noexcept</td></tr>
+<tr class="memitem:a763f12e7433118d41ad6dd3ef8cd8157" id="r_a763f12e7433118d41ad6dd3ef8cd8157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a763f12e7433118d41ad6dd3ef8cd8157">ReadTemperature</a> (<a class="el" href="structntc__reading__t.html">ntc_reading_t</a> *reading) noexcept</td></tr>
 <tr class="memdesc:a763f12e7433118d41ad6dd3ef8cd8157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read complete temperature information.  <br /></td></tr>
 <tr class="separator:a763f12e7433118d41ad6dd3ef8cd8157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f6c51a6139324f020d50a56416a2cd3" id="r_a6f6c51a6139324f020d50a56416a2cd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f6c51a6139324f020d50a56416a2cd3">GetResistance</a> (float *resistance_ohms) noexcept</td></tr>
+<tr class="memitem:a6f6c51a6139324f020d50a56416a2cd3" id="r_a6f6c51a6139324f020d50a56416a2cd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f6c51a6139324f020d50a56416a2cd3">GetResistance</a> (float *resistance_ohms) noexcept</td></tr>
 <tr class="memdesc:a6f6c51a6139324f020d50a56416a2cd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get thermistor resistance.  <br /></td></tr>
 <tr class="separator:a6f6c51a6139324f020d50a56416a2cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a6295bd186d9883e9495f1e32a95b9c" id="r_a0a6295bd186d9883e9495f1e32a95b9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a6295bd186d9883e9495f1e32a95b9c">GetVoltage</a> (float *voltage_volts) noexcept</td></tr>
+<tr class="memitem:a0a6295bd186d9883e9495f1e32a95b9c" id="r_a0a6295bd186d9883e9495f1e32a95b9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a6295bd186d9883e9495f1e32a95b9c">GetVoltage</a> (float *voltage_volts) noexcept</td></tr>
 <tr class="memdesc:a0a6295bd186d9883e9495f1e32a95b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get voltage across thermistor.  <br /></td></tr>
 <tr class="separator:a0a6295bd186d9883e9495f1e32a95b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3721322696d11ee55f3d1b95b36db90" id="r_ac3721322696d11ee55f3d1b95b36db90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3721322696d11ee55f3d1b95b36db90">GetRawAdcValue</a> (uint32_t *adc_value) noexcept</td></tr>
+<tr class="memitem:ac3721322696d11ee55f3d1b95b36db90" id="r_ac3721322696d11ee55f3d1b95b36db90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3721322696d11ee55f3d1b95b36db90">GetRawAdcValue</a> (uint32_t *adc_value) noexcept</td></tr>
 <tr class="memdesc:ac3721322696d11ee55f3d1b95b36db90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get raw ADC value.  <br /></td></tr>
 <tr class="separator:ac3721322696d11ee55f3d1b95b36db90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff226e4010c830261a9f1eab84beb302" id="r_aff226e4010c830261a9f1eab84beb302"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff226e4010c830261a9f1eab84beb302">Calibrate</a> (float reference_temperature_celsius) noexcept</td></tr>
+<tr class="memitem:aff226e4010c830261a9f1eab84beb302" id="r_aff226e4010c830261a9f1eab84beb302"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff226e4010c830261a9f1eab84beb302">Calibrate</a> (float reference_temperature_celsius) noexcept</td></tr>
 <tr class="memdesc:aff226e4010c830261a9f1eab84beb302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calibrate the thermistor.  <br /></td></tr>
 <tr class="separator:aff226e4010c830261a9f1eab84beb302"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69b6155de5f940be09644f3268679806" id="r_a69b6155de5f940be09644f3268679806"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69b6155de5f940be09644f3268679806">SetCalibrationOffset</a> (float offset_celsius) noexcept</td></tr>
+<tr class="memitem:a69b6155de5f940be09644f3268679806" id="r_a69b6155de5f940be09644f3268679806"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69b6155de5f940be09644f3268679806">SetCalibrationOffset</a> (float offset_celsius) noexcept</td></tr>
 <tr class="memdesc:a69b6155de5f940be09644f3268679806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set calibration offset.  <br /></td></tr>
 <tr class="separator:a69b6155de5f940be09644f3268679806"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d7a4685e6dc9b00e739a8b53087fee3" id="r_a6d7a4685e6dc9b00e739a8b53087fee3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d7a4685e6dc9b00e739a8b53087fee3">GetCalibrationOffset</a> (float *offset_celsius) const noexcept</td></tr>
+<tr class="memitem:a6d7a4685e6dc9b00e739a8b53087fee3" id="r_a6d7a4685e6dc9b00e739a8b53087fee3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d7a4685e6dc9b00e739a8b53087fee3">GetCalibrationOffset</a> (float *offset_celsius) const noexcept</td></tr>
 <tr class="memdesc:a6d7a4685e6dc9b00e739a8b53087fee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get calibration offset.  <br /></td></tr>
 <tr class="separator:a6d7a4685e6dc9b00e739a8b53087fee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc6c91be2a3128e0caf233412fc96c66" id="r_adc6c91be2a3128e0caf233412fc96c66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc6c91be2a3128e0caf233412fc96c66">ResetCalibration</a> () noexcept</td></tr>
+<tr class="memitem:adc6c91be2a3128e0caf233412fc96c66" id="r_adc6c91be2a3128e0caf233412fc96c66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc6c91be2a3128e0caf233412fc96c66">ResetCalibration</a> () noexcept</td></tr>
 <tr class="memdesc:adc6c91be2a3128e0caf233412fc96c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset calibration.  <br /></td></tr>
 <tr class="separator:adc6c91be2a3128e0caf233412fc96c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a612e6259fc18736a48634d813d78d0ca" id="r_a612e6259fc18736a48634d813d78d0ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a612e6259fc18736a48634d813d78d0ca">SetConversionMethod</a> (<a class="el" href="NtcTypes_8h.html#aa0270dbb8c335c8cf792195e2d6188e2">NtcConversionMethod</a> method) noexcept</td></tr>
+<tr class="memitem:a612e6259fc18736a48634d813d78d0ca" id="r_a612e6259fc18736a48634d813d78d0ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a612e6259fc18736a48634d813d78d0ca">SetConversionMethod</a> (<a class="el" href="ntc__types_8hpp.html#aa0270dbb8c335c8cf792195e2d6188e2">NtcConversionMethod</a> method) noexcept</td></tr>
 <tr class="memdesc:a612e6259fc18736a48634d813d78d0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set conversion method.  <br /></td></tr>
 <tr class="separator:a612e6259fc18736a48634d813d78d0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0055fc273d31760f5bc61b51c77f132f" id="r_a0055fc273d31760f5bc61b51c77f132f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0055fc273d31760f5bc61b51c77f132f">SetVoltageDivider</a> (float series_resistance) noexcept</td></tr>
+<tr class="memitem:a0055fc273d31760f5bc61b51c77f132f" id="r_a0055fc273d31760f5bc61b51c77f132f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0055fc273d31760f5bc61b51c77f132f">SetVoltageDivider</a> (float series_resistance) noexcept</td></tr>
 <tr class="memdesc:a0055fc273d31760f5bc61b51c77f132f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set voltage divider parameters.  <br /></td></tr>
 <tr class="separator:a0055fc273d31760f5bc61b51c77f132f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f769d66fdb5e268067aa290ce963f92" id="r_a3f769d66fdb5e268067aa290ce963f92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f769d66fdb5e268067aa290ce963f92">SetReferenceVoltage</a> (float reference_voltage) noexcept</td></tr>
+<tr class="memitem:a3f769d66fdb5e268067aa290ce963f92" id="r_a3f769d66fdb5e268067aa290ce963f92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f769d66fdb5e268067aa290ce963f92">SetReferenceVoltage</a> (float reference_voltage) noexcept</td></tr>
 <tr class="memdesc:a3f769d66fdb5e268067aa290ce963f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set reference voltage.  <br /></td></tr>
 <tr class="separator:a3f769d66fdb5e268067aa290ce963f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a046e5acf713f68cf69e8ee6552022281" id="r_a046e5acf713f68cf69e8ee6552022281"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a046e5acf713f68cf69e8ee6552022281">SetBetaValue</a> (float beta_value) noexcept</td></tr>
+<tr class="memitem:a046e5acf713f68cf69e8ee6552022281" id="r_a046e5acf713f68cf69e8ee6552022281"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a046e5acf713f68cf69e8ee6552022281">SetBetaValue</a> (float beta_value) noexcept</td></tr>
 <tr class="memdesc:a046e5acf713f68cf69e8ee6552022281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set beta value.  <br /></td></tr>
 <tr class="separator:a046e5acf713f68cf69e8ee6552022281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b0f1a50bf4e93359c0cd20e07a220d6" id="r_a9b0f1a50bf4e93359c0cd20e07a220d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b0f1a50bf4e93359c0cd20e07a220d6">SetAdcChannel</a> (uint8_t adc_channel) noexcept</td></tr>
+<tr class="memitem:a9b0f1a50bf4e93359c0cd20e07a220d6" id="r_a9b0f1a50bf4e93359c0cd20e07a220d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b0f1a50bf4e93359c0cd20e07a220d6">SetAdcChannel</a> (uint8_t adc_channel) noexcept</td></tr>
 <tr class="memdesc:a9b0f1a50bf4e93359c0cd20e07a220d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set ADC channel.  <br /></td></tr>
 <tr class="separator:a9b0f1a50bf4e93359c0cd20e07a220d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14bcc1e5d9982c080a0cc167f327015a" id="r_a14bcc1e5d9982c080a0cc167f327015a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14bcc1e5d9982c080a0cc167f327015a">SetSamplingParameters</a> (uint32_t sample_count, uint32_t sample_delay_ms) noexcept</td></tr>
+<tr class="memitem:a14bcc1e5d9982c080a0cc167f327015a" id="r_a14bcc1e5d9982c080a0cc167f327015a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14bcc1e5d9982c080a0cc167f327015a">SetSamplingParameters</a> (uint32_t sample_count, uint32_t sample_delay_ms) noexcept</td></tr>
 <tr class="memdesc:a14bcc1e5d9982c080a0cc167f327015a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set sampling parameters.  <br /></td></tr>
 <tr class="separator:a14bcc1e5d9982c080a0cc167f327015a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ac73c1968411826d60c2d1f8cb4aa8f" id="r_a0ac73c1968411826d60c2d1f8cb4aa8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ac73c1968411826d60c2d1f8cb4aa8f">SetFiltering</a> (bool enable, float alpha=0.1F) noexcept</td></tr>
+<tr class="memitem:a0ac73c1968411826d60c2d1f8cb4aa8f" id="r_a0ac73c1968411826d60c2d1f8cb4aa8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ac73c1968411826d60c2d1f8cb4aa8f">SetFiltering</a> (bool enable, float alpha=0.1F) noexcept</td></tr>
 <tr class="memdesc:a0ac73c1968411826d60c2d1f8cb4aa8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/disable filtering.  <br /></td></tr>
 <tr class="separator:a0ac73c1968411826d60c2d1f8cb4aa8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -211,10 +211,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a7526498293e2a6da849d3908ff0caf31" id="r_a7526498293e2a6da849d3908ff0caf31"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7526498293e2a6da849d3908ff0caf31">KelvinToCelsius</a> (float kelvin) noexcept</td></tr>
 <tr class="memdesc:a7526498293e2a6da849d3908ff0caf31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Kelvin to Celsius.  <br /></td></tr>
 <tr class="separator:a7526498293e2a6da849d3908ff0caf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a904c3213613a75433756f000542259d5" id="r_a904c3213613a75433756f000542259d5"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a904c3213613a75433756f000542259d5">GetErrorString</a> (<a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> error) noexcept</td></tr>
+<tr class="memitem:a904c3213613a75433756f000542259d5" id="r_a904c3213613a75433756f000542259d5"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a904c3213613a75433756f000542259d5">GetErrorString</a> (<a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> error) noexcept</td></tr>
 <tr class="memdesc:a904c3213613a75433756f000542259d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get error string.  <br /></td></tr>
 <tr class="separator:a904c3213613a75433756f000542259d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61d208940fed34c62ed4da7b97160c5d" id="r_a61d208940fed34c62ed4da7b97160c5d"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61d208940fed34c62ed4da7b97160c5d">GetTypeString</a> (<a class="el" href="NtcTypes_8h.html#af55611f166cbf0fe94f4aa4ae2de9bce">NtcType</a> type) noexcept</td></tr>
+<tr class="memitem:a61d208940fed34c62ed4da7b97160c5d" id="r_a61d208940fed34c62ed4da7b97160c5d"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61d208940fed34c62ed4da7b97160c5d">GetTypeString</a> (<a class="el" href="ntc__types_8hpp.html#af55611f166cbf0fe94f4aa4ae2de9bce">NtcType</a> type) noexcept</td></tr>
 <tr class="memdesc:a61d208940fed34c62ed4da7b97160c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="namespaceNTC.html">NTC</a> type string.  <br /></td></tr>
 <tr class="separator:a61d208940fed34c62ed4da7b97160c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -231,12 +231,12 @@ class NtcThermistor&lt; AdcType &gt;</div><p>Hardware-agnostic <a class="el" hre
 </ul>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">AdcType</td><td>The ADC implementation type that inherits from NTC::NtcAdcInterface&lt;AdcType&gt;</td></tr>
+    <tr><td class="paramname">AdcType</td><td>The ADC implementation type that inherits from ntc::AdcInterface&lt;AdcType&gt;</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>The driver requires an ADC type that implements <a class="el" href="classNTC_1_1NtcAdcInterface.html" title="CRTP-based template interface for ADC operations.">NTC::NtcAdcInterface</a> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2hf-ntc-thermistor-driver_2hf-ntc-thermistor-driver_2inc_2NtcTypes_8h-example.html#_a3">/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcTypes.h</a>, <a class="el" href="Basic-example.html#_a3">Basic</a>, and <a class="el" href="Custom-example.html#_a7">Custom</a>.</dd>
+<dl class="section note"><dt>Note</dt><dd>The driver requires an ADC type that implements <a class="el" href="classntc_1_1AdcInterface.html" title="CRTP-based template interface for ADC operations.">ntc::AdcInterface</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2hf-ntc-thermistor-driver_2hf-ntc-thermistor-driver_2inc_2ntc_types_8hpp-example.html#_a3">/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_types.hpp</a>, <a class="el" href="Basic-example.html#_a3">Basic</a>, and <a class="el" href="Custom-example.html#_a7">Custom</a>.</dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab70c244847544c3db5eb4121af9a2a95" name="ab70c244847544c3db5eb4121af9a2a95"></a>
@@ -253,7 +253,7 @@ template&lt;typename AdcType &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;<a class="el" href="classNtcThermistor.html">::NtcThermistor</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="NtcTypes_8h.html#af55611f166cbf0fe94f4aa4ae2de9bce">NtcType</a></td>          <td class="paramname"><span class="paramname"><em>ntc_type</em>, </span></td>
+          <td class="paramtype"><a class="el" href="ntc__types_8hpp.html#af55611f166cbf0fe94f4aa4ae2de9bce">NtcType</a></td>          <td class="paramname"><span class="paramname"><em>ntc_type</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -273,7 +273,7 @@ template&lt;typename AdcType &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ntc_type</td><td><a class="el" href="namespaceNTC.html">NTC</a> thermistor type (e.g., NTC_TYPE_NTCG163JFT103FT1S) </td></tr>
-    <tr><td class="paramname">adc_interface</td><td>Pointer to ADC interface (must inherit from NTC::NtcAdcInterface&lt;AdcType&gt;)</td></tr>
+    <tr><td class="paramname">adc_interface</td><td>Pointer to ADC interface (must inherit from ntc::AdcInterface&lt;AdcType&gt;)</td></tr>
   </table>
   </dd>
 </dl>
@@ -315,7 +315,7 @@ template&lt;typename AdcType &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td><a class="el" href="namespaceNTC.html">NTC</a> configuration structure </td></tr>
-    <tr><td class="paramname">adc_interface</td><td>Pointer to ADC interface (must inherit from NTC::NtcAdcInterface&lt;AdcType&gt;) </td></tr>
+    <tr><td class="paramname">adc_interface</td><td>Pointer to ADC interface (must inherit from ntc::AdcInterface&lt;AdcType&gt;) </td></tr>
   </table>
   </dd>
 </dl>
@@ -422,7 +422,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::Calibrate </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::Calibrate </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>reference_temperature_celsius</em></span></td><td>)</td>
           <td></td>
@@ -596,7 +596,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetCalibrationOffset </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetCalibrationOffset </td>
           <td>(</td>
           <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>offset_celsius</em></span></td><td>)</td>
           <td> const</td>
@@ -632,7 +632,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetConfiguration </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetConfiguration </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structntc__config__t.html">ntc_config_t</a> *</td>          <td class="paramname"><span class="paramname"><em>config</em></span></td><td>)</td>
           <td> const</td>
@@ -670,7 +670,7 @@ template&lt;typename AdcType &gt; </div>
         <tr>
           <td class="memname">const char * <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetErrorString </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a></td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a></td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -704,7 +704,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetRawAdcValue </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetRawAdcValue </td>
           <td>(</td>
           <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>adc_value</em></span></td><td>)</td>
           <td></td>
@@ -740,7 +740,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetResistance </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetResistance </td>
           <td>(</td>
           <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>resistance_ohms</em></span></td><td>)</td>
           <td></td>
@@ -778,7 +778,7 @@ template&lt;typename AdcType &gt; </div>
         <tr>
           <td class="memname">const char * <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetTypeString </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="NtcTypes_8h.html#af55611f166cbf0fe94f4aa4ae2de9bce">NtcType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="ntc__types_8hpp.html#af55611f166cbf0fe94f4aa4ae2de9bce">NtcType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -812,7 +812,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetVoltage </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetVoltage </td>
           <td>(</td>
           <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>voltage_volts</em></span></td><td>)</td>
           <td></td>
@@ -1002,7 +1002,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::ReadTemperature </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::ReadTemperature </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structntc__reading__t.html">ntc_reading_t</a> *</td>          <td class="paramname"><span class="paramname"><em>reading</em></span></td><td>)</td>
           <td></td>
@@ -1038,7 +1038,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::ReadTemperatureCelsius </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::ReadTemperatureCelsius </td>
           <td>(</td>
           <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>temperature_celsius</em></span></td><td>)</td>
           <td></td>
@@ -1077,7 +1077,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::ReadTemperatureFahrenheit </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::ReadTemperatureFahrenheit </td>
           <td>(</td>
           <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>temperature_fahrenheit</em></span></td><td>)</td>
           <td></td>
@@ -1113,7 +1113,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::ReadTemperatureKelvin </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::ReadTemperatureKelvin </td>
           <td>(</td>
           <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>temperature_kelvin</em></span></td><td>)</td>
           <td></td>
@@ -1149,7 +1149,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::ResetCalibration </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::ResetCalibration </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -1179,7 +1179,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetAdcChannel </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetAdcChannel </td>
           <td>(</td>
           <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>adc_channel</em></span></td><td>)</td>
           <td></td>
@@ -1215,7 +1215,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetBetaValue </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetBetaValue </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>beta_value</em></span></td><td>)</td>
           <td></td>
@@ -1251,7 +1251,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetCalibrationOffset </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetCalibrationOffset </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>offset_celsius</em></span></td><td>)</td>
           <td></td>
@@ -1287,7 +1287,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetConfiguration </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetConfiguration </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structntc__config__t.html">ntc_config_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>config</em></span></td><td>)</td>
           <td></td>
@@ -1323,9 +1323,9 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetConversionMethod </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetConversionMethod </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="NtcTypes_8h.html#aa0270dbb8c335c8cf792195e2d6188e2">NtcConversionMethod</a></td>          <td class="paramname"><span class="paramname"><em>method</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="ntc__types_8hpp.html#aa0270dbb8c335c8cf792195e2d6188e2">NtcConversionMethod</a></td>          <td class="paramname"><span class="paramname"><em>method</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1359,7 +1359,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetFiltering </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetFiltering </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enable</em>, </span></td>
         </tr>
@@ -1400,7 +1400,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetReferenceVoltage </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetReferenceVoltage </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>reference_voltage</em></span></td><td>)</td>
           <td></td>
@@ -1436,7 +1436,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetSamplingParameters </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetSamplingParameters </td>
           <td>(</td>
           <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>sample_count</em>, </span></td>
         </tr>
@@ -1477,7 +1477,7 @@ template&lt;typename AdcType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetVoltageDivider </td>
+          <td class="memname"><a class="el" href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9da">NtcError</a> <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::SetVoltageDivider </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>series_resistance</em></span></td><td>)</td>
           <td></td>
@@ -1502,8 +1502,8 @@ template&lt;typename AdcType &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>inc/<a class="el" href="NtcThermistor_8h_source.html">NtcThermistor.h</a></li>
-<li>src/<a class="el" href="NtcThermistor_8cpp_source.html">NtcThermistor.cpp</a></li>
+<li>inc/<a class="el" href="ntc__thermistor_8hpp_source.html">ntc_thermistor.hpp</a></li>
+<li>src/<a class="el" href="ntc__thermistor_8cpp_source.html">ntc_thermistor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

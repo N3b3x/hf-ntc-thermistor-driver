@@ -1,5 +1,5 @@
-warning: ignoring unsupported tag 'PAGE_OUTLINE_PANEL' at line 1763, file /tmp/doxyfile.WL9g6f
-warning: Tag 'DOT_TRANSPARENT' at line 2786 of file '/tmp/doxyfile.WL9g6f' has become obsolete.
+warning: ignoring unsupported tag 'PAGE_OUTLINE_PANEL' at line 1763, file /tmp/doxyfile.fVAgKm
+warning: Tag 'DOT_TRANSPARENT' at line 2786 of file '/tmp/doxyfile.fVAgKm' has become obsolete.
          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
 error: Style sheet '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome.css' specified by HTML_EXTRA_STYLESHEET does not exist!
 error: Style sheet '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-sidebar-only.css' specified by HTML_EXTRA_STYLESHEET does not exist!
@@ -9,8 +9,8 @@ error: Extra file '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesom
 error: Extra file '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-paragraph-link.js' specified in HTML_EXTRA_FILES does not exist!
 error: Extra file '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-interactive-toc.js' specified in HTML_EXTRA_FILES does not exist!
 error: Extra file '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesome-tabs.js' specified in HTML_EXTRA_FILES does not exist!
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcThermistor.h:71: warning: included file 'Basic' is not found. Check your EXAMPLE_PATH
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcThermistor.h:84: warning: included file 'Custom' is not found. Check your EXAMPLE_PATH
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_thermistor.hpp:71: warning: included file 'Basic' is not found. Check your EXAMPLE_PATH
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_thermistor.hpp:84: warning: included file 'Custom' is not found. Check your EXAMPLE_PATH
 /home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/examples/esp32/main/TestFramework.h:414: warning: The following parameter of print_test_section_footer(const char *tag, const char *section_name, bool enabled=true) is not documented:
   parameter 'tag'
 /home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/examples/esp32/main/TestFramework.h:384: warning: The following parameter of print_test_section_header(const char *tag, const char *section_name, bool enabled=true) is not documented:
@@ -20,24 +20,24 @@ error: Extra file '_config/doxygen-extensions/doxygen-awesome-css/doxygen-awesom
   parameter 'tag'
 /home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/examples/esp32/main/TestFramework.h:337: warning: The following parameter of print_test_summary(const TestResults &test_results, const char *test_suite_name, const char *tag) is not documented:
   parameter 'tag'
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:117: warning: argument 'a' of command @param is not found in the argument list of NTC::ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float coeff_a, float coeff_b, float coeff_c, float *temperature_celsius)
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:117: warning: argument 'b' of command @param is not found in the argument list of NTC::ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float coeff_a, float coeff_b, float coeff_c, float *temperature_celsius)
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:117: warning: argument 'c' of command @param is not found in the argument list of NTC::ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float coeff_a, float coeff_b, float coeff_c, float *temperature_celsius)
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:117: warning: The following parameters of NTC::ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float coeff_a, float coeff_b, float coeff_c, float *temperature_celsius) are not documented:
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:117: warning: argument 'a' of command @param is not found in the argument list of NTC::ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float coeff_a, float coeff_b, float coeff_c, float *temperature_celsius)
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:117: warning: argument 'b' of command @param is not found in the argument list of NTC::ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float coeff_a, float coeff_b, float coeff_c, float *temperature_celsius)
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:117: warning: argument 'c' of command @param is not found in the argument list of NTC::ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float coeff_a, float coeff_b, float coeff_c, float *temperature_celsius)
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:117: warning: The following parameters of NTC::ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float coeff_a, float coeff_b, float coeff_c, float *temperature_celsius) are not documented:
   parameter 'coeff_a'
   parameter 'coeff_b'
   parameter 'coeff_c'
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:141: warning: argument 'a' of command @param is not found in the argument list of NTC::ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float coeff_a, float coeff_b, float coeff_c, float *resistance_ohms)
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:141: warning: argument 'b' of command @param is not found in the argument list of NTC::ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float coeff_a, float coeff_b, float coeff_c, float *resistance_ohms)
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:141: warning: argument 'c' of command @param is not found in the argument list of NTC::ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float coeff_a, float coeff_b, float coeff_c, float *resistance_ohms)
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:141: warning: The following parameters of NTC::ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float coeff_a, float coeff_b, float coeff_c, float *resistance_ohms) are not documented:
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:141: warning: argument 'a' of command @param is not found in the argument list of NTC::ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float coeff_a, float coeff_b, float coeff_c, float *resistance_ohms)
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:141: warning: argument 'b' of command @param is not found in the argument list of NTC::ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float coeff_a, float coeff_b, float coeff_c, float *resistance_ohms)
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:141: warning: argument 'c' of command @param is not found in the argument list of NTC::ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float coeff_a, float coeff_b, float coeff_c, float *resistance_ohms)
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:141: warning: The following parameters of NTC::ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float coeff_a, float coeff_b, float coeff_c, float *resistance_ohms) are not documented:
   parameter 'coeff_a'
   parameter 'coeff_b'
   parameter 'coeff_c'
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:255: warning: argument 'a' of command @param is not found in the argument list of NTC::ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff_c)
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:255: warning: argument 'b' of command @param is not found in the argument list of NTC::ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff_c)
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:255: warning: argument 'c' of command @param is not found in the argument list of NTC::ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff_c)
-/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/NtcConversion.h:255: warning: The following parameters of NTC::ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff_c) are not documented:
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:255: warning: argument 'a' of command @param is not found in the argument list of NTC::ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff_c)
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:255: warning: argument 'b' of command @param is not found in the argument list of NTC::ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff_c)
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:255: warning: argument 'c' of command @param is not found in the argument list of NTC::ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff_c)
+/home/runner/work/hf-ntc-thermistor-driver/hf-ntc-thermistor-driver/inc/ntc_conversion.hpp:255: warning: The following parameters of NTC::ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff_c) are not documented:
   parameter 'coeff_a'
   parameter 'coeff_b'
   parameter 'coeff_c'

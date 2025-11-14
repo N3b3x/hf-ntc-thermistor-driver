@@ -20,11 +20,11 @@ message(STATUS "Source Root: ${SRC_ROOT}")
 # Source File Discovery and Validation
 # =============================================================================
 # List all potential driver source files
-# Note: NtcThermistor.cpp is a template implementation file included by the header,
+# Note: ntc_thermistor.cpp is a template implementation file included by the header,
 #       so it should NOT be compiled separately
 set(DRIVER_SRCS
-    "${SRC_ROOT}/NtcConversion.cpp"
-    "${SRC_ROOT}/NtcLookupTable.cpp"
+    "${SRC_ROOT}/ntc_conversion.cpp"
+    "${SRC_ROOT}/ntc_lookup_table.cpp"
 )
 
 # Check which source files actually exist and add them

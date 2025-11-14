@@ -1,0 +1,12 @@
+<map id="inc/ntc_conversion.hpp" name="inc/ntc_conversion.hpp">
+<area shape="rect" id="Node000001" title="Mathematical conversion functions for NTC thermistor temperature calculation." alt="" coords="101,5,272,31"/>
+<area shape="rect" id="Node000002" href="$ntc__conversion_8cpp.html" title="Mathematical conversion functions for NTC thermistor temperature calculation." alt="" coords="5,79,176,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,41,108,81,105,76,159,37"/>
+<area shape="rect" id="Node000003" href="$ntc__thermistor_8cpp.html" title="Hardware&#45;agnostic NTC thermistor driver implementation." alt="" coords="201,79,367,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,37,270,76,267,81,212,41"/>
+<area shape="rect" id="Node000004" href="$ntc__thermistor_8hpp.html" title="Hardware&#45;agnostic NTC thermistor driver for temperature measurement." alt="" coords="201,152,367,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="278,118,280,152,274,152,273,118"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="290,139,288,104,294,104,295,138"/>
+<area shape="rect" id="Node000005" href="$ntc__thermistor__comprehensive__test_8cpp.html" title="Comprehensive test suite for NTC Thermistor driver on ESP32&#45;C6." alt="" coords="170,225,398,280"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="287,191,287,225,281,225,281,191"/>
+</map>

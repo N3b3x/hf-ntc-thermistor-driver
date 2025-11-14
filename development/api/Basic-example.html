@@ -95,10 +95,10 @@ $(function(){initNavTree('Basic-example.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <p>Usage </p><div class="fragment"><div class="line">  <span class="comment">// Define your ADC implementation</span></div>
-<div class="line">  <span class="keyword">class </span>MyAdc : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a>&lt;MyAdc&gt; {</div>
+<div class="line">  <span class="keyword">class </span>MyAdc : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classntc_1_1AdcInterface.html">ntc::AdcInterface</a>&lt;MyAdc&gt; {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keywordtype">bool</span> <a id="a1" name="a1"></a><a class="code hl_function" href="classNTC_1_1NtcAdcInterface.html#a28cd5fffada1d46d42afb7d39cf9f820">IsInitialized</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> initialized_; }</div>
-<div class="line">    <span class="keywordtype">bool</span> <a id="a2" name="a2"></a><a class="code hl_function" href="classNTC_1_1NtcAdcInterface.html#a44634333343db2c1291a7e90930f2fee">EnsureInitialized</a>() { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line">    <span class="keywordtype">bool</span> <a id="a1" name="a1"></a><a class="code hl_function" href="classntc_1_1AdcInterface.html#a7cab614f2e651085ed26a2ded3cc5e9e">IsInitialized</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> initialized_; }</div>
+<div class="line">    <span class="keywordtype">bool</span> <a id="a2" name="a2"></a><a class="code hl_function" href="classntc_1_1AdcInterface.html#a59b7695f6c4a2b9768c66b323c997ac0">EnsureInitialized</a>() { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
 <div class="line">  <span class="comment">// ... implement other required methods</span></div>
 <div class="line">  };</div>
 <div class="line"> </div>
@@ -114,10 +114,10 @@ $(function(){initNavTree('Basic-example.html',''); initResizable(); });
 <div class="line">  printf(<span class="stringliteral">&quot;Temperature: %.2F°C\n&quot;</span>, temp_c);</div>
 <div class="line">  }</div>
 <div class="line">  }</div>
-<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a></div><div class="ttdoc">CRTP-based template interface for ADC operations.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:58</div></div>
-<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html_a28cd5fffada1d46d42afb7d39cf9f820"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html#a28cd5fffada1d46d42afb7d39cf9f820">NTC::NtcAdcInterface::IsInitialized</a></div><div class="ttdeci">bool IsInitialized() const</div><div class="ttdoc">Check if ADC is initialized.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:64</div></div>
-<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html_a44634333343db2c1291a7e90930f2fee"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html#a44634333343db2c1291a7e90930f2fee">NTC::NtcAdcInterface::EnsureInitialized</a></div><div class="ttdeci">bool EnsureInitialized()</div><div class="ttdoc">Ensure ADC is initialized, initializing if necessary.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:73</div></div>
-<div class="ttc" id="aclassNtcThermistor_html"><div class="ttname"><a href="classNtcThermistor.html">NtcThermistor</a></div><div class="ttdoc">Hardware-agnostic NTC thermistor driver.</div><div class="ttdef"><b>Definition</b> NtcThermistor.h:84</div></div>
+<div class="ttc" id="aclassNtcThermistor_html"><div class="ttname"><a href="classNtcThermistor.html">NtcThermistor</a></div><div class="ttdoc">Hardware-agnostic NTC thermistor driver.</div><div class="ttdef"><b>Definition</b> ntc_thermistor.hpp:84</div></div>
+<div class="ttc" id="aclassntc_1_1AdcInterface_html"><div class="ttname"><a href="classntc_1_1AdcInterface.html">ntc::AdcInterface</a></div><div class="ttdoc">CRTP-based template interface for ADC operations.</div><div class="ttdef"><b>Definition</b> ntc_adc_interface.hpp:58</div></div>
+<div class="ttc" id="aclassntc_1_1AdcInterface_html_a59b7695f6c4a2b9768c66b323c997ac0"><div class="ttname"><a href="classntc_1_1AdcInterface.html#a59b7695f6c4a2b9768c66b323c997ac0">ntc::AdcInterface::EnsureInitialized</a></div><div class="ttdeci">bool EnsureInitialized()</div><div class="ttdoc">Ensure ADC is initialized, initializing if necessary.</div><div class="ttdef"><b>Definition</b> ntc_adc_interface.hpp:73</div></div>
+<div class="ttc" id="aclassntc_1_1AdcInterface_html_a7cab614f2e651085ed26a2ded3cc5e9e"><div class="ttname"><a href="classntc_1_1AdcInterface.html#a7cab614f2e651085ed26a2ded3cc5e9e">ntc::AdcInterface::IsInitialized</a></div><div class="ttdeci">bool IsInitialized() const</div><div class="ttdoc">Check if ADC is initialized.</div><div class="ttdef"><b>Definition</b> ntc_adc_interface.hpp:64</div></div>
 </div><!-- fragment --><div class="fragment"></div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
