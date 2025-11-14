@@ -24,7 +24,7 @@ extern "C" {
 }
 #endif
 
-static const char* TAG = "NTC_Test";
+static const char *TAG = "NTC_Test";
 static TestResults g_test_results;
 
 //=============================================================================
@@ -47,7 +47,7 @@ static std::unique_ptr<NtcThermistor<MockEsp32Adc>> g_ntc_driver;
  */
 static bool init_test_resources() noexcept {
   // Create mock ADC
-  g_mock_adc = std::make_unique<MockEsp32Adc>(3.3f, 12);
+  g_mock_adc = std::make_unique<MockEsp32Adc>(3.3F, 12);
   if (!g_mock_adc->Initialize()) {
     ESP_LOGE(TAG, "Failed to initialize mock ADC");
     return false;
@@ -56,22 +56,23 @@ static bool init_test_resources() noexcept {
   // Create NTC driver configuration
   ntc_config_t config = {};
   config.adc_channel = 0;
-  config.series_resistance = 10000.0f;
-  config.resistance_at_25c = 10000.0f;
-  config.beta_value = 3950.0f;
-  config.reference_voltage = 3.3f;
-  config.type = NTC_TYPE_CUSTOM;
-  config.conversion_method = NTC_CONVERSION_AUTO;
+  config.series_resistance = 10000.0F;
+  config.resistance_at_25c = 10000.0F;
+  config.beta_value = 3950.0F;
+  config.reference_voltage = 3.3F;
+  config.type = NtcType::Custom;
+  config.conversion_method = NtcConversionMethod::Auto;
   config.sample_count = 1;
   config.sample_delay_ms = 0;
-  config.min_temperature = -40.0f;
-  config.max_temperature = 125.0f;
+  config.min_temperature = -40.0F;
+  config.max_temperature = 125.0F;
   config.enable_filtering = false;
-  config.filter_alpha = 0.1f;
-  config.calibration_offset = 0.0f;
+  config.filter_alpha = 0.1F;
+  config.calibration_offset = 0.0F;
 
   // Create NTC driver instance
-  g_ntc_driver = std::make_unique<NtcThermistor<MockEsp32Adc>>(config, g_mock_adc.get());
+  g_ntc_driver =
+      std::make_unique<NtcThermistor<MockEsp32Adc>>(config, g_mock_adc.get());
   if (!g_ntc_driver->Initialize()) {
     ESP_LOGE(TAG, "Failed to initialize NTC driver");
     return false;
@@ -104,12 +105,14 @@ static bool test_basic_initialization() noexcept {
 //=============================================================================
 
 extern "C" void app_main() {
-  ESP_LOGI(TAG, "╔══════════════════════════════════════════════════════════════════════════════╗");
-  ESP_LOGI(TAG,
-           "║                  ESP32-C6 NTC THERMISTOR COMPREHENSIVE TEST SUITE             ║");
-  ESP_LOGI(TAG,
-           "║                      HardFOC NTC Thermistor Driver Tests                      ║");
-  ESP_LOGI(TAG, "╚══════════════════════════════════════════════════════════════════════════════╝");
+  ESP_LOGI(TAG, "╔═════════════════════════════════════════════════════════════"
+                "═════════════════╗");
+  ESP_LOGI(TAG, "║                  ESP32-C6 NTC THERMISTOR COMPREHENSIVE TEST "
+                "SUITE             ║");
+  ESP_LOGI(TAG, "║                      HardFOC NTC Thermistor Driver Tests    "
+                "                  ║");
+  ESP_LOGI(TAG, "╚═════════════════════════════════════════════════════════════"
+                "═════════════════╝");
 
   vTaskDelay(pdMS_TO_TICKS(1000));
 
@@ -125,7 +128,8 @@ extern "C" void app_main() {
   // Run all tests based on configuration
   RUN_TEST_SECTION_IF_ENABLED_WITH_PATTERN(
       ENABLE_BASIC_TESTS, "NTC THERMISTOR BASIC TESTS", 5,
-      RUN_TEST_IN_TASK("basic_initialization", test_basic_initialization, 8192, 1);
+      RUN_TEST_IN_TASK("basic_initialization", test_basic_initialization, 8192,
+                       1);
       flip_test_progress_indicator(););
 
   // Cleanup

@@ -74,11 +74,8 @@ Checks: |
   # - Lambda expressions
   # - constexpr usage
   modernize-*
-
-# =============================================================================
-# DISABLED CHECKS
-# =============================================================================
-
+  
+  # DISABLED CHECKS
   # Disable trailing return type enforcement (can be verbose for simple functions)
   -modernize-use-trailing-return-type
   

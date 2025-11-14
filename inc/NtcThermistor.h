@@ -2,16 +2,17 @@
  * @file NtcThermistor.h
  * @brief Hardware-agnostic NTC thermistor driver for temperature measurement.
  *
- * This header provides a comprehensive interface for temperature measurement using
- * NTC (Negative Temperature Coefficient) thermistors. It supports various NTC types
- * and provides both lookup table and mathematical conversion methods.
+ * This header provides a comprehensive interface for temperature measurement
+ * using NTC (Negative Temperature Coefficient) thermistors. It supports various
+ * NTC types and provides both lookup table and mathematical conversion methods.
  *
  * @author Nebiyu Tadesse
  * @date 2025
  * @copyright HardFOC
  */
 
-#pragma once
+#ifndef NTC_THERMISTOR_H
+#define NTC_THERMISTOR_H
 
 #include <cstdint>
 #include <memory>
@@ -38,7 +39,8 @@
  * - Built-in calibration and filtering
  * - Comprehensive error handling
  *
- * @tparam AdcType The ADC implementation type that inherits from NTC::NtcAdcInterface<AdcType>
+ * @tparam AdcType The ADC implementation type that inherits from
+ * NTC::NtcAdcInterface<AdcType>
  *
  * @note The driver requires an ADC type that implements NTC::NtcAdcInterface
  *
@@ -61,26 +63,25 @@
  *if (thermistor.Initialize()) {
  * float temp_c;
  * if (thermistor.ReadTemperatureCelsius(&temp_c) == NTC_SUCCESS) {
- * printf("Temperature: %.2f°C\n", temp_c);
+ * printf("Temperature: %.2F°C\n", temp_c);
  * }
  * }
  * @endcode
  * @example Custom Configuration
  * @code
  * // Create custom configuration
- * ntc_config_t config = NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S();
+ * ntc_config_t config = GetDefaultNtcG163Jft103Ft1SConfig();
  * config.adc_channel = 1;
- * config.series_resistance = 10000.0f;
+ * config.series_resistance = 10000.0F;
  * config.conversion_method = NTC_CONVERSION_MATHEMATICAL;
  * config.enable_filtering = true;
- * config.filter_alpha = 0.1f;
+ * config.filter_alpha = 0.1F;
  *
  * NtcThermistor<MyAdc> thermistor(config, &my_adc);
  * thermistor.Initialize();
  * @endcode
  */
-template <typename AdcType>
-class NtcThermistor {
+template <typename AdcType> class NtcThermistor {
 public:
   //==============================================================//
   // CONSTRUCTORS AND DESTRUCTOR
@@ -94,41 +95,43 @@ public:
    * appropriate values for the thermistor type.
    *
    * @param ntc_type NTC thermistor type (e.g., NTC_TYPE_NTCG163JFT103FT1S)
-   * @param adc_interface Pointer to ADC interface (must inherit from NTC::NtcAdcInterface<AdcType>)
+   * @param adc_interface Pointer to ADC interface (must inherit from
+   * NTC::NtcAdcInterface<AdcType>)
    *
    * @note The ADC interface must remain valid for the lifetime of the
    *       NtcThermistor instance. The driver does not take ownership.
    *
    * @warning The ADC interface pointer must not be nullptr.
    */
-  NtcThermistor(ntc_type_t ntc_type, AdcType* adc_interface) noexcept;
+  NtcThermistor(NtcType ntc_type, AdcType *adc_interface) noexcept;
 
   /**
    * @brief Constructor with custom configuration
    * @param config NTC configuration structure
-   * @param adc_interface Pointer to ADC interface (must inherit from NTC::NtcAdcInterface<AdcType>)
+   * @param adc_interface Pointer to ADC interface (must inherit from
+   * NTC::NtcAdcInterface<AdcType>)
    */
-  NtcThermistor(const ntc_config_t& config, AdcType* adc_interface) noexcept;
+  NtcThermistor(const ntc_config_t &config, AdcType *adc_interface) noexcept;
 
   /**
    * @brief Copy constructor is deleted
    */
-  NtcThermistor(const NtcThermistor&) = delete;
+  NtcThermistor(const NtcThermistor &) = delete;
 
   /**
    * @brief Assignment operator is deleted
    */
-  NtcThermistor& operator=(const NtcThermistor&) = delete;
+  NtcThermistor &operator=(const NtcThermistor &) = delete;
 
   /**
    * @brief Move constructor
    */
-  NtcThermistor(NtcThermistor&&) noexcept = default;
+  NtcThermistor(NtcThermistor &&) noexcept = default;
 
   /**
    * @brief Move assignment operator
    */
-  NtcThermistor& operator=(NtcThermistor&&) noexcept = default;
+  NtcThermistor &operator=(NtcThermistor &&) noexcept = default;
 
   /**
    * @brief Virtual destructor
@@ -162,14 +165,14 @@ public:
    * @param config Pointer to store configuration
    * @return Error code
    */
-  ntc_err_t GetConfiguration(ntc_config_t* config) const noexcept;
+  NtcError GetConfiguration(ntc_config_t *config) const noexcept;
 
   /**
    * @brief Set configuration
    * @param config New configuration
    * @return Error code
    */
-  ntc_err_t SetConfiguration(const ntc_config_t& config) noexcept;
+  NtcError SetConfiguration(const ntc_config_t &config) noexcept;
 
   //==============================================================//
   // TEMPERATURE READING
@@ -191,28 +194,28 @@ public:
    * @warning The driver must be initialized before calling this function.
    *          Check return value before using the temperature value.
    */
-  ntc_err_t ReadTemperatureCelsius(float* temperature_celsius) noexcept;
+  NtcError ReadTemperatureCelsius(float *temperature_celsius) noexcept;
 
   /**
    * @brief Read temperature in Fahrenheit
    * @param temperature_fahrenheit Pointer to store temperature
    * @return Error code
    */
-  ntc_err_t ReadTemperatureFahrenheit(float* temperature_fahrenheit) noexcept;
+  NtcError ReadTemperatureFahrenheit(float *temperature_fahrenheit) noexcept;
 
   /**
    * @brief Read temperature in Kelvin
    * @param temperature_kelvin Pointer to store temperature
    * @return Error code
    */
-  ntc_err_t ReadTemperatureKelvin(float* temperature_kelvin) noexcept;
+  NtcError ReadTemperatureKelvin(float *temperature_kelvin) noexcept;
 
   /**
    * @brief Read complete temperature information
    * @param reading Pointer to store reading information
    * @return Error code
    */
-  ntc_err_t ReadTemperature(ntc_reading_t* reading) noexcept;
+  NtcError ReadTemperature(ntc_reading_t *reading) noexcept;
 
   //==============================================================//
   // RESISTANCE AND VOLTAGE
@@ -223,21 +226,21 @@ public:
    * @param resistance_ohms Pointer to store resistance
    * @return Error code
    */
-  ntc_err_t GetResistance(float* resistance_ohms) noexcept;
+  NtcError GetResistance(float *resistance_ohms) noexcept;
 
   /**
    * @brief Get voltage across thermistor
    * @param voltage_volts Pointer to store voltage
    * @return Error code
    */
-  ntc_err_t GetVoltage(float* voltage_volts) noexcept;
+  NtcError GetVoltage(float *voltage_volts) noexcept;
 
   /**
    * @brief Get raw ADC value
    * @param adc_value Pointer to store ADC value
    * @return Error code
    */
-  ntc_err_t GetRawAdcValue(uint32_t* adc_value) noexcept;
+  NtcError GetRawAdcValue(uint32_t *adc_value) noexcept;
 
   //==============================================================//
   // CALIBRATION
@@ -248,27 +251,27 @@ public:
    * @param reference_temperature_celsius Known reference temperature
    * @return Error code
    */
-  ntc_err_t Calibrate(float reference_temperature_celsius) noexcept;
+  NtcError Calibrate(float reference_temperature_celsius) noexcept;
 
   /**
    * @brief Set calibration offset
    * @param offset_celsius Calibration offset in Celsius
    * @return Error code
    */
-  ntc_err_t SetCalibrationOffset(float offset_celsius) noexcept;
+  NtcError SetCalibrationOffset(float offset_celsius) noexcept;
 
   /**
    * @brief Get calibration offset
    * @param offset_celsius Pointer to store offset
    * @return Error code
    */
-  ntc_err_t GetCalibrationOffset(float* offset_celsius) const noexcept;
+  NtcError GetCalibrationOffset(float *offset_celsius) const noexcept;
 
   /**
    * @brief Reset calibration
    * @return Error code
    */
-  ntc_err_t ResetCalibration() noexcept;
+  NtcError ResetCalibration() noexcept;
 
   //==============================================================//
   // CONFIGURATION METHODS
@@ -279,35 +282,35 @@ public:
    * @param method Conversion method
    * @return Error code
    */
-  ntc_err_t SetConversionMethod(ntc_conversion_method_t method) noexcept;
+  NtcError SetConversionMethod(NtcConversionMethod method) noexcept;
 
   /**
    * @brief Set voltage divider parameters
    * @param series_resistance Series resistance (ohms)
    * @return Error code
    */
-  ntc_err_t SetVoltageDivider(float series_resistance) noexcept;
+  NtcError SetVoltageDivider(float series_resistance) noexcept;
 
   /**
    * @brief Set reference voltage
    * @param reference_voltage Reference voltage (V)
    * @return Error code
    */
-  ntc_err_t SetReferenceVoltage(float reference_voltage) noexcept;
+  NtcError SetReferenceVoltage(float reference_voltage) noexcept;
 
   /**
    * @brief Set beta value
    * @param beta_value Beta value (K)
    * @return Error code
    */
-  ntc_err_t SetBetaValue(float beta_value) noexcept;
+  NtcError SetBetaValue(float beta_value) noexcept;
 
   /**
    * @brief Set ADC channel
    * @param adc_channel ADC channel number
    * @return Error code
    */
-  ntc_err_t SetAdcChannel(uint8_t adc_channel) noexcept;
+  NtcError SetAdcChannel(uint8_t adc_channel) noexcept;
 
   /**
    * @brief Set sampling parameters
@@ -315,7 +318,8 @@ public:
    * @param sample_delay_ms Delay between samples (ms)
    * @return Error code
    */
-  ntc_err_t SetSamplingParameters(uint32_t sample_count, uint32_t sample_delay_ms) noexcept;
+  NtcError SetSamplingParameters(uint32_t sample_count,
+                                 uint32_t sample_delay_ms) noexcept;
 
   /**
    * @brief Enable/disable filtering
@@ -323,7 +327,7 @@ public:
    * @param alpha Filter alpha value (0.0-1.0)
    * @return Error code
    */
-  ntc_err_t SetFiltering(bool enable, float alpha = 0.1f) noexcept;
+  NtcError SetFiltering(bool enable, float alpha = 0.1F) noexcept;
 
   //==============================================================//
   // UTILITY FUNCTIONS
@@ -362,14 +366,14 @@ public:
    * @param error Error code
    * @return Error string
    */
-  static const char* GetErrorString(ntc_err_t error) noexcept;
+  static const char *GetErrorString(NtcError error) noexcept;
 
   /**
    * @brief Get NTC type string
    * @param type NTC type
    * @return Type string
    */
-  static const char* GetTypeString(ntc_type_t type) noexcept;
+  static const char *GetTypeString(NtcType type) noexcept;
 
 private:
   //==============================================================//
@@ -377,7 +381,7 @@ private:
   //==============================================================//
 
   ntc_config_t config_;    ///< NTC configuration
-  AdcType* adc_interface_; ///< ADC interface pointer
+  AdcType *adc_interface_; ///< ADC interface pointer
   bool initialized_;       ///< Initialization status
 
   // Filtering
@@ -393,14 +397,15 @@ private:
    * @param config Configuration to validate
    * @return Error code
    */
-  ntc_err_t validateConfiguration(const ntc_config_t& config) const noexcept;
+  [[nodiscard]] NtcError
+  validateConfiguration(const ntc_config_t &config) const noexcept;
 
   /**
    * @brief Read ADC voltage
    * @param voltage_volts Pointer to store voltage
    * @return Error code
    */
-  ntc_err_t readAdcVoltage(float* voltage_volts) noexcept;
+  NtcError readAdcVoltage(float *voltage_volts) noexcept;
 
   /**
    * @brief Calculate resistance from voltage
@@ -408,7 +413,8 @@ private:
    * @param resistance_ohms Pointer to store resistance
    * @return Error code
    */
-  ntc_err_t calculateResistance(float voltage_volts, float* resistance_ohms) noexcept;
+  NtcError calculateResistance(float voltage_volts,
+                               float *resistance_ohms) noexcept;
 
   /**
    * @brief Convert resistance to temperature
@@ -416,8 +422,8 @@ private:
    * @param temperature_celsius Pointer to store temperature
    * @return Error code
    */
-  ntc_err_t convertResistanceToTemperature(float resistance_ohms,
-                                           float* temperature_celsius) noexcept;
+  NtcError convertResistanceToTemperature(float resistance_ohms,
+                                          float *temperature_celsius) noexcept;
 
   /**
    * @brief Apply filtering
@@ -431,10 +437,14 @@ private:
    * @param ntc_type NTC type
    * @param config Pointer to configuration to initialize
    */
-  static void initializeConfigForType(ntc_type_t ntc_type, ntc_config_t* config) noexcept;
+  static void initializeConfigForType(NtcType ntc_type,
+                                      ntc_config_t *config) noexcept;
 };
 
 // Include template implementation
 #define NTC_THERMISTOR_HEADER_INCLUDED
+// NOLINTNEXTLINE(bugprone-suspicious-include) - Template implementation file
 #include "../src/NtcThermistor.cpp"
 #undef NTC_THERMISTOR_HEADER_INCLUDED
+
+#endif // NTC_THERMISTOR_H

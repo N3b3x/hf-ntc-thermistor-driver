@@ -1,10 +1,11 @@
 /**
  * @file NtcConversion.h
- * @brief Mathematical conversion functions for NTC thermistor temperature calculation.
+ * @brief Mathematical conversion functions for NTC thermistor temperature
+ * calculation.
  *
- * This header provides mathematical conversion methods for calculating temperature
- * from NTC thermistor resistance values using the Steinhart-Hart equation and
- * beta parameter approximation.
+ * This header provides mathematical conversion methods for calculating
+ * temperature from NTC thermistor resistance values using the Steinhart-Hart
+ * equation and beta parameter approximation.
  *
  * All conversion functions are in the @ref NTC namespace and can be used
  * independently of the NtcThermistor class for standalone calculations.
@@ -14,7 +15,8 @@
  * @copyright HardFOC
  */
 
-#pragma once
+#ifndef NTC_CONVERSION_H
+#define NTC_CONVERSION_H
 
 #include <cmath>
 #include <cstdint>
@@ -23,48 +25,48 @@
 //  Conversion Constants
 //--------------------------------------
 
-namespace NTC {
-/**
- * @brief Physical constants for NTC calculations
- */
-namespace Constants {
-constexpr float kAbsoluteZeroCelsius = -273.15f; ///< Absolute zero in Celsius
-constexpr float kKelvinOffset = 273.15f;         ///< Celsius to Kelvin conversion offset
-constexpr float kReferenceTemperatureC = 25.0f;  ///< Reference temperature (25°C)
-constexpr float kSteinhartHartA = 1.129241e-3f;  ///< Steinhart-Hart coefficient A
-constexpr float kSteinhartHartB = 2.341077e-4f;  ///< Steinhart-Hart coefficient B
-constexpr float kSteinhartHartC = 8.775468e-8f;  ///< Steinhart-Hart coefficient C
+namespace NTC::Constants {
+constexpr float ABSOLUTE_ZERO_CELSIUS_ = -273.15F; ///< Absolute zero in Celsius
+constexpr float KELVIN_OFFSET_ =
+    273.15F; ///< Celsius to Kelvin conversion offset
+constexpr float REFERENCE_TEMPERATURE_C_ =
+    25.0F; ///< Reference temperature (25°C)
+constexpr float STEINHART_HART_A_ =
+    1.129241e-3F; ///< Steinhart-Hart coefficient A
+constexpr float STEINHART_HART_B_ =
+    2.341077e-4F; ///< Steinhart-Hart coefficient B
+constexpr float STEINHART_HART_C_ =
+    8.775468e-8F; ///< Steinhart-Hart coefficient C
 
 // Validation limits
-constexpr float kMinResistanceOhms = 0.1f;         ///< Minimum valid resistance (ohms)
-constexpr float kMaxResistanceOhms = 1000000.0f;   ///< Maximum valid resistance (ohms)
-constexpr float kMinTemperatureCelsius = -273.15f; ///< Minimum valid temperature (°C)
-constexpr float kMaxTemperatureCelsius = 1000.0f;  ///< Maximum valid temperature (°C)
-constexpr float kMinBetaValue = 1000.0f;           ///< Minimum valid beta value (K)
-constexpr float kMaxBetaValue = 5000.0f;           ///< Maximum valid beta value (K)
+constexpr float MIN_RESISTANCE_OHMS_ =
+    0.1F; ///< Minimum valid resistance (ohms)
+constexpr float MAX_RESISTANCE_OHMS_ =
+    1000000.0F; ///< Maximum valid resistance (ohms)
+constexpr float MIN_TEMPERATURE_CELSIUS_ =
+    -273.15F; ///< Minimum valid temperature (°C)
+constexpr float MAX_TEMPERATURE_CELSIUS_ =
+    1000.0F;                               ///< Maximum valid temperature (°C)
+constexpr float MIN_BETA_VALUE_ = 1000.0F; ///< Minimum valid beta value (K)
+constexpr float MAX_BETA_VALUE_ = 5000.0F; ///< Maximum valid beta value (K)
 
 // Numerical precision constants
-constexpr float kEpsilonFloat = 1e-6f;   ///< Float comparison epsilon
-constexpr float kEpsilonDouble = 1e-12f; ///< Double precision epsilon
-constexpr float kOneFloat = 1.0f;        ///< One as float
-constexpr float kZeroFloat = 0.0f;       ///< Zero as float
+constexpr float EPSILON_FLOAT_ = 1e-6F;   ///< Float comparison epsilon
+constexpr float EPSILON_DOUBLE_ = 1e-12F; ///< Double precision epsilon
+constexpr float ONE_FLOAT_ = 1.0F;        ///< One as float
+constexpr float ZERO_FLOAT_ = 0.0F;       ///< Zero as float
 
 // Time conversion constants
-constexpr uint32_t kMillisecondsPerSecond = 1000U; ///< Milliseconds per second
+constexpr uint32_t MILLISECONDS_PER_SECOND_ =
+    1000U; ///< Milliseconds per second
 
 // Temperature conversion constants
-constexpr float kCelsiusToFahrenheitMultiplier = 9.0f / 5.0f; ///< Celsius to Fahrenheit multiplier
-constexpr float kFahrenheitOffset = 32.0f;                    ///< Fahrenheit offset
-constexpr float kFahrenheitToCelsiusMultiplier = 5.0f / 9.0f; ///< Fahrenheit to Celsius multiplier
-} // namespace Constants
-} // namespace NTC
-
-// Legacy compatibility macros (deprecated, use NTC::Constants::*)
-#define NTC_ABSOLUTE_ZERO_CELSIUS NTC::Constants::kAbsoluteZeroCelsius
-#define NTC_REFERENCE_TEMPERATURE_C NTC::Constants::kReferenceTemperatureC
-#define NTC_STEINHART_HART_A NTC::Constants::kSteinhartHartA
-#define NTC_STEINHART_HART_B NTC::Constants::kSteinhartHartB
-#define NTC_STEINHART_HART_C NTC::Constants::kSteinhartHartC
+constexpr float CELSIUS_TO_FAHRENHEIT_MULTIPLIER_ =
+    9.0F / 5.0F; ///< Celsius to Fahrenheit multiplier
+constexpr float FAHRENHEIT_OFFSET_ = 32.0F; ///< Fahrenheit offset
+constexpr float FAHRENHEIT_TO_CELSIUS_MULTIPLIER_ =
+    5.0F / 9.0F; ///< Fahrenheit to Celsius multiplier
+} // namespace NTC::Constants
 
 //--------------------------------------
 //  Conversion Methods
@@ -91,8 +93,10 @@ namespace NTC {
  * @warning Input resistance must be positive and non-zero. Beta value should
  *          be within valid range (1000-5000K).
  */
-bool ConvertResistanceToTemperatureBeta(float resistance_ohms, float resistance_at_25c,
-                                        float beta_value, float* temperature_celsius) noexcept;
+bool ConvertResistanceToTemperatureBeta(float resistance_ohms,
+                                        float resistance_at_25c,
+                                        float beta_value,
+                                        float *temperature_celsius) noexcept;
 
 /**
  * @brief Convert temperature to resistance using beta parameter
@@ -102,8 +106,10 @@ bool ConvertResistanceToTemperatureBeta(float resistance_ohms, float resistance_
  * @param resistance_ohms Pointer to store resistance (ohms)
  * @return true if successful, false otherwise
  */
-bool ConvertTemperatureToResistanceBeta(float temperature_celsius, float resistance_at_25c,
-                                        float beta_value, float* resistance_ohms) noexcept;
+bool ConvertTemperatureToResistanceBeta(float temperature_celsius,
+                                        float resistance_at_25c,
+                                        float beta_value,
+                                        float *resistance_ohms) noexcept;
 
 /**
  * @brief Convert resistance to temperature using Steinhart-Hart equation
@@ -126,9 +132,9 @@ bool ConvertTemperatureToResistanceBeta(float temperature_celsius, float resista
  *
  * @see ValidateSteinhartHartCoefficients() to validate coefficients
  */
-bool ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float coeff_a,
-                                                 float coeff_b, float coeff_c,
-                                                 float* temperature_celsius) noexcept;
+bool ConvertResistanceToTemperatureSteinhartHart(
+    float resistance_ohms, float coeff_a, float coeff_b, float coeff_c,
+    float *temperature_celsius) noexcept;
 
 /**
  * @brief Convert temperature to resistance using Steinhart-Hart equation
@@ -139,27 +145,29 @@ bool ConvertResistanceToTemperatureSteinhartHart(float resistance_ohms, float co
  * @param resistance_ohms Pointer to store resistance (ohms)
  * @return true if successful, false otherwise
  */
-bool ConvertTemperatureToResistanceSteinhartHart(float temperature_celsius, float coeff_a,
-                                                 float coeff_b, float coeff_c,
-                                                 float* resistance_ohms) noexcept;
+bool ConvertTemperatureToResistanceSteinhartHart(
+    float temperature_celsius, float coeff_a, float coeff_b, float coeff_c,
+    float *resistance_ohms) noexcept;
 
 /**
- * @brief Convert resistance to temperature using default Steinhart-Hart coefficients
+ * @brief Convert resistance to temperature using default Steinhart-Hart
+ * coefficients
  * @param resistance_ohms Thermistor resistance (ohms)
  * @param temperature_celsius Pointer to store temperature (°C)
  * @return true if successful, false otherwise
  */
 bool ConvertResistanceToTemperatureDefault(float resistance_ohms,
-                                           float* temperature_celsius) noexcept;
+                                           float *temperature_celsius) noexcept;
 
 /**
- * @brief Convert temperature to resistance using default Steinhart-Hart coefficients
+ * @brief Convert temperature to resistance using default Steinhart-Hart
+ * coefficients
  * @param temperature_celsius Temperature (°C)
  * @param resistance_ohms Pointer to store resistance (ohms)
  * @return true if successful, false otherwise
  */
 bool ConvertTemperatureToResistanceDefault(float temperature_celsius,
-                                           float* resistance_ohms) noexcept;
+                                           float *resistance_ohms) noexcept;
 
 //--------------------------------------
 //  Voltage Divider Calculations
@@ -173,8 +181,10 @@ bool ConvertTemperatureToResistanceDefault(float temperature_celsius,
  * @param resistance_ohms Pointer to store thermistor resistance (ohms)
  * @return true if successful, false otherwise
  */
-bool CalculateThermistorResistance(float voltage_thermistor, float reference_voltage,
-                                   float series_resistance, float* resistance_ohms) noexcept;
+bool CalculateThermistorResistance(float voltage_thermistor,
+                                   float reference_voltage,
+                                   float series_resistance,
+                                   float *resistance_ohms) noexcept;
 
 /**
  * @brief Calculate voltage across thermistor from resistance
@@ -185,7 +195,8 @@ bool CalculateThermistorResistance(float voltage_thermistor, float reference_vol
  * @return true if successful, false otherwise
  */
 bool CalculateThermistorVoltage(float resistance_ohms, float reference_voltage,
-                                float series_resistance, float* voltage_thermistor) noexcept;
+                                float series_resistance,
+                                float *voltage_thermistor) noexcept;
 
 /**
  * @brief Calculate voltage divider ratio
@@ -194,8 +205,9 @@ bool CalculateThermistorVoltage(float resistance_ohms, float reference_voltage,
  * @param ratio Pointer to store voltage ratio
  * @return true if successful, false otherwise
  */
-bool CalculateVoltageDividerRatio(float resistance_ohms, float series_resistance,
-                                  float* ratio) noexcept;
+bool CalculateVoltageDividerRatio(float resistance_ohms,
+                                  float series_resistance,
+                                  float *ratio) noexcept;
 
 //--------------------------------------
 //  Validation Functions
@@ -208,7 +220,8 @@ bool CalculateVoltageDividerRatio(float resistance_ohms, float series_resistance
  * @param max_resistance Maximum valid resistance
  * @return true if valid, false otherwise
  */
-bool ValidateResistance(float resistance_ohms, float min_resistance, float max_resistance) noexcept;
+bool ValidateResistance(float resistance_ohms, float min_resistance,
+                        float max_resistance) noexcept;
 
 /**
  * @brief Validate temperature value
@@ -227,7 +240,8 @@ bool ValidateTemperature(float temperature_celsius, float min_temperature,
  * @param max_voltage Maximum valid voltage
  * @return true if valid, false otherwise
  */
-bool ValidateVoltage(float voltage_volts, float min_voltage, float max_voltage) noexcept;
+bool ValidateVoltage(float voltage_volts, float min_voltage,
+                     float max_voltage) noexcept;
 
 /**
  * @brief Validate beta value
@@ -243,7 +257,8 @@ bool ValidateBetaValue(float beta_value) noexcept;
  * @param c Coefficient C
  * @return true if valid, false otherwise
  */
-bool ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff_c) noexcept;
+bool ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b,
+                                       float coeff_c) noexcept;
 
 //--------------------------------------
 //  Utility Functions
@@ -251,30 +266,35 @@ bool ValidateSteinhartHartCoefficients(float coeff_a, float coeff_b, float coeff
 
 /**
  * @brief Calculate beta value from two temperature-resistance pairs
- * @param t1 First temperature (°C)
- * @param r1 First resistance (ohms)
- * @param t2 Second temperature (°C)
- * @param r2 Second resistance (ohms)
+ * @param temp1_celsius First temperature (°C)
+ * @param resistance1_ohms First resistance (ohms)
+ * @param temp2_celsius Second temperature (°C)
+ * @param resistance2_ohms Second resistance (ohms)
  * @param beta_value Pointer to store calculated beta value
  * @return true if successful, false otherwise
  */
-bool CalculateBetaValue(float t1, float r1, float t2, float r2, float* beta_value) noexcept;
+bool CalculateBetaValue(float temp1_celsius, float resistance1_ohms,
+                        float temp2_celsius, float resistance2_ohms,
+                        float *beta_value) noexcept;
 
 /**
- * @brief Calculate Steinhart-Hart coefficients from three temperature-resistance pairs
- * @param t1 First temperature (°C)
- * @param r1 First resistance (ohms)
- * @param t2 Second temperature (°C)
- * @param r2 Second resistance (ohms)
- * @param t3 Third temperature (°C)
- * @param r3 Third resistance (ohms)
- * @param a Pointer to store coefficient A
- * @param b Pointer to store coefficient B
- * @param c Pointer to store coefficient C
+ * @brief Calculate Steinhart-Hart coefficients from three
+ * temperature-resistance pairs
+ * @param temp1_celsius First temperature (°C)
+ * @param resistance1_ohms First resistance (ohms)
+ * @param temp2_celsius Second temperature (°C)
+ * @param resistance2_ohms Second resistance (ohms)
+ * @param temp3_celsius Third temperature (°C)
+ * @param resistance3_ohms Third resistance (ohms)
+ * @param coeff_a Pointer to store coefficient A
+ * @param coeff_b Pointer to store coefficient B
+ * @param coeff_c Pointer to store coefficient C
  * @return true if successful, false otherwise
  */
-bool CalculateSteinhartHartCoefficients(float t1, float r1, float t2, float r2, float t3, float r3,
-                                        float* coeff_a, float* coeff_b, float* coeff_c) noexcept;
+bool CalculateSteinhartHartCoefficients(
+    float temp1_celsius, float resistance1_ohms, float temp2_celsius,
+    float resistance2_ohms, float temp3_celsius, float resistance3_ohms,
+    float *coeff_a, float *coeff_b, float *coeff_c) noexcept;
 
 /**
  * @brief Calculate temperature accuracy estimate
@@ -284,8 +304,10 @@ bool CalculateSteinhartHartCoefficients(float t1, float r1, float t2, float r2, 
  * @param accuracy_celsius Pointer to store accuracy estimate (°C)
  * @return true if successful, false otherwise
  */
-bool CalculateTemperatureAccuracy(float resistance_ohms, float resistance_tolerance,
-                                  float beta_tolerance, float* accuracy_celsius) noexcept;
+bool CalculateTemperatureAccuracy(float resistance_ohms,
+                                  float resistance_tolerance,
+                                  float beta_tolerance,
+                                  float *accuracy_celsius) noexcept;
 
 /**
  * @brief Calculate optimal series resistance for voltage divider
@@ -295,7 +317,11 @@ bool CalculateTemperatureAccuracy(float resistance_ohms, float resistance_tolera
  * @param optimal_resistance Pointer to store optimal series resistance (ohms)
  * @return true if successful, false otherwise
  */
-bool CalculateOptimalSeriesResistance(float thermistor_resistance_at_25c, float min_temperature,
-                                      float max_temperature, float* optimal_resistance) noexcept;
+bool CalculateOptimalSeriesResistance(float thermistor_resistance_at_25c,
+                                      float min_temperature,
+                                      float max_temperature,
+                                      float *optimal_resistance) noexcept;
 
 } // namespace NTC
+
+#endif // NTC_CONVERSION_H
