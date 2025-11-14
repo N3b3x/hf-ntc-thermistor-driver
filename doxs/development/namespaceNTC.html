@@ -94,7 +94,6 @@ $(function(){initNavTree('namespaceNTC.html',''); initResizable(); });
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">NTC Namespace Reference</div></div>
 </div><!--header-->
@@ -116,24 +115,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNTC_1_1ntc__lookup__table__t.html">ntc_lookup_table_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup table structure.  <a href="structNTC_1_1ntc__lookup__table__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTC_1_1NtcAdcInterface.html">NtcAdcInterface</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRTP-based template interface for ADC operations.  <a href="classNTC_1_1NtcAdcInterface.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a38b88f41b2a4e17b568fa3edfdde6b03" id="r_a38b88f41b2a4e17b568fa3edfdde6b03"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03">AdcError</a> : uint8_t { <br />
-&#160;&#160;<a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38">Success</a> = 0
-, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6">NotInitialized</a>
-, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4">InvalidChannel</a>
-, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a723ee677cab1d41ba376d588d78146ed">ReadFailed</a>
-, <br />
-&#160;&#160;<a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03ac85a251cc457840f1e032f1b733e9398">Timeout</a>
-, <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03">HardwareError</a>
-<br />
- }</td></tr>
-<tr class="memdesc:a38b88f41b2a4e17b568fa3edfdde6b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC error codes.  <a href="#a38b88f41b2a4e17b568fa3edfdde6b03">More...</a><br /></td></tr>
-<tr class="separator:a38b88f41b2a4e17b568fa3edfdde6b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -222,45 +203,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:a1b6cb12400525c268d9bf212b6e73d36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get NTCG163JF103FT1S lookup table.  <br /></td></tr>
 <tr class="separator:a1b6cb12400525c268d9bf212b6e73d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a38b88f41b2a4e17b568fa3edfdde6b03" name="a38b88f41b2a4e17b568fa3edfdde6b03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38b88f41b2a4e17b568fa3edfdde6b03">&#9670;&#160;</a></span>AdcError</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a> : uint8_t</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ADC error codes. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38" name="a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38"></a>Success&#160;</td><td class="fielddoc"><p>Operation successful. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6" name="a38b88f41b2a4e17b568fa3edfdde6b03a9646ad3a1c3e708b4fa8b4b4270fbab6"></a>NotInitialized&#160;</td><td class="fielddoc"><p>ADC not initialized. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4" name="a38b88f41b2a4e17b568fa3edfdde6b03a94a9e4213f08b322090d83fa5a8be5e4"></a>InvalidChannel&#160;</td><td class="fielddoc"><p>Invalid ADC channel. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a723ee677cab1d41ba376d588d78146ed" name="a38b88f41b2a4e17b568fa3edfdde6b03a723ee677cab1d41ba376d588d78146ed"></a>ReadFailed&#160;</td><td class="fielddoc"><p>ADC read operation failed. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03ac85a251cc457840f1e032f1b733e9398" name="a38b88f41b2a4e17b568fa3edfdde6b03ac85a251cc457840f1e032f1b733e9398"></a>Timeout&#160;</td><td class="fielddoc"><p>Operation timeout. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03" name="a38b88f41b2a4e17b568fa3edfdde6b03a4852946e074a1f48ed7de9a024b10c03"></a>HardwareError&#160;</td><td class="fielddoc"><p>Hardware-level error. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ada06b0b3be062dec1351057d2a30ad7b" name="ada06b0b3be062dec1351057d2a30ad7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada06b0b3be062dec1351057d2a30ad7b">&#9670;&#160;</a></span>BinarySearchLookupTable()</h2>

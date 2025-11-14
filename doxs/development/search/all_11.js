@@ -17,6 +17,6 @@ var searchData=
   ['steinhart_5fhart_5fa_5f_14',['STEINHART_HART_A_',['../namespaceNTC_1_1Constants.html#ad17bf0e376a2a231654a20e09b1ce934',1,'NTC::Constants']]],
   ['steinhart_5fhart_5fb_5f_15',['STEINHART_HART_B_',['../namespaceNTC_1_1Constants.html#af245fa0d038cd5d5d214333af43bc3f8',1,'NTC::Constants']]],
   ['steinhart_5fhart_5fc_5f_16',['STEINHART_HART_C_',['../namespaceNTC_1_1Constants.html#ab27b77c8d2e42e55dec30aec18d3cbac',1,'NTC::Constants']]],
-  ['success_17',['Success',['../namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03a505a83f220c02df2f85c3810cd9ceb38',1,'NTC::Success'],['../NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9daa505a83f220c02df2f85c3810cd9ceb38',1,'Success:&#160;NtcTypes.h']]],
+  ['success_17',['Success',['../namespacentc.html#a01084a88ebce86485b27e6b963fa5941a505a83f220c02df2f85c3810cd9ceb38',1,'ntc::Success'],['../ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9daa505a83f220c02df2f85c3810cd9ceb38',1,'Success:&#160;ntc_types.hpp']]],
   ['supported_20ntc_20types_18',['Supported NTC Types',['../index.html#autotoc_md4',1,'']]]
 ];

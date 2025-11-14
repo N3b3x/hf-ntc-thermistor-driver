@@ -10,7 +10,7 @@ var searchData=
   ['calibrate_7',['Calibrate',['../classNtcThermistor.html#aff226e4010c830261a9f1eab84beb302',1,'NtcThermistor']]],
   ['calibration_8',['Calibration',['../index.html#autotoc_md13',1,'']]],
   ['calibration_5foffset_9',['calibration_offset',['../structntc__config__t.html#abf4c362acc5e44cae04710cf30daf0b2',1,'ntc_config_t']]],
-  ['calibrationfailed_10',['CalibrationFailed',['../NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9daabe354e42be93887c3e936e8b0892f5af',1,'NtcTypes.h']]],
+  ['calibrationfailed_10',['CalibrationFailed',['../ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9daabe354e42be93887c3e936e8b0892f5af',1,'ntc_types.hpp']]],
   ['celsius_5fto_5ffahrenheit_5fmultiplier_5f_11',['CELSIUS_TO_FAHRENHEIT_MULTIPLIER_',['../namespaceNTC_1_1Constants.html#a252917811331d0acb6d796a00434657e',1,'NTC::Constants']]],
   ['celsiustofahrenheit_12',['CelsiusToFahrenheit',['../classNtcThermistor.html#a9f1c76053ef3029a40a5aa25f2687105',1,'NtcThermistor']]],
   ['celsiustokelvin_13',['CelsiusToKelvin',['../classNtcThermistor.html#a3fe4d28a0ba0c7b59dfea1aa0d80a4bb',1,'NtcThermistor']]],
@@ -22,7 +22,7 @@ var searchData=
   ['contributing_19',['🤝 Contributing',['../index.html#autotoc_md24',1,'']]],
   ['conversion_20methods_20',['Conversion Methods',['../index.html#autotoc_md20',1,'']]],
   ['conversion_5fmethod_21',['conversion_method',['../structntc__config__t.html#a81e069258f118f95093a787426eb6576',1,'ntc_config_t']]],
-  ['conversionfailed_22',['ConversionFailed',['../NtcTypes_8h.html#a2e2559895ad8d6429024959b3200e9daaff957d0751db2f27185a73e9b7485b9f',1,'NtcTypes.h']]],
+  ['conversionfailed_22',['ConversionFailed',['../ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9daaff957d0751db2f27185a73e9b7485b9f',1,'ntc_types.hpp']]],
   ['convertresistancetotemperaturebeta_23',['ConvertResistanceToTemperatureBeta',['../namespaceNTC.html#a2241358b1f0b0a19e1b59bf7e55298a8',1,'NTC']]],
   ['convertresistancetotemperaturedefault_24',['ConvertResistanceToTemperatureDefault',['../namespaceNTC.html#a8cca1b35b9d4de92cb2388323033bcd1',1,'NTC']]],
   ['convertresistancetotemperaturesteinharthart_25',['ConvertResistanceToTemperatureSteinhartHart',['../namespaceNTC.html#aa1785d9467faa154b30d4d3710ca12b9',1,'NTC']]],
@@ -30,6 +30,6 @@ var searchData=
   ['converttemperaturetoresistancedefault_27',['ConvertTemperatureToResistanceDefault',['../namespaceNTC.html#aa922d3f7ff526eac78cd1bc3a1fffb25',1,'NTC']]],
   ['converttemperaturetoresistancesteinharthart_28',['ConvertTemperatureToResistanceSteinhartHart',['../namespaceNTC.html#a409b9386c346fdac5dbf35602763bc0b',1,'NTC']]],
   ['core_20functions_29',['Core Functions',['../index.html#autotoc_md9',1,'']]],
-  ['custom_30',['Custom',['../NtcTypes_8h.html#af55611f166cbf0fe94f4aa4ae2de9bcea90589c47f06eb971d548591f23c285af',1,'NtcTypes.h']]],
+  ['custom_30',['Custom',['../ntc__types_8hpp.html#af55611f166cbf0fe94f4aa4ae2de9bcea90589c47f06eb971d548591f23c285af',1,'ntc_types.hpp']]],
   ['custom_20configuration_20example_31',['Custom Configuration Example',['../index.html#autotoc_md7',1,'']]]
 ];
