@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['baseadc_0',['BaseAdc',['../classNTC_1_1BaseAdc.html',1,'NTC']]]
+  ['mockesp32adc_0',['MockEsp32Adc',['../classMockEsp32Adc.html',1,'']]]
 ];

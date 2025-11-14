@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['deinitialize_0',['Deinitialize',['../classNtcThermistor.html#a84a6f11997eb3f93cc5d47875f810939',1,'NtcThermistor']]],
-  ['documentation_1',['📚 Documentation',['../index.html#autotoc_md11',1,'']]],
-  ['driver_2',['HF-NTC-Thermistor Driver',['../index.html',1,'']]]
+  ['deinitialize_0',['Deinitialize',['../classNtcThermistor.html#af59f294174e28354624dcc1cb820fa69',1,'NtcThermistor']]],
+  ['design_20features_1',['Key Design Features',['../index.html#autotoc_md19',1,'']]],
+  ['documentation_2',['📚 Documentation',['../index.html#autotoc_md23',1,'']]],
+  ['driver_3',['HF-NTC-Thermistor Driver',['../index.html',1,'']]]
 ];

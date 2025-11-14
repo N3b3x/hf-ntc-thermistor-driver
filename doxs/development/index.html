@@ -118,7 +118,7 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 <h1><a class="anchor" id="autotoc_md3"></a>
 ✨ Features</h1>
 <ul>
-<li><b>Hardware Agnostic</b>: Works with any ADC interface that implements BaseAdc</li>
+<li><b>Hardware Agnostic</b>: Works with any ADC interface that implements NtcAdcInterface</li>
 <li><b>Multiple <a class="el" href="namespaceNTC.html">NTC</a> Types</b>: Support for various <a class="el" href="namespaceNTC.html">NTC</a> thermistor specifications</li>
 <li><b>Dual Conversion Methods</b>: Lookup table and mathematical (Steinhart-Hart) conversion</li>
 <li><b>High Accuracy</b>: Optimized for precision temperature measurement</li>
@@ -143,45 +143,151 @@ Supported NTC Types</h1>
 </table>
 <h1><a class="anchor" id="autotoc_md5"></a>
 🚀 Quick Start</h1>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Basic Example</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="NtcThermistor_8h.html">NtcThermistor.h</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Create NTC thermistor instance</span></div>
-<div class="line"><a class="code hl_class" href="classNtcThermistor.html">NtcThermistor</a> thermistor(<a class="code hl_enumvalue" href="NtcThermistor_8h.html#ace43706329887586ece3193d84444070ab73a5aeabf142edf7ed6d561d7a8772c">NTC_TYPE_NTCG163JFT103FT1S</a>, adc_interface);</div>
+<div class="line"><span class="comment">// 1. Define your ADC implementation (must inherit from NTC::NtcAdcInterface)</span></div>
+<div class="line"><span class="keyword">class </span>MyAdc : <span class="keyword">public</span> <a class="code hl_class" href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a>&lt;MyAdc&gt; {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="classNTC_1_1NtcAdcInterface.html#a28cd5fffada1d46d42afb7d39cf9f820">IsInitialized</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> initialized_; }</div>
+<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="classNTC_1_1NtcAdcInterface.html#a44634333343db2c1291a7e90930f2fee">EnsureInitialized</a>() { <span class="comment">/* initialize ADC */</span> <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="classNTC_1_1NtcAdcInterface.html#ac09f7ed9762f106b80f7680f0fea61a7">IsChannelAvailable</a>(uint8_t channel)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> channel &lt; 8; }</div>
+<div class="line">    <a class="code hl_enumeration" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">AdcError</a> <a class="code hl_function" href="classNTC_1_1NtcAdcInterface.html#a19e3b5ff558cc20c17a1662a88f5e543">ReadChannelCount</a>(uint8_t channel, uint32_t* count) { <span class="comment">/* ... */</span> }</div>
+<div class="line">    <a class="code hl_enumeration" href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">AdcError</a> <a class="code hl_function" href="classNTC_1_1NtcAdcInterface.html#a173e85eefb34161f3dd2e51acc8e0d48">ReadChannelV</a>(uint8_t channel, <span class="keywordtype">float</span>* voltage_v) { <span class="comment">/* ... */</span> }</div>
+<div class="line">    <span class="keywordtype">float</span> <a class="code hl_function" href="classNTC_1_1NtcAdcInterface.html#a96fc5ce5eae1bc8ed679d77eec00d6c2">GetReferenceVoltage</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> 3.3f; }</div>
+<div class="line">    uint8_t <a class="code hl_function" href="classNTC_1_1NtcAdcInterface.html#a677a62da6c55f0799c1ecf2172f90727">GetResolutionBits</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> 12; }</div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    <span class="keywordtype">bool</span> initialized_ = <span class="keyword">false</span>;</div>
+<div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Initialize</span></div>
+<div class="line"><span class="comment">// 2. Create ADC and NTC instances</span></div>
+<div class="line">MyAdc adc;</div>
+<div class="line">adc.Initialize();</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classNtcThermistor.html">NtcThermistor&lt;MyAdc&gt;</a> thermistor(<a class="code hl_enumvalue" href="NtcTypes_8h.html#ace43706329887586ece3193d84444070ab73a5aeabf142edf7ed6d561d7a8772c">NTC_TYPE_NTCG163JFT103FT1S</a>, &amp;adc);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 3. Initialize and read temperature</span></div>
 <div class="line"><span class="keywordflow">if</span> (thermistor.Initialize()) {</div>
-<div class="line">    <span class="comment">// Read temperature</span></div>
 <div class="line">    <span class="keywordtype">float</span> temperature;</div>
-<div class="line">    <span class="keywordflow">if</span> (thermistor.ReadTemperatureCelsius(&amp;temperature) == <a class="code hl_enumvalue" href="NtcThermistor_8h.html#a8a342ee9d042e4bd4eb81005ca903cb0a6fbd1895fb870684b05955c10f4b9bf0">NTC_SUCCESS</a>) {</div>
+<div class="line">    <span class="keywordflow">if</span> (thermistor.ReadTemperatureCelsius(&amp;temperature) == <a class="code hl_enumvalue" href="NtcTypes_8h.html#a8a342ee9d042e4bd4eb81005ca903cb0a6fbd1895fb870684b05955c10f4b9bf0">NTC_SUCCESS</a>) {</div>
 <div class="line">        printf(<span class="stringliteral">&quot;Temperature: %.2f°C\n&quot;</span>, temperature);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="aNtcThermistor_8h_html"><div class="ttname"><a href="NtcThermistor_8h.html">NtcThermistor.h</a></div><div class="ttdoc">Hardware-agnostic NTC thermistor driver for temperature measurement.</div></div>
-<div class="ttc" id="aNtcThermistor_8h_html_a8a342ee9d042e4bd4eb81005ca903cb0a6fbd1895fb870684b05955c10f4b9bf0"><div class="ttname"><a href="NtcThermistor_8h.html#a8a342ee9d042e4bd4eb81005ca903cb0a6fbd1895fb870684b05955c10f4b9bf0">NTC_SUCCESS</a></div><div class="ttdeci">@ NTC_SUCCESS</div><div class="ttdoc">Operation successful.</div><div class="ttdef"><b>Definition</b> NtcThermistor.h:29</div></div>
-<div class="ttc" id="aNtcThermistor_8h_html_ace43706329887586ece3193d84444070ab73a5aeabf142edf7ed6d561d7a8772c"><div class="ttname"><a href="NtcThermistor_8h.html#ace43706329887586ece3193d84444070ab73a5aeabf142edf7ed6d561d7a8772c">NTC_TYPE_NTCG163JFT103FT1S</a></div><div class="ttdeci">@ NTC_TYPE_NTCG163JFT103FT1S</div><div class="ttdoc">NTCG163JFT103FT1S (10kΩ @ 25°C, β=3435K)</div><div class="ttdef"><b>Definition</b> NtcThermistor.h:57</div></div>
-<div class="ttc" id="aclassNtcThermistor_html"><div class="ttname"><a href="classNtcThermistor.html">NtcThermistor</a></div><div class="ttdoc">Hardware-agnostic NTC thermistor driver.</div><div class="ttdef"><b>Definition</b> NtcThermistor.h:164</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+<div class="ttc" id="aNtcTypes_8h_html_a8a342ee9d042e4bd4eb81005ca903cb0a6fbd1895fb870684b05955c10f4b9bf0"><div class="ttname"><a href="NtcTypes_8h.html#a8a342ee9d042e4bd4eb81005ca903cb0a6fbd1895fb870684b05955c10f4b9bf0">NTC_SUCCESS</a></div><div class="ttdeci">@ NTC_SUCCESS</div><div class="ttdoc">Operation successful.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:37</div></div>
+<div class="ttc" id="aNtcTypes_8h_html_ace43706329887586ece3193d84444070ab73a5aeabf142edf7ed6d561d7a8772c"><div class="ttname"><a href="NtcTypes_8h.html#ace43706329887586ece3193d84444070ab73a5aeabf142edf7ed6d561d7a8772c">NTC_TYPE_NTCG163JFT103FT1S</a></div><div class="ttdeci">@ NTC_TYPE_NTCG163JFT103FT1S</div><div class="ttdoc">NTCG163JFT103FT1S (10kΩ @ 25°C, β=3435K)</div><div class="ttdef"><b>Definition</b> NtcTypes.h:72</div></div>
+<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html">NTC::NtcAdcInterface</a></div><div class="ttdoc">CRTP-based template interface for ADC operations.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:57</div></div>
+<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html_a173e85eefb34161f3dd2e51acc8e0d48"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html#a173e85eefb34161f3dd2e51acc8e0d48">NTC::NtcAdcInterface::ReadChannelV</a></div><div class="ttdeci">AdcError ReadChannelV(uint8_t channel, float *voltage_v)</div><div class="ttdoc">Read voltage value from specified channel.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:100</div></div>
+<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html_a19e3b5ff558cc20c17a1662a88f5e543"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html#a19e3b5ff558cc20c17a1662a88f5e543">NTC::NtcAdcInterface::ReadChannelCount</a></div><div class="ttdeci">AdcError ReadChannelCount(uint8_t channel, uint32_t *count)</div><div class="ttdoc">Read raw ADC count value from specified channel.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:90</div></div>
+<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html_a28cd5fffada1d46d42afb7d39cf9f820"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html#a28cd5fffada1d46d42afb7d39cf9f820">NTC::NtcAdcInterface::IsInitialized</a></div><div class="ttdeci">bool IsInitialized() const</div><div class="ttdoc">Check if ADC is initialized.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:63</div></div>
+<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html_a44634333343db2c1291a7e90930f2fee"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html#a44634333343db2c1291a7e90930f2fee">NTC::NtcAdcInterface::EnsureInitialized</a></div><div class="ttdeci">bool EnsureInitialized()</div><div class="ttdoc">Ensure ADC is initialized, initializing if necessary.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:71</div></div>
+<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html_a677a62da6c55f0799c1ecf2172f90727"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html#a677a62da6c55f0799c1ecf2172f90727">NTC::NtcAdcInterface::GetResolutionBits</a></div><div class="ttdeci">uint8_t GetResolutionBits() const</div><div class="ttdoc">Get the ADC resolution in bits.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:116</div></div>
+<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html_a96fc5ce5eae1bc8ed679d77eec00d6c2"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html#a96fc5ce5eae1bc8ed679d77eec00d6c2">NTC::NtcAdcInterface::GetReferenceVoltage</a></div><div class="ttdeci">float GetReferenceVoltage() const</div><div class="ttdoc">Get the reference voltage of the ADC.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:108</div></div>
+<div class="ttc" id="aclassNTC_1_1NtcAdcInterface_html_ac09f7ed9762f106b80f7680f0fea61a7"><div class="ttname"><a href="classNTC_1_1NtcAdcInterface.html#ac09f7ed9762f106b80f7680f0fea61a7">NTC::NtcAdcInterface::IsChannelAvailable</a></div><div class="ttdeci">bool IsChannelAvailable(uint8_t channel) const</div><div class="ttdoc">Check if a specific ADC channel is available.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:80</div></div>
+<div class="ttc" id="aclassNtcThermistor_html"><div class="ttname"><a href="classNtcThermistor.html">NtcThermistor</a></div><div class="ttdoc">Hardware-agnostic NTC thermistor driver.</div><div class="ttdef"><b>Definition</b> NtcThermistor.h:83</div></div>
+<div class="ttc" id="anamespaceNTC_html_a38b88f41b2a4e17b568fa3edfdde6b03"><div class="ttname"><a href="namespaceNTC.html#a38b88f41b2a4e17b568fa3edfdde6b03">NTC::AdcError</a></div><div class="ttdeci">AdcError</div><div class="ttdoc">ADC error codes.</div><div class="ttdef"><b>Definition</b> NtcAdcInterface.h:23</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
+Custom Configuration Example</h2>
+<div class="fragment"><div class="line"><span class="comment">// Create custom configuration</span></div>
+<div class="line"><a class="code hl_struct" href="structntc__config__t.html">ntc_config_t</a> config = <a class="code hl_define" href="NtcTypes_8h.html#af91ad0e0c342dd2c186735fc88702302">NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S</a>();</div>
+<div class="line">config.<a class="code hl_variable" href="structntc__config__t.html#ae3b26d7c225e6c2d62de570becfc250f">adc_channel</a> = 1;                              <span class="comment">// Use ADC channel 1</span></div>
+<div class="line">config.<a class="code hl_variable" href="structntc__config__t.html#abee875d391f6e0fada1ec9ff8e6c309b">series_resistance</a> = 10000.0f;                 <span class="comment">// 10kΩ series resistor</span></div>
+<div class="line">config.<a class="code hl_variable" href="structntc__config__t.html#adb45bc69957ca7f98c1ce4ec2e102247">conversion_method</a> = <a class="code hl_enumvalue" href="NtcTypes_8h.html#aec3ad4e3c5c534e2cdd9cd82d53d8da9aaf762e96fd2793941db7db972ae2ea4a">NTC_CONVERSION_MATHEMATICAL</a>; <span class="comment">// Use math conversion</span></div>
+<div class="line">config.<a class="code hl_variable" href="structntc__config__t.html#a99b4a5952c2626e9c6fb19dd49f0d7c5">enable_filtering</a> = <span class="keyword">true</span>;                      <span class="comment">// Enable filtering</span></div>
+<div class="line">config.<a class="code hl_variable" href="structntc__config__t.html#a0a7c484fdb6372efcb428ed9a058d56c">filter_alpha</a> = 0.1f;                          <span class="comment">// Filter coefficient</span></div>
+<div class="line">config.<a class="code hl_variable" href="structntc__config__t.html#a72825d0039feff76a840c2f1296cd0ef">sample_count</a> = 5;                             <span class="comment">// Average 5 samples</span></div>
+<div class="line">config.<a class="code hl_variable" href="structntc__config__t.html#a8222f8483f80020046da4f3ec6efff13">sample_delay_ms</a> = 10;                         <span class="comment">// 10ms between samples</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classNtcThermistor.html">NtcThermistor&lt;MyAdc&gt;</a> thermistor(config, &amp;adc);</div>
+<div class="line">thermistor.Initialize();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Read complete temperature information</span></div>
+<div class="line"><a class="code hl_struct" href="structntc__reading__t.html">ntc_reading_t</a> reading;</div>
+<div class="line"><span class="keywordflow">if</span> (thermistor.ReadTemperature(&amp;reading) == <a class="code hl_enumvalue" href="NtcTypes_8h.html#a8a342ee9d042e4bd4eb81005ca903cb0a6fbd1895fb870684b05955c10f4b9bf0">NTC_SUCCESS</a> &amp;&amp; reading.<a class="code hl_variable" href="structntc__reading__t.html#a0c268b67c46d0a790bc0945be7c5be34">is_valid</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Temperature: %.2f°C (%.2f°F, %.2fK)\n&quot;</span>,</div>
+<div class="line">           reading.<a class="code hl_variable" href="structntc__reading__t.html#a9b9f6ee06ea49887efd8dbdac0268bff">temperature_celsius</a>,</div>
+<div class="line">           reading.<a class="code hl_variable" href="structntc__reading__t.html#a9aecb844c8d8005347a6d71f1dc9a664">temperature_fahrenheit</a>,</div>
+<div class="line">           reading.<a class="code hl_variable" href="structntc__reading__t.html#a710b01fb1bf264b2821403509ec57e77">temperature_kelvin</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Resistance: %.2fΩ, Voltage: %.3fV\n&quot;</span>,</div>
+<div class="line">           reading.<a class="code hl_variable" href="structntc__reading__t.html#ab6b28ef3b5ef7089a7aaba3762a2d1e0">resistance_ohms</a>,</div>
+<div class="line">           reading.<a class="code hl_variable" href="structntc__reading__t.html#aa148f99413fc629fb8ffe8b1b29ccdec">voltage_volts</a>);</div>
+<div class="line">}</div>
+<div class="ttc" id="aNtcTypes_8h_html_aec3ad4e3c5c534e2cdd9cd82d53d8da9aaf762e96fd2793941db7db972ae2ea4a"><div class="ttname"><a href="NtcTypes_8h.html#aec3ad4e3c5c534e2cdd9cd82d53d8da9aaf762e96fd2793941db7db972ae2ea4a">NTC_CONVERSION_MATHEMATICAL</a></div><div class="ttdeci">@ NTC_CONVERSION_MATHEMATICAL</div><div class="ttdoc">Use mathematical conversion (slower, more accurate)</div><div class="ttdef"><b>Definition</b> NtcTypes.h:95</div></div>
+<div class="ttc" id="aNtcTypes_8h_html_af91ad0e0c342dd2c186735fc88702302"><div class="ttname"><a href="NtcTypes_8h.html#af91ad0e0c342dd2c186735fc88702302">NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S</a></div><div class="ttdeci">#define NTC_CONFIG_DEFAULT_NTCG163JFT103FT1S()</div><div class="ttdef"><b>Definition</b> NtcTypes.h:198</div></div>
+<div class="ttc" id="astructntc__config__t_html"><div class="ttname"><a href="structntc__config__t.html">ntc_config_t</a></div><div class="ttdoc">NTC thermistor configuration structure.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:118</div></div>
+<div class="ttc" id="astructntc__config__t_html_a0a7c484fdb6372efcb428ed9a058d56c"><div class="ttname"><a href="structntc__config__t.html#a0a7c484fdb6372efcb428ed9a058d56c">ntc_config_t::filter_alpha</a></div><div class="ttdeci">float filter_alpha</div><div class="ttdoc">Filter alpha value (0.0-1.0)</div><div class="ttdef"><b>Definition</b> NtcTypes.h:133</div></div>
+<div class="ttc" id="astructntc__config__t_html_a72825d0039feff76a840c2f1296cd0ef"><div class="ttname"><a href="structntc__config__t.html#a72825d0039feff76a840c2f1296cd0ef">ntc_config_t::sample_count</a></div><div class="ttdeci">uint32_t sample_count</div><div class="ttdoc">Number of samples to average.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:128</div></div>
+<div class="ttc" id="astructntc__config__t_html_a8222f8483f80020046da4f3ec6efff13"><div class="ttname"><a href="structntc__config__t.html#a8222f8483f80020046da4f3ec6efff13">ntc_config_t::sample_delay_ms</a></div><div class="ttdeci">uint32_t sample_delay_ms</div><div class="ttdoc">Delay between samples (ms)</div><div class="ttdef"><b>Definition</b> NtcTypes.h:129</div></div>
+<div class="ttc" id="astructntc__config__t_html_a99b4a5952c2626e9c6fb19dd49f0d7c5"><div class="ttname"><a href="structntc__config__t.html#a99b4a5952c2626e9c6fb19dd49f0d7c5">ntc_config_t::enable_filtering</a></div><div class="ttdeci">bool enable_filtering</div><div class="ttdoc">Enable temperature filtering.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:132</div></div>
+<div class="ttc" id="astructntc__config__t_html_abee875d391f6e0fada1ec9ff8e6c309b"><div class="ttname"><a href="structntc__config__t.html#abee875d391f6e0fada1ec9ff8e6c309b">ntc_config_t::series_resistance</a></div><div class="ttdeci">float series_resistance</div><div class="ttdoc">Series resistance in voltage divider (ohms)</div><div class="ttdef"><b>Definition</b> NtcTypes.h:123</div></div>
+<div class="ttc" id="astructntc__config__t_html_adb45bc69957ca7f98c1ce4ec2e102247"><div class="ttname"><a href="structntc__config__t.html#adb45bc69957ca7f98c1ce4ec2e102247">ntc_config_t::conversion_method</a></div><div class="ttdeci">ntc_conversion_method_t conversion_method</div><div class="ttdoc">Conversion method.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:125</div></div>
+<div class="ttc" id="astructntc__config__t_html_ae3b26d7c225e6c2d62de570becfc250f"><div class="ttname"><a href="structntc__config__t.html#ae3b26d7c225e6c2d62de570becfc250f">ntc_config_t::adc_channel</a></div><div class="ttdeci">uint8_t adc_channel</div><div class="ttdoc">ADC channel number.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:126</div></div>
+<div class="ttc" id="astructntc__reading__t_html"><div class="ttname"><a href="structntc__reading__t.html">ntc_reading_t</a></div><div class="ttdoc">NTC thermistor reading structure.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:147</div></div>
+<div class="ttc" id="astructntc__reading__t_html_a0c268b67c46d0a790bc0945be7c5be34"><div class="ttname"><a href="structntc__reading__t.html#a0c268b67c46d0a790bc0945be7c5be34">ntc_reading_t::is_valid</a></div><div class="ttdeci">bool is_valid</div><div class="ttdoc">Whether reading is valid.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:156</div></div>
+<div class="ttc" id="astructntc__reading__t_html_a710b01fb1bf264b2821403509ec57e77"><div class="ttname"><a href="structntc__reading__t.html#a710b01fb1bf264b2821403509ec57e77">ntc_reading_t::temperature_kelvin</a></div><div class="ttdeci">float temperature_kelvin</div><div class="ttdoc">Temperature in Kelvin.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:150</div></div>
+<div class="ttc" id="astructntc__reading__t_html_a9aecb844c8d8005347a6d71f1dc9a664"><div class="ttname"><a href="structntc__reading__t.html#a9aecb844c8d8005347a6d71f1dc9a664">ntc_reading_t::temperature_fahrenheit</a></div><div class="ttdeci">float temperature_fahrenheit</div><div class="ttdoc">Temperature in Fahrenheit.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:149</div></div>
+<div class="ttc" id="astructntc__reading__t_html_a9b9f6ee06ea49887efd8dbdac0268bff"><div class="ttname"><a href="structntc__reading__t.html#a9b9f6ee06ea49887efd8dbdac0268bff">ntc_reading_t::temperature_celsius</a></div><div class="ttdeci">float temperature_celsius</div><div class="ttdoc">Temperature in Celsius.</div><div class="ttdef"><b>Definition</b> NtcTypes.h:148</div></div>
+<div class="ttc" id="astructntc__reading__t_html_aa148f99413fc629fb8ffe8b1b29ccdec"><div class="ttname"><a href="structntc__reading__t.html#aa148f99413fc629fb8ffe8b1b29ccdec">ntc_reading_t::voltage_volts</a></div><div class="ttdeci">float voltage_volts</div><div class="ttdoc">Voltage across thermistor (V)</div><div class="ttdef"><b>Definition</b> NtcTypes.h:152</div></div>
+<div class="ttc" id="astructntc__reading__t_html_ab6b28ef3b5ef7089a7aaba3762a2d1e0"><div class="ttname"><a href="structntc__reading__t.html#ab6b28ef3b5ef7089a7aaba3762a2d1e0">ntc_reading_t::resistance_ohms</a></div><div class="ttdeci">float resistance_ohms</div><div class="ttdoc">Thermistor resistance (ohms)</div><div class="ttdef"><b>Definition</b> NtcTypes.h:151</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
 📖 API Reference</h1>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Core Functions</h2>
+<h3><a class="anchor" id="autotoc_md10"></a>
+Initialization</h3>
 <ul>
-<li><code>Initialize()</code> - Initialize the thermistor driver</li>
-<li><code>ReadTemperatureCelsius()</code> - Read temperature in Celsius</li>
-<li><code>ReadTemperatureFahrenheit()</code> - Read temperature in Fahrenheit</li>
-<li><code>ReadTemperatureKelvin()</code> - Read temperature in Kelvin</li>
-<li><code>GetResistance()</code> - Get thermistor resistance</li>
-<li><code>Calibrate()</code> - Calibrate the thermistor</li>
-<li><code>SetCalibrationOffset()</code> - Set calibration offset</li>
+<li><code>Initialize()</code> - Initialize the thermistor driver (must be called before use)</li>
+<li><code>Deinitialize()</code> - Clean up resources</li>
+<li><code>IsInitialized()</code> - Check initialization status</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Configuration</h2>
+<h3><a class="anchor" id="autotoc_md11"></a>
+Temperature Reading</h3>
 <ul>
-<li><code>SetConversionMethod()</code> - Choose between lookup table and mathematical conversion</li>
-<li><code>SetVoltageDivider()</code> - Configure voltage divider parameters</li>
-<li><code>SetReferenceVoltage()</code> - Set ADC reference voltage</li>
-<li><code>SetBetaValue()</code> - Set thermistor beta value</li>
+<li><code>ReadTemperatureCelsius(float* temp)</code> - Read temperature in Celsius</li>
+<li><code>ReadTemperatureFahrenheit(float* temp)</code> - Read temperature in Fahrenheit</li>
+<li><code>ReadTemperatureKelvin(float* temp)</code> - Read temperature in Kelvin</li>
+<li><code>ReadTemperature(ntc_reading_t* reading)</code> - Read complete temperature information</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h3><a class="anchor" id="autotoc_md12"></a>
+Resistance and Voltage</h3>
+<ul>
+<li><code>GetResistance(float* resistance)</code> - Get thermistor resistance (ohms)</li>
+<li><code>GetVoltage(float* voltage)</code> - Get voltage across thermistor (V)</li>
+<li><code>GetRawAdcValue(uint32_t* value)</code> - Get raw ADC reading</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md13"></a>
+Calibration</h3>
+<ul>
+<li><code>Calibrate(float reference_temp)</code> - Calibrate using known reference temperature</li>
+<li><code>SetCalibrationOffset(float offset)</code> - Set calibration offset (°C)</li>
+<li><code>GetCalibrationOffset(float* offset)</code> - Get current calibration offset</li>
+<li><code>ResetCalibration()</code> - Reset calibration to zero</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Configuration Methods</h2>
+<ul>
+<li><code>SetConfiguration(const <a class="el" href="structntc__config__t.html" title="NTC thermistor configuration structure.">ntc_config_t</a>&amp; config)</code> - Set complete configuration</li>
+<li><code>GetConfiguration(ntc_config_t* config)</code> - Get current configuration</li>
+<li><code>SetConversionMethod(ntc_conversion_method_t method)</code> - Choose conversion method</li>
+<li><code>SetVoltageDivider(float series_resistance)</code> - Configure voltage divider</li>
+<li><code>SetReferenceVoltage(float voltage)</code> - Set ADC reference voltage</li>
+<li><code>SetBetaValue(float beta)</code> - Set thermistor beta value</li>
+<li><code>SetAdcChannel(uint8_t channel)</code> - Set ADC channel</li>
+<li><code>SetSamplingParameters(uint32_t count, uint32_t delay_ms)</code> - Configure sampling</li>
+<li><code>SetFiltering(bool enable, float alpha)</code> - Enable/disable filtering</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Utility Functions</h2>
+<ul>
+<li><code>CelsiusToFahrenheit(float celsius)</code> - Static conversion function</li>
+<li><code>FahrenheitToCelsius(float fahrenheit)</code> - Static conversion function</li>
+<li><code>CelsiusToKelvin(float celsius)</code> - Static conversion function</li>
+<li><code>KelvinToCelsius(float kelvin)</code> - Static conversion function</li>
+<li><code>GetErrorString(ntc_err_t error)</code> - Get human-readable error message</li>
+<li><code>GetTypeString(ntc_type_t type)</code> - Get <a class="el" href="namespaceNTC.html">NTC</a> type name string</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md16"></a>
 🔧 Installation</h1>
 <ol type="1">
 <li>Add to your project's <code>CMakeLists.txt</code>: <div class="fragment"><div class="line">set(EXTRA_COMPONENT_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/utils-and-drivers/hf-core-drivers/external/hf-ntc-thermistor-driver)</div>
@@ -191,16 +297,79 @@ Configuration</h2>
 <div class="line">)</div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 📊 Examples</h1>
-<p>For ESP32 examples, see the <a href="examples/esp32/">examples/esp32</a> directory.</p>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
+Architecture Overview</h2>
+<p>The <a class="el" href="namespaceNTC.html">NTC</a> thermistor driver uses a <b>CRTP (Curiously Recurring Template Pattern)</b> design for hardware abstraction:</p>
+<div class="fragment"><div class="line">┌─────────────────────────────────────┐</div>
+<div class="line">│   NtcThermistor&lt;AdcType&gt;            │</div>
+<div class="line">│   (Main Driver Class)               │</div>
+<div class="line">└──────────────┬──────────────────────┘</div>
+<div class="line">               │ uses</div>
+<div class="line">               ▼</div>
+<div class="line">┌─────────────────────────────────────┐</div>
+<div class="line">│   NTC::NtcAdcInterface&lt;AdcType&gt;     │</div>
+<div class="line">│   (CRTP Base Interface)             │</div>
+<div class="line">└──────────────┬──────────────────────┘</div>
+<div class="line">               │ implements</div>
+<div class="line">               ▼</div>
+<div class="line">┌─────────────────────────────────────┐</div>
+<div class="line">│ YourAdc : NtcAdcInterface&lt;YourAdc&gt;  │</div>
+<div class="line">│ (Platform-Specific Implementation)  │</div>
+<div class="line">└─────────────────────────────────────┘</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md19"></a>
+Key Design Features</h2>
+<ol type="1">
+<li><b>Hardware Agnostic</b>: Works with any ADC by implementing the interface</li>
+<li><b>Zero Virtual Overhead</b>: CRTP provides compile-time polymorphism</li>
+<li><b>Type Safe</b>: Template-based design catches errors at compile time</li>
+<li><b>Modular</b>: Separate modules for conversion, lookup tables, and types</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md20"></a>
+Conversion Methods</h2>
+<p>The driver supports two conversion methods:</p>
+<ol type="1">
+<li><b>Lookup Table</b> (<code>NTC_CONVERSION_LOOKUP_TABLE</code>)<ul>
+<li>Fast, pre-calculated values</li>
+<li>Lower memory usage</li>
+<li>Slightly less accurate</li>
+<li>Best for real-time applications</li>
+</ul>
+</li>
+<li><b>Mathematical</b> (<code>NTC_CONVERSION_MATHEMATICAL</code>)<ul>
+<li>Uses Steinhart-Hart or Beta equations</li>
+<li>Higher accuracy</li>
+<li>More computational overhead</li>
+<li>Best for precision applications</li>
+</ul>
+</li>
+<li><b>Auto</b> (<code>NTC_CONVERSION_AUTO</code>)<ul>
+<li>Automatically selects best method</li>
+<li>Balances speed and accuracy</li>
+</ul>
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md21"></a>
+Best Practices</h2>
+<ol type="1">
+<li><b>Always check return values</b>: Functions return <code>ntc_err_t</code> error codes</li>
+<li><b>Initialize before use</b>: Call <code>Initialize()</code> before reading temperatures</li>
+<li><b>Validate readings</b>: Check <code>is_valid</code> flag in <code><a class="el" href="structntc__reading__t.html" title="NTC thermistor reading structure.">ntc_reading_t</a></code> structures</li>
+<li><b>Configure appropriately</b>: Set ADC channel, series resistance, and reference voltage correctly</li>
+<li><b>Use filtering for noisy signals</b>: Enable filtering with appropriate alpha value</li>
+<li><b>Calibrate when needed</b>: Use <code>Calibrate()</code> for improved accuracy</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md22"></a>
+ESP32 Examples</h2>
+<p>For complete ESP32 examples, see the <a href="examples/esp32/">examples/esp32</a> directory.</p>
+<h1><a class="anchor" id="autotoc_md23"></a>
 📚 Documentation</h1>
 <p>For detailed documentation, see the <a href="docs/">docs</a> directory.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md24"></a>
 🤝 Contributing</h1>
-<p>Pull requests and suggestions are welcome! Please see CONTRIBUTING.md for guidelines.</p>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<p>Pull requests and suggestions are welcome! Please see the main HardFOC coding standards for contribution guidelines.</p>
+<h1><a class="anchor" id="autotoc_md25"></a>
 📄 License</h1>
 <p>This project is licensed under the <b>GNU General Public License v3.0</b>. <br  />
  See the [LICENSE](LICENSE) file for details. </p>
