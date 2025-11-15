@@ -9,8 +9,10 @@ permalink: /
 # HF-NTC-Thermistor Driver
 **Hardware-agnostic NTC thermistor driver for temperature measurement**
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![CI Build](https://github.com/N3b3x/hf-ntc-thermistor-driver/actions/workflows/esp32-examples-build-ci.yml/badge.svg?branch=main)](https://github.com/N3b3x/hf-ntc-thermistor-driver/actions/workflows/esp32-examples-build-ci.yml)
+[![C++](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
+[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![CI](https://github.com/N3b3x/hf-ntc-thermistor-driver/actions/workflows/esp32-examples-build-ci.yml/badge.svg?branch=main)](https://github.com/N3b3x/hf-ntc-thermistor-driver/actions/workflows/esp32-examples-build-ci.yml)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://n3b3x.github.io/hf-ntc-thermistor-driver/)
 
 ## 📚 Table of Contents
 1. [Overview](#-overview)
