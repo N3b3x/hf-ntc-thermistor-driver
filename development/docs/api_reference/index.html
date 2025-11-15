@@ -61,8 +61,8 @@
 <meta property="og:title" content="📖 API Reference" />
 <meta name="author" content="N3b3x" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Complete API documentation for the NTC Thermistor driver" />
-<meta property="og:description" content="Complete API documentation for the NTC Thermistor driver" />
+<meta name="description" content="Complete API reference for the NTC Thermistor driver" />
+<meta property="og:description" content="Complete API reference for the NTC Thermistor driver" />
 <link rel="canonical" href="https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/api_reference/" />
 <meta property="og:url" content="https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/api_reference/" />
 <meta property="og:site_name" content="HardFOC NTC Thermistor Driver - development" />
@@ -70,7 +70,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="📖 API Reference" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"N3b3x","url":"https://github.com/n3b3x"},"description":"Complete API documentation for the NTC Thermistor driver","headline":"📖 API Reference","url":"https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/api_reference/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"N3b3x","url":"https://github.com/n3b3x"},"description":"Complete API reference for the NTC Thermistor driver","headline":"📖 API Reference","url":"https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/api_reference/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -287,10 +287,10 @@
   <li><strong>ADC Interface</strong>: <a href="../inc/ntc_adc_interface.hpp"><code class="language-plaintext highlighter-rouge">inc/ntc_adc_interface.hpp</code></a></li>
   <li><strong>Types</strong>: <a href="../inc/ntc_types.hpp"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp</code></a></li>
 </ul>
-<h2 id="core-classes">
+<h2 id="core-class">
   
   
-    <a href="#core-classes" class="anchor-heading" aria-labelledby="core-classes"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Core Classes
+    <a href="#core-class" class="anchor-heading" aria-labelledby="core-class"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Core Class
   
   
 </h2>
@@ -334,72 +334,43 @@
   
 </h3>
     
-<h4 id="initialize">
-  
-  
-    <a href="#initialize" class="anchor-heading" aria-labelledby="initialize"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">Initialize()</code>
-  
-  
-</h4>
-    
 
-<p>Initialize the driver and prepare it for use.</p>
-
-<p><strong>Signature:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kt">bool</span> <span class="n">Initialize</span><span class="p">()</span> <span class="k">noexcept</span><span class="p">;</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Location</strong>: <a href="../src/ntc_thermistor.cpp#L68"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L68</code></a></p>
-
-<p><strong>Returns:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">true</code> if initialization succeeded</li>
-  <li><code class="language-plaintext highlighter-rouge">false</code> if initialization failed</li>
-</ul>
-
-<p><strong>Example:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">thermistor</span><span class="p">.</span><span class="n">Initialize</span><span class="p">())</span> <span class="p">{</span>
-    <span class="c1">// Handle initialization error</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div><hr />
-<h4 id="deinitialize">
-  
-  
-    <a href="#deinitialize" class="anchor-heading" aria-labelledby="deinitialize"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">Deinitialize()</code>
-  
-  
-</h4>
-    
-
-<p>Clean up resources and deinitialize the driver.</p>
-
-<p><strong>Signature:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kt">bool</span> <span class="n">Deinitialize</span><span class="p">()</span> <span class="k">noexcept</span><span class="p">;</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Location</strong>: <a href="../src/ntc_thermistor.cpp#L105"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L105</code></a></p><hr />
-<h4 id="isinitialized">
-  
-  
-    <a href="#isinitialized" class="anchor-heading" aria-labelledby="isinitialized"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">IsInitialized()</code>
-  
-  
-</h4>
-    
-
-<p>Check if the driver is initialized.</p>
-
-<p><strong>Signature:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kt">bool</span> <span class="n">IsInitialized</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L161"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L161</code></a></p><hr />
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Signature</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Initialize()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bool Initialize() noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L68"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L68</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Deinitialize()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bool Deinitialize() noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L105"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L105</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">IsInitialized()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bool IsInitialized() const noexcept</code></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L161"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L161</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetConfiguration()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError GetConfiguration(ntc_config_t *config) const noexcept</code></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L168"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L168</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SetConfiguration()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError SetConfiguration(const ntc_config_t &amp;config) noexcept</code></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L175"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L175</code></a></td>
+    </tr>
+  </tbody>
+</table></div>
 <h3 id="temperature-reading">
   
   
@@ -408,149 +379,73 @@
   
 </h3>
     
-<h4 id="readtemperaturecelsiusfloat">
-  
-  
-    <a href="#readtemperaturecelsiusfloat" class="anchor-heading" aria-labelledby="readtemperaturecelsiusfloat"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">ReadTemperatureCelsius(float*)</code>
-  
-  
-</h4>
-    
 
-<p>Read temperature in Celsius.</p>
-
-<p><strong>Signature:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">NtcError</span> <span class="n">ReadTemperatureCelsius</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span> <span class="n">temperature_celsius</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L197"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L197</code></a></p>
-
-<p><strong>Parameters:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">temperature_celsius</code>: Pointer to store temperature (°C)</li>
-</ul>
-
-<p><strong>Returns:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">NtcError::Success</code> on success</li>
-  <li>Error code on failure</li>
-</ul>
-
-<p><strong>Example:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="kt">float</span> <span class="n">temp_c</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">thermistor</span><span class="p">.</span><span class="n">ReadTemperatureCelsius</span><span class="p">(</span><span class="o">&amp;</span><span class="n">temp_c</span><span class="p">)</span> <span class="o">==</span> <span class="n">NtcError</span><span class="o">::</span><span class="n">Success</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">"Temperature: %.2f°C</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">temp_c</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div><hr />
-<h4 id="readtemperaturefahrenheitfloat">
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Signature</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ReadTemperatureCelsius()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError ReadTemperatureCelsius(float *temperature_celsius) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L197"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L197</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ReadTemperatureFahrenheit()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError ReadTemperatureFahrenheit(float *temperature_fahrenheit) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L204"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L204</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ReadTemperatureKelvin()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError ReadTemperatureKelvin(float *temperature_kelvin) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L211"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L211</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ReadTemperature()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError ReadTemperature(ntc_reading_t *reading) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L218"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L218</code></a></td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="resistance-and-voltage">
   
   
-    <a href="#readtemperaturefahrenheitfloat" class="anchor-heading" aria-labelledby="readtemperaturefahrenheitfloat"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">ReadTemperatureFahrenheit(float*)</code>
-  
-  
-</h4>
-    
-
-<p>Read temperature in Fahrenheit.</p>
-
-<p><strong>Signature:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">NtcError</span> <span class="n">ReadTemperatureFahrenheit</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span> <span class="n">temperature_fahrenheit</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L204"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L204</code></a></p><hr />
-<h4 id="readtemperaturekelvinfloat">
-  
-  
-    <a href="#readtemperaturekelvinfloat" class="anchor-heading" aria-labelledby="readtemperaturekelvinfloat"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">ReadTemperatureKelvin(float*)</code>
-  
-  
-</h4>
-    
-
-<p>Read temperature in Kelvin.</p>
-
-<p><strong>Signature:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">NtcError</span> <span class="n">ReadTemperatureKelvin</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span> <span class="n">temperature_kelvin</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L211"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L211</code></a></p><hr />
-<h4 id="readtemperaturentc_reading_t">
-  
-  
-    <a href="#readtemperaturentc_reading_t" class="anchor-heading" aria-labelledby="readtemperaturentc_reading_t"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">ReadTemperature(ntc_reading_t*)</code>
-  
-  
-</h4>
-    
-
-<p>Read complete temperature information including all units, resistance, and voltage.</p>
-
-<p><strong>Signature:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">NtcError</span> <span class="n">ReadTemperature</span><span class="p">(</span><span class="n">ntc_reading_t</span><span class="o">*</span> <span class="n">reading</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L218"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L218</code></a></p>
-
-<p><strong>Parameters:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">reading</code>: Pointer to <code class="language-plaintext highlighter-rouge">ntc_reading_t</code> structure to store complete reading</li>
-</ul>
-
-<p><strong>Returns:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">NtcError::Success</code> on success</li>
-  <li>Error code on failure</li>
-</ul><hr />
-<h3 id="configuration">
-  
-  
-    <a href="#configuration" class="anchor-heading" aria-labelledby="configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Configuration
+    <a href="#resistance-and-voltage" class="anchor-heading" aria-labelledby="resistance-and-voltage"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Resistance and Voltage
   
   
 </h3>
     
-<h4 id="getconfigurationntc_config_t">
-  
-  
-    <a href="#getconfigurationntc_config_t" class="anchor-heading" aria-labelledby="getconfigurationntc_config_t"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">GetConfiguration(ntc_config_t*)</code>
-  
-  
-</h4>
-    
 
-<p>Get current configuration.</p>
-
-<p><strong>Signature:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">NtcError</span> <span class="n">GetConfiguration</span><span class="p">(</span><span class="n">ntc_config_t</span><span class="o">*</span> <span class="n">config</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L168"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L168</code></a></p><hr />
-<h4 id="setconfigurationconst-ntc_config_t">
-  
-  
-    <a href="#setconfigurationconst-ntc_config_t" class="anchor-heading" aria-labelledby="setconfigurationconst-ntc_config_t"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">SetConfiguration(const ntc_config_t&amp;)</code>
-  
-  
-</h4>
-    
-
-<p>Set complete configuration.</p>
-
-<p><strong>Signature:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">NtcError</span> <span class="n">SetConfiguration</span><span class="p">(</span><span class="k">const</span> <span class="n">ntc_config_t</span><span class="o">&amp;</span> <span class="n">config</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L175"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L175</code></a></p><hr />
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Signature</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetResistance()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError GetResistance(float *resistance_ohms) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L229"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L229</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetVoltage()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError GetVoltage(float *voltage_volts) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L236"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L236</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetRawAdcValue()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError GetRawAdcValue(uint32_t *adc_value) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L243"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L243</code></a></td>
+    </tr>
+  </tbody>
+</table></div>
 <h3 id="calibration">
   
   
@@ -559,160 +454,216 @@
   
 </h3>
     
-<h4 id="calibratefloat">
-  
-  
-    <a href="#calibratefloat" class="anchor-heading" aria-labelledby="calibratefloat"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">Calibrate(float)</code>
-  
-  
-</h4>
-    
-
-<p>Calibrate using a known reference temperature.</p>
-
-<p><strong>Signature:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">NtcError</span> <span class="n">Calibrate</span><span class="p">(</span><span class="kt">float</span> <span class="n">reference_temperature_celsius</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L254"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L254</code></a></p>
-
-<p><strong>Parameters:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">reference_temperature_celsius</code>: Known reference temperature (°C)</li>
-</ul>
-
-<p><strong>Example:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="c1">// Calibrate at 25°C room temperature</span>
-<span class="n">thermistor</span><span class="p">.</span><span class="n">Calibrate</span><span class="p">(</span><span class="mf">25.0</span><span class="n">f</span><span class="p">);</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div><hr />
-<h2 id="error-handling">
-  
-  
-    <a href="#error-handling" class="anchor-heading" aria-labelledby="error-handling"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Error Handling
-  
-  
-</h2>
-    
-
-<p>The driver uses the <code class="language-plaintext highlighter-rouge">NtcError</code> enum for error reporting.</p>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_types.hpp#L37"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp#L37</code></a></p>
 
 <div class="table-wrapper"><table>
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Description</th>
+      <th>Method</th>
+      <th>Signature</th>
+      <th>Location</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Success</code></td>
-      <td>Success</td>
-      <td>Operation succeeded</td>
+      <td><code class="language-plaintext highlighter-rouge">Calibrate()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError Calibrate(float reference_temperature_celsius) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L254"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L254</code></a></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">NotInitialized</code></td>
-      <td>Not initialized</td>
-      <td>Driver not initialized</td>
+      <td><code class="language-plaintext highlighter-rouge">SetCalibrationOffset()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError SetCalibrationOffset(float offset_celsius) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L261"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L261</code></a></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">InvalidParameter</code></td>
-      <td>Invalid parameter</td>
-      <td>Invalid method parameter</td>
+      <td><code class="language-plaintext highlighter-rouge">GetCalibrationOffset()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError GetCalibrationOffset(float *offset_celsius) const noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L268"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L268</code></a></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">AdcReadFailed</code></td>
-      <td>ADC read failed</td>
-      <td>ADC read operation failed</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">TemperatureOutOfRange</code></td>
-      <td>Temperature out of range</td>
-      <td>Temperature outside valid range</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">ConversionFailed</code></td>
-      <td>Conversion failed</td>
-      <td>Temperature conversion failed</td>
+      <td><code class="language-plaintext highlighter-rouge">ResetCalibration()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError ResetCalibration() noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L274"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L274</code></a></td>
     </tr>
   </tbody>
 </table></div>
-<h2 id="type-definitions">
+<h3 id="configuration">
   
   
-    <a href="#type-definitions" class="anchor-heading" aria-labelledby="type-definitions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Type Definitions
+    <a href="#configuration" class="anchor-heading" aria-labelledby="configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Configuration
+  
+  
+</h3>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Signature</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SetConversionMethod()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError SetConversionMethod(NtcConversionMethod method) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L285"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L285</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SetVoltageDivider()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError SetVoltageDivider(float series_resistance) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L292"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L292</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SetReferenceVoltage()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError SetReferenceVoltage(float reference_voltage) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L299"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L299</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SetBetaValue()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError SetBetaValue(float beta_value) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L306"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L306</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SetAdcChannel()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError SetAdcChannel(uint8_t adc_channel) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L313"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L313</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SetSamplingParameters()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError SetSamplingParameters(uint32_t sample_count, uint32_t sample_delay_ms) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L321"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L321</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SetFiltering()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NtcError SetFiltering(bool enable, float alpha = 0.1F) noexcept</code></td>
+      <td><a href="../src/ntc_thermistor.cpp#L330"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L330</code></a></td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="utility-functions">
+  
+  
+    <a href="#utility-functions" class="anchor-heading" aria-labelledby="utility-functions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Utility Functions
+  
+  
+</h3>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Signature</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CelsiusToFahrenheit()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">static float CelsiusToFahrenheit(float celsius) noexcept</code></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L341"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L341</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">FahrenheitToCelsius()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">static float FahrenheitToCelsius(float fahrenheit) noexcept</code></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L348"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L348</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CelsiusToKelvin()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">static float CelsiusToKelvin(float celsius) noexcept</code></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L355"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L355</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">KelvinToCelsius()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">static float KelvinToCelsius(float kelvin) noexcept</code></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L362"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L362</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetErrorString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">static const char *GetErrorString(NtcError error) noexcept</code></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L369"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L369</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetTypeString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">static const char *GetTypeString(NtcType type) noexcept</code></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L376"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L376</code></a></td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="types">
+  
+  
+    <a href="#types" class="anchor-heading" aria-labelledby="types"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Types
   
   
 </h2>
     
-<h3 id="ntcerror-enum">
+<h3 id="enumerations">
   
   
-    <a href="#ntcerror-enum" class="anchor-heading" aria-labelledby="ntcerror-enum"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">NtcError</code> Enum
-  
-  
-</h3>
-    
-
-<p>Error code enumeration.</p>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_types.hpp#L37"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp#L37</code></a></p>
-<h3 id="ntctype-enum">
-  
-  
-    <a href="#ntctype-enum" class="anchor-heading" aria-labelledby="ntctype-enum"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">NtcType</code> Enum
+    <a href="#enumerations" class="anchor-heading" aria-labelledby="enumerations"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Enumerations
   
   
 </h3>
     
 
-<p>NTC thermistor type enumeration.</p>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_types.hpp#L71"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp#L71</code></a></p>
-<h3 id="ntc_config_t-structure">
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Values</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">NtcError</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NTC_SUCCESS</code>, <code class="language-plaintext highlighter-rouge">NTC_ERROR_INIT</code>, <code class="language-plaintext highlighter-rouge">NTC_ERROR_ADC</code>, etc.</td>
+      <td><a href="../inc/ntc_types.hpp"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">NtcType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NTC_TYPE_NTCG163JFT103FT1S</code>, etc.</td>
+      <td><a href="../inc/ntc_types.hpp"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">NtcConversionMethod</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NTC_METHOD_STEINHART_HART</code>, <code class="language-plaintext highlighter-rouge">NTC_METHOD_BETA</code>, <code class="language-plaintext highlighter-rouge">NTC_METHOD_LOOKUP_TABLE</code></td>
+      <td><a href="../inc/ntc_types.hpp"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp</code></a></td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="structures">
   
   
-    <a href="#ntc_config_t-structure" class="anchor-heading" aria-labelledby="ntc_config_t-structure"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">ntc_config_t</code> Structure
+    <a href="#structures" class="anchor-heading" aria-labelledby="structures"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Structures
   
   
 </h3>
     
 
-<p>Configuration structure.</p>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_types.hpp#L120"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp#L120</code></a></p>
-<h3 id="ntc_reading_t-structure">
-  
-  
-    <a href="#ntc_reading_t-structure" class="anchor-heading" aria-labelledby="ntc_reading_t-structure"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">ntc_reading_t</code> Structure
-  
-  
-</h3>
-    
-
-<p>Temperature reading structure.</p>
-
-<p><strong>Location</strong>: <a href="../inc/ntc_types.hpp#L149"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp#L149</code></a></p>
-<h2 id="thread-safety">
-  
-  
-    <a href="#thread-safety" class="anchor-heading" aria-labelledby="thread-safety"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Thread Safety
-  
-  
-</h2>
-    
-
-<p>The driver is <strong>not thread-safe</strong>. If used in a multi-threaded environment:</p>
-<ul>
-  <li>Each <code class="language-plaintext highlighter-rouge">NtcThermistor</code> instance should be used by a single thread</li>
-  <li>Use external synchronization (mutex, etc.) for shared access</li>
-  <li>ADC interface access must be thread-safe in your ADC implementation</li>
-</ul><hr />
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ntc_config_t</code></td>
+      <td>NTC configuration structure</td>
+      <td><a href="../inc/ntc_types.hpp"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp</code></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ntc_reading_t</code></td>
+      <td>Temperature reading structure</td>
+      <td><a href="../inc/ntc_types.hpp"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp</code></a></td>
+    </tr>
+  </tbody>
+</table></div><hr />
 
 <p><strong>Navigation</strong>
 ⬅️ <a href="/hf-ntc-thermistor-driver/development/docs/configuration/">Configuration</a> | <a href="/hf-ntc-thermistor-driver/development/docs/examples/">Next: Examples ➡️</a> | <a href="/hf-ntc-thermistor-driver/development/docs/">Back to Index</a></p>
