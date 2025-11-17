@@ -11,6 +11,12 @@
 *.gch
 *.pch
 
+# Linker files
+*.ilk
+
+# Debugger Files
+*.pdb
+
 # Compiled Dynamic libraries
 *.so
 *.dylib
@@ -30,6 +36,9 @@
 *.exe
 *.out
 *.app
+
+# Debug information files
+*.dwo
 
 # Build directories (ESP-IDF and general)
 **/build/
@@ -66,10 +75,10 @@ Makefile
 **/dependencies.lock
 
 # Documentation output
+**/docs/html/
 **/docs/doxygen/
 docs/doxygen/
 docs/html/
-**/docs/html/
 
 # VSCode user-specific files (keep .vscode/ but ignore user files)
 .vscode/settings.json.user
@@ -117,6 +126,10 @@ package*.json
 # OS files
 .DS_Store
 **/.DS_Store
+*.DS_Store
 Thumbs.db
 **/Thumbs.db
 
+# Backup files
+**/*.bak*
+*.bak
