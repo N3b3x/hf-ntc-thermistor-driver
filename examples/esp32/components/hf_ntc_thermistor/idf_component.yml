@@ -1,8 +1,24 @@
+---
 name: hf-ntc-thermistor-driver
 version: "1.0.0"
-description: Hardware-agnostic NTC Thermistor driver component
+description: "Hardware-agnostic NTC thermistor driver with lookup table and conversion support"
+
 maintainers:
   - "HardFOC"
+license: "MIT"
+
 targets:
   - esp32
   - esp32c6
+  - esp32s3
+
+dependencies:
+  idf: ">=5.0.0"
+
+tags:
+  - "ntc"
+  - "thermistor"
+  - "temperature"
+  - "driver"
+  - "adc"
+  - "hardware-agnostic"
