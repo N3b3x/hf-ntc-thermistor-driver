@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['readchannelcount_0',['ReadChannelCount',['../classntc_1_1AdcInterface.html#ab115a271254f3f42887af6fa9b536bc1',1,'ntc::AdcInterface::ReadChannelCount()'],['../classMockEsp32Adc.html#af401849ceae818257a8d47767a62365a',1,'MockEsp32Adc::ReadChannelCount()']]],
-  ['readchannelv_1',['ReadChannelV',['../classntc_1_1AdcInterface.html#a8b406533e2399f1a3b2758869986651e',1,'ntc::AdcInterface::ReadChannelV()'],['../classMockEsp32Adc.html#ad7ed3ca030c72099174fdfce864b364b',1,'MockEsp32Adc::ReadChannelV()']]],
-  ['readtemperature_2',['ReadTemperature',['../classNtcThermistor.html#a763f12e7433118d41ad6dd3ef8cd8157',1,'NtcThermistor']]],
-  ['readtemperaturecelsius_3',['ReadTemperatureCelsius',['../classNtcThermistor.html#a18c29f6f5a00552343fdd9692a2ec814',1,'NtcThermistor']]],
-  ['readtemperaturefahrenheit_4',['ReadTemperatureFahrenheit',['../classNtcThermistor.html#a6836a216914af62c079cd72243ea5757',1,'NtcThermistor']]],
-  ['readtemperaturekelvin_5',['ReadTemperatureKelvin',['../classNtcThermistor.html#ac3b63c341106a98ecbab8b8b26390143',1,'NtcThermistor']]],
-  ['resetcalibration_6',['ResetCalibration',['../classNtcThermistor.html#adc6c91be2a3128e0caf233412fc96c66',1,'NtcThermistor']]]
+  ['setadcchannel_0',['SetAdcChannel',['../classNtcThermistor.html#a9b0f1a50bf4e93359c0cd20e07a220d6',1,'NtcThermistor']]],
+  ['setbetavalue_1',['SetBetaValue',['../classNtcThermistor.html#a046e5acf713f68cf69e8ee6552022281',1,'NtcThermistor']]],
+  ['setcalibrationoffset_2',['SetCalibrationOffset',['../classNtcThermistor.html#a69b6155de5f940be09644f3268679806',1,'NtcThermistor']]],
+  ['setconfiguration_3',['SetConfiguration',['../classNtcThermistor.html#a1c2da1a8a9726972231fa5941a089928',1,'NtcThermistor']]],
+  ['setconversionmethod_4',['SetConversionMethod',['../classNtcThermistor.html#a612e6259fc18736a48634d813d78d0ca',1,'NtcThermistor']]],
+  ['setfiltering_5',['SetFiltering',['../classNtcThermistor.html#a0ac73c1968411826d60c2d1f8cb4aa8f',1,'NtcThermistor']]],
+  ['setreferencevoltage_6',['SetReferenceVoltage',['../classNtcThermistor.html#a3f769d66fdb5e268067aa290ce963f92',1,'NtcThermistor']]],
+  ['setsamplingparameters_7',['SetSamplingParameters',['../classNtcThermistor.html#a14bcc1e5d9982c080a0cc167f327015a',1,'NtcThermistor']]],
+  ['setsimulatedvoltage_8',['SetSimulatedVoltage',['../classEsp32NtcAdcBus.html#a03b89553e1fd7d057c9239a8345b61ce',1,'Esp32NtcAdcBus']]],
+  ['setvoltagedivider_9',['SetVoltageDivider',['../classNtcThermistor.html#a0055fc273d31760f5bc61b51c77f132f',1,'NtcThermistor']]]
 ];
