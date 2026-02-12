@@ -16,5 +16,6 @@ var searchData=
   ['convertresistancetotemperaturesteinharthart_13',['ConvertResistanceToTemperatureSteinhartHart',['../namespaceNTC.html#aa1785d9467faa154b30d4d3710ca12b9',1,'NTC']]],
   ['converttemperaturetoresistancebeta_14',['ConvertTemperatureToResistanceBeta',['../namespaceNTC.html#af49c71b1b1bef9c63600d16f6af7a7b7',1,'NTC']]],
   ['converttemperaturetoresistancedefault_15',['ConvertTemperatureToResistanceDefault',['../namespaceNTC.html#aa922d3f7ff526eac78cd1bc3a1fffb25',1,'NTC']]],
-  ['converttemperaturetoresistancesteinharthart_16',['ConvertTemperatureToResistanceSteinhartHart',['../namespaceNTC.html#a409b9386c346fdac5dbf35602763bc0b',1,'NTC']]]
+  ['converttemperaturetoresistancesteinharthart_16',['ConvertTemperatureToResistanceSteinhartHart',['../namespaceNTC.html#a409b9386c346fdac5dbf35602763bc0b',1,'NTC']]],
+  ['createesp32ntcadcbus_17',['CreateEsp32NtcAdcBus',['../mock__esp32__adc_8hpp.html#a10e924e9fa689f9fb15ce0c59bebcb14',1,'mock_esp32_adc.hpp']]]
 ];

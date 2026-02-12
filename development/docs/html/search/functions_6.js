@@ -13,9 +13,9 @@ var searchData=
   ['getntcg164jf103ft1slookuptable_10',['GetNtcG164Jf103Ft1sLookupTable',['../ntc__lookup__table_8cpp.html#a81f949cf79d44ef51235772ec96849c6',1,'GetNtcG164Jf103Ft1sLookupTable():&#160;ntc_lookup_table.cpp'],['../namespaceNTC.html#a12f1182493f0efa43e9c7cd93abab1c0',1,'NTC::GetNtcG164Jf103Ft1sLookupTable()']]],
   ['getntclookuptable_11',['GetNtcLookupTable',['../ntc__lookup__table_8cpp.html#a36c81bc3c45e7e022bbfed40dc0c14c2',1,'GetNtcLookupTable():&#160;ntc_lookup_table.cpp'],['../namespaceNTC.html#ae9f4370d062be80682f51e690d7033cb',1,'NTC::GetNtcLookupTable()']]],
   ['getrawadcvalue_12',['GetRawAdcValue',['../classNtcThermistor.html#ac3721322696d11ee55f3d1b95b36db90',1,'NtcThermistor']]],
-  ['getreferencevoltage_13',['GetReferenceVoltage',['../classntc_1_1AdcInterface.html#a0545102b48082bc0d535f9623bcfb45d',1,'ntc::AdcInterface::GetReferenceVoltage()'],['../classMockEsp32Adc.html#ac43c0b6c7df753218e40e9ab0e769dd5',1,'MockEsp32Adc::GetReferenceVoltage()']]],
+  ['getreferencevoltage_13',['GetReferenceVoltage',['../classntc_1_1AdcInterface.html#a0545102b48082bc0d535f9623bcfb45d',1,'ntc::AdcInterface::GetReferenceVoltage()'],['../classEsp32NtcAdcBus.html#abe597f360f0014dbad0f7a1446a7d0cd',1,'Esp32NtcAdcBus::GetReferenceVoltage()']]],
   ['getresistance_14',['GetResistance',['../classNtcThermistor.html#a6f6c51a6139324f020d50a56416a2cd3',1,'NtcThermistor']]],
-  ['getresolutionbits_15',['GetResolutionBits',['../classntc_1_1AdcInterface.html#a03934e879e80ff16df2df59ed91066b6',1,'ntc::AdcInterface::GetResolutionBits()'],['../classMockEsp32Adc.html#a3c511e67fe8b09afc568ce14ea8d0a1d',1,'MockEsp32Adc::GetResolutionBits()']]],
+  ['getresolutionbits_15',['GetResolutionBits',['../classntc_1_1AdcInterface.html#a03934e879e80ff16df2df59ed91066b6',1,'ntc::AdcInterface::GetResolutionBits()'],['../classEsp32NtcAdcBus.html#a43913ebd44d7aa656ea1dcb3f66c065f',1,'Esp32NtcAdcBus::GetResolutionBits()']]],
   ['gettypestring_16',['GetTypeString',['../classNtcThermistor.html#a61d208940fed34c62ed4da7b97160c5d',1,'NtcThermistor']]],
   ['getvoltage_17',['GetVoltage',['../classNtcThermistor.html#a0a6295bd186d9883e9495f1e32a95b9c',1,'NtcThermistor']]]
 ];

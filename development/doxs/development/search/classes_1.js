@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mockesp32adc_0',['MockEsp32Adc',['../classMockEsp32Adc.html',1,'']]]
+  ['circuitconfig_0',['CircuitConfig',['../structNTC__TestConfig_1_1CircuitConfig.html',1,'NTC_TestConfig']]]
 ];

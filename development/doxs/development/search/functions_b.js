@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['operator_3d_0',['operator=',['../classntc_1_1AdcInterface.html#a01f8de3b5dd46e8053c1f3129e700595',1,'ntc::AdcInterface::operator=(const AdcInterface &amp;)=delete'],['../classntc_1_1AdcInterface.html#abc71f28f3a4756849fcbb193cb6112c1',1,'ntc::AdcInterface::operator=(AdcInterface &amp;&amp;)=default'],['../classNtcThermistor.html#aff5312f134301d166b86ebef3bdd252b',1,'NtcThermistor::operator=(const NtcThermistor &amp;)=delete'],['../classNtcThermistor.html#abe5dc5b49372d604ba3f47a268049108',1,'NtcThermistor::operator=(NtcThermistor &amp;&amp;) noexcept=default']]],
-  ['output_5fsection_5findicator_1',['output_section_indicator',['../TestFramework_8h.html#a0b263a245b65a247ab95a28992b8cc4c',1,'TestFramework.h']]]
+  ['print_5ftest_5fsection_5ffooter_0',['print_test_section_footer',['../TestFramework_8h.html#a5fe4d7658c49a1f3999cd09c0db952c0',1,'TestFramework.h']]],
+  ['print_5ftest_5fsection_5fheader_1',['print_test_section_header',['../TestFramework_8h.html#a5c46ab8dc59b071f0843bc287145d5f1',1,'TestFramework.h']]],
+  ['print_5ftest_5fsection_5fstatus_2',['print_test_section_status',['../TestFramework_8h.html#a200bb35a3a48c625b9cb8d2511d6bd87',1,'TestFramework.h']]],
+  ['print_5ftest_5fsummary_3',['print_test_summary',['../TestFramework_8h.html#ab7e4c076755ecdf2ad6212cb8f6578ab',1,'TestFramework.h']]]
 ];

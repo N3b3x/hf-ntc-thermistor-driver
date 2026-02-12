@@ -95,7 +95,8 @@ $(function(){initNavTree('mock__esp32__adc_8hpp.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">mock_esp32_adc.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -104,10 +105,11 @@ $(function(){initNavTree('mock__esp32__adc_8hpp.html',''); initResizable(); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ntc__adc__interface_8hpp_source.html">ntc_adc_interface.hpp</a>&quot;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for mock_esp32_adc.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="mock__esp32__adc_8hpp__incl.svg" width="264" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="mock__esp32__adc_8hpp__incl.svg" width="366" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -119,9 +121,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockEsp32Adc.html">MockEsp32Adc</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock ADC implementation for testing.  <a href="classMockEsp32Adc.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEsp32NtcAdcBus.html">Esp32NtcAdcBus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock ADC implementation for testing.  <a href="classEsp32NtcAdcBus.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a10e924e9fa689f9fb15ce0c59bebcb14" id="r_a10e924e9fa689f9fb15ce0c59bebcb14"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classEsp32NtcAdcBus.html">Esp32NtcAdcBus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10e924e9fa689f9fb15ce0c59bebcb14">CreateEsp32NtcAdcBus</a> (float reference_voltage=3.3F, uint8_t resolution_bits=12)</td></tr>
+<tr class="memdesc:a10e924e9fa689f9fb15ce0c59bebcb14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory function to create an ESP32 <a class="el" href="namespaceNTC.html">NTC</a> ADC bus instance.  <br /></td></tr>
+<tr class="separator:a10e924e9fa689f9fb15ce0c59bebcb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Mock ADC implementation for ESP32-C6 testing. </p>
@@ -129,7 +137,48 @@ Classes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Nebiyu Tadesse </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>HardFOC </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a10e924e9fa689f9fb15ce0c59bebcb14" name="a10e924e9fa689f9fb15ce0c59bebcb14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10e924e9fa689f9fb15ce0c59bebcb14">&#9670;&#160;</a></span>CreateEsp32NtcAdcBus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classEsp32NtcAdcBus.html">Esp32NtcAdcBus</a> &gt; CreateEsp32NtcAdcBus </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>reference_voltage</em><span class="paramdefsep"> = </span><span class="paramdefval">3.3F</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>resolution_bits</em><span class="paramdefsep"> = </span><span class="paramdefval">12</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Factory function to create an ESP32 <a class="el" href="namespaceNTC.html">NTC</a> ADC bus instance. </p>
+<p>Creates and initializes the mock ADC bus. Returns nullptr on failure.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reference_voltage</td><td>Reference voltage in volts (default: 3.3V) </td></tr>
+    <tr><td class="paramname">resolution_bits</td><td>ADC resolution in bits (default: 12-bit) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Unique pointer to <a class="el" href="classEsp32NtcAdcBus.html" title="Mock ADC implementation for testing.">Esp32NtcAdcBus</a> instance, or nullptr on failure </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

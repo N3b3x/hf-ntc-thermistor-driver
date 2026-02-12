@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Mathematical conversion functions for NTC thermistor temperature calculation.">
+<g id="a_Node000001"><a xlink:title="Mathematical conversion functions for NTC thermistor temperature.">
 <polygon fill="#999999" stroke="#666666" points="162.5,-129 34.5,-129 34.5,-110 162.5,-110 162.5,-129"/>
 <text text-anchor="middle" x="98.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">src/ntc_conversion.cpp</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="ntc__conversion_8hpp.html" target="_top" xlink:title="Mathematical conversion functions for NTC thermistor temperature calculation.">
+<g id="a_Node000002"><a xlink:href="ntc__conversion_8hpp.html" target="_top" xlink:title="Mathematical conversion functions for NTC thermistor temperature.">
 <polygon fill="white" stroke="#666666" points="154,-74 43,-74 43,-55 154,-55 154,-74"/>
 <text text-anchor="middle" x="98.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">ntc_conversion.hpp</text>
 </a>

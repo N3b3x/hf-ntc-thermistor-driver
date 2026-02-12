@@ -15,6 +15,7 @@
 #include "ntc_adc_interface.hpp"
 
 #include <cmath>
+#include <memory>
 
 /**
  * @brief Mock ADC implementation for testing
@@ -25,7 +26,7 @@
  *
  * Uses CRTP pattern with ntc::AdcInterface
  */
-class MockEsp32Adc : public ntc::AdcInterface<MockEsp32Adc> {
+class Esp32NtcAdcBus : public ntc::AdcInterface<Esp32NtcAdcBus> {
 public:
   /**
    * @brief Constructor
@@ -34,7 +35,7 @@ public:
    * @param resolution_bits ADC resolution in bits (default: 12-bit for
    * ESP32-C6)
    */
-  explicit MockEsp32Adc(float reference_voltage = 3.3F,
+  explicit Esp32NtcAdcBus(float reference_voltage = 3.3F,
                         uint8_t resolution_bits = 12)
       : initialized_(false), reference_voltage_(reference_voltage),
         resolution_bits_(resolution_bits),
@@ -43,7 +44,7 @@ public:
   /**
    * @brief Destructor
    */
-  ~MockEsp32Adc() = default;
+  ~Esp32NtcAdcBus() = default;
 
   /**
    * @brief Check if ADC is initialized
@@ -173,3 +174,21 @@ private:
   uint32_t max_count_;
   float simulated_voltage_ = 1.65F; // Default mid-scale voltage
 };
+
+/**
+ * @brief Factory function to create an ESP32 NTC ADC bus instance
+ *
+ * Creates and initializes the mock ADC bus. Returns nullptr on failure.
+ *
+ * @param reference_voltage Reference voltage in volts (default: 3.3V)
+ * @param resolution_bits ADC resolution in bits (default: 12-bit)
+ * @return Unique pointer to Esp32NtcAdcBus instance, or nullptr on failure
+ */
+inline std::unique_ptr<Esp32NtcAdcBus> CreateEsp32NtcAdcBus(
+    float reference_voltage = 3.3F, uint8_t resolution_bits = 12) {
+  auto bus = std::make_unique<Esp32NtcAdcBus>(reference_voltage, resolution_bits);
+  if (!bus->Initialize()) {
+    return nullptr;
+  }
+  return bus;
+}

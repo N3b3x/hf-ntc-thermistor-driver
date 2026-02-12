@@ -11,9 +11,9 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="classNtcThermistor.html" target="_top" xlink:title="Hardware&#45;agnostic NTC thermistor driver.">
+<g id="a_Node000000"><a xlink:href="structNTC__TestConfig_1_1ADCConfig.html" target="_top" xlink:title="ADC Configuration for ESP32&#45;C6.">
 <polygon fill="white" stroke="#666666" points="149,-19 0,-19 0,0 149,0 149,-19"/>
-<text text-anchor="middle" x="74.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">NtcThermistor&lt; AdcType &gt;</text>
+<text text-anchor="middle" x="74.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">NTC_TestConfig::ADCConfig</text>
 </a>
 </g>
 </g>

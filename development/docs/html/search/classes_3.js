@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['testresults_0',['TestResults',['../structTestResults.html',1,'']]],
-  ['testtaskcontext_1',['TestTaskContext',['../structTestTaskContext.html',1,'']]]
+  ['esp32ntcadcbus_0',['Esp32NtcAdcBus',['../classEsp32NtcAdcBus.html',1,'']]]
 ];

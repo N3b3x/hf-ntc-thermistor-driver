@@ -5,15 +5,15 @@
  -->
 <!-- Title: inc/ntc_thermistor.hpp Pages: 1 -->
 <svg width="566pt" height="192pt"
- viewBox="0.00 0.00 565.74 192.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 565.73 192.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 188)">
 <title>inc/ntc_thermistor.hpp</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Hardware&#45;agnostic NTC thermistor driver for temperature measurement.">
-<polygon fill="#999999" stroke="#666666" points="329.24,-184 204.24,-184 204.24,-165 329.24,-165 329.24,-184"/>
-<text text-anchor="middle" x="266.74" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">inc/ntc_thermistor.hpp</text>
+<polygon fill="#999999" stroke="#666666" points="328.23,-184 203.23,-184 203.23,-165 328.23,-165 328.23,-184"/>
+<text text-anchor="middle" x="265.73" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">inc/ntc_thermistor.hpp</text>
 </a>
 </g>
 </g>
@@ -21,8 +21,8 @@
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:title=" ">
-<polygon fill="#e0e0e0" stroke="#999999" points="116.74,-19 66.74,-19 66.74,0 116.74,0 116.74,-19"/>
-<text text-anchor="middle" x="91.74" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">cstdint</text>
+<polygon fill="#e0e0e0" stroke="#999999" points="116.73,-19 66.73,-19 66.73,0 116.73,0 116.73,-19"/>
+<text text-anchor="middle" x="91.73" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">cstdint</text>
 </a>
 </g>
 </g>
@@ -30,8 +30,8 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M204.04,-171.65C135.84,-168.15 33.23,-158.07 8.74,-129 -21.12,-93.55 35.18,-47.64 68.95,-24.77"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="70.96,-27.64 77.39,-19.21 67.11,-21.79 70.96,-27.64"/>
+<path fill="none" stroke="#63b8ff" d="M202.97,-171.59C135.03,-168.05 33.08,-157.93 8.73,-129 -21.11,-93.54 35.18,-47.64 68.95,-24.77"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="70.96,-27.63 77.39,-19.21 67.11,-21.79 70.96,-27.63"/>
 </a>
 </g>
 </g>
@@ -39,8 +39,8 @@
 <g id="Node000003" class="node">
 <title>Node3</title>
 <g id="a_Node000003"><a xlink:title=" ">
-<polygon fill="#e0e0e0" stroke="#999999" points="473.74,-129 415.74,-129 415.74,-110 473.74,-110 473.74,-129"/>
-<text text-anchor="middle" x="444.74" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">memory</text>
+<polygon fill="#e0e0e0" stroke="#999999" points="470.73,-129 412.73,-129 412.73,-110 470.73,-110 470.73,-129"/>
+<text text-anchor="middle" x="441.73" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">memory</text>
 </a>
 </g>
 </g>
@@ -48,8 +48,8 @@
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M295.34,-164.98C325.35,-156.05 372.72,-141.94 406.06,-132.02"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="407.33,-135.29 415.92,-129.08 405.33,-128.58 407.33,-135.29"/>
+<path fill="none" stroke="#63b8ff" d="M294.01,-164.98C323.69,-156.05 370.52,-141.94 403.49,-132.02"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="404.67,-135.32 413.24,-129.08 402.65,-128.61 404.67,-135.32"/>
 </a>
 </g>
 </g>
@@ -57,8 +57,8 @@
 <g id="Node000004" class="node">
 <title>Node4</title>
 <g id="a_Node000004"><a xlink:href="ntc__adc__interface_8hpp.html" target="_top" xlink:title="CRTP&#45;based template interface for ADC used by NTC thermistor driver.">
-<polygon fill="white" stroke="#666666" points="141.74,-129 17.74,-129 17.74,-110 141.74,-110 141.74,-129"/>
-<text text-anchor="middle" x="79.74" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">ntc_adc_interface.hpp</text>
+<polygon fill="white" stroke="#666666" points="141.73,-129 17.73,-129 17.73,-110 141.73,-110 141.73,-129"/>
+<text text-anchor="middle" x="79.73" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">ntc_adc_interface.hpp</text>
 </a>
 </g>
 </g>
@@ -66,8 +66,8 @@
 <g id="edge3_Node000001_Node000004" class="edge">
 <title>Node1&#45;&gt;Node4</title>
 <g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M236.69,-164.98C205.03,-156.01 154.97,-141.82 119.93,-131.89"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="120.6,-128.44 110.02,-129.08 118.69,-135.18 120.6,-128.44"/>
+<path fill="none" stroke="#63b8ff" d="M235.85,-164.98C204.35,-156.01 154.57,-141.82 119.71,-131.89"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="120.43,-128.46 109.85,-129.08 118.51,-135.19 120.43,-128.46"/>
 </a>
 </g>
 </g>
@@ -75,8 +75,8 @@
 <g id="Node000005" class="node">
 <title>Node5</title>
 <g id="a_Node000005"><a xlink:href="ntc__types_8hpp.html" target="_top" xlink:title="Type definitions for NTC thermistor driver.">
-<polygon fill="white" stroke="#666666" points="245.24,-129 160.24,-129 160.24,-110 245.24,-110 245.24,-129"/>
-<text text-anchor="middle" x="202.74" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">ntc_types.hpp</text>
+<polygon fill="white" stroke="#666666" points="245.23,-129 160.23,-129 160.23,-110 245.23,-110 245.23,-129"/>
+<text text-anchor="middle" x="202.73" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">ntc_types.hpp</text>
 </a>
 </g>
 </g>
@@ -84,17 +84,17 @@
 <g id="edge5_Node000001_Node000005" class="edge">
 <title>Node1&#45;&gt;Node5</title>
 <g id="a_edge5_Node000001_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M256.46,-164.98C246.9,-157.07 232.46,-145.11 220.96,-135.58"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="223.14,-132.85 213.21,-129.17 218.68,-138.24 223.14,-132.85"/>
+<path fill="none" stroke="#63b8ff" d="M255.61,-164.98C246.3,-157.15 232.27,-145.34 221,-135.86"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="222.95,-132.93 213.04,-129.17 218.44,-138.29 222.95,-132.93"/>
 </a>
 </g>
 </g>
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="ntc__thermistor_8cpp.html" target="_top" xlink:title="Hardware&#45;agnostic NTC thermistor driver implementation.">
-<polygon fill="white" stroke="#666666" points="397.74,-129 263.74,-129 263.74,-110 397.74,-110 397.74,-129"/>
-<text text-anchor="middle" x="330.74" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">../src/ntc_thermistor.cpp</text>
+<g id="a_Node000006"><a xlink:href="ntc__thermistor_8ipp.html" target="_top" xlink:title="Hardware&#45;agnostic NTC thermistor driver implementation.">
+<polygon fill="white" stroke="#666666" points="394.23,-129 263.23,-129 263.23,-110 394.23,-110 394.23,-129"/>
+<text text-anchor="middle" x="328.73" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">../src/ntc_thermistor.ipp</text>
 </a>
 </g>
 </g>
@@ -102,8 +102,8 @@
 <g id="edge7_Node000001_Node000006" class="edge">
 <title>Node1&#45;&gt;Node6</title>
 <g id="a_edge7_Node000001_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M272.14,-164.75C280.11,-156.72 294.34,-144.67 306.9,-135.18"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="309.23,-137.81 315.24,-129.09 305.1,-132.16 309.23,-137.81"/>
+<path fill="none" stroke="#63b8ff" d="M270.97,-164.75C278.79,-156.72 292.79,-144.67 305.18,-135.18"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="307.44,-137.85 313.39,-129.09 303.27,-132.23 307.44,-137.85"/>
 </a>
 </g>
 </g>
@@ -111,8 +111,8 @@
 <g id="edge4_Node000004_Node000002" class="edge">
 <title>Node4&#45;&gt;Node2</title>
 <g id="a_edge4_Node000004_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M78.47,-109.81C76.89,-97.52 74.76,-74.41 77.74,-55 79.09,-46.19 81.87,-36.74 84.59,-28.82"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="87.97,-29.77 88.14,-19.18 81.4,-27.35 87.97,-29.77"/>
+<path fill="none" stroke="#63b8ff" d="M78.46,-109.81C76.89,-97.52 74.75,-74.41 77.73,-55 79.09,-46.19 81.86,-36.74 84.59,-28.82"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="87.97,-29.77 88.13,-19.18 81.4,-27.35 87.97,-29.77"/>
 </a>
 </g>
 </g>
@@ -120,8 +120,8 @@
 <g id="edge6_Node000005_Node000002" class="edge">
 <title>Node5&#45;&gt;Node2</title>
 <g id="a_edge6_Node000005_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M170.03,-109.99C150.28,-103.27 126.04,-91.96 110.74,-74 100.13,-61.54 95.45,-43.34 93.38,-29.61"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="96.82,-28.88 92.18,-19.35 89.86,-29.69 96.82,-28.88"/>
+<path fill="none" stroke="#63b8ff" d="M170.03,-109.99C150.27,-103.27 126.04,-91.96 110.73,-74 100.13,-61.54 95.44,-43.34 93.37,-29.61"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="96.81,-28.88 92.18,-19.35 89.86,-29.69 96.81,-28.88"/>
 </a>
 </g>
 </g>
@@ -129,17 +129,17 @@
 <g id="edge14_Node000006_Node000001" class="edge">
 <title>Node6&#45;&gt;Node1</title>
 <g id="a_edge14_Node000006_Node000001"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M325.42,-129.17C317.45,-137.21 303.13,-149.34 290.51,-158.88"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="288.15,-156.26 282.14,-164.98 292.28,-161.92 288.15,-156.26"/>
+<path fill="none" stroke="#63b8ff" d="M323.58,-129.17C315.76,-137.21 301.67,-149.34 289.22,-158.88"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="286.93,-156.22 280.97,-164.98 291.09,-161.85 286.93,-156.22"/>
 </a>
 </g>
 </g>
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="ntc__conversion_8hpp.html" target="_top" xlink:title="Mathematical conversion functions for NTC thermistor temperature calculation.">
-<polygon fill="white" stroke="#666666" points="437.24,-74 326.24,-74 326.24,-55 437.24,-55 437.24,-74"/>
-<text text-anchor="middle" x="381.74" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">ntc_conversion.hpp</text>
+<g id="a_Node000007"><a xlink:href="ntc__conversion_8hpp.html" target="_top" xlink:title="Mathematical conversion functions for NTC thermistor temperature.">
+<polygon fill="white" stroke="#666666" points="437.23,-74 326.23,-74 326.23,-55 437.23,-55 437.23,-74"/>
+<text text-anchor="middle" x="381.73" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">ntc_conversion.hpp</text>
 </a>
 </g>
 </g>
@@ -147,8 +147,8 @@
 <g id="edge8_Node000006_Node000007" class="edge">
 <title>Node6&#45;&gt;Node7</title>
 <g id="a_edge8_Node000006_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M339.16,-109.75C346.51,-102.11 357.37,-90.82 366.28,-81.56"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="369.06,-83.72 373.47,-74.09 364.02,-78.87 369.06,-83.72"/>
+<path fill="none" stroke="#63b8ff" d="M337.49,-109.75C345.2,-102.03 356.64,-90.6 365.95,-81.28"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="368.55,-83.64 373.15,-74.09 363.6,-78.69 368.55,-83.64"/>
 </a>
 </g>
 </g>
@@ -156,8 +156,8 @@
 <g id="Node000008" class="node">
 <title>Node8</title>
 <g id="a_Node000008"><a xlink:title=" ">
-<polygon fill="#e0e0e0" stroke="#999999" points="447.24,-19 400.24,-19 400.24,0 447.24,0 447.24,-19"/>
-<text text-anchor="middle" x="423.74" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">cmath</text>
+<polygon fill="#e0e0e0" stroke="#999999" points="447.23,-19 400.23,-19 400.23,0 447.23,0 447.23,-19"/>
+<text text-anchor="middle" x="423.73" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">cmath</text>
 </a>
 </g>
 </g>
@@ -165,8 +165,8 @@
 <g id="edge16_Node000006_Node000008" class="edge">
 <title>Node6&#45;&gt;Node8</title>
 <g id="a_edge16_Node000006_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M390.21,-109.98C411.67,-103.71 433.79,-92.84 446.74,-74 456.55,-59.73 447.39,-40.8 437.88,-27.33"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="440.64,-25.17 431.78,-19.37 435.09,-29.43 440.64,-25.17"/>
+<path fill="none" stroke="#63b8ff" d="M390.13,-109.96C411.67,-103.69 433.72,-92.82 446.73,-74 456.58,-59.76 447.42,-40.82 437.9,-27.34"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="440.65,-25.18 431.79,-19.38 435.1,-29.44 440.65,-25.18"/>
 </a>
 </g>
 </g>
@@ -174,8 +174,8 @@
 <g id="Node000009" class="node">
 <title>Node9</title>
 <g id="a_Node000009"><a xlink:href="ntc__lookup__table_8hpp.html" target="_top" xlink:title="Lookup table implementation for NTC thermistor temperature conversion.">
-<polygon fill="white" stroke="#666666" points="307.74,-74 187.74,-74 187.74,-55 307.74,-55 307.74,-74"/>
-<text text-anchor="middle" x="247.74" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">ntc_lookup_table.hpp</text>
+<polygon fill="white" stroke="#666666" points="307.73,-74 187.73,-74 187.73,-55 307.73,-55 307.73,-74"/>
+<text text-anchor="middle" x="247.73" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">ntc_lookup_table.hpp</text>
 </a>
 </g>
 </g>
@@ -183,8 +183,8 @@
 <g id="edge11_Node000006_Node000009" class="edge">
 <title>Node6&#45;&gt;Node9</title>
 <g id="a_edge11_Node000006_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M317.4,-109.98C304.65,-101.84 285.19,-89.41 270.07,-79.76"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="271.63,-76.6 261.32,-74.17 267.86,-82.5 271.63,-76.6"/>
+<path fill="none" stroke="#63b8ff" d="M315.72,-109.98C303.28,-101.84 284.28,-89.41 269.53,-79.76"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="271.27,-76.72 260.99,-74.17 267.44,-82.57 271.27,-76.72"/>
 </a>
 </g>
 </g>
@@ -192,8 +192,8 @@
 <g id="Node000011" class="node">
 <title>Node11</title>
 <g id="a_Node000011"><a xlink:title=" ">
-<polygon fill="#e0e0e0" stroke="#999999" points="557.74,-74 493.74,-74 493.74,-55 557.74,-55 557.74,-74"/>
-<text text-anchor="middle" x="525.74" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">algorithm</text>
+<polygon fill="#e0e0e0" stroke="#999999" points="557.73,-74 493.73,-74 493.73,-55 557.73,-55 557.73,-74"/>
+<text text-anchor="middle" x="525.73" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">algorithm</text>
 </a>
 </g>
 </g>
@@ -201,8 +201,8 @@
 <g id="edge15_Node000006_Node000011" class="edge">
 <title>Node6&#45;&gt;Node11</title>
 <g id="a_edge15_Node000006_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M362.07,-109.98C395.23,-100.97 447.74,-86.7 484.3,-76.76"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="485.43,-80.08 494.16,-74.08 483.6,-73.33 485.43,-80.08"/>
+<path fill="none" stroke="#63b8ff" d="M360.39,-109.98C393.89,-100.97 446.93,-86.7 483.87,-76.76"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="485.09,-80.06 493.83,-74.08 483.27,-73.3 485.09,-80.06"/>
 </a>
 </g>
 </g>
@@ -210,8 +210,8 @@
 <g id="Node000012" class="node">
 <title>Node12</title>
 <g id="a_Node000012"><a xlink:title=" ">
-<polygon fill="#e0e0e0" stroke="#999999" points="169.74,-74 119.74,-74 119.74,-55 169.74,-55 169.74,-74"/>
-<text text-anchor="middle" x="144.74" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">cstring</text>
+<polygon fill="#e0e0e0" stroke="#999999" points="169.73,-74 119.73,-74 119.73,-55 169.73,-55 169.73,-74"/>
+<text text-anchor="middle" x="144.73" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">cstring</text>
 </a>
 </g>
 </g>
@@ -219,8 +219,8 @@
 <g id="edge17_Node000006_Node000012" class="edge">
 <title>Node6&#45;&gt;Node12</title>
 <g id="a_edge17_Node000006_Node000012"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M300.86,-109.98C267.77,-100.56 214.5,-85.38 179.56,-75.42"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="180.36,-72.01 169.78,-72.63 178.44,-78.74 180.36,-72.01"/>
+<path fill="none" stroke="#63b8ff" d="M299.17,-109.98C266.53,-100.58 214.04,-85.46 179.47,-75.51"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="180.37,-72.12 169.79,-72.72 178.43,-78.85 180.37,-72.12"/>
 </a>
 </g>
 </g>
@@ -228,8 +228,8 @@
 <g id="edge10_Node000007_Node000002" class="edge">
 <title>Node7&#45;&gt;Node2</title>
 <g id="a_edge10_Node000007_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M335.15,-54.98C277.18,-44.39 179.48,-26.53 127.23,-16.99"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="127.57,-13.49 117.1,-15.13 126.31,-20.38 127.57,-13.49"/>
+<path fill="none" stroke="#63b8ff" d="M335.14,-54.98C277.17,-44.39 179.47,-26.53 127.22,-16.99"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="127.56,-13.49 117.1,-15.13 126.3,-20.38 127.56,-13.49"/>
 </a>
 </g>
 </g>
@@ -237,8 +237,8 @@
 <g id="edge9_Node000007_Node000008" class="edge">
 <title>Node7&#45;&gt;Node8</title>
 <g id="a_edge9_Node000007_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M388.68,-54.75C394.61,-47.26 403.31,-36.28 410.56,-27.13"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="413.47,-29.1 416.93,-19.09 407.98,-24.75 413.47,-29.1"/>
+<path fill="none" stroke="#63b8ff" d="M388.67,-54.75C394.6,-47.26 403.31,-36.28 410.56,-27.13"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="413.46,-29.1 416.93,-19.09 407.97,-24.75 413.46,-29.1"/>
 </a>
 </g>
 </g>
@@ -246,8 +246,8 @@
 <g id="edge13_Node000009_Node000002" class="edge">
 <title>Node9&#45;&gt;Node2</title>
 <g id="a_edge13_Node000009_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M222.68,-54.98C196.63,-46.14 155.69,-32.23 126.52,-22.32"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="127.34,-18.9 116.74,-18.99 125.08,-25.53 127.34,-18.9"/>
+<path fill="none" stroke="#63b8ff" d="M222.67,-54.98C196.63,-46.14 155.68,-32.23 126.52,-22.32"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="127.33,-18.9 116.74,-18.99 125.08,-25.53 127.33,-18.9"/>
 </a>
 </g>
 </g>
@@ -255,8 +255,8 @@
 <g id="Node000010" class="node">
 <title>Node10</title>
 <g id="a_Node000010"><a xlink:title=" ">
-<polygon fill="#e0e0e0" stroke="#999999" points="274.24,-19 221.24,-19 221.24,0 274.24,0 274.24,-19"/>
-<text text-anchor="middle" x="247.74" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">cstddef</text>
+<polygon fill="#e0e0e0" stroke="#999999" points="274.23,-19 221.23,-19 221.23,0 274.23,0 274.23,-19"/>
+<text text-anchor="middle" x="247.73" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">cstddef</text>
 </a>
 </g>
 </g>
@@ -264,8 +264,8 @@
 <g id="edge12_Node000009_Node000010" class="edge">
 <title>Node9&#45;&gt;Node10</title>
 <g id="a_edge12_Node000009_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M247.74,-54.75C247.74,-47.8 247.74,-37.85 247.74,-29.13"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="251.24,-29.09 247.74,-19.09 244.24,-29.09 251.24,-29.09"/>
+<path fill="none" stroke="#63b8ff" d="M247.73,-54.75C247.73,-47.8 247.73,-37.85 247.73,-29.13"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="251.23,-29.09 247.73,-19.09 244.23,-29.09 251.23,-29.09"/>
 </a>
 </g>
 </g>
