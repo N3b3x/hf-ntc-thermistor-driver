@@ -1,20 +1,9 @@
 /**
  * @file ntc_adc_interface.hpp
- * @brief CRTP-based template interface for ADC used by NTC thermistor driver.
- *
- * This header defines a CRTP (Curiously Recurring Template Pattern) interface
- * that any ADC implementation must provide to work with the NTC thermistor
- * driver. This approach provides compile-time polymorphism without virtual
- * function overhead.
- *
- * @author Nebiyu Tadesse
- * @date 2025
- * @copyright HardFOC
+ * @brief CRTP-based template interface for ADC used by NTC thermistor driver
+ * @copyright Copyright (c) 2024-2025 HardFOC. All rights reserved.
  */
-
-#ifndef NTC_ADC_INTERFACE_H
-#define NTC_ADC_INTERFACE_H
-
+#pragma once
 #include <cstdint>
 
 namespace ntc {
@@ -141,5 +130,3 @@ protected:
 };
 
 } // namespace ntc
-
-#endif // NTC_ADC_INTERFACE_H

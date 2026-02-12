@@ -1,17 +1,8 @@
 /**
  * @file ntc_conversion.cpp
  * @brief Mathematical conversion functions for NTC thermistor temperature
- * calculation.
- *
- * This file contains mathematical conversion methods for calculating
- * temperature from NTC thermistor resistance values using the Steinhart-Hart
- * equation and beta parameter approximation.
- *
- * @author Nebiyu Tadesse
- * @date 2025
- * @copyright HardFOC
+ * @copyright Copyright (c) 2024-2025 HardFOC. All rights reserved.
  */
-
 #include "ntc_conversion.hpp"
 #include <algorithm>
 #include <cmath>

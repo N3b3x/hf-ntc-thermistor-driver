@@ -1,19 +1,8 @@
 /**
- * @file ntc_thermistor.cpp
- * @brief Hardware-agnostic NTC thermistor driver implementation.
- *
- * This file contains the complete implementation of the NtcThermistor class
- * that provides temperature measurement using NTC thermistors with support
- * for various NTC types and conversion methods.
- *
- * @author Nebiyu Tadesse
- * @date 2025
- * @copyright HardFOC
- *
- * @note This file is included by ntc_thermistor.hpp for template instantiation.
- *       It should not be compiled separately when included.
+ * @file ntc_thermistor.ipp
+ * @brief Hardware-agnostic NTC thermistor driver implementation
+ * @copyright Copyright (c) 2024-2025 HardFOC. All rights reserved.
  */
-
 #ifndef NTC_THERMISTOR_IMPL
 #define NTC_THERMISTOR_IMPL
 

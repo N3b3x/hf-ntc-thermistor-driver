@@ -1,22 +1,9 @@
 /**
  * @file ntc_types.hpp
- * @brief Type definitions for NTC thermistor driver.
- *
- * This header contains all type definitions, enumerations, and structures
- * used by the NTC thermistor driver. This file is included by other modules
- * that need type definitions without requiring the full NtcThermistor class.
- *
- * @note This header is designed to minimize dependencies and can be included
- *       independently of the main NtcThermistor class for type-only usage.
- *
- * @author Nebiyu Tadesse
- * @date 2025
- * @copyright HardFOC
+ * @brief Type definitions for NTC thermistor driver
+ * @copyright Copyright (c) 2024-2025 HardFOC. All rights reserved.
  */
-
-#ifndef NTC_TYPES_H
-#define NTC_TYPES_H
-
+#pragma once
 #include <cstdint>
 
 //--------------------------------------
@@ -237,5 +224,3 @@ GetDefaultNtcG163Jft103Ft1SConfig() noexcept {
 [[nodiscard]] constexpr ntc_config_t GetDefaultNtcConfig() noexcept {
   return GetDefaultNtcG163Jft103Ft1SConfig();
 }
-
-#endif // NTC_TYPES_H

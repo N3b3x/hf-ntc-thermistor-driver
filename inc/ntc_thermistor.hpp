@@ -1,19 +1,9 @@
 /**
  * @file ntc_thermistor.hpp
- * @brief Hardware-agnostic NTC thermistor driver for temperature measurement.
- *
- * This header provides a comprehensive interface for temperature measurement
- * using NTC (Negative Temperature Coefficient) thermistors. It supports various
- * NTC types and provides both lookup table and mathematical conversion methods.
- *
- * @author Nebiyu Tadesse
- * @date 2025
- * @copyright HardFOC
+ * @brief Hardware-agnostic NTC thermistor driver for temperature measurement
+ * @copyright Copyright (c) 2024-2025 HardFOC. All rights reserved.
  */
-
-#ifndef NTC_THERMISTOR_H
-#define NTC_THERMISTOR_H
-
+#pragma once
 #include <cstdint>
 #include <memory>
 
@@ -444,7 +434,5 @@ private:
 // Include template implementation
 #define NTC_THERMISTOR_HEADER_INCLUDED
 // NOLINTNEXTLINE(bugprone-suspicious-include) - Template implementation file
-#include "../src/ntc_thermistor.cpp"
+#include "../src/ntc_thermistor.ipp"
 #undef NTC_THERMISTOR_HEADER_INCLUDED
-
-#endif // NTC_THERMISTOR_H

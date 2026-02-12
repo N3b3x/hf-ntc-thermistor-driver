@@ -1,23 +1,9 @@
 /**
  * @file ntc_conversion.hpp
  * @brief Mathematical conversion functions for NTC thermistor temperature
- * calculation.
- *
- * This header provides mathematical conversion methods for calculating
- * temperature from NTC thermistor resistance values using the Steinhart-Hart
- * equation and beta parameter approximation.
- *
- * All conversion functions are in the @ref NTC namespace and can be used
- * independently of the NtcThermistor class for standalone calculations.
- *
- * @author Nebiyu Tadesse
- * @date 2025
- * @copyright HardFOC
+ * @copyright Copyright (c) 2024-2025 HardFOC. All rights reserved.
  */
-
-#ifndef NTC_CONVERSION_H
-#define NTC_CONVERSION_H
-
+#pragma once
 #include <cmath>
 #include <cstdint>
 
@@ -323,5 +309,3 @@ bool CalculateOptimalSeriesResistance(float thermistor_resistance_at_25c,
                                       float *optimal_resistance) noexcept;
 
 } // namespace NTC
-
-#endif // NTC_CONVERSION_H

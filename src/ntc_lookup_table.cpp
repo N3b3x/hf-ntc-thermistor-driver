@@ -1,16 +1,8 @@
 /**
  * @file ntc_lookup_table.cpp
- * @brief Lookup table implementation for NTC thermistor temperature conversion.
- *
- * This file contains lookup tables and functions for fast temperature
- * conversion from resistance values using pre-calculated tables for common NTC
- * types.
- *
- * @author Nebiyu Tadesse
- * @date 2025
- * @copyright HardFOC
+ * @brief Lookup table implementation for NTC thermistor temperature conversion
+ * @copyright Copyright (c) 2024-2025 HardFOC. All rights reserved.
  */
-
 #include "ntc_lookup_table.hpp"
 #include "ntc_types.hpp"
 #include <algorithm>

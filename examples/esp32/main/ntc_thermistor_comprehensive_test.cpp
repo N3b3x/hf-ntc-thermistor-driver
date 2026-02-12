@@ -35,8 +35,8 @@ static constexpr bool ENABLE_BASIC_TESTS = true;
 //=============================================================================
 // SHARED TEST RESOURCES
 //=============================================================================
-static std::unique_ptr<MockEsp32Adc> g_mock_adc;
-static std::unique_ptr<NtcThermistor<MockEsp32Adc>> g_ntc_driver;
+static std::unique_ptr<Esp32NtcAdcBus> g_mock_adc;
+static std::unique_ptr<NtcThermistor<Esp32NtcAdcBus>> g_ntc_driver;
 
 //=============================================================================
 // TEST HELPER FUNCTIONS
@@ -47,7 +47,7 @@ static std::unique_ptr<NtcThermistor<MockEsp32Adc>> g_ntc_driver;
  */
 static bool init_test_resources() noexcept {
   // Create mock ADC
-  g_mock_adc = std::make_unique<MockEsp32Adc>(3.3F, 12);
+  g_mock_adc = std::make_unique<Esp32NtcAdcBus>(3.3F, 12);
   if (!g_mock_adc->Initialize()) {
     ESP_LOGE(TAG, "Failed to initialize mock ADC");
     return false;
@@ -72,7 +72,7 @@ static bool init_test_resources() noexcept {
 
   // Create NTC driver instance
   g_ntc_driver =
-      std::make_unique<NtcThermistor<MockEsp32Adc>>(config, g_mock_adc.get());
+      std::make_unique<NtcThermistor<Esp32NtcAdcBus>>(config, g_mock_adc.get());
   if (!g_ntc_driver->Initialize()) {
     ESP_LOGE(TAG, "Failed to initialize NTC driver");
     return false;
