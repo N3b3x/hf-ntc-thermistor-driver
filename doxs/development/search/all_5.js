@@ -8,7 +8,7 @@ var searchData=
   ['features_5',['✨ Features',['../index.html#autotoc_md3',1,'']]],
   ['filter_5falpha_6',['filter_alpha',['../structntc__config__t.html#a0a7c484fdb6372efcb428ed9a058d56c',1,'ntc_config_t']]],
   ['filter_5falpha_7',['FILTER_ALPHA',['../structNTC__TestConfig_1_1SamplingConfig.html#a9f66df7a95423a678fbf6379e60c9a11',1,'NTC_TestConfig::SamplingConfig']]],
-  ['findresistancefromlookuptable_8',['FindResistanceFromLookupTable',['../ntc__lookup__table_8cpp.html#abd28977d9567178c1969fee469515db0',1,'FindResistanceFromLookupTable():&#160;ntc_lookup_table.cpp'],['../namespaceNTC.html#a6553b07d26df8eb952a9435b0733c346',1,'NTC::FindResistanceFromLookupTable()']]],
-  ['findtemperaturefromlookuptable_9',['FindTemperatureFromLookupTable',['../ntc__lookup__table_8cpp.html#aec7bc100eab52795b9edbb4e089475f7',1,'FindTemperatureFromLookupTable():&#160;ntc_lookup_table.cpp'],['../namespaceNTC.html#a03641f0b725bcdc1f76d2c21bd77b887',1,'NTC::FindTemperatureFromLookupTable()']]],
+  ['findresistancefromlookuptable_8',['FindResistanceFromLookupTable',['../namespaceNTC.html#a6553b07d26df8eb952a9435b0733c346',1,'NTC']]],
+  ['findtemperaturefromlookuptable_9',['FindTemperatureFromLookupTable',['../namespaceNTC.html#a03641f0b725bcdc1f76d2c21bd77b887',1,'NTC']]],
   ['flip_5ftest_5fprogress_5findicator_10',['flip_test_progress_indicator',['../TestFramework_8h.html#a7bb80345e5681c19686df292fa897daf',1,'TestFramework.h']]]
 ];
