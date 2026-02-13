@@ -258,6 +258,8 @@ static const ntc_lookup_table_t NTCG163JF103FT1S_LOOKUP_TABLE = {
 //  Lookup Table Functions
 //--------------------------------------
 
+namespace NTC {
+
 const ntc_lookup_table_t *GetNtcLookupTable(int ntc_type) noexcept {
   switch (ntc_type) {
   case static_cast<int>(NtcType::NtcG163Jft103Ft1S):
@@ -491,3 +493,5 @@ const ntc_lookup_table_t *GetNtcG164Jf103Ft1sLookupTable() noexcept {
 const ntc_lookup_table_t *GetNtcG163Jf103Ft1sLookupTable() noexcept {
   return &NTCG163JF103FT1S_LOOKUP_TABLE;
 }
+
+} // namespace NTC
