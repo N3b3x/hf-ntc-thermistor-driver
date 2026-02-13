@@ -284,7 +284,7 @@
 
 <ul>
   <li><strong>Main Header</strong>: <a href="../inc/ntc_thermistor.hpp"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp</code></a></li>
-  <li><strong>Implementation</strong>: <a href="../src/ntc_thermistor.cpp"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp</code></a></li>
+  <li><strong>Implementation</strong>: <a href="../src/ntc_thermistor.ipp"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp</code></a></li>
   <li><strong>ADC Interface</strong>: <a href="../inc/ntc_adc_interface.hpp"><code class="language-plaintext highlighter-rouge">inc/ntc_adc_interface.hpp</code></a></li>
   <li><strong>Types</strong>: <a href="../inc/ntc_types.hpp"><code class="language-plaintext highlighter-rouge">inc/ntc_types.hpp</code></a></li>
 </ul>
@@ -309,7 +309,7 @@
 
 <p><strong>Template Parameter</strong>: <code class="language-plaintext highlighter-rouge">AdcType</code> - Your ADC interface implementation (must inherit from <code class="language-plaintext highlighter-rouge">ntc::AdcInterface&lt;AdcType&gt;</code>)</p>
 
-<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L84"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L84</code></a></p>
+<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L74"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L74</code></a></p>
 
 <p><strong>Constructors:</strong></p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -318,7 +318,7 @@
 <span class="n">NtcThermistor</span><span class="p">(</span><span class="k">const</span> <span class="n">ntc_config_t</span><span class="o">&amp;</span> <span class="n">config</span><span class="p">,</span> <span class="n">AdcType</span><span class="o">*</span> <span class="n">adc_interface</span><span class="p">);</span>
 </pre></td></tr></tbody></table></div></code></pre></div></div>
 
-<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L106"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L106</code></a>, <a href="../inc/ntc_thermistor.hpp#L114"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L114</code></a></p>
+<p><strong>Location</strong>: <a href="../inc/ntc_thermistor.hpp#L96"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L96</code></a>, <a href="../inc/ntc_thermistor.hpp#L104"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L104</code></a></p>
 <h2 id="methods">
   
   
@@ -348,27 +348,27 @@
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Initialize()</code></td>
       <td><code class="language-plaintext highlighter-rouge">bool Initialize() noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L68"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L68</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L57"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L57</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Deinitialize()</code></td>
       <td><code class="language-plaintext highlighter-rouge">bool Deinitialize() noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L105"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L105</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L94"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L94</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">IsInitialized()</code></td>
       <td><code class="language-plaintext highlighter-rouge">bool IsInitialized() const noexcept</code></td>
-      <td><a href="../inc/ntc_thermistor.hpp#L161"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L161</code></a></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L151"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L151</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">GetConfiguration()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError GetConfiguration(ntc_config_t *config) const noexcept</code></td>
-      <td><a href="../inc/ntc_thermistor.hpp#L168"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L168</code></a></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L158"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L158</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">SetConfiguration()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError SetConfiguration(const ntc_config_t &amp;config) noexcept</code></td>
-      <td><a href="../inc/ntc_thermistor.hpp#L175"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L175</code></a></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L165"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L165</code></a></td>
     </tr>
   </tbody>
 </table></div>
@@ -393,22 +393,22 @@
     <tr>
       <td><code class="language-plaintext highlighter-rouge">ReadTemperatureCelsius()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError ReadTemperatureCelsius(float *temperature_celsius) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L197"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L197</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L145"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L145</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">ReadTemperatureFahrenheit()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError ReadTemperatureFahrenheit(float *temperature_fahrenheit) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L204"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L204</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L196"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L196</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">ReadTemperatureKelvin()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError ReadTemperatureKelvin(float *temperature_kelvin) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L211"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L211</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L211"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L211</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">ReadTemperature()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError ReadTemperature(ntc_reading_t *reading) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L218"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L218</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L227"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L227</code></a></td>
     </tr>
   </tbody>
 </table></div>
@@ -433,17 +433,17 @@
     <tr>
       <td><code class="language-plaintext highlighter-rouge">GetResistance()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError GetResistance(float *resistance_ohms) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L229"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L229</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L273"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L273</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">GetVoltage()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError GetVoltage(float *voltage_volts) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L236"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L236</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L292"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L292</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">GetRawAdcValue()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError GetRawAdcValue(uint32_t *adc_value) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L243"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L243</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L305"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L305</code></a></td>
     </tr>
   </tbody>
 </table></div>
@@ -468,22 +468,22 @@
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Calibrate()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError Calibrate(float reference_temperature_celsius) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L254"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L254</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L390"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L390</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">SetCalibrationOffset()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError SetCalibrationOffset(float offset_celsius) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L261"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L261</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L414"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L414</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">GetCalibrationOffset()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError GetCalibrationOffset(float *offset_celsius) const noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L268"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L268</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L420"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L420</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">ResetCalibration()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError ResetCalibration() noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L274"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L274</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L431"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L431</code></a></td>
     </tr>
   </tbody>
 </table></div>
@@ -508,37 +508,37 @@
     <tr>
       <td><code class="language-plaintext highlighter-rouge">SetConversionMethod()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError SetConversionMethod(NtcConversionMethod method) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L285"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L285</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L440"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L440</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">SetVoltageDivider()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError SetVoltageDivider(float series_resistance) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L292"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L292</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L448"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L448</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">SetReferenceVoltage()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError SetReferenceVoltage(float reference_voltage) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L299"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L299</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L459"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L459</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">SetBetaValue()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError SetBetaValue(float beta_value) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L306"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L306</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L469"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L469</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">SetAdcChannel()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError SetAdcChannel(uint8_t adc_channel) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L313"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L313</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L479"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L479</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">SetSamplingParameters()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError SetSamplingParameters(uint32_t sample_count, uint32_t sample_delay_ms) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L321"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L321</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L490"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L490</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">SetFiltering()</code></td>
       <td><code class="language-plaintext highlighter-rouge">NtcError SetFiltering(bool enable, float alpha = 0.1F) noexcept</code></td>
-      <td><a href="../src/ntc_thermistor.cpp#L330"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.cpp#L330</code></a></td>
+      <td><a href="../src/ntc_thermistor.ipp#L502"><code class="language-plaintext highlighter-rouge">src/ntc_thermistor.ipp#L502</code></a></td>
     </tr>
   </tbody>
 </table></div>
@@ -563,32 +563,32 @@
     <tr>
       <td><code class="language-plaintext highlighter-rouge">CelsiusToFahrenheit()</code></td>
       <td><code class="language-plaintext highlighter-rouge">static float CelsiusToFahrenheit(float celsius) noexcept</code></td>
-      <td><a href="../inc/ntc_thermistor.hpp#L341"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L341</code></a></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L331"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L331</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">FahrenheitToCelsius()</code></td>
       <td><code class="language-plaintext highlighter-rouge">static float FahrenheitToCelsius(float fahrenheit) noexcept</code></td>
-      <td><a href="../inc/ntc_thermistor.hpp#L348"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L348</code></a></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L338"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L338</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">CelsiusToKelvin()</code></td>
       <td><code class="language-plaintext highlighter-rouge">static float CelsiusToKelvin(float celsius) noexcept</code></td>
-      <td><a href="../inc/ntc_thermistor.hpp#L355"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L355</code></a></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L345"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L345</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">KelvinToCelsius()</code></td>
       <td><code class="language-plaintext highlighter-rouge">static float KelvinToCelsius(float kelvin) noexcept</code></td>
-      <td><a href="../inc/ntc_thermistor.hpp#L362"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L362</code></a></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L352"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L352</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">GetErrorString()</code></td>
       <td><code class="language-plaintext highlighter-rouge">static const char *GetErrorString(NtcError error) noexcept</code></td>
-      <td><a href="../inc/ntc_thermistor.hpp#L369"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L369</code></a></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L359"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L359</code></a></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">GetTypeString()</code></td>
       <td><code class="language-plaintext highlighter-rouge">static const char *GetTypeString(NtcType type) noexcept</code></td>
-      <td><a href="../inc/ntc_thermistor.hpp#L376"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L376</code></a></td>
+      <td><a href="../inc/ntc_thermistor.hpp#L366"><code class="language-plaintext highlighter-rouge">inc/ntc_thermistor.hpp#L366</code></a></td>
     </tr>
   </tbody>
 </table></div>
