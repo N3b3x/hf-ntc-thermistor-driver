@@ -7,6 +7,10 @@ maintainers:
   - "HardFOC"
 license: "MIT"
 
+url: https://github.com/N3b3x/hf-ntc-thermistor-driver
+repository: https://github.com/N3b3x/hf-ntc-thermistor-driver
+issues: https://github.com/N3b3x/hf-ntc-thermistor-driver/issues
+
 targets:
   - esp32
   - esp32c6
