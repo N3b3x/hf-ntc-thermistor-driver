@@ -58,4 +58,7 @@ exclude = [
   # General patterns for GNU license URLs (broader matching)
   '^https?://(www\.)?gnu\.org/licenses/.*',
   '^https?://img\.shields\.io/badge/License-.*',
+
+  # Manufacturer product sites - may timeout or block automated requests
+  '^https://product\.tdk\.com/',
 ]
