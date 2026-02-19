@@ -14,11 +14,9 @@
   <style id="jtd-nav-activation">
   
 
-    .site-nav > ul.nav-list:first-child > li > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li > a,
     
-    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(1)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+    .site-nav > ul.nav-list:first-child > li:not(:nth-child(2)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li a {
       background-image: none;
     }
 
@@ -27,16 +25,12 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(1) > ul > li:nth-child(1) > ul > li:nth-child(1) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > a {
       font-weight: 600;
       text-decoration: none;
-    }.site-nav > ul.nav-list:first-child > li:nth-child(1) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(1) > ul > li:nth-child(1) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(1) > ul > li:nth-child(1) > ul > li:nth-child(1) > button svg {
+    }.site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg {
       transform: rotate(-90deg);
-    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(1) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list {
       display: block;
     }
   </style>
@@ -56,21 +50,21 @@
 
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>🛠️ Installation | HardFOC NTC Thermistor Driver - development</title>
+<title>CMake Integration — NTC Thermistor Driver | HardFOC NTC Thermistor Driver - development</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="🛠️ Installation" />
+<meta property="og:title" content="CMake Integration — NTC Thermistor Driver" />
 <meta name="author" content="N3b3x" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Installation and build instructions for the NTC Thermistor driver" />
-<meta property="og:description" content="Installation and build instructions for the NTC Thermistor driver" />
-<link rel="canonical" href="https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/installation/" />
-<meta property="og:url" content="https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/installation/" />
+<meta name="description" content="Hardware-agnostic NTC thermistor driver with lookup table and mathematical conversion methods for accurate temperature readings" />
+<meta property="og:description" content="Hardware-agnostic NTC thermistor driver with lookup table and mathematical conversion methods for accurate temperature readings" />
+<link rel="canonical" href="https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/cmake_integration.html" />
+<meta property="og:url" content="https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/cmake_integration.html" />
 <meta property="og:site_name" content="HardFOC NTC Thermistor Driver - development" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="🛠️ Installation" />
+<meta property="twitter:title" content="CMake Integration — NTC Thermistor Driver" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"N3b3x","url":"https://github.com/n3b3x"},"description":"Installation and build instructions for the NTC Thermistor driver","headline":"🛠️ Installation","url":"https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/installation/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"N3b3x","url":"https://github.com/n3b3x"},"description":"Hardware-agnostic NTC thermistor driver with lookup table and mathematical conversion methods for accurate temperature readings","headline":"CMake Integration — NTC Thermistor Driver","url":"https://n3b3x.github.io/hf-ntc-thermistor-driver/development/docs/cmake_integration.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -251,236 +245,96 @@
 </div>
 
     <div class="main-content-wrap">
-      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-  <ol class="breadcrumb-nav-list">
-    <li class="breadcrumb-nav-list-item"><a href="/hf-ntc-thermistor-driver/development/">HardFOC NTC Thermistor Driver</a></li>
-    <li class="breadcrumb-nav-list-item"><a href="/hf-ntc-thermistor-driver/development/docs/">📚 Documentation</a></li>
-    <li class="breadcrumb-nav-list-item"><span>🛠️ Installation</span></li>
-  </ol>
-</nav>
-
-
+      
       <div id="main-content" class="main-content">
         <main>
           
-            <h1 id="installation">
+            <h1 id="cmake-integration--ntc-thermistor-driver">
   
   
-    <a href="#installation" class="anchor-heading" aria-labelledby="installation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Installation
+    <a href="#cmake-integration--ntc-thermistor-driver" class="anchor-heading" aria-labelledby="cmake-integration--ntc-thermistor-driver"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> CMake Integration — NTC Thermistor Driver
   
   
 </h1>
     
 
-<p>This guide covers how to obtain, build, and verify the NTC Thermistor driver library.</p>
-<h2 id="prerequisites">
+<blockquote>
+  <p><strong>Canonical reference</strong>: <a href="../../../../../docs/development/CMAKE_BUILD_CONTRACT.md"><code class="language-plaintext highlighter-rouge">hf-hal-vortex-v1/docs/development/CMAKE_BUILD_CONTRACT.md</code></a></p>
+</blockquote>
+<h2 id="quick-start-esp-idf">
   
   
-    <a href="#prerequisites" class="anchor-heading" aria-labelledby="prerequisites"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Prerequisites
-  
-  
-</h2>
-    
-
-<p>Before installing the driver, ensure you have:</p>
-
-<ul>
-  <li><strong>C++11 Compiler</strong>: GCC 4.8+, Clang 3.3+, or MSVC 2013+</li>
-  <li><strong>Build System</strong>: Make or CMake (optional, for building static library)</li>
-  <li><strong>Platform SDK</strong>: Your platform’s ADC driver (ESP-IDF, STM32 HAL, Arduino, etc.)</li>
-</ul>
-<h2 id="obtaining-the-source">
-  
-  
-    <a href="#obtaining-the-source" class="anchor-heading" aria-labelledby="obtaining-the-source"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Obtaining the Source
+    <a href="#quick-start-esp-idf" class="anchor-heading" aria-labelledby="quick-start-esp-idf"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Quick start (ESP-IDF)
   
   
 </h2>
     
-<h3 id="option-1-git-clone">
-  
-  
-    <a href="#option-1-git-clone" class="anchor-heading" aria-labelledby="option-1-git-clone"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Option 1: Git Clone
-  
-  
-</h3>
-    
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>git clone https://github.com/N3b3x/hf-ntc-thermistor-driver.git
-<span class="nb">cd </span>hf-ntc-thermistor-driver
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h3 id="option-2-copy-files">
-  
-  
-    <a href="#option-2-copy-files" class="anchor-heading" aria-labelledby="option-2-copy-files"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Option 2: Copy Files
-  
-  
-</h3>
-    
-
-<p>Copy the following files into your project:</p>
+<p>The ESP-IDF component wrapper lives at:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>examples/esp32/components/hf_ntc_thermistor/CMakeLists.txt
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<p>It imports <code class="language-plaintext highlighter-rouge">cmake/hf_ntc_thermistor_build_settings.cmake</code>, which is the single
+source of truth for sources, includes, and version information.</p>
+<h2 id="layer-overview">
+  
+  
+    <a href="#layer-overview" class="anchor-heading" aria-labelledby="layer-overview"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Layer overview
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Layer</th>
+      <th>File</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 — Settings</td>
+      <td><code class="language-plaintext highlighter-rouge">cmake/hf_ntc_thermistor_build_settings.cmake</code></td>
+      <td>Sources, includes, version</td>
+    </tr>
+    <tr>
+      <td>2 — Root</td>
+      <td><code class="language-plaintext highlighter-rouge">CMakeLists.txt</code></td>
+      <td>Desktop / CI static library</td>
+    </tr>
+    <tr>
+      <td>3 — ESP-IDF</td>
+      <td><code class="language-plaintext highlighter-rouge">examples/esp32/components/…/CMakeLists.txt</code></td>
+      <td>IDF wrapper</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="version">
+  
+  
+    <a href="#version" class="anchor-heading" aria-labelledby="version"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Version
+  
+  
+</h2>
+    
+
+<p>The version is defined once in <code class="language-plaintext highlighter-rouge">hf_ntc_thermistor_build_settings.cmake</code> and
+stamped into <code class="language-plaintext highlighter-rouge">inc/ntc_thermistor_version.h.in</code> → <code class="language-plaintext highlighter-rouge">ntc_thermistor_version.h</code> via
+<code class="language-plaintext highlighter-rouge">configure_file()</code>.</p>
+
+<p>Access at runtime:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre>inc/
-  ├── ntc_thermistor.hpp
-  ├── ntc_adc_interface.hpp
-  ├── ntc_types.hpp
-  ├── ntc_conversion.hpp
-  └── ntc_lookup_table.hpp
-src/
-  ├── ntc_thermistor.cpp
-  ├── ntc_conversion.cpp
-  └── ntc_lookup_table.cpp
+</pre></td><td class="rouge-code"><pre><span class="n">NtcThermistor</span><span class="o">&lt;</span><span class="n">MyAdc</span><span class="o">&gt;::</span><span class="n">GetDriverVersion</span><span class="p">();</span>      <span class="c1">// "1.0.0"</span>
+<span class="n">NtcThermistor</span><span class="o">&lt;</span><span class="n">MyAdc</span><span class="o">&gt;::</span><span class="n">GetDriverVersionMajor</span><span class="p">();</span> <span class="c1">// 1</span>
+<span class="n">GetNtcThermistorDriverVersion</span><span class="p">();</span>               <span class="c1">// "1.0.0" (free function)</span>
 </pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p><strong>Note</strong>: The driver uses a header-only template design where implementation files are included by headers. You typically only need to include the header files in your project.</p>
-<h2 id="building-the-library">
-  
-  
-    <a href="#building-the-library" class="anchor-heading" aria-labelledby="building-the-library"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Building the Library
-  
-  
-</h2>
-    
-<h3 id="using-make">
-  
-  
-    <a href="#using-make" class="anchor-heading" aria-labelledby="using-make"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Using Make
-  
-  
-</h3>
-    
-
-<p>A simple Makefile is provided:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>make
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p>This builds <code class="language-plaintext highlighter-rouge">build/libntc_thermistor.a</code> which can be linked into your application.</p>
-<h3 id="using-cmake">
-  
-  
-    <a href="#using-cmake" class="anchor-heading" aria-labelledby="using-cmake"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Using CMake
-  
-  
-</h3>
-    
-
-<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="nb">add_subdirectory</span><span class="p">(</span>ntc-thermistor-driver<span class="p">)</span>
-<span class="nb">target_link_libraries</span><span class="p">(</span>your_target PRIVATE ntc_thermistor<span class="p">)</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p>Or manually:</p>
-
-<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="rouge-code"><pre><span class="nb">add_library</span><span class="p">(</span>ntc_thermistor STATIC
-    inc/ntc_thermistor.hpp
-    inc/ntc_adc_interface.hpp
-    inc/ntc_types.hpp
-    inc/ntc_conversion.hpp
-    inc/ntc_lookup_table.hpp
-    src/ntc_thermistor.cpp
-    src/ntc_conversion.cpp
-    src/ntc_lookup_table.cpp
-<span class="p">)</span>
-<span class="nb">target_include_directories</span><span class="p">(</span>ntc_thermistor PUBLIC inc<span class="p">)</span>
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h3 id="using-esp-idf-component">
-  
-  
-    <a href="#using-esp-idf-component" class="anchor-heading" aria-labelledby="using-esp-idf-component"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Using ESP-IDF Component
-  
-  
-</h3>
-    
-
-<p>The driver can be used as an ESP-IDF component. See the <a href="../examples/esp32/">examples/esp32</a> directory for component integration examples.</p>
-<h2 id="running-unit-tests">
-  
-  
-    <a href="#running-unit-tests" class="anchor-heading" aria-labelledby="running-unit-tests"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Running Unit Tests
-  
-  
-</h2>
-    
-
-<p>The library includes unit tests. To run them:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>make <span class="nb">test</span>
-./build/test
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-
-<p>Expected output:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>All tests passed.
-</pre></td></tr></tbody></table></div></code></pre></div></div>
-<h2 id="verification">
-  
-  
-    <a href="#verification" class="anchor-heading" aria-labelledby="verification"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Verification
-  
-  
-</h2>
-    
-
-<p>To verify the installation:</p>
-
-<ol>
-  <li>Include the header in a test file:
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">"ntc_thermistor.hpp"</span><span class="cp">
-</span></pre></td></tr></tbody></table></div></code></pre></div>    </div>
-  </li>
-  <li>Compile a simple test:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>g++ <span class="nt">-std</span><span class="o">=</span>c++11 <span class="nt">-I</span> inc/ <span class="nt">-c</span> src/ntc_thermistor.cpp <span class="nt">-o</span> test.o
-</pre></td></tr></tbody></table></div></code></pre></div>    </div>
-  </li>
-  <li>If compilation succeeds, the library is properly installed.</li>
-</ol>
-<h2 id="next-steps">
-  
-  
-    <a href="#next-steps" class="anchor-heading" aria-labelledby="next-steps"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Next Steps
-  
-  
-</h2>
-    
-
-<ul>
-  <li>Follow the <a href="/hf-ntc-thermistor-driver/development/docs/quickstart/">Quick Start</a> guide to create your first application</li>
-  <li>Review <a href="/hf-ntc-thermistor-driver/development/docs/hardware_setup/">Hardware Setup</a> for voltage divider circuit wiring</li>
-  <li>Check <a href="/hf-ntc-thermistor-driver/development/docs/platform_integration/">Platform Integration</a> to implement the ADC interface</li>
-</ul><hr />
-
-<p><strong>Navigation</strong>
-⬅️ <a href="/hf-ntc-thermistor-driver/development/docs/">Back to Index</a> | <a href="/hf-ntc-thermistor-driver/development/docs/quickstart/">Next: Quick Start ➡️</a></p>
 
           
 

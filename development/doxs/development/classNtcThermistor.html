@@ -220,6 +220,18 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a61d208940fed34c62ed4da7b97160c5d" id="r_a61d208940fed34c62ed4da7b97160c5d"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61d208940fed34c62ed4da7b97160c5d">GetTypeString</a> (<a class="el" href="ntc__types_8hpp.html#af55611f166cbf0fe94f4aa4ae2de9bce">NtcType</a> type) noexcept</td></tr>
 <tr class="memdesc:a61d208940fed34c62ed4da7b97160c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="namespaceNTC.html">NTC</a> type string.  <br /></td></tr>
 <tr class="separator:a61d208940fed34c62ed4da7b97160c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a314c1e98d064423b881f6dab4e8af0ac" id="r_a314c1e98d064423b881f6dab4e8af0ac"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a314c1e98d064423b881f6dab4e8af0ac">GetDriverVersion</a> () noexcept</td></tr>
+<tr class="memdesc:a314c1e98d064423b881f6dab4e8af0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the compiled driver version string.  <br /></td></tr>
+<tr class="separator:a314c1e98d064423b881f6dab4e8af0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad408342be075f729b637c36ee6d68cc1" id="r_ad408342be075f729b637c36ee6d68cc1"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad408342be075f729b637c36ee6d68cc1">GetDriverVersionMajor</a> () noexcept</td></tr>
+<tr class="memdesc:ad408342be075f729b637c36ee6d68cc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the compiled driver major version number.  <br /></td></tr>
+<tr class="separator:ad408342be075f729b637c36ee6d68cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af939aa82752a679d553160a16e90581e" id="r_af939aa82752a679d553160a16e90581e"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af939aa82752a679d553160a16e90581e">GetDriverVersionMinor</a> () noexcept</td></tr>
+<tr class="memdesc:af939aa82752a679d553160a16e90581e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the compiled driver minor version number.  <br /></td></tr>
+<tr class="separator:af939aa82752a679d553160a16e90581e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a172408dae9ec54c41992b2c88d34aaf8" id="r_a172408dae9ec54c41992b2c88d34aaf8"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a172408dae9ec54c41992b2c88d34aaf8">GetDriverVersionPatch</a> () noexcept</td></tr>
+<tr class="memdesc:a172408dae9ec54c41992b2c88d34aaf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the compiled driver patch version number.  <br /></td></tr>
+<tr class="separator:a172408dae9ec54c41992b2c88d34aaf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename AdcType&gt;<br />
@@ -656,6 +668,122 @@ template&lt;typename AdcType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
+
+</div>
+</div>
+<a id="a314c1e98d064423b881f6dab4e8af0ac" name="a314c1e98d064423b881f6dab4e8af0ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a314c1e98d064423b881f6dab4e8af0ac">&#9670;&#160;</a></span>GetDriverVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AdcType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr const char * <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetDriverVersion </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the compiled driver version string. </p>
+
+</div>
+</div>
+<a id="ad408342be075f729b637c36ee6d68cc1" name="ad408342be075f729b637c36ee6d68cc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad408342be075f729b637c36ee6d68cc1">&#9670;&#160;</a></span>GetDriverVersionMajor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AdcType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr uint8_t <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetDriverVersionMajor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the compiled driver major version number. </p>
+
+</div>
+</div>
+<a id="af939aa82752a679d553160a16e90581e" name="af939aa82752a679d553160a16e90581e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af939aa82752a679d553160a16e90581e">&#9670;&#160;</a></span>GetDriverVersionMinor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AdcType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr uint8_t <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetDriverVersionMinor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the compiled driver minor version number. </p>
+
+</div>
+</div>
+<a id="a172408dae9ec54c41992b2c88d34aaf8" name="a172408dae9ec54c41992b2c88d34aaf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172408dae9ec54c41992b2c88d34aaf8">&#9670;&#160;</a></span>GetDriverVersionPatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AdcType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr uint8_t <a class="el" href="classNtcThermistor.html">NtcThermistor</a>&lt; AdcType &gt;::GetDriverVersionPatch </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the compiled driver patch version number. </p>
 
 </div>
 </div>

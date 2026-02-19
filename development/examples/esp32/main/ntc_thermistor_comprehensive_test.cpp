@@ -113,6 +113,7 @@ extern "C" void app_main() {
                 "                  ║");
   ESP_LOGI(TAG, "╚═════════════════════════════════════════════════════════════"
                 "═════════════════╝");
+  ESP_LOGI(TAG, "Driver version: %s", GetNtcThermistorDriverVersion());
 
   vTaskDelay(pdMS_TO_TICKS(1000));
 
