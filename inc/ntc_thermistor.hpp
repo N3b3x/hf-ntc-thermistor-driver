@@ -8,6 +8,7 @@
 #include <memory>
 
 #include "ntc_adc_interface.hpp"
+#include "ntc_thermistor_version.h"
 #include "ntc_types.hpp"
 
 //--------------------------------------
@@ -365,6 +366,30 @@ public:
    */
   static const char *GetTypeString(NtcType type) noexcept;
 
+  // ===========================================================================
+  // Driver Version
+  // ===========================================================================
+
+  /** @brief Get the compiled driver version string. */
+  static constexpr const char* GetDriverVersion() noexcept {
+    return HF_NTC_THERMISTOR_VERSION_STRING;
+  }
+
+  /** @brief Get the compiled driver major version number. */
+  static constexpr uint8_t GetDriverVersionMajor() noexcept {
+    return HF_NTC_THERMISTOR_VERSION_MAJOR;
+  }
+
+  /** @brief Get the compiled driver minor version number. */
+  static constexpr uint8_t GetDriverVersionMinor() noexcept {
+    return HF_NTC_THERMISTOR_VERSION_MINOR;
+  }
+
+  /** @brief Get the compiled driver patch version number. */
+  static constexpr uint8_t GetDriverVersionPatch() noexcept {
+    return HF_NTC_THERMISTOR_VERSION_PATCH;
+  }
+
 private:
   //==============================================================//
   // PRIVATE MEMBER VARIABLES
@@ -430,6 +455,15 @@ private:
   static void initializeConfigForType(NtcType ntc_type,
                                       ntc_config_t *config) noexcept;
 };
+
+// =============================================================================
+// Free-function version accessor (no namespace — class is at global scope)
+// =============================================================================
+
+/** @brief Get the NTC Thermistor driver version string (free function). */
+inline const char* GetNtcThermistorDriverVersion() noexcept {
+  return HF_NTC_THERMISTOR_VERSION_STRING;
+}
 
 // Include template implementation
 #define NTC_THERMISTOR_HEADER_INCLUDED

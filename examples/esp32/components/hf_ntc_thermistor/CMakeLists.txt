@@ -1,91 +1,29 @@
 # =============================================================================
-# NTC Thermistor Driver Component - CMakeLists.txt
+# hf_ntc_thermistor — ESP-IDF component wrapper
 # =============================================================================
-# This component provides the NTC Thermistor driver library
+# This thin wrapper imports the shared build-settings file and registers the
+# component for ESP-IDF.  All sources, includes, and version info are defined
+# in cmake/hf_ntc_thermistor_build_settings.cmake (single source of truth).
 # =============================================================================
 
-cmake_minimum_required(VERSION 3.16)
+# ── Locate driver root ───────────────────────────────────────────────────────
+set(HF_NTC_THERMISTOR_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../../../.." CACHE PATH
+    "Root of the hf-ntc-thermistor-driver repository")
 
-# =============================================================================
-# Path Configuration
-# =============================================================================
-# Set the source root path relative to this component directory
-set(SRC_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../../../../src")
-set(INC_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../../../../inc")
+if(NOT EXISTS "${HF_NTC_THERMISTOR_ROOT}/cmake/hf_ntc_thermistor_build_settings.cmake")
+  message(FATAL_ERROR
+    "Cannot find hf_ntc_thermistor_build_settings.cmake.\n"
+    "  HF_NTC_THERMISTOR_ROOT = ${HF_NTC_THERMISTOR_ROOT}")
+endif()
 
-message(STATUS "NTC Thermistor Driver - ESP32 Component Configuration")
-message(STATUS "Source Root: ${SRC_ROOT}")
+# ── Import build settings ────────────────────────────────────────────────────
+include("${HF_NTC_THERMISTOR_ROOT}/cmake/hf_ntc_thermistor_build_settings.cmake")
 
-# =============================================================================
-# Source File Discovery and Validation
-# =============================================================================
-# List all potential driver source files
-# Note: ntc_thermistor.cpp is a template implementation file included by the header,
-#       so it should NOT be compiled separately
-set(DRIVER_SRCS
-    "${SRC_ROOT}/ntc_conversion.cpp"
-    "${SRC_ROOT}/ntc_lookup_table.cpp"
-)
-
-# Check which source files actually exist and add them
-set(EXISTING_SRCS "")
-foreach(src_file ${DRIVER_SRCS})
-    if(EXISTS "${src_file}")
-        list(APPEND EXISTING_SRCS "${src_file}")
-        message(STATUS "Found source: ${src_file}")
-    else()
-        message(WARNING "Source file not found: ${src_file}")
-    endif()
-endforeach()
-
-# =============================================================================
-# Include Directories Configuration
-# =============================================================================
-# Define include directories for the driver component
-set(DRIVER_INCLUDE_DIRS
-    "${INC_ROOT}"                       # Main driver headers
-)
-
-# =============================================================================
-# Component Dependencies
-# =============================================================================
-# Define required ESP-IDF components for the driver
-set(DRIVER_REQUIRES
-    driver              # ESP-IDF driver framework
-)
-
-# =============================================================================
-# Component Registration
-# =============================================================================
-# Register the driver component with ESP-IDF build system
+# ── Register ESP-IDF component ───────────────────────────────────────────────
 idf_component_register(
-    SRCS ${EXISTING_SRCS}                 # Source files (validated above)
-    INCLUDE_DIRS ${DRIVER_INCLUDE_DIRS}   # Include directories defined above
-    REQUIRES ${DRIVER_REQUIRES}           # Component dependencies defined above
+    SRCS        ${HF_NTC_THERMISTOR_SOURCES}
+    INCLUDE_DIRS ${HF_NTC_THERMISTOR_INCLUDE_DIRS}
+    REQUIRES     ${HF_NTC_THERMISTOR_IDF_REQUIRES}
 )
 
-# =============================================================================
-# Compiler Configuration
-# =============================================================================
-# Set C++ standard
 target_compile_features(${COMPONENT_LIB} PRIVATE cxx_std_20)
-
-# =============================================================================
-# Compiler Flags
-# =============================================================================
-target_compile_options(${COMPONENT_LIB} PRIVATE
-    -Wall                    # Enable all warnings
-    -Wextra                  # Enable extra warnings
-    -O2                      # Optimize for performance
-    -g                       # Include debug information
-)
-
-# =============================================================================
-# Build Summary
-# =============================================================================
-list(LENGTH EXISTING_SRCS NUM_SOURCES)
-message(STATUS "=== NTC Thermistor Driver Component Summary ===")
-message(STATUS "Component configured successfully")
-message(STATUS "Included ${NUM_SOURCES} source files")
-message(STATUS "C++ Standard: 17")
-message(STATUS "===============================================")
