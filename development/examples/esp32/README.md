@@ -323,7 +323,7 @@ NtcThermistor<MockEsp32Adc> thermistor(config, &mock_adc);
 
 - [NTC Driver Documentation](../../README.md) - Complete driver documentation
 - [API Reference](../../docs/) - Detailed API documentation
-- [Datasheets](../../datasheet/) - NTC thermistor datasheets
+- [Datasheets](../../docs/datasheet/) - NTC thermistor datasheets
 
 ---
 
