@@ -12,22 +12,19 @@ project(hf_ntc_thermistor
 )
 
 # ── Import shared build settings ─────────────────────────────────────────────
-set(HF_NTC_THERMISTOR_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" CACHE PATH
-    "Root of the NTC Thermistor driver repository")
-
-include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/hf_ntc_thermistor_build_settings.cmake")
+include(${CMAKE_CURRENT_LIST_DIR}/cmake/hf_ntc_thermistor_build_settings.cmake)
 
 # ── Library target ───────────────────────────────────────────────────────────
-add_library(hf_ntc_thermistor STATIC ${HF_NTC_THERMISTOR_SOURCES})
+add_library(${HF_NTC_THERMISTOR_TARGET_NAME} STATIC ${HF_NTC_THERMISTOR_SOURCE_FILES})
 
-target_include_directories(hf_ntc_thermistor PUBLIC ${HF_NTC_THERMISTOR_INCLUDE_DIRS})
+target_include_directories(${HF_NTC_THERMISTOR_TARGET_NAME} PUBLIC ${HF_NTC_THERMISTOR_PUBLIC_INCLUDE_DIRS})
 
-target_compile_features(hf_ntc_thermistor PUBLIC cxx_std_20)
+target_compile_features(${HF_NTC_THERMISTOR_TARGET_NAME} PUBLIC cxx_std_20)
 
 # ── Optional warnings (off by default, enable with -DHF_NTC_THERMISTOR_ENABLE_WARNINGS=ON)
 option(HF_NTC_THERMISTOR_ENABLE_WARNINGS "Enable compiler warnings" OFF)
 if(HF_NTC_THERMISTOR_ENABLE_WARNINGS)
-  target_compile_options(hf_ntc_thermistor PRIVATE -Wall -Wextra -Wpedantic)
+  target_compile_options(${HF_NTC_THERMISTOR_TARGET_NAME} PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
 # ── CMake package export ─────────────────────────────────────────────────────
