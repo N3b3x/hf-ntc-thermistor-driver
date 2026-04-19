@@ -9,6 +9,8 @@ permalink: /docs/hardware_setup/
 
 # Hardware Setup
 
+![NTC voltage-divider topology and resistance-temperature curve](assets/ntc-divider.svg)
+
 This guide covers the physical connections and hardware requirements for using an NTC thermistor with this driver.
 
 ## Voltage Divider Circuit

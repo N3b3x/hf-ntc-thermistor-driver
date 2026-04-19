@@ -35,6 +35,8 @@ An **NTC (Negative Temperature Coefficient) thermistor** is a temperature-sensit
 
 The driver uses a **CRTP (Curiously Recurring Template Pattern)** design for zero-overhead hardware abstraction, requiring only an ADC interface implementation for your platform. This makes it ideal for embedded systems where performance and memory efficiency are critical.
 
+![NTC voltage-divider topology and resistance-temperature curve](docs/assets/ntc-divider.svg)
+
 ### 🔀 Supported Thermistors
 
 The driver ships with calibrated lookup tables (and Beta-equation parameters) for the
