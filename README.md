@@ -22,8 +22,9 @@ permalink: /
 5. [API Reference](#-api-reference)
 6. [Examples](#-examples)
 7. [Documentation](#-documentation)
-8. [Contributing](#-contributing)
-9. [License](#-license)
+8. [References](#-references)
+9. [Contributing](#-contributing)
+10. [License](#-license)
 
 ## 📦 Overview
 
@@ -33,6 +34,19 @@ permalink: /
 An **NTC (Negative Temperature Coefficient) thermistor** is a temperature-sensitive resistor whose resistance decreases as temperature increases. This driver provides a comprehensive, hardware-agnostic solution for temperature measurement using NTC thermistors in a voltage divider configuration. The driver supports multiple NTC types (including NTCG163JFT103FT1S, NTCG164JF103FT1S, and custom types), dual conversion methods (lookup table for speed, mathematical for accuracy), built-in calibration, filtering, and multi-sample averaging for precise temperature readings.
 
 The driver uses a **CRTP (Curiously Recurring Template Pattern)** design for zero-overhead hardware abstraction, requiring only an ADC interface implementation for your platform. This makes it ideal for embedded systems where performance and memory efficiency are critical.
+
+### 🔀 Supported Thermistors
+
+The driver ships with calibrated lookup tables (and Beta-equation parameters) for the
+TDK NTCG family. Use `NtcType::Custom` for any other part by supplying β / R₂₅ / R_series
+in the `ntc_config_t`.
+
+| NTC Type            | R₂₅      | β (K) | Lookup table | Math (Beta) | Notes |
+|---------------------|----------|-------|--------------|-------------|-------|
+| `NtcG163Jft103Ft1S` | 10 kΩ    | 3435  | ✅           | ✅          | TDK NTCG163JFT103FT1S, ±1 % at 25 °C |
+| `NtcG164Jf103Ft1S`  | 10 kΩ    | 3435  | ✅           | ✅          | TDK NTCG164JF103FT1S, ±1 % at 25 °C |
+| `NtcG163Jf103Ft1S`  | 10 kΩ    | 3435  | ✅           | ✅          | TDK NTCG163JF103FT1S, ±1 % at 25 °C |
+| `Custom`            | user     | user  | —            | ✅          | Any β/R₂₅/R_series via `ntc_config_t` |
 
 ## ✨ Features
 
@@ -117,6 +131,16 @@ Detailed example walkthroughs are available in [docs/examples.md](docs/examples.
 ## 📚 Documentation
 
 For complete documentation, see the [docs directory](docs/index.md).
+
+## 🔗 References
+
+| Resource | Link |
+|----------|------|
+| TDK NTCG product family | <https://product.tdk.com/en/search/sensor/ntc/chip-ntc-thermistor> |
+| Steinhart–Hart equation | <https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation> |
+| β-parameter equation | <https://en.wikipedia.org/wiki/Thermistor#B_or_%CE%B2_parameter_equation> |
+| ESP-IDF ADC API | <https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/adc.html> |
+| C++11 language reference | <https://en.cppreference.com/w/cpp/11> |
 
 ## 🤝 Contributing
 
