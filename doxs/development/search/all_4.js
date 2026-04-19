@@ -16,5 +16,5 @@ var searchData=
   ['esp32_5fntc_5fenable_5fdetailed_5fadc_5flogging_13',['ESP32_NTC_ENABLE_DETAILED_ADC_LOGGING',['../esp32__ntc__test__config_8hpp.html#a85c9cc36612a4a87062ab7ef34836673',1,'esp32_ntc_test_config.hpp']]],
   ['esp32_5fntc_5ftest_5fconfig_2ehpp_14',['esp32_ntc_test_config.hpp',['../esp32__ntc__test__config_8hpp.html',1,'']]],
   ['esp32ntcadcbus_15',['Esp32NtcAdcBus',['../classEsp32NtcAdcBus.html',1,'Esp32NtcAdcBus'],['../classEsp32NtcAdcBus.html#a7af956b4dac80ad5170452cefabeeba6',1,'Esp32NtcAdcBus::Esp32NtcAdcBus()']]],
-  ['examples_16',['📊 Examples',['../index.html#autotoc_md7',1,'']]]
+  ['examples_16',['📊 Examples',['../index.html#autotoc_md8',1,'']]]
 ];
