@@ -19,7 +19,7 @@ var searchData=
   ['cleanup_5ftest_5fprogress_5findicator_16',['cleanup_test_progress_indicator',['../TestFramework_8h.html#a5c86314094f10701c597cf07a95a4bae',1,'TestFramework.h']]],
   ['completion_5fsemaphore_17',['completion_semaphore',['../structTestTaskContext.html#ab82bee11b198be2f2b4d6c908573ddb6',1,'TestTaskContext']]],
   ['contents_18',['📚 Table of Contents',['../index.html#autotoc_md1',1,'']]],
-  ['contributing_19',['🤝 Contributing',['../index.html#autotoc_md9',1,'']]],
+  ['contributing_19',['🤝 Contributing',['../index.html#autotoc_md11',1,'']]],
   ['conversion_5fdelay_5fms_20',['CONVERSION_DELAY_MS',['../structNTC__TestConfig_1_1Timing.html#a45d3b7b313299e5669c48c5c712e33eb',1,'NTC_TestConfig::Timing']]],
   ['conversion_5fmethod_21',['conversion_method',['../structntc__config__t.html#a81e069258f118f95093a787426eb6576',1,'ntc_config_t']]],
   ['conversionfailed_22',['ConversionFailed',['../ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9daaff957d0751db2f27185a73e9b7485b9f',1,'ntc_types.hpp']]],

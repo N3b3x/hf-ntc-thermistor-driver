@@ -17,12 +17,13 @@ var searchData=
   ['testresults_14',['TestResults',['../structTestResults.html',1,'']]],
   ['testtaskcontext_15',['TestTaskContext',['../structTestTaskContext.html',1,'']]],
   ['thermistor_20driver_16',['HF-NTC-Thermistor Driver',['../index.html',1,'']]],
-  ['thermistorspecs_17',['ThermistorSpecs',['../structNTC__TestConfig_1_1ThermistorSpecs.html',1,'NTC_TestConfig']]],
-  ['timeout_18',['Timeout',['../namespacentc.html#a01084a88ebce86485b27e6b963fa5941ac85a251cc457840f1e032f1b733e9398',1,'ntc::Timeout'],['../ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9daac85a251cc457840f1e032f1b733e9398',1,'Timeout:&#160;ntc_types.hpp']]],
-  ['timestamp_5fus_19',['timestamp_us',['../structntc__reading__t.html#ab2233cc82368b63a9b6fd0a3e81eacee',1,'ntc_reading_t']]],
-  ['timing_20',['Timing',['../structNTC__TestConfig_1_1Timing.html',1,'NTC_TestConfig']]],
-  ['tolerance_5fpercent_21',['TOLERANCE_PERCENT',['../structNTC__TestConfig_1_1ThermistorSpecs.html#a6007180353db977fe298275163932ad8',1,'NTC_TestConfig::ThermistorSpecs']]],
-  ['total_5fexecution_5ftime_5fus_22',['total_execution_time_us',['../structTestResults.html#a7eddc258a4288ac5f0a36a1008c9d014',1,'TestResults']]],
-  ['total_5ftests_23',['total_tests',['../structTestResults.html#afe20b168a13950ffca7296c0c56d4359',1,'TestResults']]],
-  ['type_24',['type',['../structntc__config__t.html#a97d0e7ea611987e25a1008eb02d81d1d',1,'ntc_config_t']]]
+  ['thermistors_17',['🔀 Supported Thermistors',['../index.html#autotoc_md3',1,'']]],
+  ['thermistorspecs_18',['ThermistorSpecs',['../structNTC__TestConfig_1_1ThermistorSpecs.html',1,'NTC_TestConfig']]],
+  ['timeout_19',['Timeout',['../namespacentc.html#a01084a88ebce86485b27e6b963fa5941ac85a251cc457840f1e032f1b733e9398',1,'ntc::Timeout'],['../ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9daac85a251cc457840f1e032f1b733e9398',1,'Timeout:&#160;ntc_types.hpp']]],
+  ['timestamp_5fus_20',['timestamp_us',['../structntc__reading__t.html#ab2233cc82368b63a9b6fd0a3e81eacee',1,'ntc_reading_t']]],
+  ['timing_21',['Timing',['../structNTC__TestConfig_1_1Timing.html',1,'NTC_TestConfig']]],
+  ['tolerance_5fpercent_22',['TOLERANCE_PERCENT',['../structNTC__TestConfig_1_1ThermistorSpecs.html#a6007180353db977fe298275163932ad8',1,'NTC_TestConfig::ThermistorSpecs']]],
+  ['total_5fexecution_5ftime_5fus_23',['total_execution_time_us',['../structTestResults.html#a7eddc258a4288ac5f0a36a1008c9d014',1,'TestResults']]],
+  ['total_5ftests_24',['total_tests',['../structTestResults.html#afe20b168a13950ffca7296c0c56d4359',1,'TestResults']]],
+  ['type_25',['type',['../structntc__config__t.html#a97d0e7ea611987e25a1008eb02d81d1d',1,'ntc_config_t']]]
 ];

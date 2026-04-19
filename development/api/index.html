@@ -109,6 +109,7 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 <li>API Reference</li>
 <li>Examples</li>
 <li>Documentation</li>
+<li>References</li>
 <li>Contributing</li>
 <li>License</li>
 </ol>
@@ -119,7 +120,22 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 </blockquote>
 <p>An <b><a class="el" href="namespaceNTC.html">NTC</a> (Negative Temperature Coefficient) thermistor</b> is a temperature-sensitive resistor whose resistance decreases as temperature increases. This driver provides a comprehensive, hardware-agnostic solution for temperature measurement using <a class="el" href="namespaceNTC.html">NTC</a> thermistors in a voltage divider configuration. The driver supports multiple <a class="el" href="namespaceNTC.html">NTC</a> types (including NTCG163JFT103FT1S, NTCG164JF103FT1S, and custom types), dual conversion methods (lookup table for speed, mathematical for accuracy), built-in calibration, filtering, and multi-sample averaging for precise temperature readings.</p>
 <p>The driver uses a <b>CRTP (Curiously Recurring Template Pattern)</b> design for zero-overhead hardware abstraction, requiring only an ADC interface implementation for your platform. This makes it ideal for embedded systems where performance and memory efficiency are critical.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
+🔀 Supported Thermistors</h2>
+<p>The driver ships with calibrated lookup tables (and Beta-equation parameters) for the TDK NTCG family. Use <code><a class="el" href="ntc__types_8hpp.html#af55611f166cbf0fe94f4aa4ae2de9bcea90589c47f06eb971d548591f23c285af" title="Custom NTC type.">NtcType::Custom</a></code> for any other part by supplying β / R₂₅ / R_series in the <code><a class="el" href="structntc__config__t.html" title="NTC thermistor configuration structure.">ntc_config_t</a></code>.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"><a class="el" href="namespaceNTC.html">NTC</a> Type   </th><th class="markdownTableHeadNone">R₂₅   </th><th class="markdownTableHeadNone">β (K)   </th><th class="markdownTableHeadNone">Lookup table   </th><th class="markdownTableHeadNone">Math (Beta)   </th><th class="markdownTableHeadNone">Notes    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>NtcG163Jft103Ft1S</code>   </td><td class="markdownTableBodyNone">10 kΩ   </td><td class="markdownTableBodyNone">3435   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">TDK NTCG163JFT103FT1S, ±1 % at 25 °C    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>NtcG164Jf103Ft1S</code>   </td><td class="markdownTableBodyNone">10 kΩ   </td><td class="markdownTableBodyNone">3435   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">TDK NTCG164JF103FT1S, ±1 % at 25 °C    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>NtcG163Jf103Ft1S</code>   </td><td class="markdownTableBodyNone">10 kΩ   </td><td class="markdownTableBodyNone">3435   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">TDK NTCG163JF103FT1S, ±1 % at 25 °C    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Custom</code>   </td><td class="markdownTableBodyNone">user   </td><td class="markdownTableBodyNone">user   </td><td class="markdownTableBodyNone">—   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">Any β/R₂₅/R_series via <code><a class="el" href="structntc__config__t.html" title="NTC thermistor configuration structure.">ntc_config_t</a></code>   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md4"></a>
 ✨ Features</h1>
 <ul>
 <li>✅ <b>Hardware Agnostic</b>: CRTP-based ADC interface for platform independence</li>
@@ -133,7 +149,7 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 <li>✅ <b>Multiple Units</b>: Celsius, Fahrenheit, and Kelvin support</li>
 <li>✅ <b>Comprehensive Error Handling</b>: Detailed error codes for debugging</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 🚀 Quick Start</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ntc__thermistor_8hpp.html">ntc_thermistor.hpp</a>&quot;</span></div>
 <div class="line"> </div>
@@ -176,7 +192,7 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 <div class="ttc" id="antc__types_8hpp_html_a2e2559895ad8d6429024959b3200e9daa505a83f220c02df2f85c3810cd9ceb38"><div class="ttname"><a href="ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9daa505a83f220c02df2f85c3810cd9ceb38">NtcError::Success</a></div><div class="ttdeci">@ Success</div><div class="ttdoc">Operation successful.</div></div>
 <div class="ttc" id="antc__types_8hpp_html_af55611f166cbf0fe94f4aa4ae2de9bcea01894f2108fb52bc57d9a1fc688a5ae2"><div class="ttname"><a href="ntc__types_8hpp.html#af55611f166cbf0fe94f4aa4ae2de9bcea01894f2108fb52bc57d9a1fc688a5ae2">NtcType::NtcG163Jft103Ft1S</a></div><div class="ttdeci">@ NtcG163Jft103Ft1S</div><div class="ttdoc">NTCG163JFT103FT1S (10kΩ @ 25°C, β=3435K)</div></div>
 </div><!-- fragment --><p>For detailed setup, see Installation and Quick Start Guide.</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 🔧 Installation</h1>
 <ol type="1">
 <li><b>Clone or copy</b> the driver files into your project</li>
@@ -186,7 +202,7 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 <li>Compile with a <b>C++11</b> or newer compiler</li>
 </ol>
 <p>For detailed installation instructions, see docs/installation.md.</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 📖 API Reference</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -207,17 +223,33 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 <td class="markdownTableBodyNone"><code>SetFiltering(bool, float)</code>   </td><td class="markdownTableBodyNone">Enable/disable filtering   </td></tr>
 </table>
 <p>For complete API documentation with source code links, see docs/api_reference.md.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 📊 Examples</h1>
 <p>For ESP32 examples, see the <a href="examples/esp32/">examples/esp32</a> directory. Additional examples for other platforms are available in the <a href="examples/">examples</a> directory.</p>
 <p>Detailed example walkthroughs are available in docs/examples.md.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 📚 Documentation</h1>
 <p>For complete documentation, see the docs directory.</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
+🔗 References</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Resource   </th><th class="markdownTableHeadNone">Link    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">TDK NTCG product family   </td><td class="markdownTableBodyNone"><a href="https://product.tdk.com/en/search/sensor/ntc/chip-ntc-thermistor">https://product.tdk.com/en/search/sensor/ntc/chip-ntc-thermistor</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Steinhart–Hart equation   </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation">https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">β-parameter equation   </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Thermistor#B_or_%CE%B2_parameter_equation">https://en.wikipedia.org/wiki/Thermistor#B_or_%CE%B2_parameter_equation</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ESP-IDF ADC API   </td><td class="markdownTableBodyNone"><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/adc.html">https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/adc.html</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">C++11 language reference   </td><td class="markdownTableBodyNone"><a href="https://en.cppreference.com/w/cpp/11">https://en.cppreference.com/w/cpp/11</a>   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md11"></a>
 🤝 Contributing</h1>
 <p>Pull requests and suggestions are welcome! Please follow the existing code style and include tests for new features.</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 📄 License</h1>
 <p>This project is licensed under the <b>GNU General Public License v3.0</b>. See the [LICENSE](LICENSE) file for details. </p>
 </div></div><!-- PageDoc -->

@@ -279,6 +279,7 @@
   <li><a href="#-api-reference">API Reference</a></li>
   <li><a href="#-examples">Examples</a></li>
   <li><a href="#-documentation">Documentation</a></li>
+  <li><a href="#-references">References</a></li>
   <li><a href="#-contributing">Contributing</a></li>
   <li><a href="#-license">License</a></li>
 </ol>
@@ -299,6 +300,65 @@ Interactive guides, examples, and step-by-step tutorials</p>
 <p>An <strong>NTC (Negative Temperature Coefficient) thermistor</strong> is a temperature-sensitive resistor whose resistance decreases as temperature increases. This driver provides a comprehensive, hardware-agnostic solution for temperature measurement using NTC thermistors in a voltage divider configuration. The driver supports multiple NTC types (including NTCG163JFT103FT1S, NTCG164JF103FT1S, and custom types), dual conversion methods (lookup table for speed, mathematical for accuracy), built-in calibration, filtering, and multi-sample averaging for precise temperature readings.</p>
 
 <p>The driver uses a <strong>CRTP (Curiously Recurring Template Pattern)</strong> design for zero-overhead hardware abstraction, requiring only an ADC interface implementation for your platform. This makes it ideal for embedded systems where performance and memory efficiency are critical.</p>
+<h3 id="-supported-thermistors">
+  
+  
+    <a href="#-supported-thermistors" class="anchor-heading" aria-labelledby="-supported-thermistors"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🔀 Supported Thermistors
+  
+  
+</h3>
+    
+
+<p>The driver ships with calibrated lookup tables (and Beta-equation parameters) for the
+TDK NTCG family. Use <code class="language-plaintext highlighter-rouge">NtcType::Custom</code> for any other part by supplying β / R₂₅ / R_series
+in the <code class="language-plaintext highlighter-rouge">ntc_config_t</code>.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>NTC Type</th>
+      <th>R₂₅</th>
+      <th>β (K)</th>
+      <th>Lookup table</th>
+      <th>Math (Beta)</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">NtcG163Jft103Ft1S</code></td>
+      <td>10 kΩ</td>
+      <td>3435</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>TDK NTCG163JFT103FT1S, ±1 % at 25 °C</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">NtcG164Jf103Ft1S</code></td>
+      <td>10 kΩ</td>
+      <td>3435</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>TDK NTCG164JF103FT1S, ±1 % at 25 °C</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">NtcG163Jf103Ft1S</code></td>
+      <td>10 kΩ</td>
+      <td>3435</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>TDK NTCG163JF103FT1S, ±1 % at 25 °C</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Custom</code></td>
+      <td>user</td>
+      <td>user</td>
+      <td>—</td>
+      <td>✅</td>
+      <td>Any β/R₂₅/R_series via <code class="language-plaintext highlighter-rouge">ntc_config_t</code></td>
+    </tr>
+  </tbody>
+</table></div>
 <h2 id="-features">
   
   
@@ -479,6 +539,45 @@ Additional examples for other platforms are available in the <a href="examples/"
     
 
 <p>For complete documentation, see the <a href="/hf-ntc-thermistor-driver/development/docs/">docs directory</a>.</p>
+<h2 id="-references">
+  
+  
+    <a href="#-references" class="anchor-heading" aria-labelledby="-references"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 🔗 References
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TDK NTCG product family</td>
+      <td><a href="https://product.tdk.com/en/search/sensor/ntc/chip-ntc-thermistor">https://product.tdk.com/en/search/sensor/ntc/chip-ntc-thermistor</a></td>
+    </tr>
+    <tr>
+      <td>Steinhart–Hart equation</td>
+      <td><a href="https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation">https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation</a></td>
+    </tr>
+    <tr>
+      <td>β-parameter equation</td>
+      <td><a href="https://en.wikipedia.org/wiki/Thermistor#B_or_%CE%B2_parameter_equation">https://en.wikipedia.org/wiki/Thermistor#B_or_%CE%B2_parameter_equation</a></td>
+    </tr>
+    <tr>
+      <td>ESP-IDF ADC API</td>
+      <td><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/adc.html">https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/adc.html</a></td>
+    </tr>
+    <tr>
+      <td>C++11 language reference</td>
+      <td><a href="https://en.cppreference.com/w/cpp/11">https://en.cppreference.com/w/cpp/11</a></td>
+    </tr>
+  </tbody>
+</table></div>
 <h2 id="-contributing">
   
   

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🔧_20installation_0',['🔧 Installation',['../index.html#autotoc_md5',1,'']]]
+  ['🔀_20supported_20thermistors_0',['🔀 Supported Thermistors',['../index.html#autotoc_md3',1,'']]]
 ];

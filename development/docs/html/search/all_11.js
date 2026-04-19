@@ -18,11 +18,12 @@ var searchData=
   ['setsimulatedvoltage_15',['SetSimulatedVoltage',['../classEsp32NtcAdcBus.html#a03b89553e1fd7d057c9239a8345b61ce',1,'Esp32NtcAdcBus']]],
   ['setvoltagedivider_16',['SetVoltageDivider',['../classNtcThermistor.html#a0055fc273d31760f5bc61b51c77f132f',1,'NtcThermistor']]],
   ['short_5fcircuit_5fcount_17',['SHORT_CIRCUIT_COUNT',['../structNTC__TestConfig_1_1Diagnostics.html#ad7c7ebfaf870d3a7cbbcdfaad0fe5879',1,'NTC_TestConfig::Diagnostics']]],
-  ['start_18',['🚀 Quick Start',['../index.html#autotoc_md4',1,'']]],
+  ['start_18',['🚀 Quick Start',['../index.html#autotoc_md5',1,'']]],
   ['stats_5freport_5finterval_5fms_19',['STATS_REPORT_INTERVAL_MS',['../structNTC__TestConfig_1_1AppConfig.html#a119a3fd64941a5926d468eb163d63b18',1,'NTC_TestConfig::AppConfig']]],
   ['steinhart_5fhart_5fa_5f_20',['STEINHART_HART_A_',['../namespaceNTC_1_1Constants.html#ad17bf0e376a2a231654a20e09b1ce934',1,'NTC::Constants']]],
   ['steinhart_5fhart_5fb_5f_21',['STEINHART_HART_B_',['../namespaceNTC_1_1Constants.html#af245fa0d038cd5d5d214333af43bc3f8',1,'NTC::Constants']]],
   ['steinhart_5fhart_5fc_5f_22',['STEINHART_HART_C_',['../namespaceNTC_1_1Constants.html#ab27b77c8d2e42e55dec30aec18d3cbac',1,'NTC::Constants']]],
   ['success_23',['Success',['../namespacentc.html#a01084a88ebce86485b27e6b963fa5941a505a83f220c02df2f85c3810cd9ceb38',1,'ntc::Success'],['../ntc__types_8hpp.html#a2e2559895ad8d6429024959b3200e9daa505a83f220c02df2f85c3810cd9ceb38',1,'Success:&#160;ntc_types.hpp']]],
-  ['supply_5fvoltage_24',['SUPPLY_VOLTAGE',['../structNTC__TestConfig_1_1CircuitConfig.html#adfbbdad284757ed2f14492fa6607f6ad',1,'NTC_TestConfig::CircuitConfig']]]
+  ['supply_5fvoltage_24',['SUPPLY_VOLTAGE',['../structNTC__TestConfig_1_1CircuitConfig.html#adfbbdad284757ed2f14492fa6607f6ad',1,'NTC_TestConfig::CircuitConfig']]],
+  ['supported_20thermistors_25',['🔀 Supported Thermistors',['../index.html#autotoc_md3',1,'']]]
 ];
