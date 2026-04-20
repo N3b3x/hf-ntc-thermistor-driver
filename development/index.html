@@ -300,6 +300,8 @@ Interactive guides, examples, and step-by-step tutorials</p>
 <p>An <strong>NTC (Negative Temperature Coefficient) thermistor</strong> is a temperature-sensitive resistor whose resistance decreases as temperature increases. This driver provides a comprehensive, hardware-agnostic solution for temperature measurement using NTC thermistors in a voltage divider configuration. The driver supports multiple NTC types (including NTCG163JFT103FT1S, NTCG164JF103FT1S, and custom types), dual conversion methods (lookup table for speed, mathematical for accuracy), built-in calibration, filtering, and multi-sample averaging for precise temperature readings.</p>
 
 <p>The driver uses a <strong>CRTP (Curiously Recurring Template Pattern)</strong> design for zero-overhead hardware abstraction, requiring only an ADC interface implementation for your platform. This makes it ideal for embedded systems where performance and memory efficiency are critical.</p>
+
+<p><img src="/hf-ntc-thermistor-driver/development/docs/assets/ntc-divider.svg" alt="NTC voltage-divider topology and resistance-temperature curve" /></p>
 <h3 id="-supported-thermistors">
   
   

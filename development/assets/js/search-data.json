@@ -435,7 +435,7 @@
   },"62": {
     "doc": "🔌 Hardware Setup",
     "title": "Hardware Setup",
-    "content": "This guide covers the physical connections and hardware requirements for using an NTC thermistor with this driver. ",
+    "content": ". This guide covers the physical connections and hardware requirements for using an NTC thermistor with this driver. ",
     "url": "/hf-ntc-thermistor-driver/development/docs/hardware_setup/#hardware-setup",
     
     "relUrl": "/docs/hardware_setup/#hardware-setup"
