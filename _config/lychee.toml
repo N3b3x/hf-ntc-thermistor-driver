@@ -61,4 +61,8 @@ exclude = [
 
   # Manufacturer product sites - may timeout or block automated requests
   '^https://product\.tdk\.com/',
+
+  # Manufacturer / IC vendor documentation URLs (frequently block automated crawlers)
+  '^https?://(www\.)?murata\.com/',
+  '^https?://(www\.)?vishay\.com/',
 ]
