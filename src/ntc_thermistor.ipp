@@ -353,11 +353,10 @@ NtcError NtcThermistor<AdcType>::GetRawAdcValue(uint32_t *adc_value) noexcept {
       // hardware-agnostic)
       if (config_.sample_delay_ms > 0 && i < config_.sample_count - 1) {
         // Simple busy-wait delay (approximate)
-        volatile uint32_t delay_count =
-            config_.sample_delay_ms *
-            static_cast<uint32_t>(MILLISECONDS_PER_SECOND_);
-        while (delay_count-- > 0) {
-          // Busy wait
+        uint32_t delay_count = config_.sample_delay_ms *
+                               static_cast<uint32_t>(MILLISECONDS_PER_SECOND_);
+        while (delay_count > 0) {
+          --delay_count;  // not volatile: avoids deprecated 'volatile' decrement
         }
       }
     }
@@ -688,11 +687,10 @@ NtcError NtcThermistor<AdcType>::readAdcVoltage(float *voltage_volts) noexcept {
       // hardware-agnostic)
       if (config_.sample_delay_ms > 0 && i < config_.sample_count - 1) {
         // Simple busy-wait delay (approximate)
-        volatile uint32_t delay_count =
-            config_.sample_delay_ms *
-            static_cast<uint32_t>(MILLISECONDS_PER_SECOND_);
-        while (delay_count-- > 0) {
-          // Busy wait
+        uint32_t delay_count = config_.sample_delay_ms *
+                               static_cast<uint32_t>(MILLISECONDS_PER_SECOND_);
+        while (delay_count > 0) {
+          --delay_count;  // not volatile: avoids deprecated 'volatile' decrement
         }
       }
     }
